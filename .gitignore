@@ -1,0 +1,64 @@
+# ── Dependencies ──────────────────────────────────
+node_modules/
+
+# ── Build output ──────────────────────────────────
+dist/
+*.tsbuildinfo
+
+# ── Environment & secrets ─────────────────────────
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+credentials*
+secrets*
+
+# ── OS generated files ────────────────────────────
+# macOS
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+# Linux
+*~
+.directory
+# Windows
+Thumbs.db
+Thumbs.db:encryptable
+Desktop.ini
+$RECYCLE.BIN/
+
+# ── Editor & IDE ──────────────────────────────────
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+*.sublime-project
+*.sublime-workspace
+.project
+.classpath
+.settings/
+*.launch
+
+# ── Astro ─────────────────────────────────────────
+.astro/
+
+# ── Debug & logs ──────────────────────────────────
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+bun-debug.log*
+lerna-debug.log*
+*.log
+
+# ── Misc ──────────────────────────────────────────
+*.tgz
+*.gz
+*.tar
+.cache/
+tmp/
+temp/

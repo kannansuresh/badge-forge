@@ -1,0 +1,97 @@
+{
+  "categoryName": "Social & Community",
+  "categorySlug": "social",
+  "categoryDescription": "Social media, community engagement, and contribution badges",
+  "badges": [
+    {
+      "id": "github-stars",
+      "label": "GitHub",
+      "message": "⭐ 1.2k Stars",
+      "color": "181717",
+      "logo": "github",
+      "logoColor": "white",
+      "style": "flat"
+    },
+    {
+      "id": "github-forks",
+      "label": "GitHub",
+      "message": "🔱 250 Forks",
+      "color": "181717",
+      "logo": "github",
+      "logoColor": "white",
+      "style": "flat"
+    },
+    {
+      "id": "discord-community",
+      "label": "Chat",
+      "message": "Discord",
+      "color": "5865F2",
+      "logo": "discord",
+      "logoColor": "white",
+      "style": "flat"
+    },
+    {
+      "id": "twitter-follow",
+      "label": "Follow",
+      "message": "@badgecraft",
+      "color": "1DA1F2",
+      "logo": "x",
+      "logoColor": "white",
+      "style": "flat"
+    },
+    {
+      "id": "mastodon-follow",
+      "label": "Follow",
+      "message": "@badgecraft",
+      "color": "6364FF",
+      "logo": "mastodon",
+      "logoColor": "white",
+      "style": "flat"
+    },
+    {
+      "id": "reddit-community",
+      "label": "Reddit",
+      "message": "r/badgecraft",
+      "color": "FF4500",
+      "logo": "reddit",
+      "logoColor": "white",
+      "style": "flat"
+    },
+    {
+      "id": "youtube-subscribe",
+      "label": "YouTube",
+      "message": "Subscribe",
+      "color": "FF0000",
+      "logo": "youtube",
+      "logoColor": "white",
+      "style": "flat"
+    },
+    {
+      "id": "sponsor-github",
+      "label": "Sponsor",
+      "message": "❤️ GitHub",
+      "color": "EA4AAA",
+      "logo": "githubsponsors",
+      "logoColor": "white",
+      "style": "flat"
+    },
+    {
+      "id": "open-collective",
+      "label": "Support",
+      "message": "Open Collective",
+      "color": "7FADF2",
+      "logo": "opencollective",
+      "logoColor": "white",
+      "style": "flat"
+    },
+    {
+      "id": "contributors-wanted",
+      "label": "Contributors",
+      "message": "Welcome! 🎉",
+      "color": "22C55E",
+      "logo": "handshake",
+      "logoColor": "white",
+      "style": "flat"
+    }
+  ]
+}

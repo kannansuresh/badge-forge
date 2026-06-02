@@ -1,0 +1,71 @@
+# ── Auto-detect text files, normalize to LF on commit ──
+* text=auto
+
+# ── Explicit line endings ─────────────────────────────
+# Source code — always LF
+*.js        text eol=lf
+*.mjs       text eol=lf
+*.cjs       text eol=lf
+*.ts        text eol=lf
+*.tsx       text eol=lf
+*.jsx       text eol=lf
+*.astro     text eol=lf
+*.css       text eol=lf
+*.json      text eol=lf
+*.md        text eol=lf
+*.yaml      text eol=lf
+*.yml       text eol=lf
+*.svg       text eol=lf
+
+# Shell scripts — LF required for execution
+*.sh        text eol=lf
+*.bash      text eol=lf
+*.zsh       text eol=lf
+
+# Config files — LF
+.gitattributes  text eol=lf
+.gitignore       text eol=lf
+.editorconfig    text eol=lf
+
+# Windows batch — CRLF required
+*.bat       text eol=crlf
+*.cmd       text eol=crlf
+
+# ── Binary files (no line-ending conversion) ──────────
+*.png       binary
+*.jpg       binary
+*.jpeg      binary
+*.gif       binary
+*.ico       binary
+*.webp      binary
+*.avif      binary
+*.bmp       binary
+*.tiff      binary
+
+*.woff      binary
+*.woff2     binary
+*.ttf       binary
+*.eot       binary
+*.otf       binary
+
+*.zip       binary
+*.tar       binary
+*.gz        binary
+*.bz2       binary
+*.7z        binary
+
+*.mp3       binary
+*.mp4       binary
+*.webm      binary
+
+# ── GitHub Linguist overrides ─────────────────────────
+# Collapse lockfiles and generated files in PR diffs
+bun.lock    linguist-generated=true
+package-lock.json  linguist-generated=true
+
+# Mark generated directories
+dist/**     linguist-generated=true
+.astro/**   linguist-generated=true
+
+# Treat Astro files as JSX-like for stats
+*.astro     linguist-language=Astro

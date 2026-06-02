@@ -1,0 +1,76 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { getCollection } from 'astro:content';
+
+export async function getStaticPaths() {
+  const gallery = await getCollection('gallery');
+  return gallery.map((entry) => ({
+    params: { category: entry.data.categorySlug },
+    props: { entry },
+  }));
+}
+
+const { entry } = Astro.props;
+const { categoryName, categoryDescription, badges } = entry.data;
+---
+
+<Layout
+  title={`${categoryName} — BadgeCraft Gallery`}
+  description={categoryDescription || `Browse ${categoryName} badges in the BadgeCraft curated gallery.`}
+>
+  <div class="max-w-6xl mx-auto px-4 py-12">
+    <!-- Breadcrumb -->
+    <div class="text-sm breadcrumbs mb-6">
+      <ul>
+        <li><a href="/gallery">Gallery</a></li>
+        <li>{categoryName}</li>
+      </ul>
+    </div>
+
+    <div class="mb-8">
+      <h1 class="text-3xl font-bold">{categoryName}</h1>
+      {categoryDescription && (
+        <p class="text-base-content/60 mt-2">{categoryDescription}</p>
+      )}
+    </div>
+
+    <!-- Badge grid -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
+      {badges.map((badge) => (
+        <a
+          href={`/builder?label=${encodeURIComponent(badge.label)}&message=${encodeURIComponent(badge.message)}&color=${badge.color}${badge.logo ? `&logo=${badge.logo}` : ''}${badge.logoColor ? `&logoColor=${badge.logoColor}` : ''}&style=${badge.style || 'flat'}${badge.labelColor ? `&labelColor=${badge.labelColor}` : ''}`}
+          class="card bg-base-100 shadow-sm border border-base-300 card-hover no-underline cursor-pointer group"
+        >
+          <div class="card-body p-4 gap-2 items-center text-center">
+            <!-- Badge image -->
+            <div class="badge-preview-wrapper w-full min-h-[52px]">
+              <img
+                src={`https://img.shields.io/badge/${encodeURIComponent(badge.label)}-${encodeURIComponent(badge.message)}-${badge.color}?style=${badge.style || 'flat'}${badge.logo ? `&logo=${badge.logo}` : ''}${badge.logoColor ? `&logoColor=${badge.logoColor}` : ''}${badge.labelColor ? `&labelColor=${badge.labelColor}` : ''}`}
+                alt={`${badge.label}: ${badge.message}`}
+                class="max-w-full h-auto"
+                loading="lazy"
+              />
+            </div>
+
+            <!-- Label -->
+            <div class="text-sm font-medium text-base-content/70 group-hover:text-primary transition-colors">
+              {badge.label} · {badge.message}
+            </div>
+
+            <!-- Meta chips -->
+            <div class="flex flex-wrap gap-1 justify-center">
+              <span class="badge badge-xs badge-outline">{badge.style || 'flat'}</span>
+              {badge.logo && <span class="badge badge-xs badge-ghost">{badge.logo}</span>}
+            </div>
+          </div>
+        </a>
+      ))}
+    </div>
+
+    {badges.length === 0 && (
+      <div class="text-center py-20">
+        <p class="text-base-content/60">No badges in this category yet.</p>
+      </div>
+    )}
+  </div>
+</Layout>
