@@ -1,5 +1,5 @@
-import { useState, useEffect, useCallback, useMemo, useRef } from 'react';
-import { buildShieldsUrl, toMarkdown, toHtml, saveBadge } from '../lib/storage';
+import { useState, useEffect, useLayoutEffect, useCallback, useMemo, useRef } from 'react';
+import { buildShieldsUrl, toMarkdown, toHtml, saveBadge, readClipboard } from '../lib/storage';
 import { loadIcons, searchIcons, type SimpleIconData } from '../lib/icons';
 
 interface BadgeParams {
@@ -30,46 +30,75 @@ interface LiveStudioProps {
   initialParams?: Partial<BadgeParams>;
 }
 
-/** Parse badge params from URL query string at runtime (SSG-compatible) */
-function parseQueryParams(): Partial<BadgeParams> {
+/** Resolve badge params at runtime — sessionStorage clipboard first, then URL query params (for bookmarks / direct links), then fallback defaults. */
+function resolveRuntimeParams(): Partial<BadgeParams> {
   if (typeof window === 'undefined') return {};
+
+  // 1) sessionStorage clipboard — primary channel from gallery → builder
+  const clipboard = readClipboard();
+  if (clipboard) {
+    const result: Partial<BadgeParams> = {};
+    if (clipboard.label) result.label = clipboard.label;
+    if (clipboard.message) result.message = clipboard.message;
+    if (clipboard.color) result.color = clipboard.color;
+    if (clipboard.logo) result.logo = clipboard.logo;
+    if (clipboard.logoColor) result.logoColor = clipboard.logoColor;
+    if (clipboard.style && STYLES.includes(clipboard.style)) result.style = clipboard.style;
+    if (clipboard.labelColor) result.labelColor = clipboard.labelColor;
+    return result;
+  }
+
+  // 2) URL query params — fallback for shared / bookmarked links
   const sp = new URLSearchParams(window.location.search);
-  const result: Partial<BadgeParams> = {};
-  const label = sp.get('label');
-  const message = sp.get('message');
-  const color = sp.get('color');
-  const logo = sp.get('logo');
-  const logoColor = sp.get('logoColor');
-  const style = sp.get('style') as BadgeParams['style'] | null;
-  const labelColor = sp.get('labelColor');
-  if (label) result.label = label;
-  if (message) result.message = message;
-  if (color) result.color = color;
-  if (logo) result.logo = logo;
-  if (logoColor) result.logoColor = logoColor;
-  if (style && STYLES.includes(style)) result.style = style;
-  if (labelColor) result.labelColor = labelColor;
-  return result;
+  const hasQueryParams = ['label','message','color','logo','logoColor','style','labelColor'].some(k => sp.has(k));
+  if (hasQueryParams) {
+    const result: Partial<BadgeParams> = {};
+    const label = sp.get('label');
+    const message = sp.get('message');
+    const color = sp.get('color');
+    const logo = sp.get('logo');
+    const logoColor = sp.get('logoColor');
+    const style = sp.get('style') as BadgeParams['style'] | null;
+    const labelColor = sp.get('labelColor');
+    if (label) result.label = label;
+    if (message) result.message = message;
+    if (color) result.color = color;
+    if (logo) result.logo = logo;
+    if (logoColor) result.logoColor = logoColor;
+    if (style && STYLES.includes(style)) result.style = style;
+    if (labelColor) result.labelColor = labelColor;
+    return result;
+  }
+
+  return {};
 }
 
 export default function LiveStudio({ initialParams }: LiveStudioProps) {
-  // Merge build-time props with runtime query params (for gallery → builder navigation)
-  const resolvedParams = useMemo(() => {
-    const queryParams = parseQueryParams();
-    return {
-      label: 'badge',
-      message: 'craft',
-      color: '6366f1',
-      logo: '',
-      logoColor: 'white',
-      style: 'flat' as BadgeParams['style'],
-      labelColor: '',
-      ...initialParams,
-      ...queryParams,
-    };
-  }, [initialParams]);
+  // Initial state with build-time props + safe defaults (SSR-compatible).
+  // Runtime params (sessionStorage clipboard / URL) are applied post-hydration
+  // via useLayoutEffect because React hydration ignores useState initializers
+  // and always prefers the server-rendered state.
+  const [params, setParams] = useState<BadgeParams>({
+    label: initialParams?.label || 'badge',
+    message: initialParams?.message || 'craft',
+    color: initialParams?.color || '6366f1',
+    logo: initialParams?.logo || '',
+    logoColor: initialParams?.logoColor || 'white',
+    style: initialParams?.style || 'flat',
+    labelColor: initialParams?.labelColor || '',
+  });
 
-  const [params, setParams] = useState<BadgeParams>(resolvedParams);
+  // Apply runtime clipboard/URL params synchronously after hydration.
+  // Ref guard prevents double-read in React Strict Mode (dev).
+  const didReadRuntime = useRef(false);
+  useLayoutEffect(() => {
+    if (didReadRuntime.current) return;
+    didReadRuntime.current = true;
+    const runtime = resolveRuntimeParams();
+    if (Object.keys(runtime).length > 0) {
+      setParams((prev) => ({ ...prev, ...runtime }));
+    }
+  }, []);
 
   const [logoQuery, setLogoQuery] = useState('');
   const [logoResults, setLogoResults] = useState<SimpleIconData[]>([]);

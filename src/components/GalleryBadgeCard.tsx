@@ -1,5 +1,5 @@
 import { useState, useCallback, useMemo } from 'react';
-import { buildShieldsUrl, toMarkdown, toHtml } from '../lib/storage';
+import { buildShieldsUrl, toMarkdown, toHtml, writeClipboard } from '../lib/storage';
 
 export interface GalleryBadgeConfig {
   id: string;
@@ -34,16 +34,18 @@ export default function GalleryBadgeCard({ badge }: GalleryBadgeCardProps) {
     [badge],
   );
 
-  const builderUrl = useMemo(() => {
-    const params = new URLSearchParams();
-    params.set('label', badge.label);
-    params.set('message', badge.message);
-    params.set('color', badge.color);
-    if (badge.logo) params.set('logo', badge.logo);
-    if (badge.logoColor) params.set('logoColor', badge.logoColor);
-    if (badge.style) params.set('style', badge.style);
-    if (badge.labelColor) params.set('labelColor', badge.labelColor);
-    return `/builder?${params.toString()}`;
+  /** Write badge to sessionStorage then navigate to the builder */
+  const handleEdit = useCallback(() => {
+    writeClipboard({
+      label: badge.label,
+      message: badge.message,
+      color: badge.color,
+      logo: badge.logo,
+      logoColor: badge.logoColor,
+      style: badge.style,
+      labelColor: badge.labelColor,
+    });
+    window.location.href = '/builder';
   }, [badge]);
 
   const copy = useCallback(
@@ -153,16 +155,16 @@ export default function GalleryBadgeCard({ badge }: GalleryBadgeCardProps) {
           {/* Divider */}
           <span className="w-px h-5 bg-base-300 self-center mx-0.5" />
 
-          {/* Edit in Studio */}
-          <a
-            href={builderUrl}
+          {/* Edit in Studio — via sessionStorage clipboard */}
+          <button
             className="btn btn-xs btn-primary btn-outline gap-1"
+            onClick={handleEdit}
           >
             <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
             </svg>
             Edit
-          </a>
+          </button>
         </div>
       </div>
     </div>

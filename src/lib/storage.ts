@@ -1,5 +1,38 @@
 import Dexie, { type EntityTable } from 'dexie';
 
+// ── Session-storage clipboard (gallery → builder hand-off) ─────
+/** Key used to pass badge config from gallery cards to the Live Studio builder. */
+export const CLIPBOARD_KEY = 'badgecraft-clipboard';
+
+export interface BadgeClipboard {
+  label: string;
+  message: string;
+  color: string;
+  logo?: string;
+  logoColor?: string;
+  style?: 'flat' | 'flat-square' | 'plastic' | 'for-the-badge' | 'social';
+  labelColor?: string;
+}
+
+/** Write badge config so the builder can pick it up after navigation. */
+export function writeClipboard(badge: BadgeClipboard): void {
+  if (typeof window === 'undefined') return;
+  sessionStorage.setItem(CLIPBOARD_KEY, JSON.stringify(badge));
+}
+
+/** Read and consume the clipboard. Returns null if nothing was stored. */
+export function readClipboard(): BadgeClipboard | null {
+  if (typeof window === 'undefined') return null;
+  const raw = sessionStorage.getItem(CLIPBOARD_KEY);
+  if (!raw) return null;
+  sessionStorage.removeItem(CLIPBOARD_KEY);
+  try {
+    return JSON.parse(raw) as BadgeClipboard;
+  } catch {
+    return null;
+  }
+}
+
 // ── Badge configuration stored in IndexedDB ──────────────────────
 export interface SavedBadge {
   id?: number; // auto-incremented primary key
