@@ -70,7 +70,7 @@ export default function LiveStudio({ initialParams }: LiveStudioProps) {
     message: initialParams?.message || 'craft',
     color: initialParams?.color || '6366f1',
     logo: initialParams?.logo || '',
-    logoColor: initialParams?.logoColor || 'white',
+    logoColor: initialParams?.logoColor || 'ffffff',
     style: initialParams?.style || 'flat',
     labelColor: initialParams?.labelColor || '',
   });
@@ -304,9 +304,13 @@ export default function LiveStudio({ initialParams }: LiveStudioProps) {
                     className="w-full text-left px-3 py-2 flex items-center gap-3 hover:bg-base-200 transition-colors"
                     onClick={() => selectLogo(icon)}
                   >
-                    <span className="w-6 h-6 flex-shrink-0 rounded" style={{ backgroundColor: `#${icon.hex}` }} />
+                    <span
+                      className="w-5 h-5 rounded shrink-0 ring-1 ring-base-300 ring-inset"
+                      style={{ backgroundColor: `#${icon.hex}` }}
+                      title={`Brand color: #${icon.hex}`}
+                    />
                     <span className="font-medium text-sm truncate">{icon.title}</span>
-                    <span className="text-xs text-base-content/50 ml-auto font-mono">#{icon.hex}</span>
+                    <span className="text-xs text-base-content/40 ml-auto font-mono shrink-0">#{icon.hex}</span>
                   </button>
                 </li>
               ))}
