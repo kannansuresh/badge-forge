@@ -1,6 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import Dashboard from '../components/Dashboard';
+import DashboardPage from '../components/Dashboard';
 ---
 
 <Layout
@@ -8,6 +8,6 @@ import Dashboard from '../components/Dashboard';
   description="Your locally saved badge collection. Export, import, and manage your shields.io badge creations."
 >
   <div class="max-w-6xl mx-auto px-4 py-12">
-    <Dashboard client:load />
+    <DashboardPage client:load />
   </div>
 </Layout>
