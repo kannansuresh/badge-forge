@@ -1,7 +1,7 @@
 ---
 import { Icon } from 'astro-icon/components';
 import { Font } from 'astro:assets';
-import ThemeController from '../components/ThemeController';
+import ThemeController from '../components/ThemeController.astro';
 import '../styles/global.css';
 
 export interface Props {
@@ -69,7 +69,7 @@ const currentPath = Astro.url.pathname;
         <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="btn btn-ghost btn-circle" aria-label="GitHub">
           <Icon name="lucide:github" class="w-5 h-5" />
         </a>
-        <ThemeController client:load />
+        <ThemeController />
       </div>
     </div>
 

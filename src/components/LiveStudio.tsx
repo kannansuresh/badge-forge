@@ -1,9 +1,6 @@
 import { useState, useEffect, useLayoutEffect, useCallback, useMemo, useRef } from 'react';
-import { Search, Save, RefreshCw } from 'lucide-react';
-import { buildShieldsUrl, saveBadge, isDuplicate, readClipboard, getIconPreviewPref, setIconPreviewPref, clearIconCache, getIconCacheCount } from '../lib/storage';
-import IconPreview from './IconPreview';
-import ColorInput from './ColorInput';
-import CopyTabs from './CopyTabs';
+import { Search, Save, RefreshCw, FileCode, Code2, Link, FileText, BookOpen } from 'lucide-react';
+import { buildShieldsUrl, saveBadge, isDuplicate, readClipboard, getIconPreviewPref, setIconPreviewPref, clearIconCache, getIconCacheCount, getIconSvg, toMarkdown, toHtml, toRst, toAsciiDoc } from '../lib/storage';
 import { loadIcons, searchIcons, type SimpleIconData } from '../lib/icons';
 
 interface BadgeParams {
@@ -442,6 +439,118 @@ export default function LiveStudio({ initialParams }: LiveStudioProps) {
             <button className="btn btn-primary w-full shadow-xl" onClick={() => setMobilePreviewOpen(true)}>Preview Badge</button>
           </div>
         )}
+      </div>
+    </div>
+  );
+}
+
+/* ── ColorInput (inline) ─────────────────────────── */
+const PALETTE = [
+  { hex: '6366f1', label: 'Primary' },
+  { hex: '8b5cf6', label: 'Secondary' },
+  { hex: '06b6d4', label: 'Accent' },
+  { hex: '1f2937', label: 'Neutral' },
+  { hex: '22c55e', label: 'Success' },
+  { hex: 'f59e0b', label: 'Warning' },
+  { hex: 'ef4444', label: 'Error' },
+  { hex: '3b82f6', label: 'Info' },
+];
+
+function ColorInput({ id, label, value, onChange, placeholder, hint }: {
+  id: string; label: string; value: string; onChange: (v: string) => void; placeholder: string; hint?: string;
+}) {
+  return (
+    <fieldset className="fieldset">
+      <legend className="fieldset-legend">{label}</legend>
+      <div className="join w-full">
+        <span className="join-item bg-base-200 px-3 flex items-center text-sm font-mono ring-1 ring-inset ring-base-300">#</span>
+        <input id={id} type="text" className="input join-item w-full font-mono" value={value} maxLength={6}
+          onChange={(e) => onChange(e.target.value.replace(/[^0-9a-fA-F]/g, '').slice(0, 6))} placeholder={placeholder} />
+        <div className="dropdown dropdown-end join-item">
+          <div tabIndex={0} role="button" className="w-10 h-full cursor-pointer rounded-r-box ring-1 ring-inset ring-base-300"
+            style={{ backgroundColor: value ? `#${value}` : '#ccc' }} />
+          <div tabIndex={0} className="dropdown-content z-30 mt-1 p-2 shadow bg-base-100 rounded-box border border-base-300 w-48">
+            <p className="px-1 py-1 text-xs text-base-content/50 font-medium">Palette</p>
+            <div className="flex flex-wrap gap-1.5 px-1 py-1">
+              {PALETTE.map((c) => (
+                <button key={c.hex} className={`w-6 h-6 rounded-full border-2 transition-transform hover:scale-125 ${value === c.hex ? 'border-base-content' : 'border-base-300'}`}
+                  style={{ backgroundColor: `#${c.hex}` }} onClick={() => onChange(c.hex)} title={c.label} />
+              ))}
+            </div>
+            <div className="divider my-1" />
+            <label className="flex items-center gap-2 px-2 py-1.5 cursor-pointer hover:bg-base-200 rounded text-sm">
+              <span className="w-6 h-6 rounded-full border-2 border-dashed border-base-300 flex items-center justify-center text-[10px]">+</span>
+              <span>Custom</span>
+              <input type="color" className="absolute opacity-0 w-0 h-0"
+                value={`#${value || '000000'}`} onChange={(e) => onChange(e.target.value.replace('#', ''))} />
+            </label>
+          </div>
+        </div>
+      </div>
+      {hint && <p className="fieldset-label">{hint}</p>}
+    </fieldset>
+  );
+}
+
+/* ── IconPreview (inline) ────────────────────────── */
+function IconPreview({ slug, hex }: { slug: string; hex: string }) {
+  const [svg, setSvg] = useState<string | null>(null);
+  const [error, setError] = useState(false);
+  const mountedRef = useRef(true);
+  useEffect(() => {
+    mountedRef.current = true; setSvg(null); setError(false);
+    getIconSvg(slug).then((d) => { if (mountedRef.current) setSvg(d); }).catch(() => { if (mountedRef.current) setError(true); });
+    return () => { mountedRef.current = false; };
+  }, [slug]);
+  if (error) return <span className="w-5 h-5 rounded shrink-0 ring-1 ring-base-300 ring-inset" style={{ backgroundColor: `#${hex}` }} />;
+  if (!svg) return <span className="w-5 h-5 rounded shrink-0 animate-pulse" style={{ backgroundColor: `${hex}40` }} />;
+  return <span className="w-5 h-5 shrink-0 inline-flex items-center justify-center"
+    dangerouslySetInnerHTML={{ __html: svg.replace(/width="[^"]*"/, 'width="20"').replace(/height="[^"]*"/, 'height="20"') }} />;
+}
+
+/* ── CopyTabs (inline) ───────────────────────────── */
+type TabId = 'md' | 'rst' | 'adoc' | 'html' | 'url';
+const TABS: { id: TabId; label: string; Icon: typeof FileCode }[] = [
+  { id: 'md', label: 'Markdown', Icon: FileCode },
+  { id: 'rst', label: 'RST', Icon: FileText },
+  { id: 'adoc', label: 'AsciiDoc', Icon: BookOpen },
+  { id: 'html', label: 'HTML', Icon: Code2 },
+  { id: 'url', label: 'URL', Icon: Link },
+];
+
+function CopyTabs({ shieldsUrl, alt }: { shieldsUrl: string; alt?: string }) {
+  const [tab, setTab] = useState<TabId>('md');
+  const [copied, setCopied] = useState(false);
+  const snippets = useMemo(() => ({
+    md: toMarkdown(shieldsUrl, alt), rst: toRst(shieldsUrl, alt), adoc: toAsciiDoc(shieldsUrl, alt),
+    html: toHtml(shieldsUrl, alt), url: shieldsUrl,
+  }), [shieldsUrl, alt]);
+  const copy = useCallback(async () => {
+    try { await navigator.clipboard.writeText(snippets[tab]); } catch {
+      const ta = document.createElement('textarea'); ta.value = snippets[tab]; ta.style.cssText = 'position:fixed;opacity:0';
+      document.body.appendChild(ta); ta.select(); document.execCommand('copy'); document.body.removeChild(ta);
+    }
+    setCopied(true); setTimeout(() => setCopied(false), 2000);
+  }, [snippets, tab]);
+  return (
+    <div className="card bg-base-200 border border-base-300 max-w-full overflow-hidden">
+      <div className="card-body p-3 sm:p-4 gap-0">
+        <div className="flex items-start justify-between">
+          <div role="tablist" className="tabs tabs-lift">
+            {TABS.map(({ id, label, Icon }) => (
+              <label key={id} className={`tab gap-1 ${tab === id ? 'tab-active' : ''}`}>
+                <input type="radio" name="copy_tabs" className="tab hidden" checked={tab === id} onChange={() => setTab(id)} />
+                <Icon className="w-3 h-3" /><span className="text-[11px]">{label}</span>
+              </label>
+            ))}
+          </div>
+          <button className={`btn btn-xs shrink-0 mt-1 ${copied ? 'btn-success' : 'btn-outline'}`} onClick={copy}>
+            {copied ? '✓ Copied!' : 'Copy'}
+          </button>
+        </div>
+        <div className="bg-neutral text-neutral-content rounded-box p-3 text-xs font-mono max-w-full overflow-hidden -mt-px">
+          <code className="break-all whitespace-pre-wrap">{snippets[tab]}</code>
+        </div>
       </div>
     </div>
   );

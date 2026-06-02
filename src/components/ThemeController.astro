@@ -1,0 +1,38 @@
+<button
+  id="theme-toggle"
+  class="btn btn-ghost btn-circle"
+  aria-label="Toggle theme"
+>
+  <svg id="theme-sun" class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+    <circle cx="12" cy="12" r="4" />
+    <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41" />
+  </svg>
+  <svg id="theme-moon" class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" style="display:none">
+    <path d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+  </svg>
+</button>
+
+<script>
+  const KEY = 'badgecraft-theme';
+  const html = document.documentElement;
+  const sun = document.getElementById('theme-sun');
+  const moon = document.getElementById('theme-moon');
+
+  function getTheme() {
+    const s = localStorage.getItem(KEY);
+    if (s === 'light' || s === 'dark') return s;
+    return matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+  }
+
+  function apply(t) {
+    html.setAttribute('data-theme', t);
+    localStorage.setItem(KEY, t);
+    sun.style.display = t === 'dark' ? 'none' : '';
+    moon.style.display = t === 'dark' ? '' : 'none';
+  }
+
+  apply(getTheme());
+  document.getElementById('theme-toggle').addEventListener('click', () => {
+    apply(html.getAttribute('data-theme') === 'light' ? 'dark' : 'light');
+  });
+</script>
