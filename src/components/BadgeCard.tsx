@@ -3,7 +3,7 @@ import { Pencil } from 'lucide-react';
 import { buildShieldsUrl, toMarkdown, toHtml } from '../lib/storage';
 
 export interface BadgeConfig {
-  id?: string | number;
+  id?: string | number | undefined;
   label: string;
   message: string;
   color: string;

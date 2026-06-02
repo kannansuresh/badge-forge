@@ -104,8 +104,8 @@ export default function LiveStudio({ initialParams }: LiveStudioProps) {
   const [refreshingIcons, setRefreshingIcons] = useState(false);
 
   const allIconsRef = useRef<SimpleIconData[]>([]);
-  const logoSearchRef = useRef<HTMLDivElement>(null);
-  const saveTimerRef = useRef<ReturnType<typeof setTimeout>>();
+  const logoSearchRef = useRef<HTMLFieldSetElement>(null);
+  const saveTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
   const iconsLoadingRef = useRef(false);
 
   useEffect(() => {
@@ -671,7 +671,7 @@ const TABS: { id: TabId; label: string; Icon: typeof FileCode }[] = [
   { id: 'url', label: 'URL', Icon: Link },
 ];
 
-function CopyTabs({ shieldsUrl, alt }: { shieldsUrl: string; alt?: string }) {
+function CopyTabs({ shieldsUrl, alt }: { shieldsUrl: string; alt?: string | undefined }) {
   const [tab, setTab] = useState<TabId>('md');
   const [copied, setCopied] = useState(false);
   const snippets = useMemo(

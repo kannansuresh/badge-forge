@@ -41,7 +41,7 @@ const esc = (s: string) => encodeURIComponent(s.replace(/-/g, '--').replace(/_/g
                   {categoryDescription && (
                     <p class="text-sm text-base-content/60 line-clamp-2">{categoryDescription}</p>
                   )}
-                  <div class="flex flex-wrap gap-1.5 my-3 min-h-[28px]">
+                  <div class="flex flex-wrap gap-1.5 my-3 min-h-7">
                     {previewBadges.map((badge) => (
                       <img
                         src={`https://img.shields.io/badge/${esc(badge.label)}-${esc(badge.message)}-${badge.color}?style=${badge.style || 'flat'}${badge.logo ? `&logo=${badge.logo}` : ''}${badge.logoColor ? `&logoColor=${badge.logoColor}` : ''}`}

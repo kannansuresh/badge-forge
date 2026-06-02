@@ -8,10 +8,10 @@ export interface BadgeClipboard {
   label: string;
   message: string;
   color: string;
-  logo?: string;
-  logoColor?: string;
-  style?: 'flat' | 'flat-square' | 'plastic' | 'for-the-badge' | 'social';
-  labelColor?: string;
+  logo?: string | undefined;
+  logoColor?: string | undefined;
+  style?: 'flat' | 'flat-square' | 'plastic' | 'for-the-badge' | 'social' | undefined;
+  labelColor?: string | undefined;
 }
 
 /** Write badge config so the builder can pick it up after navigation. */
@@ -127,10 +127,10 @@ export function buildShieldsUrl(params: {
   label: string;
   message: string;
   color: string;
-  logo?: string;
-  logoColor?: string;
-  style?: string;
-  labelColor?: string;
+  logo?: string | undefined;
+  logoColor?: string | undefined;
+  style?: string | undefined;
+  labelColor?: string | undefined;
 }): string {
   const { label, message, color, logo, logoColor, style, labelColor } = params;
   const escLabel = encodeURIComponent(escapeShieldsText(label));
@@ -146,31 +146,31 @@ export function buildShieldsUrl(params: {
 }
 
 /** Construct Markdown badge string */
-export function toMarkdown(shieldsUrl: string, alt?: string): string {
+export function toMarkdown(shieldsUrl: string, alt?: string | undefined): string {
   const label = alt || 'badge';
   return `![${label}](${shieldsUrl})`;
 }
 
 /** Construct HTML <img> badge string */
-export function toHtml(shieldsUrl: string, alt?: string): string {
+export function toHtml(shieldsUrl: string, alt?: string | undefined): string {
   const label = alt || 'badge';
   return `<img src="${shieldsUrl}" alt="${label}" />`;
 }
 
 /** Construct reStructuredText badge string */
-export function toRst(shieldsUrl: string, alt?: string): string {
+export function toRst(shieldsUrl: string, alt?: string | undefined): string {
   const label = alt || 'badge';
   return `.. image:: ${shieldsUrl}\n   :alt: ${label}`;
 }
 
 /** Construct AsciiDoc badge string */
-export function toAsciiDoc(shieldsUrl: string, alt?: string): string {
+export function toAsciiDoc(shieldsUrl: string, alt?: string | undefined): string {
   const label = alt || 'badge';
   return `image:${shieldsUrl}[${label}]`;
 }
 
 /** Construct Textile badge string */
-export function toTextile(shieldsUrl: string, alt?: string): string {
+export function toTextile(shieldsUrl: string, alt?: string | undefined): string {
   const label = alt || 'badge';
   return `!${shieldsUrl}(${label})!`;
 }
