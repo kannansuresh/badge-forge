@@ -427,31 +427,27 @@ export default function LiveStudio({ initialParams }: LiveStudioProps) {
 
         <div className={mobilePreviewOpen ? 'block space-y-5' : 'hidden lg:block lg:space-y-5'}>
           {/* Magnified */}
-          <div className="card bg-base-200 border border-base-300">
-            <div className="card-body p-3 sm:p-4">
-              <h3 className="card-title text-xs sm:text-sm opacity-70 font-medium uppercase tracking-wider">
+          <div className="card bg-base-200 border border-base-300 relative">
+            <div className="card-body p-3 sm:p-4 flex items-center justify-center min-h-24">
+              <span className="absolute top-2 left-3 text-[10px] opacity-40 uppercase tracking-wider font-medium select-none pointer-events-none">
                 Magnified View
-              </h3>
-              <div className="flex items-center justify-center min-h-24 py-4">
-                <img
-                  src={shieldsUrl}
-                  alt="Badge preview (magnified)"
-                  className="scale-[2.5]"
-                  style={{ imageRendering: 'auto' }}
-                />
-              </div>
+              </span>
+              <img
+                src={shieldsUrl}
+                alt="Badge preview (magnified)"
+                className="scale-[2.5]"
+                style={{ imageRendering: 'auto' }}
+              />
             </div>
           </div>
 
           {/* Actual size */}
-          <div className="card bg-base-200 border border-base-300">
-            <div className="card-body p-3 sm:p-4">
-              <h3 className="card-title text-xs sm:text-sm opacity-70 font-medium uppercase tracking-wider">
+          <div className="card bg-base-200 border border-base-300 relative">
+            <div className="card-body p-3 sm:p-4 flex items-center justify-center min-h-16">
+              <span className="absolute top-2 left-3 text-[10px] opacity-40 uppercase tracking-wider font-medium select-none pointer-events-none">
                 Actual Size
-              </h3>
-              <div className="flex items-center justify-center min-h-13">
-                <img src={shieldsUrl} alt="Badge preview (actual size)" />
-              </div>
+              </span>
+              <img src={shieldsUrl} alt="Badge preview (actual size)" />
             </div>
           </div>
 
