@@ -1,8 +1,8 @@
-# 🛡️ BadgeCraft
+# 🛡️ BadgeForge
 
 A high-performance, local-first web application for creating, customizing, and browsing markdown/HTML badges powered by [shields.io](https://shields.io). Built with Astro, React, Tailwind CSS, DaisyUI, and Dexie.js.
 
-![BadgeCraft](https://img.shields.io/badge/BadgeCraft-v1.0-6366f1?style=for-the-badge)
+![BadgeForge](https://img.shields.io/badge/BadgeForge-v1.0-6366f1?style=for-the-badge)
 
 ## Features
 

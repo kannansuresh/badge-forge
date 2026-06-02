@@ -19,7 +19,7 @@ export default defineConfig({
   vite: {
     plugins: [tailwindcss()],
   },
-  site: process.env.SITE_URL || 'https://badgecraft.app',
+  site: process.env.SITE_URL || 'https://badgeforge.app',
   output: 'static',
   fonts: [
     {

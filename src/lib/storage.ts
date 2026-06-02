@@ -2,7 +2,7 @@ import Dexie, { type EntityTable } from 'dexie';
 
 // ── Session-storage clipboard (gallery → builder hand-off) ─────
 /** Key used to pass badge config from gallery cards to the Live Studio builder. */
-export const CLIPBOARD_KEY = 'badgecraft-clipboard';
+export const CLIPBOARD_KEY = 'badgeforge-clipboard';
 
 export interface BadgeClipboard {
   label: string;
@@ -73,7 +73,7 @@ export interface CachedIcon {
   cachedAt: string;
 }
 
-const db = new Dexie('BadgeCraftDB') as Dexie & {
+const db = new Dexie('BadgeForgeDB') as Dexie & {
   badges: EntityTable<SavedBadge, 'id'>;
   icons: EntityTable<CachedIcon, 'slug'>;
   categories: EntityTable<UserCategory, 'id'>;
@@ -95,7 +95,7 @@ db.version(3).stores({
 });
 
 // ── Icon preview cache ──────────────────────────────────────────
-const ICON_PREVIEW_KEY = 'badgecraft-icon-previews';
+const ICON_PREVIEW_KEY = 'badgeforge-icon-previews';
 const CDN_BASE = 'https://cdn.simpleicons.org';
 
 /** Whether the user has opted into icon previews */

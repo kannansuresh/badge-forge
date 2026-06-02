@@ -10,7 +10,7 @@ export interface Props {
   description?: string;
 }
 
-const title = Astro.props.title || 'BadgeCraft — Build Beautiful Shields.io Badges';
+const title = Astro.props.title || 'BadgeForge — Build Beautiful Shields.io Badges';
 const description =
   Astro.props.description ||
   'Create, customize, and browse stunning markdown/HTML badges powered by shields.io. Local-first, developer-focused.';
@@ -88,7 +88,7 @@ const currentPath = Astro.url.pathname;
             <li><a href="/" class:list={['', currentPath === '/' && 'menu-active']}>Home</a></li>
             <li>
               <a href="/builder" class:list={['', currentPath === '/builder' && 'menu-active']}
-                >Live Studio</a
+                >Forge</a
               >
             </li>
             <li>
@@ -99,15 +99,15 @@ const currentPath = Astro.url.pathname;
             </li>
             <li>
               <a href="/dashboard" class:list={['', currentPath === '/dashboard' && 'menu-active']}
-                >My Backpack</a
+                >My Badges</a
               >
             </li>
           </ul>
         </div>
 
         <a href="/" class="btn btn-ghost text-xl font-bold gap-2">
-          <span class="text-primary">🛡️</span>
-          BadgeCraft
+          <img src="/favicon.svg" alt="" class="w-6 h-6" />
+          BadgeForge
         </a>
       </div>
 
@@ -115,7 +115,7 @@ const currentPath = Astro.url.pathname;
         <ul class="menu menu-horizontal px-1 gap-1">
           <li>
             <a href="/builder" class:list={['', currentPath === '/builder' && 'menu-active']}
-              >Live Studio</a
+              >Forge</a
             >
           </li>
           <li>
@@ -126,7 +126,7 @@ const currentPath = Astro.url.pathname;
           </li>
           <li>
             <a href="/dashboard" class:list={['', currentPath === '/dashboard' && 'menu-active']}
-              >My Backpack</a
+              >My Badges</a
             >
           </li>
         </ul>
@@ -154,7 +154,7 @@ const currentPath = Astro.url.pathname;
     <!-- Footer -->
     <footer class="border-t border-base-300 bg-base-100 text-base-content/50 text-xs text-center py-4">
       <span>
-        🛡️ BadgeCraft by <a href="https://github.com/kannansuresh/" class="link link-hover" target="_blank">Kannan Suresh</a>
+        BadgeForge by <a href="https://github.com/kannansuresh/" class="link link-hover" target="_blank">Kannan Suresh</a>
         &mdash; Powered by <a href="https://shields.io" class="link link-hover" target="_blank">shields.io</a> &amp; <a href="https://simpleicons.org" class="link link-hover" target="_blank">Simple Icons</a>
       </span>
     </footer>

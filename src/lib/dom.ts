@@ -51,7 +51,7 @@ export function initGalleryBadgeCards(): void {
     if (editBtn) {
       editBtn.addEventListener('click', () => {
         sessionStorage.setItem(
-          'badgecraft-clipboard',
+          'badgeforge-clipboard',
           editBtn.getAttribute('data-clipboard') ?? '{}',
         );
         window.location.href = '/builder';

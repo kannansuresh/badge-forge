@@ -2,7 +2,7 @@
   "name": "badgecraft",
   "type": "module",
   "version": "1.0.0",
-  "description": "BadgeCraft — A high-performance, developer-focused, local-first web app for creating and browsing markdown/HTML badges powered by shields.io",
+  "description": "BadgeForge — A high-performance, developer-focused, local-first web app for creating and browsing markdown/HTML badges powered by shields.io",
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",

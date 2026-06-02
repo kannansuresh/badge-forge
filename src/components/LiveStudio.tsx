@@ -398,7 +398,7 @@ export default function LiveStudio({ initialParams }: LiveStudioProps) {
               onFocus={() => {
                 ensureIconsLoaded();
                 if (logoResults.length > 0) setShowLogoDropdown(true);
-                if (localStorage.getItem('badgecraft-icon-previews') === null)
+                if (localStorage.getItem('badgeforge-icon-previews') === null)
                   setShowIconOptIn(true);
               }}
               placeholder="react"

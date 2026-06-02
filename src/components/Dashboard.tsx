@@ -119,7 +119,7 @@ export default function Dashboard({ onEditBadge }: { onEditBadge?: (badge: Badge
     const url = URL.createObjectURL(blob);
     const a = document.createElement('a');
     a.href = url;
-    a.download = `badgecraft-export-${new Date().toISOString().slice(0, 10)}.json`;
+    a.download = `badgeforge-export-${new Date().toISOString().slice(0, 10)}.json`;
     document.body.appendChild(a);
     a.click();
     document.body.removeChild(a);
@@ -155,7 +155,7 @@ export default function Dashboard({ onEditBadge }: { onEditBadge?: (badge: Badge
       {/* Header */}
       <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
         <div>
-          <h2 className="text-2xl font-bold">My Backpack</h2>
+          <h2 className="text-2xl font-bold">My Badges</h2>
           <p className="text-base-content/60 text-sm">
             {filteredBadges.length} badge{filteredBadges.length !== 1 ? 's' : ''}
             {categoryFilter !== 'all' ? ' in this category' : ' saved locally'}
@@ -263,10 +263,10 @@ export default function Dashboard({ onEditBadge }: { onEditBadge?: (badge: Badge
           <div className="text-5xl mb-4">🎒</div>
           <h3 className="text-xl font-semibold mb-2">Your backpack is empty</h3>
           <p className="text-base-content/60 mb-6">
-            Create badges in the Live Studio or import a snapshot.
+            Create badges in the Forge or import a snapshot.
           </p>
           <a href="/builder" className="btn btn-primary">
-            Go to Live Studio
+            Go to Forge
           </a>
         </div>
       ) : filteredBadges.length === 0 ? (
