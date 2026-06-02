@@ -53,11 +53,26 @@
   --radius-box: 0.75rem;
 }
 
-/* ── Base layer — only what DaisyUI doesn't provide ── */
+/* ── Base layer ─────────────────────────────────────── */
 @layer base {
   html {
     scroll-behavior: smooth;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+  }
+
+  input:focus,
+  select:focus,
+  textarea:focus,
+  .input:focus,
+  .input:focus-within {
+    outline: none !important;
+    box-shadow: none !important;
+    --tw-ring-shadow: none !important;
+  }
+
+  .input:not(.join-item):focus,
+  .input:not(.join-item):focus-within {
+    border-color: var(--color-base-300);
   }
 }
