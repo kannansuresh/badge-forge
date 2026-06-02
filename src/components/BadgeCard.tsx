@@ -13,6 +13,8 @@ export interface BadgeConfig {
   labelColor?: string;
   name?: string;
   savedAt?: string;
+  categoryId?: number | undefined;
+  categoryName?: string | undefined;
 }
 
 interface BadgeCardProps {
@@ -94,6 +96,9 @@ export default function BadgeCard({
             #{badge.color}
           </span>
           {badge.logo && <span className="badge badge-xs badge-ghost">{badge.logo}</span>}
+          {badge.categoryName && (
+            <span className="badge badge-xs badge-primary badge-outline">{badge.categoryName}</span>
+          )}
         </div>
 
         {badge.savedAt && (

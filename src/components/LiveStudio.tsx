@@ -10,12 +10,16 @@ import {
   clearIconCache,
   getIconCacheCount,
   getIconSvg,
+  getAllCategories,
+  createCategory,
+  seedDefaultCategories,
   toMarkdown,
   toHtml,
   toRst,
   toAsciiDoc,
 } from '../lib/storage';
 import { loadIcons, searchIcons, type SimpleIconData } from '../lib/icons';
+import type { UserCategory } from '../lib/storage';
 
 interface BadgeParams {
   label: string;
@@ -39,8 +43,13 @@ interface LiveStudioProps {
   initialParams?: Partial<BadgeParams>;
 }
 
-function resolveRuntimeParams(): Partial<BadgeParams> {
-  if (typeof window === 'undefined') return {};
+/** Parses runtime badge params from clipboard or URL query. Returns params and optional category info. */
+function resolveRuntimeParams(): {
+  params: Partial<BadgeParams>;
+  categorySlug?: string;
+  categoryId?: number;
+} {
+  if (typeof window === 'undefined') return { params: {} };
 
   const clipboard = readClipboard();
   if (clipboard) {
@@ -52,7 +61,11 @@ function resolveRuntimeParams(): Partial<BadgeParams> {
     if ('logoColor' in clipboard) r.logoColor = clipboard.logoColor;
     if (clipboard.style && STYLES.includes(clipboard.style)) r.style = clipboard.style;
     if ('labelColor' in clipboard) r.labelColor = clipboard.labelColor;
-    return r;
+    return {
+      params: r,
+      categorySlug: clipboard.categorySlug,
+      categoryId: clipboard.categoryId,
+    };
   }
 
   const sp = new URLSearchParams(window.location.search);
@@ -73,10 +86,10 @@ function resolveRuntimeParams(): Partial<BadgeParams> {
     if (st && STYLES.includes(st)) r.style = st;
     const lb = v('labelColor');
     if (lb) r.labelColor = lb;
-    return r;
+    return { params: r };
   }
 
-  return {};
+  return { params: {} };
 }
 
 export default function LiveStudio({ initialParams }: LiveStudioProps) {
@@ -103,6 +116,15 @@ export default function LiveStudio({ initialParams }: LiveStudioProps) {
   const [iconCacheCount, setIconCacheCount] = useState(0);
   const [refreshingIcons, setRefreshingIcons] = useState(false);
 
+  // Category state
+  const [categories, setCategories] = useState<UserCategory[]>([]);
+  const [categoriesReady, setCategoriesReady] = useState(false);
+  const [selectedCategoryId, setSelectedCategoryId] = useState<number | undefined>(undefined);
+  const selectedCategoryRef = useRef<number | undefined>(undefined);
+  const [showCategoryModal, setShowCategoryModal] = useState(false);
+  const [newCategoryName, setNewCategoryName] = useState('');
+  const [newCategoryDescription, setNewCategoryDescription] = useState('');
+
   const allIconsRef = useRef<SimpleIconData[]>([]);
   const logoSearchRef = useRef<HTMLFieldSetElement>(null);
   const saveTimerRef = useRef<ReturnType<typeof setTimeout> | null>(null);
@@ -111,6 +133,21 @@ export default function LiveStudio({ initialParams }: LiveStudioProps) {
   useEffect(() => {
     setIconPreviewEnabled(getIconPreviewPref());
     getIconCacheCount().then(setIconCacheCount);
+    seedDefaultCategories().then(() =>
+      getAllCategories().then((cats) => {
+        setCategories(cats);
+        setCategoriesReady(true);
+        // Resolve pending category slug from clipboard
+        if (pendingCategorySlug.current) {
+          const match = cats.find((c) => c.slug === pendingCategorySlug.current);
+          if (match) {
+            setSelectedCategoryId(match.id);
+            selectedCategoryRef.current = match.id;
+          }
+          pendingCategorySlug.current = undefined;
+        }
+      }),
+    );
   }, []);
 
   const handleEnablePreviews = useCallback(() => {
@@ -133,12 +170,21 @@ export default function LiveStudio({ initialParams }: LiveStudioProps) {
   }, []);
 
   const didReadRuntime = useRef(false);
+  const pendingCategorySlug = useRef<string | undefined>(undefined);
   useLayoutEffect(() => {
     if (didReadRuntime.current) return;
     didReadRuntime.current = true;
-    const runtime = resolveRuntimeParams();
-    if (Object.keys(runtime).length > 0) {
-      setParams((prev) => ({ ...prev, ...runtime }));
+    const { params, categorySlug, categoryId } = resolveRuntimeParams();
+    if (Object.keys(params).length > 0) {
+      setParams((prev) => ({ ...prev, ...params }));
+    }
+    if (categoryId !== undefined) {
+      // Direct category ID from clipboard (e.g., editing a saved badge)
+      setSelectedCategoryId(categoryId);
+      selectedCategoryRef.current = categoryId;
+    } else if (categorySlug) {
+      // Gallery slug — resolve after categories load
+      pendingCategorySlug.current = categorySlug;
     }
   }, []);
 
@@ -197,13 +243,20 @@ export default function LiveStudio({ initialParams }: LiveStudioProps) {
   const handleSave = useCallback(async () => {
     setSaveStatus('saving');
     try {
-      const dup = await isDuplicate(params);
+      const dup = await isDuplicate({
+        ...params,
+        categoryId: selectedCategoryRef.current,
+      });
       if (dup) {
         setSaveStatus('duplicate');
         saveTimerRef.current = setTimeout(() => setSaveStatus('idle'), 2500);
         return;
       }
-      await saveBadge({ ...params, name: `${params.label}-${params.message}` });
+      await saveBadge({
+        ...params,
+        name: `${params.label}-${params.message}`,
+        categoryId: selectedCategoryRef.current,
+      });
       setSaveStatus('saved');
       saveTimerRef.current = setTimeout(() => setSaveStatus('idle'), 2000);
     } catch (err) {
@@ -211,6 +264,18 @@ export default function LiveStudio({ initialParams }: LiveStudioProps) {
       setSaveStatus('idle');
     }
   }, [params]);
+
+  const handleCreateCategory = useCallback(async () => {
+    const trimmed = newCategoryName.trim();
+    if (!trimmed) return;
+    const id = await createCategory(trimmed, undefined, newCategoryDescription.trim() || undefined);
+    setCategories(await getAllCategories());
+    setSelectedCategoryId(id);
+    selectedCategoryRef.current = id;
+    setShowCategoryModal(false);
+    setNewCategoryName('');
+    setNewCategoryDescription('');
+  }, [newCategoryName, newCategoryDescription]);
 
   useEffect(() => {
     return () => {
@@ -231,7 +296,7 @@ export default function LiveStudio({ initialParams }: LiveStudioProps) {
           <button
             className="btn btn-primary btn-sm sm:btn-md"
             onClick={handleSave}
-            disabled={saveStatus === 'saving' || saveStatus === 'duplicate'}
+            disabled={saveStatus === 'saving' || saveStatus === 'duplicate' || !categoriesReady}
           >
             {saveStatus === 'duplicate' ? (
               'Already saved!'
@@ -420,6 +485,90 @@ export default function LiveStudio({ initialParams }: LiveStudioProps) {
           </div>
           <p className="fieldset-label">Controls the badge shape — flat, rounded, or bold</p>
         </fieldset>
+
+        {/* ── Category ──────────────────────────────── */}
+        <fieldset className="fieldset">
+          <legend className="fieldset-legend">Category</legend>
+          <div className="flex gap-2">
+            <select
+              className="select select-bordered w-full"
+              value={selectedCategoryId ?? ''}
+              onChange={(e) => {
+                const val = e.target.value;
+                const id = val ? Number(val) : undefined;
+                setSelectedCategoryId(id);
+                selectedCategoryRef.current = id;
+              }}
+            >
+              <option value="">Uncategorized</option>
+              {categories.map((cat) => (
+                <option key={cat.id} value={cat.id}>
+                  {cat.name}
+                </option>
+              ))}
+            </select>
+            <button
+              className="btn btn-outline btn-square shrink-0"
+              onClick={() => setShowCategoryModal(true)}
+              title="Create new category"
+            >
+              +
+            </button>
+          </div>
+          <p className="fieldset-label">
+            Organize badges into groups — leave as Uncategorized if unsure
+          </p>
+        </fieldset>
+
+        {/* ── Create Category Modal ─────────────────── */}
+        <dialog className={`modal ${showCategoryModal ? 'modal-open' : ''}`}>
+          <div className="modal-box">
+            <h3 className="font-bold text-lg mb-4">New Category</h3>
+            <fieldset className="fieldset">
+              <legend className="fieldset-legend">Name</legend>
+              <input
+                type="text"
+                className="input input-bordered w-full"
+                value={newCategoryName}
+                onChange={(e) => setNewCategoryName(e.target.value)}
+                placeholder="e.g. CI/CD, Social, Monitoring"
+                autoFocus
+              />
+            </fieldset>
+            <fieldset className="fieldset">
+              <legend className="fieldset-legend">Description (optional)</legend>
+              <textarea
+                className="textarea textarea-bordered w-full"
+                value={newCategoryDescription}
+                onChange={(e) => setNewCategoryDescription(e.target.value)}
+                placeholder="What kind of badges belong here?"
+                rows={2}
+              />
+            </fieldset>
+            <div className="modal-action">
+              <button
+                className="btn btn-ghost"
+                onClick={() => {
+                  setShowCategoryModal(false);
+                  setNewCategoryName('');
+                  setNewCategoryDescription('');
+                }}
+              >
+                Cancel
+              </button>
+              <button
+                className="btn btn-primary"
+                onClick={handleCreateCategory}
+                disabled={!newCategoryName.trim()}
+              >
+                Create
+              </button>
+            </div>
+          </div>
+          <form method="dialog" className="modal-backdrop">
+            <button onClick={() => setShowCategoryModal(false)}>close</button>
+          </form>
+        </dialog>
       </div>
 
       {/* ── RIGHT: Preview ─────────────────────────────── */}

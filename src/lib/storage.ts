@@ -12,6 +12,8 @@ export interface BadgeClipboard {
   logoColor?: string | undefined;
   style?: 'flat' | 'flat-square' | 'plastic' | 'for-the-badge' | 'social' | undefined;
   labelColor?: string | undefined;
+  categorySlug?: string | undefined;
+  categoryId?: number | undefined;
 }
 
 /** Write badge config so the builder can pick it up after navigation. */
@@ -49,6 +51,19 @@ export interface SavedBadge {
   savedAt: string;
   /** Optional user-editable name for the badge */
   name: string;
+  /** FK to categories.id; undefined = uncategorized */
+  categoryId?: number | undefined;
+}
+
+// ── User-defined categories ─────────────────────────────────
+export interface UserCategory {
+  id?: number;
+  name: string;
+  slug: string;
+  description?: string;
+  createdAt: string;
+  /** Gallery-seeded categories are readonly (cannot be renamed or deleted). */
+  readonly?: boolean;
 }
 
 // ── Dexie database declaration ───────────────────────────────────
@@ -61,6 +76,7 @@ export interface CachedIcon {
 const db = new Dexie('BadgeCraftDB') as Dexie & {
   badges: EntityTable<SavedBadge, 'id'>;
   icons: EntityTable<CachedIcon, 'slug'>;
+  categories: EntityTable<UserCategory, 'id'>;
 };
 
 db.version(1).stores({
@@ -70,6 +86,12 @@ db.version(1).stores({
 db.version(2).stores({
   badges: '++id, savedAt, name, label, message',
   icons: 'slug',
+});
+
+db.version(3).stores({
+  badges: '++id, savedAt, name, label, message, categoryId',
+  icons: 'slug',
+  categories: '++id, name, slug',
 });
 
 // ── Icon preview cache ──────────────────────────────────────────
@@ -112,6 +134,98 @@ export async function clearIconCache(): Promise<void> {
 /** Get count of cached icons */
 export async function getIconCacheCount(): Promise<number> {
   return db.icons.count();
+}
+
+// ── Category CRUD ─────────────────────────────────────────────
+/** Create a new user category. Returns the auto-generated id. */
+export async function createCategory(
+  name: string,
+  slug?: string,
+  description?: string,
+): Promise<number> {
+  const id = await db.categories.add({
+    name,
+    slug:
+      slug ??
+      name
+        .toLowerCase()
+        .replace(/[^a-z0-9]+/g, '-')
+        .replace(/^-|-$/g, ''),
+    description: description ?? '',
+    createdAt: new Date().toISOString(),
+    readonly: false,
+  });
+  return id as number;
+}
+
+/** Seed default categories from the gallery taxonomy (idempotent — skips if any exist). */
+export async function seedDefaultCategories(): Promise<void> {
+  const count = await db.categories.count();
+  if (count > 0) return;
+
+  const { GALLERY_CATEGORIES } = await import('./gallery-categories');
+  await db.transaction('rw', db.categories, async () => {
+    for (const cat of GALLERY_CATEGORIES) {
+      await db.categories.add({
+        name: cat.name,
+        slug: cat.slug,
+        description: cat.description,
+        createdAt: new Date().toISOString(),
+        readonly: true,
+      });
+    }
+  });
+}
+
+/** Get all categories, ordered by name. */
+export async function getAllCategories(): Promise<UserCategory[]> {
+  return db.categories.orderBy('name').toArray();
+}
+
+/** Get a single category by id. */
+export async function getCategoryById(id: number): Promise<UserCategory | undefined> {
+  return db.categories.get(id);
+}
+
+/** Update category name and/or description. Throws if category is readonly. */
+export async function updateCategory(
+  id: number,
+  updates: { name?: string; description?: string },
+): Promise<void> {
+  const cat = await db.categories.get(id);
+  if (cat?.readonly) throw new Error('Cannot edit a default gallery category.');
+  await db.categories.update(id, updates);
+}
+
+/** Delete a category and reassign its badges to uncategorized. Throws if readonly. */
+export async function deleteCategory(id: number): Promise<void> {
+  const cat = await db.categories.get(id);
+  if (cat?.readonly) throw new Error('Cannot delete a default gallery category.');
+
+  await db.transaction('rw', db.categories, db.badges, async () => {
+    const affected = await db.badges.where('categoryId').equals(id).toArray();
+    for (const badge of affected) {
+      await db.badges.update(badge.id!, { categoryId: undefined });
+    }
+    await db.categories.delete(id);
+  });
+}
+
+/** Delete a category and all badges in it. Returns count of deleted badges. Throws if readonly. */
+export async function deleteCategoryAndBadges(id: number): Promise<number> {
+  const cat = await db.categories.get(id);
+  if (cat?.readonly) throw new Error('Cannot delete a default gallery category.');
+
+  let count = 0;
+  await db.transaction('rw', db.categories, db.badges, async () => {
+    const affected = await db.badges.where('categoryId').equals(id).toArray();
+    count = affected.length;
+    for (const badge of affected) {
+      await db.badges.delete(badge.id!);
+    }
+    await db.categories.delete(id);
+  });
+  return count;
 }
 
 // ── Helper exports ────────────────────────────────────────────────
@@ -175,7 +289,7 @@ export function toTextile(shieldsUrl: string, alt?: string | undefined): string 
   return `!${shieldsUrl}(${label})!`;
 }
 
-/** Check if an identical badge already exists */
+/** Check if an identical badge (same visuals AND category) already exists */
 export async function isDuplicate(params: {
   label: string;
   message: string;
@@ -184,6 +298,7 @@ export async function isDuplicate(params: {
   logoColor: string;
   style: string;
   labelColor: string;
+  categoryId?: number | undefined;
 }): Promise<boolean> {
   const match = await db.badges
     .where('label')
@@ -195,7 +310,8 @@ export async function isDuplicate(params: {
         b.logo === params.logo &&
         b.logoColor === params.logoColor &&
         b.style === params.style &&
-        b.labelColor === params.labelColor,
+        b.labelColor === params.labelColor &&
+        (b.categoryId ?? undefined) === (params.categoryId ?? undefined),
     )
     .first();
   return !!match;
@@ -214,9 +330,18 @@ export async function saveBadge(
   return id as number;
 }
 
-/** Get all saved badges, newest first */
-export async function getAllBadges(): Promise<SavedBadge[]> {
-  return db.badges.orderBy('savedAt').reverse().toArray();
+/** Get all saved badges, newest first, optionally filtered by category */
+export async function getAllBadges(
+  categoryFilter?: 'all' | 'uncategorized' | number,
+): Promise<SavedBadge[]> {
+  const collection = db.badges.orderBy('savedAt').reverse();
+  if (categoryFilter === 'uncategorized') {
+    return collection.filter((b) => b.categoryId === undefined || b.categoryId === null).toArray();
+  }
+  if (typeof categoryFilter === 'number') {
+    return collection.filter((b) => b.categoryId === categoryFilter).toArray();
+  }
+  return collection.toArray();
 }
 
 /** Delete a badge by id */
@@ -227,6 +352,22 @@ export async function deleteBadge(id: number): Promise<void> {
 /** Delete all saved badges */
 export async function clearAllBadges(): Promise<void> {
   await db.badges.clear();
+}
+
+/** Delete all user-created (non-readonly) categories. Returns count deleted. */
+export async function clearUserCategories(): Promise<number> {
+  const userCategories = await db.categories.filter((c) => !c.readonly).toArray();
+  await db.transaction('rw', db.categories, db.badges, async () => {
+    for (const cat of userCategories) {
+      // Reassign badges in these categories to uncategorized
+      const affected = await db.badges.where('categoryId').equals(cat.id!).toArray();
+      for (const badge of affected) {
+        await db.badges.update(badge.id!, { categoryId: undefined });
+      }
+      await db.categories.delete(cat.id!);
+    }
+  });
+  return userCategories.length;
 }
 
 /** Export entire database as a JSON blob */
@@ -245,10 +386,12 @@ export async function importDatabase(file: File): Promise<void> {
 /** Export badges as a plain JSON object (human-readable snapshot) */
 export async function exportBadgesJson(): Promise<string> {
   const badges = await getAllBadges();
+  const categories = await getAllCategories();
   return JSON.stringify(
     {
       exportedAt: new Date().toISOString(),
-      version: 1,
+      version: 2,
+      categories,
       badges,
     },
     null,
@@ -256,14 +399,32 @@ export async function exportBadgesJson(): Promise<string> {
   );
 }
 
-/** Import badges from a plain JSON snapshot */
+/** Import badges from a plain JSON snapshot (v1 or v2) */
 export async function importBadgesJson(jsonString: string): Promise<number> {
   const data = JSON.parse(jsonString);
   if (!data.badges || !Array.isArray(data.badges)) {
     throw new Error('Invalid badge snapshot: missing "badges" array');
   }
-  // Clear existing and bulk-insert
-  await db.transaction('rw', db.badges, async () => {
+
+  await db.transaction('rw', db.badges, db.categories, async () => {
+    // Build oldId → newId map for v2 imports with categories
+    const idMap = new Map<number, number>();
+    if (data.version === 2 && Array.isArray(data.categories) && data.categories.length > 0) {
+      await db.categories.clear();
+      for (const cat of data.categories as Array<Record<string, unknown>>) {
+        const oldId = typeof cat.id === 'number' ? cat.id : undefined;
+        const newId = (await db.categories.add({
+          name: String(cat.name || ''),
+          slug: String(cat.slug || ''),
+          description: String(cat.description || ''),
+          createdAt: String(cat.createdAt || new Date().toISOString()),
+          readonly: Boolean(cat.readonly),
+        })) as number;
+        if (oldId !== undefined) idMap.set(oldId, newId);
+      }
+    }
+
+    // Import badges with remapped category IDs
     await db.badges.clear();
     const toInsert = data.badges.map((b: Record<string, unknown>) => ({
       label: String(b.label || ''),
@@ -276,8 +437,11 @@ export async function importBadgesJson(jsonString: string): Promise<number> {
       shieldsUrl: String(b.shieldsUrl || ''),
       savedAt: String(b.savedAt || new Date().toISOString()),
       name: String(b.name || ''),
+      categoryId:
+        typeof b.categoryId === 'number' ? (idMap.get(b.categoryId) ?? b.categoryId) : undefined,
     }));
     await db.badges.bulkAdd(toInsert);
   });
+
   return data.badges.length;
 }
