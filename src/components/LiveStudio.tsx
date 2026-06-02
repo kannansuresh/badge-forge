@@ -30,16 +30,46 @@ interface LiveStudioProps {
   initialParams?: Partial<BadgeParams>;
 }
 
+/** Parse badge params from URL query string at runtime (SSG-compatible) */
+function parseQueryParams(): Partial<BadgeParams> {
+  if (typeof window === 'undefined') return {};
+  const sp = new URLSearchParams(window.location.search);
+  const result: Partial<BadgeParams> = {};
+  const label = sp.get('label');
+  const message = sp.get('message');
+  const color = sp.get('color');
+  const logo = sp.get('logo');
+  const logoColor = sp.get('logoColor');
+  const style = sp.get('style') as BadgeParams['style'] | null;
+  const labelColor = sp.get('labelColor');
+  if (label) result.label = label;
+  if (message) result.message = message;
+  if (color) result.color = color;
+  if (logo) result.logo = logo;
+  if (logoColor) result.logoColor = logoColor;
+  if (style && STYLES.includes(style)) result.style = style;
+  if (labelColor) result.labelColor = labelColor;
+  return result;
+}
+
 export default function LiveStudio({ initialParams }: LiveStudioProps) {
-  const [params, setParams] = useState<BadgeParams>({
-    label: initialParams?.label || 'badge',
-    message: initialParams?.message || 'craft',
-    color: initialParams?.color || '6366f1',
-    logo: initialParams?.logo || '',
-    logoColor: initialParams?.logoColor || 'white',
-    style: initialParams?.style || 'flat',
-    labelColor: initialParams?.labelColor || '',
-  });
+  // Merge build-time props with runtime query params (for gallery → builder navigation)
+  const resolvedParams = useMemo(() => {
+    const queryParams = parseQueryParams();
+    return {
+      label: 'badge',
+      message: 'craft',
+      color: '6366f1',
+      logo: '',
+      logoColor: 'white',
+      style: 'flat' as BadgeParams['style'],
+      labelColor: '',
+      ...initialParams,
+      ...queryParams,
+    };
+  }, [initialParams]);
+
+  const [params, setParams] = useState<BadgeParams>(resolvedParams);
 
   const [logoQuery, setLogoQuery] = useState('');
   const [logoResults, setLogoResults] = useState<SimpleIconData[]>([]);
@@ -139,16 +169,6 @@ export default function LiveStudio({ initialParams }: LiveStudioProps) {
       if (saveTimerRef.current) clearTimeout(saveTimerRef.current);
     };
   }, []);
-
-  // Sync initialParams changes
-  useEffect(() => {
-    if (initialParams) {
-      setParams((prev) => ({
-        ...prev,
-        ...initialParams,
-      }));
-    }
-  }, [initialParams]);
 
   return (
     <div className="flex flex-col lg:flex-row gap-0 min-h-[calc(100vh-12rem)]">
@@ -395,7 +415,7 @@ export default function LiveStudio({ initialParams }: LiveStudioProps) {
   );
 }
 
-/** Color field with palette chips + hex input + live preview swatch */
+/** Color field with palette chips + native color picker + hex input + live preview swatch */
 function ColorFieldInput({
   id,
   label,
@@ -420,14 +440,14 @@ function ColorFieldInput({
         )}
       </label>
 
-      {/* DaisyUI palette chips */}
-      <div className="flex flex-wrap gap-2 mb-2">
+      {/* DaisyUI palette chips — compact, single row */}
+      <div className="flex flex-wrap gap-1 mb-2">
         {DAISY_COLORS.map((c) => (
           <button
             key={`${id}-${c.hex}`}
-            className={`w-8 h-8 rounded-full border-2 transition-transform hover:scale-110 ${
+            className={`w-5 h-5 rounded-full border transition-transform hover:scale-125 ${
               value === c.hex
-                ? 'border-base-content scale-110 ring-2 ring-offset-2 ring-primary'
+                ? 'border-base-content scale-110 ring-1 ring-offset-1 ring-primary'
                 : 'border-base-300'
             }`}
             style={{ backgroundColor: `#${c.hex}` }}
@@ -436,6 +456,21 @@ function ColorFieldInput({
             aria-label={`Set ${label.toLowerCase()} to ${c.name}`}
           />
         ))}
+        {/* Native color picker */}
+        <label
+          className={`w-5 h-5 rounded-full border border-dashed cursor-pointer flex items-center justify-center transition-transform hover:scale-125 ${
+            !DAISY_COLORS.some((c) => c.hex === value) ? 'ring-1 ring-offset-1 ring-primary' : ''
+          }`}
+          title="Pick a custom color"
+        >
+          <span className="text-[10px] leading-none select-none">+</span>
+          <input
+            type="color"
+            className="absolute opacity-0 w-0 h-0"
+            value={`#${value || '000000'}`}
+            onChange={(e) => onChange(e.target.value.replace('#', ''))}
+          />
+        </label>
       </div>
 
       <div className="join">
