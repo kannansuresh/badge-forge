@@ -15,12 +15,8 @@ const { entry } = Astro.props;
 const { categoryName, categoryDescription, badges } = entry.data;
 ---
 
-<Layout
-  title={`${categoryName} — BadgeCraft Gallery`}
-  description={categoryDescription || `Browse ${categoryName} badges in the BadgeCraft curated gallery.`}
->
+<Layout title={`${categoryName} — BadgeCraft Gallery`}>
   <div class="max-w-6xl mx-auto px-4 py-12">
-    <!-- Breadcrumb -->
     <div class="text-sm breadcrumbs mb-6">
       <ul>
         <li><a href="/gallery">Gallery</a></li>
@@ -28,14 +24,11 @@ const { categoryName, categoryDescription, badges } = entry.data;
       </ul>
     </div>
 
-    <div class="mb-8">
-      <h1 class="text-3xl font-bold">{categoryName}</h1>
-      {categoryDescription && (
-        <p class="text-base-content/60 mt-2">{categoryDescription}</p>
-      )}
+    <div class="mb-10">
+      <h1 class="text-3xl font-bold mb-2">{categoryName}</h1>
+      {categoryDescription && <p class="text-base-content/60">{categoryDescription}</p>}
     </div>
 
-    <!-- Badge grid with copy + edit actions -->
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
       {badges.map((badge) => (
         <GalleryBadgeCard

@@ -1,42 +1,10 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import LiveStudio from '../components/LiveStudio';
-
-// Read query params for pre-population from gallery navigation
-const label = Astro.url.searchParams.get('label') || undefined;
-const message = Astro.url.searchParams.get('message') || undefined;
-const color = Astro.url.searchParams.get('color') || undefined;
-const logo = Astro.url.searchParams.get('logo') || undefined;
-const logoColor = Astro.url.searchParams.get('logoColor') || undefined;
-const style = Astro.url.searchParams.get('style') || undefined;
-const labelColor = Astro.url.searchParams.get('labelColor') || undefined;
-
-const initialParams = {
-  ...(label && { label }),
-  ...(message && { message }),
-  ...(color && { color }),
-  ...(logo && { logo }),
-  ...(logoColor && { logoColor }),
-  ...(style && { style: style as 'flat' | 'flat-square' | 'plastic' | 'for-the-badge' | 'social' }),
-  ...(labelColor && { labelColor }),
-};
 ---
 
-<Layout
-  title="Live Studio — BadgeCraft"
-  description="Build and customize shields.io badges in real-time with a dual-preview canvas. Search 3,400+ brand icons and copy ready-to-use Markdown."
->
-  <div class="max-w-7xl mx-auto px-4 py-6">
-    <div class="mb-4">
-      <h1 class="text-3xl font-bold">Live Studio</h1>
-      <p class="text-base-content/60 mt-1">
-        Build badges with real-time preview. All changes are reflected instantly.
-      </p>
-    </div>
-
-    <LiveStudio
-      client:load
-      initialParams={Object.keys(initialParams).length > 0 ? initialParams : undefined}
-    />
+<Layout title="Live Studio — BadgeCraft" description="Build and customize shields.io badges in real-time. Search 3,400+ brand icons.">
+  <div class="max-w-7xl mx-auto px-4 py-8">
+    <LiveStudio client:load />
   </div>
 </Layout>

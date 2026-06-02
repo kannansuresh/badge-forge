@@ -5,63 +5,52 @@ import { getCollection } from 'astro:content';
 const gallery = await getCollection('gallery');
 ---
 
-<Layout
-  title="Gallery — BadgeCraft"
-  description="Browse curated badge categories for tech stacks, project health, social media, and more."
->
+<Layout title="Gallery — BadgeCraft" description="Browse curated badge categories for tech stacks, project health, and social media.">
   <div class="max-w-6xl mx-auto px-4 py-12">
-    <div class="mb-10">
-      <h1 class="text-3xl font-bold">Discovery Gallery</h1>
-      <p class="text-base-content/60 mt-2 max-w-2xl">
-        Curated badge collections organized by category. Click any category to browse its badges,
-        then click a badge to customize it in the Live Studio.
+    <div class="mb-12">
+      <h1 class="text-3xl font-bold mb-2">Discovery Gallery</h1>
+      <p class="text-base-content/60 max-w-2xl">
+        Curated badge collections. Click a category to explore, then click any badge to customize it in the Live Studio.
       </p>
     </div>
 
-    {gallery.length === 0 ? (
-      <div class="text-center py-20">
-        <div class="text-5xl mb-4">📭</div>
-        <h3 class="text-xl font-semibold">No gallery categories yet</h3>
-        <p class="text-base-content/60">Add JSON files to src/content/gallery/ to populate the gallery.</p>
-      </div>
-    ) : (
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {gallery.map((entry) => {
-          const { categoryName, categorySlug, categoryDescription } = entry.data;
-          const badgeCount = entry.data.badges.length;
-
-          // Pick 3 representative badges for the preview strip
-          const previewBadges = entry.data.badges.slice(0, 3);
-
-          return (
-            <a href={`/gallery/${categorySlug}`} class="card bg-base-100 shadow-md border border-base-300 card-hover no-underline">
-              <div class="card-body">
-                <h2 class="card-title text-lg">{categoryName}</h2>
-                {categoryDescription && (
-                  <p class="text-sm text-base-content/60 line-clamp-2">{categoryDescription}</p>
-                )}
-
-                {/* Preview strip */}
-                <div class="flex flex-wrap gap-1.5 my-3 min-h-[28px]">
-                  {previewBadges.map((badge) => (
-                    <img
-                      src={`https://img.shields.io/badge/${encodeURIComponent(badge.label)}-${encodeURIComponent(badge.message)}-${badge.color}?style=${badge.style || 'flat'}${badge.logo ? `&logo=${badge.logo}` : ''}${badge.logoColor ? `&logoColor=${badge.logoColor}` : ''}`}
-                      alt={`${badge.label}: ${badge.message}`}
-                      class="h-5"
-                      loading="lazy"
-                    />
-                  ))}
+    {
+      gallery.length === 0 ? (
+        <div class="text-center py-20">
+          <div class="text-5xl mb-4">📭</div>
+          <h3 class="text-xl font-semibold">No gallery categories yet</h3>
+        </div>
+      ) : (
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {gallery.map((entry) => {
+            const { categoryName, categorySlug, categoryDescription } = entry.data;
+            const badgeCount = entry.data.badges.length;
+            const previewBadges = entry.data.badges.slice(0, 3);
+            return (
+              <a href={`/gallery/${categorySlug}`} class="card bg-base-100 shadow-sm border border-base-300 hover:shadow-md transition-shadow no-underline">
+                <div class="card-body">
+                  <h2 class="card-title">{categoryName}</h2>
+                  {categoryDescription && <p class="text-sm text-base-content/60 line-clamp-2">{categoryDescription}</p>}
+                  <div class="flex flex-wrap gap-1.5 my-3 min-h-[28px]">
+                    {previewBadges.map((badge) => (
+                      <img
+                        src={`https://img.shields.io/badge/${encodeURIComponent(badge.label)}-${encodeURIComponent(badge.message)}-${badge.color}?style=${badge.style || 'flat'}${badge.logo ? `&logo=${badge.logo}` : ''}${badge.logoColor ? `&logoColor=${badge.logoColor}` : ''}`}
+                        alt={`${badge.label}: ${badge.message}`}
+                        class="h-5"
+                        loading="lazy"
+                      />
+                    ))}
+                  </div>
+                  <div class="card-actions justify-between items-center">
+                    <span class="badge badge-outline badge-sm">{badgeCount} badge{badgeCount !== 1 ? 's' : ''}</span>
+                    <span class="text-sm text-primary font-medium">Browse →</span>
+                  </div>
                 </div>
-
-                <div class="card-actions justify-between items-center mt-2">
-                  <span class="badge badge-outline badge-sm">{badgeCount} badge{badgeCount !== 1 ? 's' : ''}</span>
-                  <span class="text-sm text-primary font-medium">Browse →</span>
-                </div>
-              </div>
-            </a>
-          );
-        })}
-      </div>
-    )}
+              </a>
+            );
+          })}
+        </div>
+      )
+    }
   </div>
 </Layout>
