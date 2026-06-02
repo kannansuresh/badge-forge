@@ -1,4 +1,5 @@
 import { useState, useCallback } from 'react';
+import { Pencil } from 'lucide-react';
 import { buildShieldsUrl, toMarkdown, toHtml } from '../lib/storage';
 
 export interface BadgeConfig {
@@ -108,10 +109,9 @@ export default function BadgeCard({ badge, onEdit, onDelete, onSave, showActions
               </button>
             </div>
             {onEdit && (
-              <button className="btn btn-xs btn-ghost" onClick={() => onEdit(badge)} title="Edit">
-                <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z" />
-                </svg>
+              <button className="btn btn-xs btn-primary btn-outline gap-1" onClick={() => onEdit(badge)}>
+                <Pencil className="w-3 h-3" />
+                Edit
               </button>
             )}
             {onSave && (

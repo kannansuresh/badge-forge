@@ -168,6 +168,30 @@ export function toTextile(shieldsUrl: string, alt?: string): string {
   return `!${shieldsUrl}(${label})!`;
 }
 
+/** Check if an identical badge already exists */
+export async function isDuplicate(params: {
+  label: string;
+  message: string;
+  color: string;
+  logo: string;
+  logoColor: string;
+  style: string;
+  labelColor: string;
+}): Promise<boolean> {
+  const match = await db.badges
+    .where('label').equals(params.label)
+    .and((b) =>
+      b.message === params.message &&
+      b.color === params.color &&
+      b.logo === params.logo &&
+      b.logoColor === params.logoColor &&
+      b.style === params.style &&
+      b.labelColor === params.labelColor
+    )
+    .first();
+  return !!match;
+}
+
 /** Save a badge configuration to IndexedDB */
 export async function saveBadge(params: Omit<SavedBadge, 'id' | 'shieldsUrl' | 'savedAt'>): Promise<number> {
   const shieldsUrl = buildShieldsUrl(params);

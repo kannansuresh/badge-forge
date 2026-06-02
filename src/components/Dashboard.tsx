@@ -6,6 +6,7 @@ import {
   clearAllBadges,
   exportBadgesJson,
   importBadgesJson,
+  writeClipboard,
   type SavedBadge,
 } from '../lib/storage';
 import type { BadgeConfig } from './BadgeCard';
@@ -16,6 +17,23 @@ export default function Dashboard({ onEditBadge }: { onEditBadge?: (badge: Badge
   const [importStatus, setImportStatus] = useState<{ type: 'success' | 'error'; msg: string } | null>(null);
   const [confirmClear, setConfirmClear] = useState(false);
   const fileInputRef = useRef<HTMLInputElement>(null);
+
+  const handleEdit = useCallback((badge: BadgeConfig) => {
+    if (onEditBadge) {
+      onEditBadge(badge);
+    } else {
+      writeClipboard({
+        label: badge.label,
+        message: badge.message,
+        color: badge.color,
+        logo: badge.logo,
+        logoColor: badge.logoColor,
+        style: badge.style || 'flat',
+        labelColor: badge.labelColor,
+      });
+      window.location.href = '/builder';
+    }
+  }, [onEditBadge]);
 
   const refresh = useCallback(async () => {
     try {
@@ -147,7 +165,7 @@ export default function Dashboard({ onEditBadge }: { onEditBadge?: (badge: Badge
                 name: badge.name,
                 savedAt: badge.savedAt,
               }}
-              onEdit={onEditBadge}
+              onEdit={handleEdit}
               onDelete={handleDelete}
             />
           ))}

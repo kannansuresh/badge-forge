@@ -1,6 +1,6 @@
 import { useState, useEffect, useLayoutEffect, useCallback, useMemo, useRef } from 'react';
 import { Search, Save, RefreshCw } from 'lucide-react';
-import { buildShieldsUrl, saveBadge, readClipboard, getIconPreviewPref, setIconPreviewPref, clearIconCache, getIconCacheCount } from '../lib/storage';
+import { buildShieldsUrl, saveBadge, isDuplicate, readClipboard, getIconPreviewPref, setIconPreviewPref, clearIconCache, getIconCacheCount } from '../lib/storage';
 import IconPreview from './IconPreview';
 import ColorInput from './ColorInput';
 import CopyTabs from './CopyTabs';
@@ -28,13 +28,13 @@ function resolveRuntimeParams(): Partial<BadgeParams> {
   const clipboard = readClipboard();
   if (clipboard) {
     const r: Partial<BadgeParams> = {};
-    if (clipboard.label) r.label = clipboard.label;
-    if (clipboard.message) r.message = clipboard.message;
-    if (clipboard.color) r.color = clipboard.color;
-    if (clipboard.logo) r.logo = clipboard.logo;
-    if (clipboard.logoColor) r.logoColor = clipboard.logoColor;
+    if ('label' in clipboard) r.label = clipboard.label;
+    if ('message' in clipboard) r.message = clipboard.message;
+    if ('color' in clipboard) r.color = clipboard.color;
+    if ('logo' in clipboard) r.logo = clipboard.logo;
+    if ('logoColor' in clipboard) r.logoColor = clipboard.logoColor;
     if (clipboard.style && STYLES.includes(clipboard.style)) r.style = clipboard.style;
-    if (clipboard.labelColor) r.labelColor = clipboard.labelColor;
+    if ('labelColor' in clipboard) r.labelColor = clipboard.labelColor;
     return r;
   }
 
@@ -58,13 +58,13 @@ function resolveRuntimeParams(): Partial<BadgeParams> {
 
 export default function LiveStudio({ initialParams }: LiveStudioProps) {
   const [params, setParams] = useState<BadgeParams>({
-    label: initialParams?.label || 'badge',
-    message: initialParams?.message || 'craft',
-    color: initialParams?.color || '6366f1',
-    logo: initialParams?.logo || '',
-    logoColor: initialParams?.logoColor || 'ffffff',
-    style: initialParams?.style || 'flat',
-    labelColor: initialParams?.labelColor || '',
+    label: initialParams?.label ?? 'Label',
+    message: initialParams?.message ?? 'Message',
+    color: initialParams?.color ?? '6366f1',
+    logo: initialParams?.logo ?? '',
+    logoColor: initialParams?.logoColor ?? 'ffffff',
+    style: initialParams?.style ?? 'flat',
+    labelColor: initialParams?.labelColor ?? '',
   });
 
   const [altCustom, setAltCustom] = useState<string | null>(null);
@@ -74,7 +74,6 @@ export default function LiveStudio({ initialParams }: LiveStudioProps) {
   const [logoResults, setLogoResults] = useState<SimpleIconData[]>([]);
   const [iconsLoaded, setIconsLoaded] = useState(false);
   const [showLogoDropdown, setShowLogoDropdown] = useState(false);
-  const [saveStatus, setSaveStatus] = useState<'idle' | 'saving' | 'saved'>('idle');
   const [mobilePreviewOpen, setMobilePreviewOpen] = useState(false);
   const [iconPreviewEnabled, setIconPreviewEnabled] = useState(false);
   const [showIconOptIn, setShowIconOptIn] = useState(false);
@@ -172,9 +171,19 @@ export default function LiveStudio({ initialParams }: LiveStudioProps) {
 
   const shieldsUrl = useMemo(() => buildShieldsUrl(params), [params]);
 
+  const [saveStatus, setSaveStatus] = useState<'idle' | 'saving' | 'saved' | 'duplicate'>('idle');
+
+  // ... (keep the existing state declarations after)
+
   const handleSave = useCallback(async () => {
     setSaveStatus('saving');
     try {
+      const dup = await isDuplicate(params);
+      if (dup) {
+        setSaveStatus('duplicate');
+        saveTimerRef.current = setTimeout(() => setSaveStatus('idle'), 2500);
+        return;
+      }
       await saveBadge({ ...params, name: `${params.label}-${params.message}` });
       setSaveStatus('saved');
       saveTimerRef.current = setTimeout(() => setSaveStatus('idle'), 2000);
@@ -204,13 +213,15 @@ export default function LiveStudio({ initialParams }: LiveStudioProps) {
           <button
             className="btn btn-primary btn-sm sm:btn-md"
             onClick={handleSave}
-            disabled={saveStatus === 'saving'}
+            disabled={saveStatus === 'saving' || saveStatus === 'duplicate'}
           >
-            {saveStatus === 'saved'
-              ? '✓ Saved!'
-              : saveStatus === 'saving'
-                ? <span className="loading loading-spinner loading-sm" />
-                : <Save className="w-4 h-4" />
+            {saveStatus === 'duplicate'
+              ? 'Already saved!'
+              : saveStatus === 'saved'
+                ? '✓ Saved!'
+                : saveStatus === 'saving'
+                  ? <span className="loading loading-spinner loading-sm" />
+                  : <Save className="w-4 h-4" />
             }
             {saveStatus === 'idle' && 'Save'}
           </button>
@@ -407,7 +418,7 @@ export default function LiveStudio({ initialParams }: LiveStudioProps) {
                   className="input input-bordered input-sm w-full"
                   value={altCustom ?? ''}
                   onChange={(e) => setAltCustom(e.target.value)}
-                  placeholder={params.message || 'badge'}
+                  placeholder={params.message || 'Message'}
                   autoFocus
                 />
               ) : (
