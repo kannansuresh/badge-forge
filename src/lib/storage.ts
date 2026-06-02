@@ -383,15 +383,17 @@ export async function importDatabase(file: File): Promise<void> {
   await db.import(file);
 }
 
-/** Export badges as a plain JSON object (human-readable snapshot) */
+/** Export badges and user-created categories as a plain JSON snapshot */
 export async function exportBadgesJson(): Promise<string> {
   const badges = await getAllBadges();
   const categories = await getAllCategories();
+  // Exclude default gallery (readonly) categories — they'll be re-seeded on import
+  const userCategories = categories.filter((c) => !c.readonly);
   return JSON.stringify(
     {
       exportedAt: new Date().toISOString(),
       version: 2,
-      categories,
+      categories: userCategories,
       badges,
     },
     null,

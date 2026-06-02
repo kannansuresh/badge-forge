@@ -102,43 +102,6 @@ const clipboardData = JSON.stringify({
 </div>
 
 <script>
-  (function () {
-    const cards = document.querySelectorAll('[data-badgecard]');
-    cards.forEach((card) => {
-      card.querySelectorAll('[data-copy]').forEach((btn) => {
-        btn.addEventListener('click', async (e) => {
-          e.preventDefault();
-          const text = btn.getAttribute('data-content');
-          try {
-            await navigator.clipboard.writeText(text);
-          } catch {
-            const ta = document.createElement('textarea');
-            ta.value = text;
-            ta.style.cssText = 'position:fixed;opacity:0';
-            document.body.appendChild(ta);
-            ta.select();
-            document.execCommand('copy');
-            document.body.removeChild(ta);
-          }
-          const orig = btn.textContent;
-          btn.textContent = '✓';
-          btn.classList.add('btn-success');
-          btn.classList.remove('btn-ghost');
-          setTimeout(() => {
-            btn.textContent = orig;
-            btn.classList.remove('btn-success');
-            btn.classList.add('btn-ghost');
-          }, 1500);
-        });
-      });
-
-      const editBtn = card.querySelector('[data-edit]');
-      if (editBtn) {
-        editBtn.addEventListener('click', () => {
-          sessionStorage.setItem('badgecraft-clipboard', editBtn.getAttribute('data-clipboard'));
-          window.location.href = '/builder';
-        });
-      }
-    });
-  })();
+  import { initGalleryBadgeCards } from '../lib/dom.ts';
+  document.addEventListener('astro:page-load', initGalleryBadgeCards);
 </script>

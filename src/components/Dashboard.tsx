@@ -4,12 +4,7 @@ import BadgeCard from './BadgeCard';
 import {
   getAllBadges,
   getAllCategories,
-  getCategoryById,
   deleteBadge,
-  deleteCategory,
-  deleteCategoryAndBadges,
-  updateCategory,
-  createCategory,
   clearAllBadges,
   clearUserCategories,
   exportBadgesJson,
@@ -31,20 +26,10 @@ export default function Dashboard({ onEditBadge }: { onEditBadge?: (badge: Badge
 
   const [categories, setCategories] = useState<UserCategory[]>([]);
   const [categoryFilter, setCategoryFilter] = useState<number | 'uncategorized' | 'all'>('all');
-  const [showCategoryManager, setShowCategoryManager] = useState(false);
-  const [editingCategory, setEditingCategory] = useState<number | null>(null);
-  const [editCatName, setEditCatName] = useState('');
-  const [editCatDesc, setEditCatDesc] = useState('');
-  const [catError, setCatError] = useState<string | null>(null);
-
-  // Create category form state
-  const [newCatName, setNewCatName] = useState('');
-  const [newCatDesc, setNewCatDesc] = useState('');
 
   // Modal state
   const [clearAllModal, setClearAllModal] = useState(false);
   const [clearCategoriesToo, setClearCategoriesToo] = useState(false);
-  const [deleteCatModal, setDeleteCatModal] = useState<number | null>(null);
 
   const handleEdit = useCallback(
     (badge: BadgeConfig) => {
@@ -165,85 +150,6 @@ export default function Dashboard({ onEditBadge }: { onEditBadge?: (badge: Badge
     [refresh],
   );
 
-  // ── Category management handlers ──────────────────────────
-  const handleDeleteCategoryKeepBadges = useCallback(
-    async (id: number) => {
-      try {
-        await deleteCategory(id);
-        setCategories((prev) => prev.filter((c) => c.id !== id));
-        setBadges((prev) =>
-          prev.map((b) => (b.categoryId === id ? { ...b, categoryId: undefined } : b)),
-        );
-        if (categoryFilter === id) setCategoryFilter('all');
-        setDeleteCatModal(null);
-        setCatError(null);
-      } catch (err) {
-        setCatError(err instanceof Error ? err.message : 'Failed to delete category');
-      }
-    },
-    [categoryFilter],
-  );
-
-  const handleDeleteCategoryWithBadges = useCallback(async (id: number) => {
-    try {
-      const count = await deleteCategoryAndBadges(id);
-      setCategories((prev) => prev.filter((c) => c.id !== id));
-      setBadges((prev) => prev.filter((b) => b.categoryId !== id));
-      setDeleteCatModal(null);
-      setCatError(null);
-      setImportStatus({
-        type: 'success',
-        msg: `Deleted category and ${count} badge${count !== 1 ? 's' : ''}.`,
-      });
-      setTimeout(() => setImportStatus(null), 4000);
-    } catch (err) {
-      setCatError(err instanceof Error ? err.message : 'Failed to delete category');
-    }
-  }, []);
-
-  const handleStartEditCategory = useCallback((cat: UserCategory) => {
-    setEditingCategory(cat.id!);
-    setEditCatName(cat.name);
-    setEditCatDesc(cat.description ?? '');
-    setCatError(null);
-  }, []);
-
-  const handleSaveCategory = useCallback(
-    async (id: number) => {
-      try {
-        await updateCategory(id, {
-          name: editCatName.trim(),
-          description: editCatDesc.trim() || undefined,
-        });
-        setCategories((prev) =>
-          prev.map((c) =>
-            c.id === id ? { ...c, name: editCatName.trim(), description: editCatDesc.trim() } : c,
-          ),
-        );
-        setEditingCategory(null);
-        setCatError(null);
-      } catch (err) {
-        setCatError(err instanceof Error ? err.message : 'Failed to update category');
-      }
-    },
-    [editCatName, editCatDesc],
-  );
-
-  const handleCreateCategory = useCallback(async () => {
-    const trimmed = newCatName.trim();
-    if (!trimmed) return;
-    try {
-      const id = await createCategory(trimmed, undefined, newCatDesc.trim() || undefined);
-      const newCat = await getCategoryById(id);
-      if (newCat) setCategories((prev) => [...prev, newCat]);
-      setNewCatName('');
-      setNewCatDesc('');
-      setCatError(null);
-    } catch (err) {
-      setCatError(err instanceof Error ? err.message : 'Failed to create category');
-    }
-  }, [newCatName, newCatDesc]);
-
   return (
     <div className="space-y-8">
       {/* Header */}
@@ -279,6 +185,9 @@ export default function Dashboard({ onEditBadge }: { onEditBadge?: (badge: Badge
             <Download className="w-3.5 h-3.5" />
             Export
           </button>
+          <a href="/categories" className="btn btn-sm btn-outline gap-1">
+            Manage Categories
+          </a>
           <button
             className="btn btn-sm btn-ghost text-error"
             onClick={() => setClearAllModal(true)}
@@ -297,136 +206,6 @@ export default function Dashboard({ onEditBadge }: { onEditBadge?: (badge: Badge
           <span>{importStatus.msg}</span>
         </div>
       )}
-
-      {/* Manage Categories */}
-      <div>
-        <button
-          className="btn btn-sm btn-ghost gap-1"
-          onClick={() => setShowCategoryManager(!showCategoryManager)}
-        >
-          {showCategoryManager ? 'Hide' : 'Manage'} Categories
-          <span className="badge badge-xs">{categories.filter((c) => !c.readonly).length}</span>
-        </button>
-
-        {showCategoryManager && (
-          <div className="mt-3 card bg-base-200 border border-base-300">
-            <div className="card-body p-3 gap-3">
-              {catError && (
-                <div className="alert alert-error alert-soft text-sm py-2">
-                  <span>{catError}</span>
-                  <button className="btn btn-xs btn-ghost" onClick={() => setCatError(null)}>
-                    Dismiss
-                  </button>
-                </div>
-              )}
-
-              {/* Create new category form */}
-              <div className="flex flex-col sm:flex-row gap-2 items-end">
-                <div className="flex-1">
-                  <input
-                    className="input input-bordered input-sm w-full"
-                    value={newCatName}
-                    onChange={(e) => setNewCatName(e.target.value)}
-                    placeholder="New category name"
-                  />
-                </div>
-                <div className="flex-1 hidden sm:block">
-                  <input
-                    className="input input-bordered input-sm w-full"
-                    value={newCatDesc}
-                    onChange={(e) => setNewCatDesc(e.target.value)}
-                    placeholder="Description (optional)"
-                  />
-                </div>
-                <button
-                  className="btn btn-xs btn-primary shrink-0"
-                  onClick={handleCreateCategory}
-                  disabled={!newCatName.trim()}
-                >
-                  Add
-                </button>
-              </div>
-
-              {categories.filter((c) => !c.readonly).length === 0 ? (
-                <p className="text-sm text-base-content/50">
-                  No custom categories yet. Create one above or they will be seeded from the gallery
-                  on your next visit to the builder.
-                </p>
-              ) : (
-                <div className="divide-y divide-base-300">
-                  {categories
-                    .filter((c) => !c.readonly)
-                    .map((cat) => (
-                      <div
-                        key={cat.id}
-                        className="flex items-center justify-between py-2 first:pt-0 last:pb-0"
-                      >
-                        {editingCategory === cat.id ? (
-                          <div className="flex flex-col sm:flex-row gap-2 flex-1 mr-2">
-                            <input
-                              className="input input-bordered input-sm flex-1"
-                              value={editCatName}
-                              onChange={(e) => setEditCatName(e.target.value)}
-                              placeholder="Category name"
-                            />
-                            <input
-                              className="input input-bordered input-sm flex-1"
-                              value={editCatDesc}
-                              onChange={(e) => setEditCatDesc(e.target.value)}
-                              placeholder="Description (optional)"
-                            />
-                            <div className="flex gap-1">
-                              <button
-                                className="btn btn-xs btn-primary"
-                                onClick={() => handleSaveCategory(cat.id!)}
-                                disabled={!editCatName.trim()}
-                              >
-                                Save
-                              </button>
-                              <button
-                                className="btn btn-xs btn-ghost"
-                                onClick={() => setEditingCategory(null)}
-                              >
-                                Cancel
-                              </button>
-                            </div>
-                          </div>
-                        ) : (
-                          <>
-                            <div className="flex items-center gap-2 min-w-0">
-                              <span className="text-sm font-medium truncate">{cat.name}</span>
-                              {cat.description && (
-                                <span className="text-xs text-base-content/40 truncate hidden sm:inline">
-                                  — {cat.description}
-                                </span>
-                              )}
-                            </div>
-                            <div className="flex gap-1 shrink-0">
-                              <button
-                                className="btn btn-xs btn-ghost"
-                                onClick={() => handleStartEditCategory(cat)}
-                                title="Edit category"
-                              >
-                                Edit
-                              </button>
-                              <button
-                                className="btn btn-xs btn-ghost text-error"
-                                onClick={() => setDeleteCatModal(cat.id!)}
-                                title="Delete category"
-                              >
-                                Delete
-                              </button>
-                            </div>
-                          </>
-                        )}
-                      </div>
-                    ))}
-                </div>
-              )}
-            </div>
-          </div>
-        )}
-      </div>
 
       {/* Category filter tabs */}
       {categories.length > 0 && (
@@ -588,83 +367,6 @@ export default function Dashboard({ onEditBadge }: { onEditBadge?: (badge: Badge
           >
             close
           </button>
-        </form>
-      </dialog>
-
-      {/* ── Delete Category Modal ────────────────────── */}
-      <dialog className={`modal ${deleteCatModal !== null ? 'modal-open' : ''}`}>
-        <div className="modal-box flex flex-col gap-5">
-          {deleteCatModal !== null &&
-            (() => {
-              const catName =
-                categories.find((c) => c.id === deleteCatModal)?.name ?? 'this category';
-              const badgeCount = badges.filter((b) => b.categoryId === deleteCatModal).length;
-              if (badgeCount === 0) {
-                return (
-                  <>
-                    <div className="flex flex-col gap-2">
-                      <h3 className="text-lg font-bold">Delete {catName}</h3>
-                      <p className="text-sm text-base-content/60">
-                        This category is empty. Delete it permanently?
-                      </p>
-                    </div>
-                    <div className="modal-action">
-                      <button
-                        className="btn btn-ghost btn-sm"
-                        onClick={() => setDeleteCatModal(null)}
-                      >
-                        Cancel
-                      </button>
-                      <button
-                        className="btn btn-error btn-sm"
-                        onClick={() => handleDeleteCategoryKeepBadges(deleteCatModal!)}
-                      >
-                        Delete
-                      </button>
-                    </div>
-                  </>
-                );
-              }
-              return (
-                <>
-                  <div className="flex flex-col gap-2">
-                    <h3 className="text-lg font-bold">Delete {catName}</h3>
-                    <p className="text-sm text-base-content/60">
-                      Contains{' '}
-                      <strong>
-                        {badgeCount} badge{badgeCount !== 1 ? 's' : ''}
-                      </strong>
-                      . Choose what to do with them:
-                    </p>
-                  </div>
-                  <div className="flex flex-col gap-2">
-                    <button
-                      className="btn btn-outline btn-sm justify-start"
-                      onClick={() => handleDeleteCategoryKeepBadges(deleteCatModal!)}
-                    >
-                      Move badges to Uncategorized
-                    </button>
-                    <button
-                      className="btn btn-error btn-outline btn-sm justify-start"
-                      onClick={() => handleDeleteCategoryWithBadges(deleteCatModal!)}
-                    >
-                      Delete all {badgeCount} badge{badgeCount !== 1 ? 's' : ''} permanently
-                    </button>
-                  </div>
-                  <div className="modal-action">
-                    <button
-                      className="btn btn-ghost btn-sm"
-                      onClick={() => setDeleteCatModal(null)}
-                    >
-                      Cancel
-                    </button>
-                  </div>
-                </>
-              );
-            })()}
-        </div>
-        <form method="dialog" className="modal-backdrop">
-          <button onClick={() => setDeleteCatModal(null)}>close</button>
         </form>
       </dialog>
     </div>

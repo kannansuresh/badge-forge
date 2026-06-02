@@ -501,11 +501,32 @@ export default function LiveStudio({ initialParams }: LiveStudioProps) {
               }}
             >
               <option value="">Uncategorized</option>
-              {categories.map((cat) => (
-                <option key={cat.id} value={cat.id}>
-                  {cat.name}
-                </option>
-              ))}
+              {(() => {
+                const userCats = categories.filter((c) => !c.readonly);
+                const builtinCats = categories.filter((c) => c.readonly);
+                return (
+                  <>
+                    {userCats.length > 0 && (
+                      <optgroup label="Your Categories">
+                        {userCats.map((cat) => (
+                          <option key={cat.id} value={cat.id}>
+                            {cat.name}
+                          </option>
+                        ))}
+                      </optgroup>
+                    )}
+                    {builtinCats.length > 0 && (
+                      <optgroup label="Gallery Categories">
+                        {builtinCats.map((cat) => (
+                          <option key={cat.id} value={cat.id}>
+                            {cat.name}
+                          </option>
+                        ))}
+                      </optgroup>
+                    )}
+                  </>
+                );
+              })()}
             </select>
             <button
               className="btn btn-outline btn-square shrink-0"

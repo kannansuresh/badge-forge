@@ -1,6 +1,7 @@
 ---
 import { Icon } from 'astro-icon/components';
 import { Font } from 'astro:assets';
+import { ClientRouter } from 'astro:transitions';
 import ThemeController from '../components/ThemeController.astro';
 import '../styles/global.css';
 
@@ -29,6 +30,29 @@ const currentPath = Astro.url.pathname;
     <meta name="twitter:card" content="summary_large_image" />
 
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+    <!-- Prevent theme flash: apply saved theme before first paint -->
+    <script is:inline>
+      (() => {
+        const stored = localStorage.getItem('theme');
+        const t =
+          stored === 'dark' || stored === 'light'
+            ? stored
+            : matchMedia('(prefers-color-scheme: dark)').matches
+              ? 'dark'
+              : 'light';
+        document.documentElement.setAttribute('data-theme', t);
+        // Restore theme after client-side navigations (ClientRouter swaps content)
+        document.addEventListener('astro:after-swap', () => {
+          const s = localStorage.getItem('theme');
+          if (s === 'dark' || s === 'light') {
+            document.documentElement.setAttribute('data-theme', s);
+          }
+        });
+      })();
+    </script>
+
+    <ClientRouter />
 
     <Font cssVariable="--font-sans" />
     <Font cssVariable="--font-mono" />
@@ -108,7 +132,7 @@ const currentPath = Astro.url.pathname;
         </ul>
       </div>
 
-      <div class="navbar-end gap-1">
+      <div class="navbar-end gap-1 pr-2">
         <a
           href="https://github.com"
           target="_blank"
