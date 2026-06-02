@@ -1,7 +1,7 @@
 ---
 import Layout from '../../layouts/Layout.astro';
 import { getCollection } from 'astro:content';
-import GalleryBadgeCard from '../../components/GalleryBadgeCard';
+import GalleryBadgeCard from '../../components/GalleryBadgeCard.astro';
 
 export async function getStaticPaths() {
   const gallery = await getCollection('gallery');
@@ -32,17 +32,14 @@ const { categoryName, categoryDescription, badges } = entry.data;
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
       {badges.map((badge) => (
         <GalleryBadgeCard
-          client:load
-          badge={{
-            id: badge.id,
-            label: badge.label,
-            message: badge.message,
-            color: badge.color,
-            logo: badge.logo || undefined,
-            logoColor: badge.logoColor || undefined,
-            style: badge.style || 'flat',
-            labelColor: badge.labelColor || undefined,
-          }}
+          id={badge.id}
+          label={badge.label}
+          message={badge.message}
+          color={badge.color}
+          logo={badge.logo}
+          logoColor={badge.logoColor}
+          style={badge.style}
+          labelColor={badge.labelColor}
         />
       ))}
     </div>

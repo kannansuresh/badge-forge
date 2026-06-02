@@ -1,0 +1,111 @@
+---
+export interface Props {
+  id: string;
+  label: string;
+  message: string;
+  color: string;
+  logo?: string;
+  logoColor?: string;
+  style?: 'flat' | 'flat-square' | 'plastic' | 'for-the-badge' | 'social';
+  labelColor?: string;
+}
+
+const {
+  id,
+  label,
+  message,
+  color,
+  logo,
+  logoColor,
+  style = 'flat',
+  labelColor,
+} = Astro.props;
+
+const params = new URLSearchParams();
+params.set('label', label);
+params.set('message', message);
+params.set('color', color);
+if (logo) params.set('logo', logo);
+if (logoColor) params.set('logoColor', logoColor);
+params.set('style', style);
+if (labelColor) params.set('labelColor', labelColor);
+
+const shieldsUrl = `https://img.shields.io/badge/${encodeURIComponent(label)}-${encodeURIComponent(message)}-${color}?style=${style}${logo ? `&logo=${logo}` : ''}${logoColor ? `&logoColor=${logoColor}` : ''}${labelColor ? `&labelColor=${labelColor}` : ''}`;
+const mdSnippet = `![badge](${shieldsUrl})`;
+const htmlSnippet = `<img src="${shieldsUrl}" alt="badge" />`;
+const clipboardData = JSON.stringify({ label, message, color, logo, logoColor, style, labelColor });
+---
+
+<div class="card bg-base-100 shadow-sm border border-base-300 hover:shadow-md transition-shadow group" data-badgecard>
+  <figure class="px-4 pt-4">
+    <img
+      src={shieldsUrl}
+      alt={`${label}: ${message}`}
+      class="h-6"
+      loading="lazy"
+      onerror="this.parentElement.innerHTML='<span class=&quot;font-mono text-xs text-base-content/50&quot;>${label}-${message}-${color}</span>'"
+    />
+  </figure>
+
+  <div class="card-body p-4 gap-2">
+    <h3 class="card-title text-sm">
+      {label} <span class="text-base-content/40 font-normal">·</span> {message}
+    </h3>
+
+    <div class="flex flex-wrap gap-1">
+      <span class="badge badge-xs badge-outline">{style}</span>
+      {logo && <span class="badge badge-xs badge-ghost">{logo}</span>}
+    </div>
+
+    <div class="card-actions justify-end mt-1">
+      <div class="join join-horizontal">
+        <button class="join-item btn btn-xs btn-ghost" data-copy="md" data-content={mdSnippet} title="Copy Markdown">MD</button>
+        <button class="join-item btn btn-xs btn-ghost" data-copy="html" data-content={htmlSnippet} title="Copy HTML">HTML</button>
+        <button class="join-item btn btn-xs btn-ghost" data-copy="url" data-content={shieldsUrl} title="Copy URL">URL</button>
+      </div>
+      <button class="btn btn-xs btn-primary btn-outline" data-edit data-clipboard={clipboardData}>Edit</button>
+    </div>
+  </div>
+</div>
+
+<script>
+  (function() {
+    const cards = document.querySelectorAll('[data-badgecard]');
+    cards.forEach(card => {
+      card.querySelectorAll('[data-copy]').forEach(btn => {
+        btn.addEventListener('click', async (e) => {
+          e.preventDefault();
+          const text = btn.getAttribute('data-content');
+          try {
+            await navigator.clipboard.writeText(text);
+          } catch {
+            const ta = document.createElement('textarea');
+            ta.value = text;
+            ta.style.cssText = 'position:fixed;opacity:0';
+            document.body.appendChild(ta);
+            ta.select();
+            document.execCommand('copy');
+            document.body.removeChild(ta);
+          }
+          const orig = btn.textContent;
+          btn.textContent = '✓';
+          btn.classList.add('btn-success');
+          btn.classList.remove('btn-ghost');
+          setTimeout(() => {
+            btn.textContent = orig;
+            btn.classList.remove('btn-success');
+            btn.classList.add('btn-ghost');
+          }, 1500);
+        });
+      });
+
+      const editBtn = card.querySelector('[data-edit]');
+      if (editBtn) {
+        editBtn.addEventListener('click', () => {
+          sessionStorage.setItem('badgecraft-clipboard', editBtn.getAttribute('data-clipboard'));
+          window.location.href = '/builder';
+        });
+      }
+    });
+  })();
+</script>
