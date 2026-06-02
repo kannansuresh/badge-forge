@@ -1,6 +1,9 @@
 import { useState, useEffect, useLayoutEffect, useCallback, useMemo, useRef } from 'react';
-import { buildShieldsUrl, toMarkdown, toHtml, saveBadge, readClipboard, getIconPreviewPref, setIconPreviewPref, clearIconCache, getIconCacheCount } from '../lib/storage';
+import { Search, Save, RefreshCw } from 'lucide-react';
+import { buildShieldsUrl, saveBadge, readClipboard, getIconPreviewPref, setIconPreviewPref, clearIconCache, getIconCacheCount } from '../lib/storage';
 import IconPreview from './IconPreview';
+import ColorInput from './ColorInput';
+import CopyTabs from './CopyTabs';
 import { loadIcons, searchIcons, type SimpleIconData } from '../lib/icons';
 
 interface BadgeParams {
@@ -14,17 +17,6 @@ interface BadgeParams {
 }
 
 const STYLES: BadgeParams['style'][] = ['flat', 'flat-square', 'plastic', 'for-the-badge', 'social'];
-
-const PALETTE = [
-  { hex: '6366f1', label: 'Primary' },
-  { hex: '8b5cf6', label: 'Secondary' },
-  { hex: '06b6d4', label: 'Accent' },
-  { hex: '1f2937', label: 'Neutral' },
-  { hex: '22c55e', label: 'Success' },
-  { hex: 'f59e0b', label: 'Warning' },
-  { hex: 'ef4444', label: 'Error' },
-  { hex: '3b82f6', label: 'Info' },
-];
 
 interface LiveStudioProps {
   initialParams?: Partial<BadgeParams>;
@@ -198,7 +190,7 @@ export default function LiveStudio({ initialParams }: LiveStudioProps) {
   return (
     <div className="flex flex-col lg:flex-row gap-6 lg:gap-8">
       {/* ── LEFT: Form ────────────────────────────────── */}
-      <div className="lg:w-1/2 space-y-5">
+      <div className="lg:w-1/2 space-y-5 min-w-0">
 
         {/* Header + Save */}
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
@@ -215,7 +207,7 @@ export default function LiveStudio({ initialParams }: LiveStudioProps) {
               ? '✓ Saved!'
               : saveStatus === 'saving'
                 ? <span className="loading loading-spinner loading-sm" />
-                : <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 5a2 2 0 012-2h10a2 2 0 012 2v16l-7-3.5L5 21V5z" /></svg>
+                : <Save className="w-4 h-4" />
             }
             {saveStatus === 'idle' && 'Save'}
           </button>
@@ -243,47 +235,13 @@ export default function LiveStudio({ initialParams }: LiveStudioProps) {
         </fieldset>
 
         {/* ── Badge Color ──────────────────────────────── */}
-        <fieldset className="fieldset">
-          <legend className="fieldset-legend">Badge Color</legend>
-          <div className="flex flex-wrap items-center gap-1 mb-2">
-            {PALETTE.map((c) => (
-              <button
-                key={c.hex}
-                className={`w-6 h-6 rounded-full border-2 transition-transform hover:scale-125 ${params.color === c.hex ? 'border-base-content scale-110' : 'border-base-300'}`}
-                style={{ backgroundColor: `#${c.hex}` }}
-                onClick={() => updateParam('color', c.hex)}
-                title={c.label}
-              />
-            ))}
-            <label
-              className={`w-6 h-6 rounded-full border cursor-pointer flex items-center justify-center transition-transform hover:scale-125 ${!PALETTE.some((c) => c.hex === params.color) ? 'border-dashed border-primary' : 'border-base-300 border-dashed'}`}
-              title="Pick custom color"
-            >
-              <span className="text-[10px] leading-none">+</span>
-              <input
-                type="color"
-                className="absolute opacity-0 w-0 h-0"
-                value={`#${params.color || '000000'}`}
-                onChange={(e) => updateParam('color', e.target.value.replace('#', ''))}
-              />
-            </label>
-          </div>
-          <div className="join w-full">
-            <span className="join-item bg-base-200 px-3 flex items-center text-sm font-mono">#</span>
-            <input
-              type="text"
-              className="input join-item w-full font-mono"
-              value={params.color}
-              onChange={(e) => updateParam('color', e.target.value.replace(/[^0-9a-fA-F]/g, '').slice(0, 6))}
-              placeholder="6366f1"
-              maxLength={6}
-            />
-            <span
-              className="join-item w-10 border border-base-300"
-              style={{ backgroundColor: `#${params.color || 'ccc'}` }}
-            />
-          </div>
-        </fieldset>
+        <ColorInput
+          id="badge-color"
+          label="Badge Color"
+          value={params.color}
+          onChange={(v) => updateParam('color', v)}
+          placeholder="6366f1"
+        />
 
         {/* ── Logo / Icon ──────────────────────────────── */}
         <fieldset className="fieldset relative" ref={logoSearchRef}>
@@ -295,7 +253,7 @@ export default function LiveStudio({ initialParams }: LiveStudioProps) {
                 <button className="btn btn-xs btn-ghost text-base-content/40" onClick={handleRefreshIcons} disabled={refreshingIcons} title="Refresh icon cache">
                   {refreshingIcons
                     ? <span className="loading loading-spinner loading-xs" />
-                    : <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" /></svg>
+                    : <RefreshCw className="w-3 h-3" />
                   }
                 </button>
               </span>
@@ -389,7 +347,7 @@ export default function LiveStudio({ initialParams }: LiveStudioProps) {
       </div>
 
       {/* ── RIGHT: Preview ─────────────────────────────── */}
-      <div className="lg:w-1/2 lg:sticky lg:top-24 lg:self-start space-y-5">
+      <div className="lg:w-1/2 lg:sticky lg:top-24 lg:self-start space-y-5 min-w-0 overflow-hidden">
         <button className="lg:hidden btn btn-outline btn-sm w-full" onClick={() => setMobilePreviewOpen(!mobilePreviewOpen)}>
           {mobilePreviewOpen ? 'Hide Preview' : 'Show Preview'}
         </button>
@@ -415,21 +373,7 @@ export default function LiveStudio({ initialParams }: LiveStudioProps) {
             </div>
           </div>
 
-          {/* Copy */}
-          <div className="card bg-base-200 border border-base-300">
-            <div className="card-body p-3 sm:p-4">
-              <h3 className="card-title text-xs sm:text-sm opacity-70 font-medium uppercase tracking-wider">Copy Code</h3>
-              <div className="flex flex-wrap gap-2">
-                <CopyBtn label="Markdown" content={toMarkdown(shieldsUrl)} />
-                <CopyBtn label="HTML" content={toHtml(shieldsUrl)} />
-                <CopyBtn label="URL" content={shieldsUrl} />
-              </div>
-            </div>
-          </div>
-
-          <div className="mockup-code text-xs break-all">
-            <pre data-prefix="$"><code>{shieldsUrl}</code></pre>
-          </div>
+          <CopyTabs shieldsUrl={shieldsUrl} />
         </div>
 
         {!mobilePreviewOpen && (
@@ -442,81 +386,3 @@ export default function LiveStudio({ initialParams }: LiveStudioProps) {
   );
 }
 
-/* ── Reusable color input ──────────────────────────── */
-function ColorInput({ id, label, value, onChange, placeholder }: {
-  id: string;
-  label: string;
-  value: string;
-  onChange: (v: string) => void;
-  placeholder: string;
-}) {
-  return (
-    <fieldset className="fieldset">
-      <legend className="fieldset-legend">{label}</legend>
-      <div className="flex flex-wrap items-center gap-1 mb-2">
-        {PALETTE.map((c) => (
-          <button
-            key={`${id}-${c.hex}`}
-            className={`w-6 h-6 rounded-full border-2 transition-transform hover:scale-125 ${value === c.hex ? 'border-base-content scale-110' : 'border-base-300'}`}
-            style={{ backgroundColor: `#${c.hex}` }}
-            onClick={() => onChange(c.hex)}
-            title={c.label}
-          />
-        ))}
-        <label
-          className={`w-6 h-6 rounded-full border cursor-pointer flex items-center justify-center transition-transform hover:scale-125 ${!PALETTE.some((c) => c.hex === value) ? 'border-dashed border-primary' : 'border-base-300 border-dashed'}`}
-          title="Pick custom color"
-        >
-          <span className="text-[10px] leading-none">+</span>
-          <input
-            type="color"
-            className="absolute opacity-0 w-0 h-0"
-            value={`#${value || '000000'}`}
-            onChange={(e) => onChange(e.target.value.replace('#', ''))}
-          />
-        </label>
-      </div>
-      <div className="join w-full">
-        <span className="join-item bg-base-200 px-3 flex items-center text-sm font-mono">#</span>
-        <input
-          id={id}
-          type="text"
-          className="input join-item w-full font-mono"
-          value={value}
-          onChange={(e) => onChange(e.target.value.replace(/[^0-9a-fA-F]/g, '').slice(0, 6))}
-          placeholder={placeholder}
-          maxLength={6}
-        />
-        <span className="join-item w-10 border border-base-300" style={{ backgroundColor: `#${value || 'ccc'}` }} />
-      </div>
-    </fieldset>
-  );
-}
-
-/* ── Copy-to-clipboard button ───────────────────────── */
-function CopyBtn({ label, content }: { label: string; content: string }) {
-  const [copied, setCopied] = useState(false);
-
-  const copy = useCallback(async () => {
-    try {
-      await navigator.clipboard.writeText(content);
-    } catch {
-      const ta = document.createElement('textarea');
-      ta.value = content;
-      ta.style.position = 'fixed';
-      ta.style.opacity = '0';
-      document.body.appendChild(ta);
-      ta.select();
-      document.execCommand('copy');
-      document.body.removeChild(ta);
-    }
-    setCopied(true);
-    setTimeout(() => setCopied(false), 2000);
-  }, [content]);
-
-  return (
-    <button className={`btn btn-sm ${copied ? 'btn-success' : 'btn-outline'}`} onClick={copy}>
-      {copied ? '✓ Copied!' : label}
-    </button>
-  );
-}

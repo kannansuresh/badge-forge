@@ -1,4 +1,6 @@
 ---
+import { Icon } from 'astro-icon/components';
+import { Font } from 'astro:assets';
 import ThemeController from '../components/ThemeController';
 import '../styles/global.css';
 
@@ -26,10 +28,8 @@ const currentPath = Astro.url.pathname;
 
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 
-    <!-- Fonts: Inter (body) + JetBrains Mono (code) -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+    <Font cssVariable="--font-sans" />
+    <Font cssVariable="--font-mono" />
 
     <title>{title}</title>
   </head>
@@ -41,9 +41,7 @@ const currentPath = Astro.url.pathname;
         <!-- Mobile dropdown -->
         <div class="dropdown">
           <label tabindex="0" class="btn btn-ghost lg:hidden">
-            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h8m-8 6h16" />
-            </svg>
+            <Icon name="lucide:menu" class="w-5 h-5" />
           </label>
           <ul tabindex="0" class="menu menu-sm dropdown-content mt-3 z-10 p-2 shadow bg-base-100 rounded-box w-52">
             <li><a href="/" class:list={['', currentPath === '/' && 'menu-active']}>Home</a></li>
@@ -54,7 +52,7 @@ const currentPath = Astro.url.pathname;
         </div>
 
         <a href="/" class="btn btn-ghost text-xl font-bold gap-2">
-          <span class="text-primary text-2xl">🛡️</span>
+          <span class="text-primary">🛡️</span>
           BadgeCraft
         </a>
       </div>
@@ -68,6 +66,9 @@ const currentPath = Astro.url.pathname;
       </div>
 
       <div class="navbar-end gap-1">
+        <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="btn btn-ghost btn-circle" aria-label="GitHub">
+          <Icon name="lucide:github" class="w-5 h-5" />
+        </a>
         <ThemeController client:load />
       </div>
     </div>

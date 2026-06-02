@@ -11,17 +11,20 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@astrojs/react": "^4.2.0",
-    "astro": "^5.5.0",
-    "dexie": "^4.0.11",
-    "dexie-export-import": "^4.0.7",
-    "react": "^19.1.0",
-    "react-dom": "^19.1.0",
-    "simple-icons": "^14.12.0"
+    "@astrojs/react": "^5.0.7",
+    "@iconify-json/lucide": "^1.2.111",
+    "astro": "^6.4.3",
+    "astro-icon": "^1.1.5",
+    "dexie": "^4.4.3",
+    "dexie-export-import": "^4.4.0",
+    "lucide-react": "^1.17.0",
+    "react": "^19.2.7",
+    "react-dom": "^19.2.7",
+    "simple-icons": "^16.22.0"
   },
   "devDependencies": {
-    "@tailwindcss/vite": "^4.1.0",
-    "daisyui": "^5.0.50",
-    "tailwindcss": "^4.1.0"
+    "@tailwindcss/vite": "^4.3.0",
+    "daisyui": "^5.5.20",
+    "tailwindcss": "^4.3.0"
   }
 }
