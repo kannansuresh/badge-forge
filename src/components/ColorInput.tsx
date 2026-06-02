@@ -15,9 +15,10 @@ interface Props {
   value: string;
   onChange: (v: string) => void;
   placeholder: string;
+  hint?: string;
 }
 
-export default function ColorInput({ id, label, value, onChange, placeholder }: Props) {
+export default function ColorInput({ id, label, value, onChange, placeholder, hint }: Props) {
   return (
     <fieldset className="fieldset">
       <legend className="fieldset-legend">{label}</legend>
@@ -66,6 +67,7 @@ export default function ColorInput({ id, label, value, onChange, placeholder }: 
           </div>
         </div>
       </div>
+      {hint && <p className="fieldset-label">{hint}</p>}
     </fieldset>
   );
 }

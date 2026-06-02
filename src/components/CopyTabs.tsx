@@ -12,17 +12,17 @@ const TABS: { id: TabId; label: string; Icon: typeof FileCode }[] = [
   { id: 'url',  label: 'URL',      Icon: Link },
 ];
 
-export default function CopyTabs({ shieldsUrl }: { shieldsUrl: string }) {
+export default function CopyTabs({ shieldsUrl, alt }: { shieldsUrl: string; alt?: string }) {
   const [tab, setTab] = useState<TabId>('md');
   const [copied, setCopied] = useState(false);
 
   const snippets = useMemo(() => ({
-    md:   toMarkdown(shieldsUrl),
-    rst:  toRst(shieldsUrl),
-    adoc: toAsciiDoc(shieldsUrl),
-    html: toHtml(shieldsUrl),
+    md:   toMarkdown(shieldsUrl, alt),
+    rst:  toRst(shieldsUrl, alt),
+    adoc: toAsciiDoc(shieldsUrl, alt),
+    html: toHtml(shieldsUrl, alt),
     url:  shieldsUrl,
-  }), [shieldsUrl]);
+  }), [shieldsUrl, alt]);
 
   const copy = useCallback(async () => {
     try {

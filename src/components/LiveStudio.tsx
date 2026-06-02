@@ -67,6 +67,7 @@ export default function LiveStudio({ initialParams }: LiveStudioProps) {
     labelColor: initialParams?.labelColor || '',
   });
 
+  const [altText, setAltText] = useState('badge');
   const [logoQuery, setLogoQuery] = useState('');
   const [logoResults, setLogoResults] = useState<SimpleIconData[]>([]);
   const [iconsLoaded, setIconsLoaded] = useState(false);
@@ -213,112 +214,41 @@ export default function LiveStudio({ initialParams }: LiveStudioProps) {
           </button>
         </div>
 
-        {/* ── Label & Message ──────────────────────────── */}
-        <fieldset className="fieldset">
-          <legend className="fieldset-legend">Label &amp; Message</legend>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+        {/* ── Label + Message ────────────────────────────── */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <fieldset className="fieldset">
+            <legend className="fieldset-legend">Label</legend>
             <input
               type="text"
               className="input input-bordered w-full"
               value={params.label}
               onChange={(e) => updateParam('label', e.target.value)}
-              placeholder="Label (left side)"
+              placeholder="build"
             />
+            <p className="fieldset-label">Left side text — leave blank for message-only</p>
+          </fieldset>
+          <fieldset className="fieldset">
+            <legend className="fieldset-legend">Message</legend>
             <input
               type="text"
               className="input input-bordered w-full"
               value={params.message}
               onChange={(e) => updateParam('message', e.target.value)}
-              placeholder="Message (right side)"
+              placeholder="passing"
             />
-          </div>
-        </fieldset>
+            <p className="fieldset-label">Right side text — the main badge content</p>
+          </fieldset>
+        </div>
 
-        {/* ── Badge Color ──────────────────────────────── */}
-        <ColorInput
-          id="badge-color"
-          label="Badge Color"
-          value={params.color}
-          onChange={(v) => updateParam('color', v)}
-          placeholder="6366f1"
-        />
-
-        {/* ── Logo / Icon ──────────────────────────────── */}
-        <fieldset className="fieldset relative" ref={logoSearchRef}>
-          <legend className="fieldset-legend flex items-center gap-2">
-            Logo / Icon
-            {iconPreviewEnabled && (
-              <span className="inline-flex items-center gap-1">
-                <span className="text-xs text-base-content/40 font-normal">{iconCacheCount > 0 ? `${iconCacheCount} cached` : ''}</span>
-                <button className="btn btn-xs btn-ghost text-base-content/40" onClick={handleRefreshIcons} disabled={refreshingIcons} title="Refresh icon cache">
-                  {refreshingIcons
-                    ? <span className="loading loading-spinner loading-xs" />
-                    : <RefreshCw className="w-3 h-3" />
-                  }
-                </button>
-              </span>
-            )}
-          </legend>
-
-          {showIconOptIn && (
-            <div className="alert alert-soft mb-2 text-sm">
-              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
-              <span>Show brand icon previews? SVGs are cached locally.</span>
-              <div className="flex gap-1">
-                <button className="btn btn-xs btn-primary" onClick={handleEnablePreviews}>Yes</button>
-                <button className="btn btn-xs btn-ghost" onClick={handleDisablePreviews}>No</button>
-              </div>
-            </div>
-          )}
-
-          <input
-            type="text"
-            className="input input-bordered w-full"
-            value={logoQuery}
-            onChange={(e) => handleLogoSearch(e.target.value)}
-            onFocus={() => {
-              ensureIconsLoaded();
-              if (logoResults.length > 0) setShowLogoDropdown(true);
-              if (localStorage.getItem('badgecraft-icon-previews') === null) setShowIconOptIn(true);
-            }}
-            placeholder="Search for a brand or logo…"
-            autoComplete="off"
-          />
-          {params.logo && !showLogoDropdown && (
-            <p className="text-xs text-success mt-1 font-medium">Selected: {params.logo}</p>
-          )}
-          {showLogoDropdown && (
-            <ul className="absolute top-full mt-1 z-30 w-full bg-base-100 border border-base-300 rounded-box shadow-lg max-h-56 overflow-y-auto">
-              {logoResults.map((icon) => (
-                <li key={icon.slug}>
-                  <button
-                    className="w-full text-left px-3 py-2 flex items-center gap-3 hover:bg-base-200 transition-colors"
-                    onClick={() => selectLogo(icon)}
-                  >
-                    {iconPreviewEnabled
-                      ? <IconPreview slug={icon.slug} hex={icon.hex} />
-                      : <span className="w-5 h-5 rounded shrink-0 ring-1 ring-base-300 ring-inset" style={{ backgroundColor: `#${icon.hex}` }} title={`Brand color: #${icon.hex}`} />
-                    }
-                    <span className="font-medium text-sm truncate">{icon.title}</span>
-                    <span className="text-xs text-base-content/40 ml-auto font-mono shrink-0">#{icon.hex}</span>
-                  </button>
-                </li>
-              ))}
-              {logoResults.length === 0 && (
-                <li className="px-3 py-2 text-sm text-base-content/50">No icons found</li>
-              )}
-            </ul>
-          )}
-        </fieldset>
-
-        {/* ── Logo Color + Label Color ──────────────────── */}
+        {/* ── Badge Color + Label Color ──────────────────── */}
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
           <ColorInput
-            id="logo-color"
-            label="Logo Color"
-            value={params.logoColor}
-            onChange={(v) => updateParam('logoColor', v)}
-            placeholder="ffffff"
+            id="badge-color"
+            label="Badge Color"
+            value={params.color}
+            onChange={(v) => updateParam('color', v)}
+            placeholder="6366f1"
+            hint="Hex color for the message (right) side"
           />
           <ColorInput
             id="label-color"
@@ -326,6 +256,76 @@ export default function LiveStudio({ initialParams }: LiveStudioProps) {
             value={params.labelColor}
             onChange={(v) => updateParam('labelColor', v)}
             placeholder="Optional"
+            hint="Background for the label (left) side — leave blank for default"
+          />
+        </div>
+
+        {/* ── Logo Search + Logo Color ──────────────────── */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <fieldset className="fieldset relative" ref={logoSearchRef}>
+            <legend className="fieldset-legend flex items-center gap-2">
+              Logo / Icon
+              {iconPreviewEnabled && (
+                <span className="inline-flex items-center gap-1">
+                  <span className="text-xs text-base-content/40 font-normal">{iconCacheCount > 0 ? `${iconCacheCount} cached` : ''}</span>
+                  <button className="btn btn-xs btn-ghost text-base-content/40" onClick={handleRefreshIcons} disabled={refreshingIcons} title="Refresh icon cache">
+                    {refreshingIcons ? <span className="loading loading-spinner loading-xs" /> : <RefreshCw className="w-3 h-3" />}
+                  </button>
+                </span>
+              )}
+            </legend>
+
+            {showIconOptIn && (
+              <div className="alert alert-soft mb-2 text-sm">
+                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                <span>Show brand icon previews? SVGs are cached locally.</span>
+                <div className="flex gap-1">
+                  <button className="btn btn-xs btn-primary" onClick={handleEnablePreviews}>Yes</button>
+                  <button className="btn btn-xs btn-ghost" onClick={handleDisablePreviews}>No</button>
+                </div>
+              </div>
+            )}
+
+            <input
+              type="text"
+              className="input input-bordered w-full"
+              value={logoQuery}
+              onChange={(e) => handleLogoSearch(e.target.value)}
+              onFocus={() => {
+                ensureIconsLoaded();
+                if (logoResults.length > 0) setShowLogoDropdown(true);
+                if (localStorage.getItem('badgecraft-icon-previews') === null) setShowIconOptIn(true);
+              }}
+              placeholder="react"
+              autoComplete="off"
+            />
+            {params.logo && !showLogoDropdown && (
+              <p className="text-xs text-success mt-1 font-medium">Selected: {params.logo}</p>
+            )}
+            {showLogoDropdown && (
+              <ul className="absolute top-full mt-1 z-30 w-full bg-base-100 border border-base-300 rounded-box shadow-lg max-h-56 overflow-y-auto">
+                {logoResults.map((icon) => (
+                  <li key={icon.slug}>
+                    <button className="w-full text-left px-3 py-2 flex items-center gap-3 hover:bg-base-200 transition-colors" onClick={() => selectLogo(icon)}>
+                      {iconPreviewEnabled ? <IconPreview slug={icon.slug} hex={icon.hex} /> : <span className="w-5 h-5 rounded shrink-0 ring-1 ring-base-300 ring-inset" style={{ backgroundColor: `#${icon.hex}` }} />}
+                      <span className="font-medium text-sm truncate">{icon.title}</span>
+                      <span className="text-xs text-base-content/40 ml-auto font-mono shrink-0">#{icon.hex}</span>
+                    </button>
+                  </li>
+                ))}
+                {logoResults.length === 0 && <li className="px-3 py-2 text-sm text-base-content/50">No icons found</li>}
+              </ul>
+            )}
+            <p className="fieldset-label">Find a brand icon — auto-applies its official color to the badge</p>
+          </fieldset>
+
+          <ColorInput
+            id="logo-color"
+            label="Logo Color"
+            value={params.logoColor}
+            onChange={(v) => updateParam('logoColor', v)}
+            placeholder="ffffff"
+            hint="Fill color for the selected icon"
           />
         </div>
 
@@ -343,7 +343,9 @@ export default function LiveStudio({ initialParams }: LiveStudioProps) {
               </button>
             ))}
           </div>
+          <p className="fieldset-label">Controls the badge shape — flat, rounded, or bold</p>
         </fieldset>
+
       </div>
 
       {/* ── RIGHT: Preview ─────────────────────────────── */}
@@ -373,7 +375,22 @@ export default function LiveStudio({ initialParams }: LiveStudioProps) {
             </div>
           </div>
 
-          <CopyTabs shieldsUrl={shieldsUrl} />
+          {/* Alt Text */}
+          <div className="card bg-base-200 border border-base-300">
+            <div className="card-body p-3 sm:p-4">
+              <h3 className="card-title text-xs sm:text-sm opacity-70 font-medium uppercase tracking-wider">Alt Text</h3>
+              <input
+                type="text"
+                className="input input-bordered input-sm w-full"
+                value={altText}
+                onChange={(e) => setAltText(e.target.value)}
+                placeholder="badge"
+              />
+              <p className="text-[11px] text-base-content/50">Sets the alt/link text in the generated code</p>
+            </div>
+          </div>
+
+          <CopyTabs shieldsUrl={shieldsUrl} alt={altText || undefined} />
         </div>
 
         {!mobilePreviewOpen && (
