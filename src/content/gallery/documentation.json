@@ -1,0 +1,115 @@
+{
+  "categoryName": "Documentation",
+  "categorySlug": "documentation",
+  "categoryDescription": "Documentation platforms, wikis, and knowledge bases",
+  "badges": [
+    {
+      "id": "gitbook-docs",
+      "label": "Docs",
+      "message": "GitBook",
+      "color": "000000",
+      "logo": "gitbook",
+      "logoColor": "ffffff",
+      "style": "flat"
+    },
+    {
+      "id": "docusaurus-docs",
+      "label": "Docs",
+      "message": "Docusaurus",
+      "color": "3ECC5F",
+      "logo": "docusaurus",
+      "logoColor": "ffffff",
+      "style": "flat"
+    },
+    {
+      "id": "readthedocs-docs",
+      "label": "Docs",
+      "message": "Read the Docs",
+      "color": "000000",
+      "logo": "readthedocs",
+      "logoColor": "ffffff",
+      "style": "flat"
+    },
+    {
+      "id": "confluence-docs",
+      "label": "Docs",
+      "message": "Confluence",
+      "color": "172BF4",
+      "logo": "confluence",
+      "logoColor": "ffffff",
+      "style": "flat"
+    },
+    {
+      "id": "notion-docs",
+      "label": "Docs",
+      "message": "Notion",
+      "color": "000000",
+      "logo": "notion",
+      "logoColor": "ffffff",
+      "style": "flat"
+    },
+    {
+      "id": "bookstack-docs",
+      "label": "Docs",
+      "message": "BookStack",
+      "color": "0288D1",
+      "logo": "bookstack",
+      "logoColor": "ffffff",
+      "style": "flat"
+    },
+    {
+      "id": "wikipedia-docs",
+      "label": "Docs",
+      "message": "Wikipedia",
+      "color": "000000",
+      "logo": "wikipedia",
+      "logoColor": "ffffff",
+      "style": "flat"
+    },
+    {
+      "id": "wikijs-docs",
+      "label": "Docs",
+      "message": "Wiki.js",
+      "color": "1976D2",
+      "logo": "wikijs",
+      "logoColor": "ffffff",
+      "style": "flat"
+    },
+    {
+      "id": "docsify-docs",
+      "label": "Docs",
+      "message": "Docsify",
+      "color": "2ECE53",
+      "logo": "docsify",
+      "logoColor": "ffffff",
+      "style": "flat"
+    },
+    {
+      "id": "swagger-docs",
+      "label": "Docs",
+      "message": "Swagger",
+      "color": "85EA2D",
+      "logo": "swagger",
+      "logoColor": "ffffff",
+      "style": "flat"
+    },
+    {
+      "id": "tiddlywiki-docs",
+      "label": "Docs",
+      "message": "TiddlyWiki",
+      "color": "111111",
+      "logo": "tiddlywiki",
+      "logoColor": "ffffff",
+      "style": "flat"
+    },
+    {
+      "id": "zettlr-docs",
+      "label": "Docs",
+      "message": "Zettlr",
+      "color": "1CB27E",
+      "logo": "zettlr",
+      "logoColor": "ffffff",
+      "style": "flat"
+    }
+  ]
+}

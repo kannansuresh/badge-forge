@@ -117,6 +117,11 @@ export async function getIconCacheCount(): Promise<number> {
 // ── Helper exports ────────────────────────────────────────────────
 export { db };
 
+/** Escape shields.io path text: - → --, _ → __ */
+function escapeShieldsText(text: string): string {
+  return text.replace(/-/g, '--').replace(/_/g, '__');
+}
+
 /** Build a shields.io badge URL from its parameters */
 export function buildShieldsUrl(params: {
   label: string;
@@ -128,7 +133,9 @@ export function buildShieldsUrl(params: {
   labelColor?: string;
 }): string {
   const { label, message, color, logo, logoColor, style, labelColor } = params;
-  const base = `https://img.shields.io/badge/${encodeURIComponent(label)}-${encodeURIComponent(message)}-${color}`;
+  const escLabel = encodeURIComponent(escapeShieldsText(label));
+  const escMessage = encodeURIComponent(escapeShieldsText(message));
+  const base = `https://img.shields.io/badge/${escLabel}-${escMessage}-${color}`;
   const qs = new URLSearchParams();
   if (logo) qs.set('logo', logo);
   if (logoColor) qs.set('logoColor', logoColor);

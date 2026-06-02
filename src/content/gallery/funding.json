@@ -1,0 +1,133 @@
+{
+  "categoryName": "Funding & Sponsorship",
+  "categorySlug": "funding",
+  "categoryDescription": "Payment platforms, sponsorship, and donation services",
+  "badges": [
+    {
+      "id": "githubsponsors-fund",
+      "label": "Support",
+      "message": "GitHub Sponsors",
+      "color": "EA4AAA",
+      "logo": "githubsponsors",
+      "logoColor": "ffffff",
+      "style": "flat"
+    },
+    {
+      "id": "patreon-fund",
+      "label": "Support",
+      "message": "Patreon",
+      "color": "F96854",
+      "logo": "patreon",
+      "logoColor": "ffffff",
+      "style": "flat"
+    },
+    {
+      "id": "kofi-fund",
+      "label": "Support",
+      "message": "Ko-fi",
+      "color": "F16061",
+      "logo": "kofi",
+      "logoColor": "ffffff",
+      "style": "flat"
+    },
+    {
+      "id": "buymeacoffee-fund",
+      "label": "Support",
+      "message": "Buy Me a Coffee",
+      "color": "ffdd00",
+      "logo": "buymeacoffee",
+      "logoColor": "ffffff",
+      "style": "flat"
+    },
+    {
+      "id": "paypal-fund",
+      "label": "Support",
+      "message": "PayPal",
+      "color": "00457C",
+      "logo": "paypal",
+      "logoColor": "ffffff",
+      "style": "flat"
+    },
+    {
+      "id": "stripe-fund",
+      "label": "Support",
+      "message": "Stripe",
+      "color": "5469d4",
+      "logo": "stripe",
+      "logoColor": "ffffff",
+      "style": "flat"
+    },
+    {
+      "id": "applepay-fund",
+      "label": "Support",
+      "message": "Apple Pay",
+      "color": "000000",
+      "logo": "applepay",
+      "logoColor": "ffffff",
+      "style": "flat"
+    },
+    {
+      "id": "googlepay-fund",
+      "label": "Support",
+      "message": "Google Pay",
+      "color": "3780F1",
+      "logo": "googlepay",
+      "logoColor": "ffffff",
+      "style": "flat"
+    },
+    {
+      "id": "amazonpay-fund",
+      "label": "Support",
+      "message": "Amazon Pay",
+      "color": "ff9900",
+      "logo": "amazonpay",
+      "logoColor": "ffffff",
+      "style": "flat"
+    },
+    {
+      "id": "liberapay-fund",
+      "label": "Support",
+      "message": "Liberapay",
+      "color": "F6C915",
+      "logo": "liberapay",
+      "logoColor": "ffffff",
+      "style": "flat"
+    },
+    {
+      "id": "wise-fund",
+      "label": "Support",
+      "message": "Wise",
+      "color": "00B9FF",
+      "logo": "wise",
+      "logoColor": "ffffff",
+      "style": "flat"
+    },
+    {
+      "id": "samsungpay-fund",
+      "label": "Support",
+      "message": "Samsung Pay",
+      "color": "1428A0",
+      "logo": "samsungpay",
+      "logoColor": "ffffff",
+      "style": "flat"
+    },
+    {
+      "id": "phonepe-fund",
+      "label": "Support",
+      "message": "PhonePe",
+      "color": "54039A",
+      "logo": "phonepe",
+      "logoColor": "ffffff",
+      "style": "flat"
+    },
+    {
+      "id": "paytm-fund",
+      "label": "Support",
+      "message": "Paytm",
+      "color": "1C2C94",
+      "logo": "paytm",
+      "logoColor": "ffffff",
+      "style": "flat"
+    }
+  ]
+}

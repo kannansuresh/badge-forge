@@ -3,6 +3,7 @@ import Layout from '../../layouts/Layout.astro';
 import { getCollection } from 'astro:content';
 
 const gallery = await getCollection('gallery');
+const esc = (s: string) => encodeURIComponent(s.replace(/-/g, '--').replace(/_/g, '__'));
 ---
 
 <Layout title="Gallery — BadgeCraft" description="Browse curated badge categories for tech stacks, project health, and social media.">
@@ -34,7 +35,7 @@ const gallery = await getCollection('gallery');
                   <div class="flex flex-wrap gap-1.5 my-3 min-h-[28px]">
                     {previewBadges.map((badge) => (
                       <img
-                        src={`https://img.shields.io/badge/${encodeURIComponent(badge.label)}-${encodeURIComponent(badge.message)}-${badge.color}?style=${badge.style || 'flat'}${badge.logo ? `&logo=${badge.logo}` : ''}${badge.logoColor ? `&logoColor=${badge.logoColor}` : ''}`}
+                        src={`https://img.shields.io/badge/${esc(badge.label)}-${esc(badge.message)}-${badge.color}?style=${badge.style || 'flat'}${badge.logo ? `&logo=${badge.logo}` : ''}${badge.logoColor ? `&logoColor=${badge.logoColor}` : ''}`}
                         alt={`${badge.label}: ${badge.message}`}
                         class="h-5"
                         loading="lazy"

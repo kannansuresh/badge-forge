@@ -1,0 +1,22 @@
+{
+  "categoryName": "IDEs & Editors",
+  "categorySlug": "ides",
+  "categoryDescription": "Code editors, IDEs, and development environments",
+  "badges": [
+    { "id": "vscode", "label": "Editor", "message": "VS Code", "color": "007ACC", "logo": "visualstudiocode", "logoColor": "ffffff", "style": "flat" },
+    { "id": "intellij", "label": "IDE", "message": "IntelliJ IDEA", "color": "000000", "logo": "intellijidea", "logoColor": "ffffff", "style": "flat" },
+    { "id": "neovim", "label": "Editor", "message": "Neovim", "color": "57A143", "logo": "neovim", "logoColor": "ffffff", "style": "flat" },
+    { "id": "vim", "label": "Editor", "message": "Vim", "color": "019733", "logo": "vim", "logoColor": "ffffff", "style": "flat" },
+    { "id": "sublime", "label": "Editor", "message": "Sublime Text", "color": "FF9800", "logo": "sublimetext", "logoColor": "ffffff", "style": "flat" },
+    { "id": "atom", "label": "Editor", "message": "Atom", "color": "66595C", "logo": "atom", "logoColor": "ffffff", "style": "flat" },
+    { "id": "emacs", "label": "Editor", "message": "Emacs", "color": "7F5AB6", "logo": "gnuemacs", "logoColor": "ffffff", "style": "flat" },
+    { "id": "webstorm", "label": "IDE", "message": "WebStorm", "color": "000000", "logo": "webstorm", "logoColor": "ffffff", "style": "flat" },
+    { "id": "pycharm", "label": "IDE", "message": "PyCharm", "color": "000000", "logo": "pycharm", "logoColor": "ffffff", "style": "flat" },
+    { "id": "android-studio", "label": "IDE", "message": "Android Studio", "color": "3DDC84", "logo": "androidstudio", "logoColor": "ffffff", "style": "flat" },
+    { "id": "xcode", "label": "IDE", "message": "Xcode", "color": "147EFB", "logo": "xcode", "logoColor": "ffffff", "style": "flat" },
+    { "id": "eclipse", "label": "IDE", "message": "Eclipse", "color": "2C2255", "logo": "eclipseide", "logoColor": "ffffff", "style": "flat" },
+    { "id": "notepadpp", "label": "Editor", "message": "Notepad++", "color": "90E59A", "logo": "notepadplusplus", "logoColor": "000000", "style": "flat" },
+    { "id": "zed", "label": "Editor", "message": "Zed", "color": "000000", "logo": "zedindustries", "logoColor": "ffffff", "style": "flat" },
+    { "id": "helix", "label": "Editor", "message": "Helix", "color": "281733", "logo": "helix", "logoColor": "ffffff", "style": "flat" }
+  ]
+}

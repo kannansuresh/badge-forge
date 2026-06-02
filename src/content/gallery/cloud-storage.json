@@ -1,0 +1,97 @@
+{
+  "categoryName": "Cloud Storage",
+  "categorySlug": "cloud-storage",
+  "categoryDescription": "Cloud storage and file hosting services",
+  "badges": [
+    {
+      "id": "googledrive-cloud",
+      "label": "Cloud",
+      "message": "Google Drive",
+      "color": "4285F4",
+      "logo": "googledrive",
+      "logoColor": "ffffff",
+      "style": "flat"
+    },
+    {
+      "id": "dropbox-cloud",
+      "label": "Cloud",
+      "message": "Dropbox",
+      "color": "3B4D98",
+      "logo": "dropbox",
+      "logoColor": "ffffff",
+      "style": "flat"
+    },
+    {
+      "id": "onedrive-cloud",
+      "label": "Cloud",
+      "message": "OneDrive",
+      "color": "0078D4",
+      "logo": "onedrive",
+      "logoColor": "ffffff",
+      "style": "flat"
+    },
+    {
+      "id": "icloud-cloud",
+      "label": "Cloud",
+      "message": "iCloud",
+      "color": "3693F3",
+      "logo": "icloud",
+      "logoColor": "ffffff",
+      "style": "flat"
+    },
+    {
+      "id": "mega-cloud",
+      "label": "Cloud",
+      "message": "MEGA",
+      "color": "D90007",
+      "logo": "mega",
+      "logoColor": "ffffff",
+      "style": "flat"
+    },
+    {
+      "id": "box-cloud",
+      "label": "Cloud",
+      "message": "Box",
+      "color": "0061D5",
+      "logo": "box",
+      "logoColor": "ffffff",
+      "style": "flat"
+    },
+    {
+      "id": "nextcloud-cloud",
+      "label": "Cloud",
+      "message": "Nextcloud",
+      "color": "0B94DE",
+      "logo": "nextcloud",
+      "logoColor": "ffffff",
+      "style": "flat"
+    },
+    {
+      "id": "amazons3-cloud",
+      "label": "Cloud",
+      "message": "Amazon S3",
+      "color": "FF9900",
+      "logo": "amazons3",
+      "logoColor": "ffffff",
+      "style": "flat"
+    },
+    {
+      "id": "backblaze-cloud",
+      "label": "Cloud",
+      "message": "Backblaze",
+      "color": "E21E29",
+      "logo": "backblaze",
+      "logoColor": "ffffff",
+      "style": "flat"
+    },
+    {
+      "id": "protondrive-cloud",
+      "label": "Cloud",
+      "message": "Proton Drive",
+      "color": "6d4aff",
+      "logo": "protondrive",
+      "logoColor": "ffffff",
+      "style": "flat"
+    }
+  ]
+}

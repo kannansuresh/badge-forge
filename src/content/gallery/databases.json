@@ -1,0 +1,223 @@
+{
+  "categoryName": "Databases",
+  "categorySlug": "databases",
+  "categoryDescription": "Relational, NoSQL, and analytics databases",
+  "badges": [
+    {
+      "id": "postgresql-db",
+      "label": "Database",
+      "message": "PostgreSQL",
+      "color": "316192",
+      "logo": "postgresql",
+      "logoColor": "ffffff",
+      "style": "flat"
+    },
+    {
+      "id": "mysql-db",
+      "label": "Database",
+      "message": "MySQL",
+      "color": "4479A1",
+      "logo": "mysql",
+      "logoColor": "ffffff",
+      "style": "flat"
+    },
+    {
+      "id": "sqlite-db",
+      "label": "Database",
+      "message": "SQLite",
+      "color": "07405e",
+      "logo": "sqlite",
+      "logoColor": "ffffff",
+      "style": "flat"
+    },
+    {
+      "id": "mongodb-db",
+      "label": "Database",
+      "message": "MongoDB",
+      "color": "4ea94b",
+      "logo": "mongodb",
+      "logoColor": "ffffff",
+      "style": "flat"
+    },
+    {
+      "id": "redis-db",
+      "label": "Database",
+      "message": "Redis",
+      "color": "DD0031",
+      "logo": "redis",
+      "logoColor": "ffffff",
+      "style": "flat"
+    },
+    {
+      "id": "firebase-db",
+      "label": "Database",
+      "message": "Firebase",
+      "color": "DD2C00",
+      "logo": "firebase",
+      "logoColor": "ffffff",
+      "style": "flat"
+    },
+    {
+      "id": "supabase-db",
+      "label": "Database",
+      "message": "Supabase",
+      "color": "3ECF8E",
+      "logo": "supabase",
+      "logoColor": "ffffff",
+      "style": "flat"
+    },
+    {
+      "id": "mariadb-db",
+      "label": "Database",
+      "message": "MariaDB",
+      "color": "003545",
+      "logo": "mariadb",
+      "logoColor": "ffffff",
+      "style": "flat"
+    },
+    {
+      "id": "neo4j-db",
+      "label": "Database",
+      "message": "Neo4j",
+      "color": "008CC1",
+      "logo": "neo4j",
+      "logoColor": "ffffff",
+      "style": "flat"
+    },
+    {
+      "id": "apachecassandra-db",
+      "label": "Database",
+      "message": "Cassandra",
+      "color": "1287B1",
+      "logo": "apachecassandra",
+      "logoColor": "ffffff",
+      "style": "flat"
+    },
+    {
+      "id": "clickhouse-db",
+      "label": "Database",
+      "message": "ClickHouse",
+      "color": "FFCC01",
+      "logo": "clickhouse",
+      "logoColor": "ffffff",
+      "style": "flat"
+    },
+    {
+      "id": "duckdb-db",
+      "label": "Database",
+      "message": "DuckDB",
+      "color": "FFF000",
+      "logo": "duckdb",
+      "logoColor": "ffffff",
+      "style": "flat"
+    },
+    {
+      "id": "planetscale-db",
+      "label": "Database",
+      "message": "PlanetScale",
+      "color": "000000",
+      "logo": "planetscale",
+      "logoColor": "ffffff",
+      "style": "flat"
+    },
+    {
+      "id": "cockroachlabs-db",
+      "label": "Database",
+      "message": "CockroachDB",
+      "color": "6933FF",
+      "logo": "cockroachlabs",
+      "logoColor": "ffffff",
+      "style": "flat"
+    },
+    {
+      "id": "influxdb-db",
+      "label": "Database",
+      "message": "InfluxDB",
+      "color": "22ADF6",
+      "logo": "influxdb",
+      "logoColor": "ffffff",
+      "style": "flat"
+    },
+    {
+      "id": "databricks-db",
+      "label": "Database",
+      "message": "Databricks",
+      "color": "FF3621",
+      "logo": "databricks",
+      "logoColor": "ffffff",
+      "style": "flat"
+    },
+    {
+      "id": "microsoftsqlserver-db",
+      "label": "Database",
+      "message": "SQL Server",
+      "color": "CC2927",
+      "logo": "microsoftsqlserver",
+      "logoColor": "ffffff",
+      "style": "flat"
+    },
+    {
+      "id": "amazondynamodb-db",
+      "label": "Database",
+      "message": "DynamoDB",
+      "color": "4053D6",
+      "logo": "amazondynamodb",
+      "logoColor": "ffffff",
+      "style": "flat"
+    },
+    {
+      "id": "couchbase-db",
+      "label": "Database",
+      "message": "Couchbase",
+      "color": "EA2328",
+      "logo": "couchbase",
+      "logoColor": "ffffff",
+      "style": "flat"
+    },
+    {
+      "id": "appwrite-db",
+      "label": "Database",
+      "message": "Appwrite",
+      "color": "FD366E",
+      "logo": "appwrite",
+      "logoColor": "ffffff",
+      "style": "flat"
+    },
+    {
+      "id": "surrealdb-db",
+      "label": "Database",
+      "message": "SurrealDB",
+      "color": "FF00A0",
+      "logo": "surrealdb",
+      "logoColor": "ffffff",
+      "style": "flat"
+    },
+    {
+      "id": "singlestore-db",
+      "label": "Database",
+      "message": "SingleStore",
+      "color": "AA00FF",
+      "logo": "singlestore",
+      "logoColor": "ffffff",
+      "style": "flat"
+    },
+    {
+      "id": "teradata-db",
+      "label": "Database",
+      "message": "Teradata",
+      "color": "F37440",
+      "logo": "teradata",
+      "logoColor": "ffffff",
+      "style": "flat"
+    },
+    {
+      "id": "arangodb-db",
+      "label": "Database",
+      "message": "ArangoDB",
+      "color": "DDE072",
+      "logo": "arangodb",
+      "logoColor": "ffffff",
+      "style": "flat"
+    }
+  ]
+}

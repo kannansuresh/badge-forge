@@ -9,7 +9,7 @@
       "message": "Passing",
       "color": "22C55E",
       "logo": "githubactions",
-      "logoColor": "white",
+      "logoColor": "ffffff",
       "style": "flat"
     },
     {
@@ -18,7 +18,7 @@
       "message": "Failing",
       "color": "EF4444",
       "logo": "githubactions",
-      "logoColor": "white",
+      "logoColor": "ffffff",
       "style": "flat"
     },
     {
@@ -27,7 +27,7 @@
       "message": "90%25",
       "color": "22C55E",
       "logo": "codecov",
-      "logoColor": "white",
+      "logoColor": "ffffff",
       "style": "flat"
     },
     {
@@ -36,7 +36,7 @@
       "message": "75%25",
       "color": "F59E0B",
       "logo": "codecov",
-      "logoColor": "white",
+      "logoColor": "ffffff",
       "style": "flat"
     },
     {
@@ -45,7 +45,7 @@
       "message": "MIT",
       "color": "22C55E",
       "logo": "open-source-initiative",
-      "logoColor": "white",
+      "logoColor": "ffffff",
       "style": "flat"
     },
     {
@@ -54,7 +54,7 @@
       "message": "Apache 2.0",
       "color": "3B82F6",
       "logo": "apache",
-      "logoColor": "white",
+      "logoColor": "ffffff",
       "style": "flat"
     },
     {
@@ -63,7 +63,7 @@
       "message": "v1.0.0 Stable",
       "color": "6366F1",
       "logo": "semver",
-      "logoColor": "white",
+      "logoColor": "ffffff",
       "style": "flat"
     },
     {
@@ -72,7 +72,7 @@
       "message": "v2.0.0 Beta",
       "color": "F59E0B",
       "logo": "semver",
-      "logoColor": "white",
+      "logoColor": "ffffff",
       "style": "flat"
     },
     {
@@ -81,7 +81,7 @@
       "message": "Active",
       "color": "22C55E",
       "logo": "statuspage",
-      "logoColor": "white",
+      "logoColor": "ffffff",
       "style": "flat"
     },
     {
@@ -90,7 +90,7 @@
       "message": "Deprecated",
       "color": "EF4444",
       "logo": "statuspage",
-      "logoColor": "white",
+      "logoColor": "ffffff",
       "style": "flat"
     },
     {
@@ -99,7 +99,7 @@
       "message": "Welcome",
       "color": "22C55E",
       "logo": "github",
-      "logoColor": "white",
+      "logoColor": "ffffff",
       "style": "flat"
     },
     {
@@ -108,7 +108,7 @@
       "message": "Up to Date",
       "color": "22C55E",
       "logo": "dependabot",
-      "logoColor": "white",
+      "logoColor": "ffffff",
       "style": "flat"
     }
   ]

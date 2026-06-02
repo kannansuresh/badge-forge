@@ -1,0 +1,79 @@
+{
+  "categoryName": "Blog & Publishing",
+  "categorySlug": "blog",
+  "categoryDescription": "Blogging platforms, CMS, and publishing tools",
+  "badges": [
+    {
+      "id": "substack-blog",
+      "label": "Blog",
+      "message": "Substack",
+      "color": "006f5c",
+      "logo": "substack",
+      "logoColor": "ffffff",
+      "style": "flat"
+    },
+    {
+      "id": "ghost-blog",
+      "label": "Blog",
+      "message": "Ghost",
+      "color": "15171A",
+      "logo": "ghost",
+      "logoColor": "ffffff",
+      "style": "flat"
+    },
+    {
+      "id": "blogger-blog",
+      "label": "Blog",
+      "message": "Blogger",
+      "color": "FF5722",
+      "logo": "blogger",
+      "logoColor": "ffffff",
+      "style": "flat"
+    },
+    {
+      "id": "rss-blog",
+      "label": "Blog",
+      "message": "RSS",
+      "color": "F88900",
+      "logo": "rss",
+      "logoColor": "ffffff",
+      "style": "flat"
+    },
+    {
+      "id": "wix-blog",
+      "label": "Blog",
+      "message": "Wix",
+      "color": "000000",
+      "logo": "wix",
+      "logoColor": "ffffff",
+      "style": "flat"
+    },
+    {
+      "id": "dailydotdev-blog",
+      "label": "Blog",
+      "message": "daily.dev",
+      "color": "CE3DF3",
+      "logo": "dailydotdev",
+      "logoColor": "ffffff",
+      "style": "flat"
+    },
+    {
+      "id": "microdotblog-blog",
+      "label": "Blog",
+      "message": "Micro.blog",
+      "color": "FF8800",
+      "logo": "microdotblog",
+      "logoColor": "ffffff",
+      "style": "flat"
+    },
+    {
+      "id": "zola-blog",
+      "label": "Blog",
+      "message": "Zola",
+      "color": "000000",
+      "logo": "zola",
+      "logoColor": "ffffff",
+      "style": "flat"
+    }
+  ]
+}

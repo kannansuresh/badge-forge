@@ -1,0 +1,187 @@
+{
+  "categoryName": "Education",
+  "categorySlug": "education",
+  "categoryDescription": "Online learning platforms and educational resources",
+  "badges": [
+    {
+      "id": "coursera-edu",
+      "label": "Learning",
+      "message": "Coursera",
+      "color": "0056D2",
+      "logo": "coursera",
+      "logoColor": "ffffff",
+      "style": "flat"
+    },
+    {
+      "id": "udemy-edu",
+      "label": "Learning",
+      "message": "Udemy",
+      "color": "A435F0",
+      "logo": "udemy",
+      "logoColor": "ffffff",
+      "style": "flat"
+    },
+    {
+      "id": "edx-edu",
+      "label": "Learning",
+      "message": "edX",
+      "color": "02262B",
+      "logo": "edx",
+      "logoColor": "ffffff",
+      "style": "flat"
+    },
+    {
+      "id": "duolingo-edu",
+      "label": "Learning",
+      "message": "Duolingo",
+      "color": "4DC730",
+      "logo": "duolingo",
+      "logoColor": "ffffff",
+      "style": "flat"
+    },
+    {
+      "id": "khanacademy-edu",
+      "label": "Learning",
+      "message": "Khan Academy",
+      "color": "14BF96",
+      "logo": "khanacademy",
+      "logoColor": "ffffff",
+      "style": "flat"
+    },
+    {
+      "id": "freecodecamp-edu",
+      "label": "Learning",
+      "message": "freeCodeCamp",
+      "color": "0A0A23",
+      "logo": "freecodecamp",
+      "logoColor": "ffffff",
+      "style": "flat"
+    },
+    {
+      "id": "codecademy-edu",
+      "label": "Learning",
+      "message": "Codecademy",
+      "color": "FFF0E5",
+      "logo": "codecademy",
+      "logoColor": "ffffff",
+      "style": "flat"
+    },
+    {
+      "id": "pluralsight-edu",
+      "label": "Learning",
+      "message": "Pluralsight",
+      "color": "EE3057",
+      "logo": "pluralsight",
+      "logoColor": "ffffff",
+      "style": "flat"
+    },
+    {
+      "id": "udacity-edu",
+      "label": "Learning",
+      "message": "Udacity",
+      "color": "02B3E4",
+      "logo": "udacity",
+      "logoColor": "ffffff",
+      "style": "flat"
+    },
+    {
+      "id": "mdnwebdocs-edu",
+      "label": "Learning",
+      "message": "MDN Web Docs",
+      "color": "000000",
+      "logo": "mdnwebdocs",
+      "logoColor": "ffffff",
+      "style": "flat"
+    },
+    {
+      "id": "scrimba-edu",
+      "label": "Learning",
+      "message": "Scrimba",
+      "color": "2B283A",
+      "logo": "scrimba",
+      "logoColor": "ffffff",
+      "style": "flat"
+    },
+    {
+      "id": "geeksforgeeks-edu",
+      "label": "Learning",
+      "message": "GeeksforGeeks",
+      "color": "2F8D46",
+      "logo": "geeksforgeeks",
+      "logoColor": "ffffff",
+      "style": "flat"
+    },
+    {
+      "id": "exercism-edu",
+      "label": "Learning",
+      "message": "Exercism",
+      "color": "009CAB",
+      "logo": "exercism",
+      "logoColor": "ffffff",
+      "style": "flat"
+    },
+    {
+      "id": "codewars-edu",
+      "label": "Learning",
+      "message": "Codewars",
+      "color": "B1361E",
+      "logo": "codewars",
+      "logoColor": "ffffff",
+      "style": "flat"
+    },
+    {
+      "id": "w3schools-edu",
+      "label": "Learning",
+      "message": "W3Schools",
+      "color": "04AA6D",
+      "logo": "w3schools",
+      "logoColor": "ffffff",
+      "style": "flat"
+    },
+    {
+      "id": "googlescholar-edu",
+      "label": "Learning",
+      "message": "Google Scholar",
+      "color": "4285F4",
+      "logo": "googlescholar",
+      "logoColor": "ffffff",
+      "style": "flat"
+    },
+    {
+      "id": "datacamp-edu",
+      "label": "Learning",
+      "message": "DataCamp",
+      "color": "05192D",
+      "logo": "datacamp",
+      "logoColor": "ffffff",
+      "style": "flat"
+    },
+    {
+      "id": "sololearn-edu",
+      "label": "Learning",
+      "message": "Sololearn",
+      "color": "149EF2",
+      "logo": "sololearn",
+      "logoColor": "ffffff",
+      "style": "flat"
+    },
+    {
+      "id": "microsoft-edu",
+      "label": "Learning",
+      "message": "Microsoft Learn",
+      "color": "258ffa",
+      "logo": "microsoft",
+      "logoColor": "ffffff",
+      "style": "flat"
+    },
+    {
+      "id": "skillshare-edu",
+      "label": "Learning",
+      "message": "Skillshare",
+      "color": "002333",
+      "logo": "skillshare",
+      "logoColor": "ffffff",
+      "style": "flat"
+    }
+  ]
+}

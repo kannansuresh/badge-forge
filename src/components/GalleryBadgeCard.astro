@@ -30,7 +30,8 @@ if (logoColor) params.set('logoColor', logoColor);
 params.set('style', style);
 if (labelColor) params.set('labelColor', labelColor);
 
-const shieldsUrl = `https://img.shields.io/badge/${encodeURIComponent(label)}-${encodeURIComponent(message)}-${color}?style=${style}${logo ? `&logo=${logo}` : ''}${logoColor ? `&logoColor=${logoColor}` : ''}${labelColor ? `&labelColor=${labelColor}` : ''}`;
+const esc = (s: string) => encodeURIComponent(s.replace(/-/g, '--').replace(/_/g, '__'));
+const shieldsUrl = `https://img.shields.io/badge/${esc(label)}-${esc(message)}-${color}?style=${style}${logo ? `&logo=${logo}` : ''}${logoColor ? `&logoColor=${logoColor}` : ''}${labelColor ? `&labelColor=${labelColor}` : ''}`;
 const mdSnippet = `![badge](${shieldsUrl})`;
 const htmlSnippet = `<img src="${shieldsUrl}" alt="badge" />`;
 const clipboardData = JSON.stringify({ label, message, color, logo, logoColor, style, labelColor });

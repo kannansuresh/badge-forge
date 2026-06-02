@@ -1,0 +1,196 @@
+{
+  "categoryName": "Design",
+  "categorySlug": "design",
+  "categoryDescription": "Design tools, creative software, and prototyping",
+  "badges": [
+    {
+      "id": "figma-design",
+      "label": "Design",
+      "message": "Figma",
+      "color": "F24E1E",
+      "logo": "figma",
+      "logoColor": "ffffff",
+      "style": "flat"
+    },
+    {
+      "id": "adobephotoshop-design",
+      "label": "Design",
+      "message": "Adobe Photoshop",
+      "color": "31A8FF",
+      "logo": "adobephotoshop",
+      "logoColor": "ffffff",
+      "style": "flat"
+    },
+    {
+      "id": "adobeillustrator-design",
+      "label": "Design",
+      "message": "Adobe Illustrator",
+      "color": "FF9A00",
+      "logo": "adobeillustrator",
+      "logoColor": "ffffff",
+      "style": "flat"
+    },
+    {
+      "id": "blender-design",
+      "label": "Design",
+      "message": "Blender",
+      "color": "F5792A",
+      "logo": "blender",
+      "logoColor": "ffffff",
+      "style": "flat"
+    },
+    {
+      "id": "canva-design",
+      "label": "Design",
+      "message": "Canva",
+      "color": "00C4CC",
+      "logo": "canva",
+      "logoColor": "ffffff",
+      "style": "flat"
+    },
+    {
+      "id": "sketch-design",
+      "label": "Design",
+      "message": "Sketch",
+      "color": "FFB387",
+      "logo": "sketch",
+      "logoColor": "ffffff",
+      "style": "flat"
+    },
+    {
+      "id": "gimp-design",
+      "label": "Design",
+      "message": "GIMP",
+      "color": "657D8B",
+      "logo": "gimp",
+      "logoColor": "ffffff",
+      "style": "flat"
+    },
+    {
+      "id": "inkscape-design",
+      "label": "Design",
+      "message": "Inkscape",
+      "color": "000000",
+      "logo": "inkscape",
+      "logoColor": "ffffff",
+      "style": "flat"
+    },
+    {
+      "id": "affinitydesigner-design",
+      "label": "Design",
+      "message": "Affinity Designer",
+      "color": "1B72BE",
+      "logo": "affinitydesigner",
+      "logoColor": "ffffff",
+      "style": "flat"
+    },
+    {
+      "id": "davinciresolve-design",
+      "label": "Design",
+      "message": "DaVinci Resolve",
+      "color": "233A51",
+      "logo": "davinciresolve",
+      "logoColor": "ffffff",
+      "style": "flat"
+    },
+    {
+      "id": "aseprite-design",
+      "label": "Design",
+      "message": "Aseprite",
+      "color": "7D929E",
+      "logo": "aseprite",
+      "logoColor": "ffffff",
+      "style": "flat"
+    },
+    {
+      "id": "krita-design",
+      "label": "Design",
+      "message": "Krita",
+      "color": "203759",
+      "logo": "krita",
+      "logoColor": "ffffff",
+      "style": "flat"
+    },
+    {
+      "id": "dribbble-design",
+      "label": "Design",
+      "message": "Dribbble",
+      "color": "EA4C89",
+      "logo": "dribbble",
+      "logoColor": "ffffff",
+      "style": "flat"
+    },
+    {
+      "id": "adobexd-design",
+      "label": "Design",
+      "message": "Adobe XD",
+      "color": "470137",
+      "logo": "adobexd",
+      "logoColor": "ffffff",
+      "style": "flat"
+    },
+    {
+      "id": "adobepremierepro-design",
+      "label": "Design",
+      "message": "Adobe Premiere Pro",
+      "color": "9999FF",
+      "logo": "adobepremierepro",
+      "logoColor": "ffffff",
+      "style": "flat"
+    },
+    {
+      "id": "adobeaftereffects-design",
+      "label": "Design",
+      "message": "Adobe After Effects",
+      "color": "9999FF",
+      "logo": "adobeaftereffects",
+      "logoColor": "ffffff",
+      "style": "flat"
+    },
+    {
+      "id": "adobelightroom-design",
+      "label": "Design",
+      "message": "Adobe Lightroom",
+      "color": "31A8FF",
+      "logo": "adobelightroom",
+      "logoColor": "ffffff",
+      "style": "flat"
+    },
+    {
+      "id": "adobeindesign-design",
+      "label": "Design",
+      "message": "Adobe InDesign",
+      "color": "49021F",
+      "logo": "adobeindesign",
+      "logoColor": "ffffff",
+      "style": "flat"
+    },
+    {
+      "id": "storybook-design",
+      "label": "Design",
+      "message": "Storybook",
+      "color": "FF4785",
+      "logo": "storybook",
+      "logoColor": "ffffff",
+      "style": "flat"
+    },
+    {
+      "id": "framer-design",
+      "label": "Design",
+      "message": "Framer",
+      "color": "0055FF",
+      "logo": "framer",
+      "logoColor": "ffffff",
+      "style": "flat"
+    },
+    {
+      "id": "penpot-design",
+      "label": "Design",
+      "message": "Penpot",
+      "color": "000000",
+      "logo": "penpot",
+      "logoColor": "ffffff",
+      "style": "flat"
+    }
+  ]
+}

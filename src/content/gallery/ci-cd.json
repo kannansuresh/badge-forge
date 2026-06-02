@@ -1,0 +1,88 @@
+{
+  "categoryName": "CI / CD",
+  "categorySlug": "ci-cd",
+  "categoryDescription": "Continuous integration and deployment tools",
+  "badges": [
+    {
+      "id": "githubactions-ci",
+      "label": "CI/CD",
+      "message": "GitHub Actions",
+      "color": "2671E5",
+      "logo": "githubactions",
+      "logoColor": "ffffff",
+      "style": "flat"
+    },
+    {
+      "id": "gitlab-ci",
+      "label": "CI/CD",
+      "message": "GitLab CI",
+      "color": "181717",
+      "logo": "gitlab",
+      "logoColor": "ffffff",
+      "style": "flat"
+    },
+    {
+      "id": "circleci-ci",
+      "label": "CI/CD",
+      "message": "CircleCI",
+      "color": "161616",
+      "logo": "circleci",
+      "logoColor": "ffffff",
+      "style": "flat"
+    },
+    {
+      "id": "travisci-ci",
+      "label": "CI/CD",
+      "message": "Travis CI",
+      "color": "2B2F33",
+      "logo": "travisci",
+      "logoColor": "ffffff",
+      "style": "flat"
+    },
+    {
+      "id": "teamcity-ci",
+      "label": "CI/CD",
+      "message": "TeamCity",
+      "color": "000000",
+      "logo": "teamcity",
+      "logoColor": "ffffff",
+      "style": "flat"
+    },
+    {
+      "id": "jenkins-ci",
+      "label": "CI/CD",
+      "message": "Jenkins",
+      "color": "D24939",
+      "logo": "jenkins",
+      "logoColor": "ffffff",
+      "style": "flat"
+    },
+    {
+      "id": "fastlane-ci",
+      "label": "CI/CD",
+      "message": "Fastlane",
+      "color": "00F200",
+      "logo": "fastlane",
+      "logoColor": "ffffff",
+      "style": "flat"
+    },
+    {
+      "id": "cloudbees-ci",
+      "label": "CI/CD",
+      "message": "CloudBees",
+      "color": "1997B5",
+      "logo": "cloudbees",
+      "logoColor": "ffffff",
+      "style": "flat"
+    },
+    {
+      "id": "octopusdeploy-ci",
+      "label": "CI/CD",
+      "message": "Octopus Deploy",
+      "color": "0D80D8",
+      "logo": "octopusdeploy",
+      "logoColor": "ffffff",
+      "style": "flat"
+    }
+  ]
+}
