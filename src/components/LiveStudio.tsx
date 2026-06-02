@@ -251,6 +251,8 @@ export default function LiveStudio({ initialParams }: LiveStudioProps) {
           <fieldset className="fieldset">
             <legend className="fieldset-legend">Label</legend>
             <input
+              id="badge-label"
+              name="label"
               type="text"
               className="input input-bordered w-full"
               value={params.label}
@@ -262,6 +264,8 @@ export default function LiveStudio({ initialParams }: LiveStudioProps) {
           <fieldset className="fieldset">
             <legend className="fieldset-legend">Message</legend>
             <input
+              id="badge-message"
+              name="message"
               type="text"
               className="input input-bordered w-full"
               value={params.message}
@@ -320,6 +324,8 @@ export default function LiveStudio({ initialParams }: LiveStudioProps) {
             )}
 
             <input
+              id="badge-logo"
+              name="logo"
               type="text"
               className="input input-bordered w-full"
               value={logoQuery}
@@ -488,6 +494,8 @@ export default function LiveStudio({ initialParams }: LiveStudioProps) {
               </div>
               {altEditing ? (
                 <input
+                  id="badge-alt"
+                  name="alt"
                   type="text"
                   className="input input-bordered input-sm w-full"
                   value={altCustom ?? ''}
@@ -562,6 +570,7 @@ function ColorInput({
         </span>
         <input
           id={id}
+          name={id}
           type="text"
           className="input join-item w-full font-mono"
           value={value}
@@ -599,6 +608,8 @@ function ColorInput({
               </span>
               <span>Custom</span>
               <input
+                id={`${id}-picker`}
+                name={`${id}-picker`}
                 type="color"
                 className="absolute opacity-0 w-0 h-0"
                 value={`#${value || '000000'}`}
