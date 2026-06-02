@@ -3,42 +3,338 @@
   "categorySlug": "tech-stack",
   "categoryDescription": "Web frameworks, libraries, and runtime platforms",
   "badges": [
-    { "id": "react", "label": "Frontend", "message": "React", "color": "61DAFB", "logo": "react", "logoColor": "000000", "style": "flat" },
-    { "id": "astro-fw", "label": "Framework", "message": "Astro", "color": "BC52EE", "logo": "astro", "logoColor": "ffffff", "style": "flat" },
-    { "id": "vue-fw", "label": "Frontend", "message": "Vue.js", "color": "4FC08D", "logo": "vuedotjs", "logoColor": "ffffff", "style": "flat" },
-    { "id": "svelte-fw", "label": "Frontend", "message": "Svelte", "color": "FF3E00", "logo": "svelte", "logoColor": "ffffff", "style": "flat" },
-    { "id": "nextjs-fw", "label": "Framework", "message": "Next.js", "color": "000000", "logo": "nextdotjs", "logoColor": "ffffff", "style": "flat" },
-    { "id": "nuxt-fw", "label": "Framework", "message": "Nuxt", "color": "00DC82", "logo": "nuxtdotjs", "logoColor": "ffffff", "style": "flat" },
-    { "id": "angular-fw", "label": "Frontend", "message": "Angular", "color": "DD0031", "logo": "angular", "logoColor": "ffffff", "style": "flat" },
-    { "id": "django-fw", "label": "Backend", "message": "Django", "color": "092E20", "logo": "django", "logoColor": "ffffff", "style": "flat" },
-    { "id": "express-fw", "label": "Backend", "message": "Express", "color": "000000", "logo": "express", "logoColor": "ffffff", "style": "flat" },
-    { "id": "fastify-fw", "label": "Backend", "message": "Fastify", "color": "000000", "logo": "fastify", "logoColor": "ffffff", "style": "flat" },
-    { "id": "spring-fw", "label": "Backend", "message": "Spring Boot", "color": "6DB33F", "logo": "springboot", "logoColor": "ffffff", "style": "flat" },
-    { "id": "rails-fw", "label": "Backend", "message": "Rails", "color": "CC0000", "logo": "rubyonrails", "logoColor": "ffffff", "style": "flat" },
-    { "id": "laravel-fw", "label": "Backend", "message": "Laravel", "color": "FF2D20", "logo": "laravel", "logoColor": "ffffff", "style": "flat" },
-    { "id": "flask-fw", "label": "Backend", "message": "Flask", "color": "000000", "logo": "flask", "logoColor": "ffffff", "style": "flat" },
-    { "id": "fastapi-fw", "label": "Backend", "message": "FastAPI", "color": "009688", "logo": "fastapi", "logoColor": "ffffff", "style": "flat" },
-    { "id": "hono-fw", "label": "Backend", "message": "Hono", "color": "E36002", "logo": "hono", "logoColor": "ffffff", "style": "flat" },
-    { "id": "node-fw", "label": "Runtime", "message": "Node.js", "color": "5FA04E", "logo": "nodedotjs", "logoColor": "ffffff", "style": "flat" },
-    { "id": "bun-fw", "label": "Runtime", "message": "Bun", "color": "000000", "logo": "bun", "logoColor": "ffffff", "style": "flat" },
-    { "id": "deno-fw", "label": "Runtime", "message": "Deno", "color": "000000", "logo": "deno", "logoColor": "ffffff", "style": "flat" },
-    { "id": "electron-fw", "label": "Desktop", "message": "Electron", "color": "47848F", "logo": "electron", "logoColor": "ffffff", "style": "flat" },
-    { "id": "tauri-fw", "label": "Desktop", "message": "Tauri", "color": "FFC131", "logo": "tauri", "logoColor": "000000", "style": "flat" },
-    { "id": "htmx-fw", "label": "Frontend", "message": "htmx", "color": "3366CC", "logo": "htmx", "logoColor": "ffffff", "style": "flat" },
-    { "id": "solid-fw", "label": "Frontend", "message": "SolidJS", "color": "2c4f7c", "logo": "solid", "logoColor": "ffffff", "style": "flat" },
-    { "id": "qwik-fw", "label": "Frontend", "message": "Qwik", "color": "AC7EF4", "logo": "qwik", "logoColor": "ffffff", "style": "flat" },
-    { "id": "remix-fw", "label": "Framework", "message": "Remix", "color": "000000", "logo": "remix", "logoColor": "ffffff", "style": "flat" },
-    { "id": "gatsby-fw", "label": "Framework", "message": "Gatsby", "color": "663399", "logo": "gatsby", "logoColor": "ffffff", "style": "flat" },
-    { "id": "redux-fw", "label": "State", "message": "Redux", "color": "764ABC", "logo": "redux", "logoColor": "ffffff", "style": "flat" },
-    { "id": "graphql-fw", "label": "API", "message": "GraphQL", "color": "E10098", "logo": "graphql", "logoColor": "ffffff", "style": "flat" },
-    { "id": "trpc-fw", "label": "API", "message": "tRPC", "color": "2596BE", "logo": "trpc", "logoColor": "ffffff", "style": "flat" },
-    { "id": "prisma-fw", "label": "ORM", "message": "Prisma", "color": "2D3748", "logo": "prisma", "logoColor": "ffffff", "style": "flat" },
-    { "id": "drizzle-fw", "label": "ORM", "message": "Drizzle", "color": "C5F74F", "logo": "drizzle", "logoColor": "000000", "style": "flat" },
-    { "id": "tailwind-fw", "label": "CSS", "message": "Tailwind CSS", "color": "06B6D4", "logo": "tailwindcss", "logoColor": "ffffff", "style": "flat" },
-    { "id": "bootstrap-fw", "label": "CSS", "message": "Bootstrap", "color": "7952B3", "logo": "bootstrap", "logoColor": "ffffff", "style": "flat" },
-    { "id": "sass-fw", "label": "CSS", "message": "Sass", "color": "CC6699", "logo": "sass", "logoColor": "ffffff", "style": "flat" },
-    { "id": "jquery-fw", "label": "Library", "message": "jQuery", "color": "0769AD", "logo": "jquery", "logoColor": "ffffff", "style": "flat" },
-    { "id": "threejs-fw", "label": "3D", "message": "Three.js", "color": "000000", "logo": "threedotjs", "logoColor": "ffffff", "style": "flat" },
-    { "id": "d3js-fw", "label": "Data", "message": "D3.js", "color": "F9A03C", "logo": "d3dotjs", "logoColor": "ffffff", "style": "flat" }
+    {
+      "id": "react",
+      "label": "Frontend",
+      "message": "React",
+      "color": "61DAFB",
+      "logo": "react",
+      "logoColor": "000000",
+      "style": "flat"
+    },
+    {
+      "id": "astro-fw",
+      "label": "Framework",
+      "message": "Astro",
+      "color": "BC52EE",
+      "logo": "astro",
+      "logoColor": "ffffff",
+      "style": "flat"
+    },
+    {
+      "id": "vue-fw",
+      "label": "Frontend",
+      "message": "Vue.js",
+      "color": "4FC08D",
+      "logo": "vuedotjs",
+      "logoColor": "ffffff",
+      "style": "flat"
+    },
+    {
+      "id": "svelte-fw",
+      "label": "Frontend",
+      "message": "Svelte",
+      "color": "FF3E00",
+      "logo": "svelte",
+      "logoColor": "ffffff",
+      "style": "flat"
+    },
+    {
+      "id": "nextjs-fw",
+      "label": "Framework",
+      "message": "Next.js",
+      "color": "000000",
+      "logo": "nextdotjs",
+      "logoColor": "ffffff",
+      "style": "flat"
+    },
+    {
+      "id": "nuxt-fw",
+      "label": "Framework",
+      "message": "Nuxt",
+      "color": "00DC82",
+      "logo": "nuxtdotjs",
+      "logoColor": "ffffff",
+      "style": "flat"
+    },
+    {
+      "id": "angular-fw",
+      "label": "Frontend",
+      "message": "Angular",
+      "color": "DD0031",
+      "logo": "angular",
+      "logoColor": "ffffff",
+      "style": "flat"
+    },
+    {
+      "id": "django-fw",
+      "label": "Backend",
+      "message": "Django",
+      "color": "092E20",
+      "logo": "django",
+      "logoColor": "ffffff",
+      "style": "flat"
+    },
+    {
+      "id": "express-fw",
+      "label": "Backend",
+      "message": "Express",
+      "color": "000000",
+      "logo": "express",
+      "logoColor": "ffffff",
+      "style": "flat"
+    },
+    {
+      "id": "fastify-fw",
+      "label": "Backend",
+      "message": "Fastify",
+      "color": "000000",
+      "logo": "fastify",
+      "logoColor": "ffffff",
+      "style": "flat"
+    },
+    {
+      "id": "spring-fw",
+      "label": "Backend",
+      "message": "Spring Boot",
+      "color": "6DB33F",
+      "logo": "springboot",
+      "logoColor": "ffffff",
+      "style": "flat"
+    },
+    {
+      "id": "rails-fw",
+      "label": "Backend",
+      "message": "Rails",
+      "color": "CC0000",
+      "logo": "rubyonrails",
+      "logoColor": "ffffff",
+      "style": "flat"
+    },
+    {
+      "id": "laravel-fw",
+      "label": "Backend",
+      "message": "Laravel",
+      "color": "FF2D20",
+      "logo": "laravel",
+      "logoColor": "ffffff",
+      "style": "flat"
+    },
+    {
+      "id": "flask-fw",
+      "label": "Backend",
+      "message": "Flask",
+      "color": "000000",
+      "logo": "flask",
+      "logoColor": "ffffff",
+      "style": "flat"
+    },
+    {
+      "id": "fastapi-fw",
+      "label": "Backend",
+      "message": "FastAPI",
+      "color": "009688",
+      "logo": "fastapi",
+      "logoColor": "ffffff",
+      "style": "flat"
+    },
+    {
+      "id": "hono-fw",
+      "label": "Backend",
+      "message": "Hono",
+      "color": "E36002",
+      "logo": "hono",
+      "logoColor": "ffffff",
+      "style": "flat"
+    },
+    {
+      "id": "node-fw",
+      "label": "Runtime",
+      "message": "Node.js",
+      "color": "5FA04E",
+      "logo": "nodedotjs",
+      "logoColor": "ffffff",
+      "style": "flat"
+    },
+    {
+      "id": "bun-fw",
+      "label": "Runtime",
+      "message": "Bun",
+      "color": "000000",
+      "logo": "bun",
+      "logoColor": "ffffff",
+      "style": "flat"
+    },
+    {
+      "id": "deno-fw",
+      "label": "Runtime",
+      "message": "Deno",
+      "color": "000000",
+      "logo": "deno",
+      "logoColor": "ffffff",
+      "style": "flat"
+    },
+    {
+      "id": "electron-fw",
+      "label": "Desktop",
+      "message": "Electron",
+      "color": "47848F",
+      "logo": "electron",
+      "logoColor": "ffffff",
+      "style": "flat"
+    },
+    {
+      "id": "tauri-fw",
+      "label": "Desktop",
+      "message": "Tauri",
+      "color": "FFC131",
+      "logo": "tauri",
+      "logoColor": "000000",
+      "style": "flat"
+    },
+    {
+      "id": "htmx-fw",
+      "label": "Frontend",
+      "message": "htmx",
+      "color": "3366CC",
+      "logo": "htmx",
+      "logoColor": "ffffff",
+      "style": "flat"
+    },
+    {
+      "id": "solid-fw",
+      "label": "Frontend",
+      "message": "SolidJS",
+      "color": "2c4f7c",
+      "logo": "solid",
+      "logoColor": "ffffff",
+      "style": "flat"
+    },
+    {
+      "id": "qwik-fw",
+      "label": "Frontend",
+      "message": "Qwik",
+      "color": "AC7EF4",
+      "logo": "qwik",
+      "logoColor": "ffffff",
+      "style": "flat"
+    },
+    {
+      "id": "remix-fw",
+      "label": "Framework",
+      "message": "Remix",
+      "color": "000000",
+      "logo": "remix",
+      "logoColor": "ffffff",
+      "style": "flat"
+    },
+    {
+      "id": "gatsby-fw",
+      "label": "Framework",
+      "message": "Gatsby",
+      "color": "663399",
+      "logo": "gatsby",
+      "logoColor": "ffffff",
+      "style": "flat"
+    },
+    {
+      "id": "redux-fw",
+      "label": "State",
+      "message": "Redux",
+      "color": "764ABC",
+      "logo": "redux",
+      "logoColor": "ffffff",
+      "style": "flat"
+    },
+    {
+      "id": "graphql-fw",
+      "label": "API",
+      "message": "GraphQL",
+      "color": "E10098",
+      "logo": "graphql",
+      "logoColor": "ffffff",
+      "style": "flat"
+    },
+    {
+      "id": "trpc-fw",
+      "label": "API",
+      "message": "tRPC",
+      "color": "2596BE",
+      "logo": "trpc",
+      "logoColor": "ffffff",
+      "style": "flat"
+    },
+    {
+      "id": "prisma-fw",
+      "label": "ORM",
+      "message": "Prisma",
+      "color": "2D3748",
+      "logo": "prisma",
+      "logoColor": "ffffff",
+      "style": "flat"
+    },
+    {
+      "id": "drizzle-fw",
+      "label": "ORM",
+      "message": "Drizzle",
+      "color": "C5F74F",
+      "logo": "drizzle",
+      "logoColor": "000000",
+      "style": "flat"
+    },
+    {
+      "id": "tailwind-fw",
+      "label": "CSS",
+      "message": "Tailwind CSS",
+      "color": "06B6D4",
+      "logo": "tailwindcss",
+      "logoColor": "ffffff",
+      "style": "flat"
+    },
+    {
+      "id": "bootstrap-fw",
+      "label": "CSS",
+      "message": "Bootstrap",
+      "color": "7952B3",
+      "logo": "bootstrap",
+      "logoColor": "ffffff",
+      "style": "flat"
+    },
+    {
+      "id": "sass-fw",
+      "label": "CSS",
+      "message": "Sass",
+      "color": "CC6699",
+      "logo": "sass",
+      "logoColor": "ffffff",
+      "style": "flat"
+    },
+    {
+      "id": "jquery-fw",
+      "label": "Library",
+      "message": "jQuery",
+      "color": "0769AD",
+      "logo": "jquery",
+      "logoColor": "ffffff",
+      "style": "flat"
+    },
+    {
+      "id": "threejs-fw",
+      "label": "3D",
+      "message": "Three.js",
+      "color": "000000",
+      "logo": "threedotjs",
+      "logoColor": "ffffff",
+      "style": "flat"
+    },
+    {
+      "id": "d3js-fw",
+      "label": "Data",
+      "message": "D3.js",
+      "color": "F9A03C",
+      "logo": "d3dotjs",
+      "logoColor": "ffffff",
+      "style": "flat"
+    }
   ]
 }

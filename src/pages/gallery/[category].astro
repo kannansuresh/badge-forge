@@ -30,24 +30,28 @@ const { categoryName, categoryDescription, badges } = entry.data;
     </div>
 
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
-      {badges.map((badge) => (
-        <GalleryBadgeCard
-          id={badge.id}
-          label={badge.label}
-          message={badge.message}
-          color={badge.color}
-          logo={badge.logo}
-          logoColor={badge.logoColor}
-          style={badge.style}
-          labelColor={badge.labelColor}
-        />
-      ))}
+      {
+        badges.map((badge) => (
+          <GalleryBadgeCard
+            id={badge.id}
+            label={badge.label}
+            message={badge.message}
+            color={badge.color}
+            logo={badge.logo}
+            logoColor={badge.logoColor}
+            style={badge.style}
+            labelColor={badge.labelColor}
+          />
+        ))
+      }
     </div>
 
-    {badges.length === 0 && (
-      <div class="text-center py-20">
-        <p class="text-base-content/60">No badges in this category yet.</p>
-      </div>
-    )}
+    {
+      badges.length === 0 && (
+        <div class="text-center py-20">
+          <p class="text-base-content/60">No badges in this category yet.</p>
+        </div>
+      )
+    }
   </div>
 </Layout>

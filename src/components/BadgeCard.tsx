@@ -23,7 +23,13 @@ interface BadgeCardProps {
   showActions?: boolean;
 }
 
-export default function BadgeCard({ badge, onEdit, onDelete, onSave, showActions = true }: BadgeCardProps) {
+export default function BadgeCard({
+  badge,
+  onEdit,
+  onDelete,
+  onSave,
+  showActions = true,
+}: BadgeCardProps) {
   const [copied, setCopied] = useState<'md' | 'html' | 'url' | null>(null);
   const [imgError, setImgError] = useState(false);
 
@@ -39,10 +45,8 @@ export default function BadgeCard({ badge, onEdit, onDelete, onSave, showActions
 
   const copy = useCallback(
     async (type: 'md' | 'html' | 'url') => {
-      let text = '';
-      if (type === 'md') text = toMarkdown(shieldsUrl);
-      else if (type === 'html') text = toHtml(shieldsUrl);
-      else text = shieldsUrl;
+      const text =
+        type === 'md' ? toMarkdown(shieldsUrl) : type === 'html' ? toHtml(shieldsUrl) : shieldsUrl;
       try {
         await navigator.clipboard.writeText(text);
       } catch {
@@ -79,13 +83,14 @@ export default function BadgeCard({ badge, onEdit, onDelete, onSave, showActions
       </figure>
 
       <div className="card-body p-4 gap-2">
-        {badge.name && (
-          <h3 className="card-title text-sm">{badge.name}</h3>
-        )}
+        {badge.name && <h3 className="card-title text-sm">{badge.name}</h3>}
 
         <div className="flex flex-wrap gap-1">
           <span className="badge badge-xs badge-outline">{badge.style || 'flat'}</span>
-          <span className="badge badge-xs" style={{ backgroundColor: `#${badge.color}`, color: '#fff' }}>
+          <span
+            className="badge badge-xs"
+            style={{ backgroundColor: `#${badge.color}`, color: '#fff' }}
+          >
             #{badge.color}
           </span>
           {badge.logo && <span className="badge badge-xs badge-ghost">{badge.logo}</span>}
@@ -98,18 +103,33 @@ export default function BadgeCard({ badge, onEdit, onDelete, onSave, showActions
         {showActions && (
           <div className="card-actions justify-end mt-1 flex-wrap gap-1">
             <div className="join join-horizontal">
-              <button className={`join-item btn btn-xs ${copied === 'md' ? 'btn-success' : 'btn-ghost'}`} onClick={() => copy('md')} title="Copy Markdown">
+              <button
+                className={`join-item btn btn-xs ${copied === 'md' ? 'btn-success' : 'btn-ghost'}`}
+                onClick={() => copy('md')}
+                title="Copy Markdown"
+              >
                 {copied === 'md' ? '✓' : 'MD'}
               </button>
-              <button className={`join-item btn btn-xs ${copied === 'html' ? 'btn-success' : 'btn-ghost'}`} onClick={() => copy('html')} title="Copy HTML">
+              <button
+                className={`join-item btn btn-xs ${copied === 'html' ? 'btn-success' : 'btn-ghost'}`}
+                onClick={() => copy('html')}
+                title="Copy HTML"
+              >
                 {copied === 'html' ? '✓' : 'HTML'}
               </button>
-              <button className={`join-item btn btn-xs ${copied === 'url' ? 'btn-success' : 'btn-ghost'}`} onClick={() => copy('url')} title="Copy URL">
+              <button
+                className={`join-item btn btn-xs ${copied === 'url' ? 'btn-success' : 'btn-ghost'}`}
+                onClick={() => copy('url')}
+                title="Copy URL"
+              >
                 {copied === 'url' ? '✓' : 'URL'}
               </button>
             </div>
             {onEdit && (
-              <button className="btn btn-xs btn-primary btn-outline gap-1" onClick={() => onEdit(badge)}>
+              <button
+                className="btn btn-xs btn-primary btn-outline gap-1"
+                onClick={() => onEdit(badge)}
+              >
                 <Pencil className="w-3 h-3" />
                 Edit
               </button>
@@ -120,9 +140,18 @@ export default function BadgeCard({ badge, onEdit, onDelete, onSave, showActions
               </button>
             )}
             {onDelete && (
-              <button className="btn btn-xs btn-ghost text-error" onClick={() => onDelete(badge)} title="Delete">
+              <button
+                className="btn btn-xs btn-ghost text-error"
+                onClick={() => onDelete(badge)}
+                title="Delete"
+              >
                 <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16" />
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"
+                  />
                 </svg>
               </button>
             )}

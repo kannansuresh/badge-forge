@@ -1,9 +1,9 @@
-@import "tailwindcss";
+@import 'tailwindcss';
 @plugin "daisyui";
 
 /* ── Light theme ────────────────────────────────────── */
 @plugin "daisyui/theme" {
-  name: "light";
+  name: 'light';
   default: true;
   --font-family-sans: var(--font-sans);
   --font-family-mono: var(--font-mono);
@@ -29,7 +29,7 @@
 
 /* ── Dark theme ─────────────────────────────────────── */
 @plugin "daisyui/theme" {
-  name: "dark";
+  name: 'dark';
   default: false;
   --font-family-sans: var(--font-sans);
   --font-family-mono: var(--font-mono);

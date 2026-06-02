@@ -1,6 +1,20 @@
 import { useState, useEffect, useLayoutEffect, useCallback, useMemo, useRef } from 'react';
-import { Search, Save, RefreshCw, FileCode, Code2, Link, FileText, BookOpen } from 'lucide-react';
-import { buildShieldsUrl, saveBadge, isDuplicate, readClipboard, getIconPreviewPref, setIconPreviewPref, clearIconCache, getIconCacheCount, getIconSvg, toMarkdown, toHtml, toRst, toAsciiDoc } from '../lib/storage';
+import { Save, RefreshCw, FileCode, Code2, Link, FileText, BookOpen } from 'lucide-react';
+import {
+  buildShieldsUrl,
+  saveBadge,
+  isDuplicate,
+  readClipboard,
+  getIconPreviewPref,
+  setIconPreviewPref,
+  clearIconCache,
+  getIconCacheCount,
+  getIconSvg,
+  toMarkdown,
+  toHtml,
+  toRst,
+  toAsciiDoc,
+} from '../lib/storage';
 import { loadIcons, searchIcons, type SimpleIconData } from '../lib/icons';
 
 interface BadgeParams {
@@ -13,7 +27,13 @@ interface BadgeParams {
   labelColor: string;
 }
 
-const STYLES: BadgeParams['style'][] = ['flat', 'flat-square', 'plastic', 'for-the-badge', 'social'];
+const STYLES: BadgeParams['style'][] = [
+  'flat',
+  'flat-square',
+  'plastic',
+  'for-the-badge',
+  'social',
+];
 
 interface LiveStudioProps {
   initialParams?: Partial<BadgeParams>;
@@ -39,14 +59,20 @@ function resolveRuntimeParams(): Partial<BadgeParams> {
   if (['label', 'message', 'color'].some((k) => sp.has(k))) {
     const r: Partial<BadgeParams> = {};
     const v = (k: string) => sp.get(k) || undefined;
-    const l = v('label'); if (l) r.label = l;
-    const m = v('message'); if (m) r.message = m;
-    const c = v('color'); if (c) r.color = c;
-    const lo = v('logo'); if (lo) r.logo = lo;
-    const lc = v('logoColor'); if (lc) r.logoColor = lc;
+    const l = v('label');
+    if (l) r.label = l;
+    const m = v('message');
+    if (m) r.message = m;
+    const c = v('color');
+    if (c) r.color = c;
+    const lo = v('logo');
+    if (lo) r.logo = lo;
+    const lc = v('logoColor');
+    if (lc) r.logoColor = lc;
     const st = v('style') as BadgeParams['style'] | null;
     if (st && STYLES.includes(st)) r.style = st;
-    const lb = v('labelColor'); if (lb) r.labelColor = lb;
+    const lb = v('labelColor');
+    if (lb) r.labelColor = lb;
     return r;
   }
 
@@ -69,7 +95,7 @@ export default function LiveStudio({ initialParams }: LiveStudioProps) {
   const effectiveAlt = altCustom ?? params.message;
   const [logoQuery, setLogoQuery] = useState('');
   const [logoResults, setLogoResults] = useState<SimpleIconData[]>([]);
-  const [iconsLoaded, setIconsLoaded] = useState(false);
+
   const [showLogoDropdown, setShowLogoDropdown] = useState(false);
   const [mobilePreviewOpen, setMobilePreviewOpen] = useState(false);
   const [iconPreviewEnabled, setIconPreviewEnabled] = useState(false);
@@ -121,7 +147,6 @@ export default function LiveStudio({ initialParams }: LiveStudioProps) {
     iconsLoadingRef.current = true;
     try {
       allIconsRef.current = await loadIcons();
-      setIconsLoaded(true);
     } finally {
       iconsLoadingRef.current = false;
     }
@@ -159,12 +184,9 @@ export default function LiveStudio({ initialParams }: LiveStudioProps) {
     setShowLogoDropdown(false);
   }, []);
 
-  const updateParam = useCallback(
-    <K extends keyof BadgeParams>(key: K, value: BadgeParams[K]) => {
-      setParams((prev) => ({ ...prev, [key]: value }));
-    },
-    [],
-  );
+  const updateParam = useCallback(<K extends keyof BadgeParams>(key: K, value: BadgeParams[K]) => {
+    setParams((prev) => ({ ...prev, [key]: value }));
+  }, []);
 
   const shieldsUrl = useMemo(() => buildShieldsUrl(params), [params]);
 
@@ -200,7 +222,6 @@ export default function LiveStudio({ initialParams }: LiveStudioProps) {
     <div className="flex flex-col lg:flex-row gap-6 lg:gap-8">
       {/* ── LEFT: Form ────────────────────────────────── */}
       <div className="lg:w-1/2 space-y-5 min-w-0">
-
         {/* Header + Save */}
         <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
           <div>
@@ -212,14 +233,15 @@ export default function LiveStudio({ initialParams }: LiveStudioProps) {
             onClick={handleSave}
             disabled={saveStatus === 'saving' || saveStatus === 'duplicate'}
           >
-            {saveStatus === 'duplicate'
-              ? 'Already saved!'
-              : saveStatus === 'saved'
-                ? '✓ Saved!'
-                : saveStatus === 'saving'
-                  ? <span className="loading loading-spinner loading-sm" />
-                  : <Save className="w-4 h-4" />
-            }
+            {saveStatus === 'duplicate' ? (
+              'Already saved!'
+            ) : saveStatus === 'saved' ? (
+              '✓ Saved!'
+            ) : saveStatus === 'saving' ? (
+              <span className="loading loading-spinner loading-sm" />
+            ) : (
+              <Save className="w-4 h-4" />
+            )}
             {saveStatus === 'idle' && 'Save'}
           </button>
         </div>
@@ -277,11 +299,22 @@ export default function LiveStudio({ initialParams }: LiveStudioProps) {
 
             {showIconOptIn && (
               <div className="alert alert-soft mb-2 text-sm">
-                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+                  />
+                </svg>
                 <span>Show brand icon previews? SVGs are cached locally.</span>
                 <div className="flex gap-1">
-                  <button className="btn btn-xs btn-primary" onClick={handleEnablePreviews}>Yes</button>
-                  <button className="btn btn-xs btn-ghost" onClick={handleDisablePreviews}>No</button>
+                  <button className="btn btn-xs btn-primary" onClick={handleEnablePreviews}>
+                    Yes
+                  </button>
+                  <button className="btn btn-xs btn-ghost" onClick={handleDisablePreviews}>
+                    No
+                  </button>
                 </div>
               </div>
             )}
@@ -294,7 +327,8 @@ export default function LiveStudio({ initialParams }: LiveStudioProps) {
               onFocus={() => {
                 ensureIconsLoaded();
                 if (logoResults.length > 0) setShowLogoDropdown(true);
-                if (localStorage.getItem('badgecraft-icon-previews') === null) setShowIconOptIn(true);
+                if (localStorage.getItem('badgecraft-icon-previews') === null)
+                  setShowIconOptIn(true);
               }}
               placeholder="react"
               autoComplete="off"
@@ -306,23 +340,48 @@ export default function LiveStudio({ initialParams }: LiveStudioProps) {
               <ul className="absolute top-full mt-1 z-30 w-full bg-base-100 border border-base-300 rounded-box shadow-lg max-h-56 overflow-y-auto">
                 {logoResults.map((icon) => (
                   <li key={icon.slug}>
-                    <button className="w-full text-left px-3 py-2 flex items-center gap-3 hover:bg-base-200 transition-colors" onClick={() => selectLogo(icon)}>
-                      {iconPreviewEnabled ? <IconPreview slug={icon.slug} hex={icon.hex} /> : <span className="w-5 h-5 rounded shrink-0 ring-1 ring-base-300 ring-inset" style={{ backgroundColor: `#${icon.hex}` }} />}
+                    <button
+                      className="w-full text-left px-3 py-2 flex items-center gap-3 hover:bg-base-200 transition-colors"
+                      onClick={() => selectLogo(icon)}
+                    >
+                      {iconPreviewEnabled ? (
+                        <IconPreview slug={icon.slug} hex={icon.hex} />
+                      ) : (
+                        <span
+                          className="w-5 h-5 rounded shrink-0 ring-1 ring-base-300 ring-inset"
+                          style={{ backgroundColor: `#${icon.hex}` }}
+                        />
+                      )}
                       <span className="font-medium text-sm truncate">{icon.title}</span>
-                      <span className="text-xs text-base-content/40 ml-auto font-mono shrink-0">#{icon.hex}</span>
+                      <span className="text-xs text-base-content/40 ml-auto font-mono shrink-0">
+                        #{icon.hex}
+                      </span>
                     </button>
                   </li>
                 ))}
-                {logoResults.length === 0 && <li className="px-3 py-2 text-sm text-base-content/50">No icons found</li>}
+                {logoResults.length === 0 && (
+                  <li className="px-3 py-2 text-sm text-base-content/50">No icons found</li>
+                )}
               </ul>
             )}
             <div className="fieldset-label flex items-center justify-between">
               <span>Find a brand icon — auto-applies its official color</span>
               {iconPreviewEnabled && (
                 <span className="inline-flex items-center gap-1 shrink-0">
-                  <span className="text-base-content/40">{iconCacheCount > 0 ? `${iconCacheCount} cached` : ''}</span>
-                  <button className="btn btn-xs btn-ghost text-base-content/40" onClick={handleRefreshIcons} disabled={refreshingIcons} title="Refresh icon cache">
-                    {refreshingIcons ? <span className="loading loading-spinner loading-xs" /> : <RefreshCw className="w-3 h-3" />}
+                  <span className="text-base-content/40">
+                    {iconCacheCount > 0 ? `${iconCacheCount} cached` : ''}
+                  </span>
+                  <button
+                    className="btn btn-xs btn-ghost text-base-content/40"
+                    onClick={handleRefreshIcons}
+                    disabled={refreshingIcons}
+                    title="Refresh icon cache"
+                  >
+                    {refreshingIcons ? (
+                      <span className="loading loading-spinner loading-xs" />
+                    ) : (
+                      <RefreshCw className="w-3 h-3" />
+                    )}
                   </button>
                 </span>
               )}
@@ -355,12 +414,14 @@ export default function LiveStudio({ initialParams }: LiveStudioProps) {
           </div>
           <p className="fieldset-label">Controls the badge shape — flat, rounded, or bold</p>
         </fieldset>
-
       </div>
 
       {/* ── RIGHT: Preview ─────────────────────────────── */}
       <div className="lg:w-1/2 lg:sticky lg:top-24 lg:self-start space-y-5 min-w-0 overflow-hidden">
-        <button className="lg:hidden btn btn-outline btn-sm w-full" onClick={() => setMobilePreviewOpen(!mobilePreviewOpen)}>
+        <button
+          className="lg:hidden btn btn-outline btn-sm w-full"
+          onClick={() => setMobilePreviewOpen(!mobilePreviewOpen)}
+        >
           {mobilePreviewOpen ? 'Hide Preview' : 'Show Preview'}
         </button>
 
@@ -368,9 +429,16 @@ export default function LiveStudio({ initialParams }: LiveStudioProps) {
           {/* Magnified */}
           <div className="card bg-base-200 border border-base-300">
             <div className="card-body p-3 sm:p-4">
-              <h3 className="card-title text-xs sm:text-sm opacity-70 font-medium uppercase tracking-wider">Magnified View</h3>
+              <h3 className="card-title text-xs sm:text-sm opacity-70 font-medium uppercase tracking-wider">
+                Magnified View
+              </h3>
               <div className="flex items-center justify-center min-h-24 py-4">
-                <img src={shieldsUrl} alt="Badge preview (magnified)" className="scale-[2.5]" style={{ imageRendering: 'auto' }} />
+                <img
+                  src={shieldsUrl}
+                  alt="Badge preview (magnified)"
+                  className="scale-[2.5]"
+                  style={{ imageRendering: 'auto' }}
+                />
               </div>
             </div>
           </div>
@@ -378,7 +446,9 @@ export default function LiveStudio({ initialParams }: LiveStudioProps) {
           {/* Actual size */}
           <div className="card bg-base-200 border border-base-300">
             <div className="card-body p-3 sm:p-4">
-              <h3 className="card-title text-xs sm:text-sm opacity-70 font-medium uppercase tracking-wider">Actual Size</h3>
+              <h3 className="card-title text-xs sm:text-sm opacity-70 font-medium uppercase tracking-wider">
+                Actual Size
+              </h3>
               <div className="flex items-center justify-center min-h-13">
                 <img src={shieldsUrl} alt="Badge preview (actual size)" />
               </div>
@@ -389,12 +459,17 @@ export default function LiveStudio({ initialParams }: LiveStudioProps) {
           <div className="card bg-base-200 border border-base-300">
             <div className="card-body p-3 sm:p-4 gap-2">
               <div className="flex items-center justify-between">
-                <h3 className="card-title text-xs sm:text-sm opacity-70 font-medium uppercase tracking-wider">Alt Text</h3>
+                <h3 className="card-title text-xs sm:text-sm opacity-70 font-medium uppercase tracking-wider">
+                  Alt Text
+                </h3>
                 <div className="flex gap-1">
                   {altCustom !== null && (
                     <button
                       className="btn btn-xs btn-ghost text-base-content/40"
-                      onClick={() => { setAltCustom(null); setAltEditing(false); }}
+                      onClick={() => {
+                        setAltCustom(null);
+                        setAltEditing(false);
+                      }}
                       title="Reset to message text"
                     >
                       Reset
@@ -402,7 +477,13 @@ export default function LiveStudio({ initialParams }: LiveStudioProps) {
                   )}
                   <button
                     className="btn btn-xs btn-ghost"
-                    onClick={() => { if (altEditing) setAltEditing(false); else { setAltCustom(effectiveAlt); setAltEditing(true); } }}
+                    onClick={() => {
+                      if (altEditing) setAltEditing(false);
+                      else {
+                        setAltCustom(effectiveAlt);
+                        setAltEditing(true);
+                      }
+                    }}
                     title={altEditing ? 'Done editing' : 'Edit alt text'}
                   >
                     {altEditing ? 'Done' : 'Edit'}
@@ -436,7 +517,12 @@ export default function LiveStudio({ initialParams }: LiveStudioProps) {
 
         {!mobilePreviewOpen && (
           <div className="lg:hidden fixed bottom-4 left-4 right-4 z-40">
-            <button className="btn btn-primary w-full shadow-xl" onClick={() => setMobilePreviewOpen(true)}>Preview Badge</button>
+            <button
+              className="btn btn-primary w-full shadow-xl"
+              onClick={() => setMobilePreviewOpen(true)}
+            >
+              Preview Badge
+            </button>
           </div>
         )}
       </div>
@@ -456,33 +542,72 @@ const PALETTE = [
   { hex: '3b82f6', label: 'Info' },
 ];
 
-function ColorInput({ id, label, value, onChange, placeholder, hint }: {
-  id: string; label: string; value: string; onChange: (v: string) => void; placeholder: string; hint?: string;
+function ColorInput({
+  id,
+  label,
+  value,
+  onChange,
+  placeholder,
+  hint,
+}: {
+  id: string;
+  label: string;
+  value: string;
+  onChange: (v: string) => void;
+  placeholder: string;
+  hint?: string;
 }) {
   return (
     <fieldset className="fieldset">
       <legend className="fieldset-legend">{label}</legend>
       <div className="join w-full">
-        <span className="join-item bg-base-200 px-3 flex items-center text-sm font-mono ring-1 ring-inset ring-base-300">#</span>
-        <input id={id} type="text" className="input join-item w-full font-mono" value={value} maxLength={6}
-          onChange={(e) => onChange(e.target.value.replace(/[^0-9a-fA-F]/g, '').slice(0, 6))} placeholder={placeholder} />
+        <span className="join-item bg-base-200 px-3 flex items-center text-sm font-mono ring-1 ring-inset ring-base-300">
+          #
+        </span>
+        <input
+          id={id}
+          type="text"
+          className="input join-item w-full font-mono"
+          value={value}
+          maxLength={6}
+          onChange={(e) => onChange(e.target.value.replace(/[^0-9a-fA-F]/g, '').slice(0, 6))}
+          placeholder={placeholder}
+        />
         <div className="dropdown dropdown-end join-item">
-          <div tabIndex={0} role="button" className="w-10 h-full cursor-pointer rounded-r-box ring-1 ring-inset ring-base-300"
-            style={{ backgroundColor: value ? `#${value}` : '#ccc' }} />
-          <div tabIndex={0} className="dropdown-content z-30 mt-1 p-2 shadow bg-base-100 rounded-box border border-base-300 w-48">
+          <div
+            tabIndex={0}
+            role="button"
+            className="w-10 h-full cursor-pointer rounded-r-box ring-1 ring-inset ring-base-300"
+            style={{ backgroundColor: value ? `#${value}` : '#ccc' }}
+          />
+          <div
+            tabIndex={0}
+            className="dropdown-content z-30 mt-1 p-2 shadow bg-base-100 rounded-box border border-base-300 w-48"
+          >
             <p className="px-1 py-1 text-xs text-base-content/50 font-medium">Palette</p>
             <div className="flex flex-wrap gap-1.5 px-1 py-1">
               {PALETTE.map((c) => (
-                <button key={c.hex} className={`w-6 h-6 rounded-full border-2 transition-transform hover:scale-125 ${value === c.hex ? 'border-base-content' : 'border-base-300'}`}
-                  style={{ backgroundColor: `#${c.hex}` }} onClick={() => onChange(c.hex)} title={c.label} />
+                <button
+                  key={c.hex}
+                  className={`w-6 h-6 rounded-full border-2 transition-transform hover:scale-125 ${value === c.hex ? 'border-base-content' : 'border-base-300'}`}
+                  style={{ backgroundColor: `#${c.hex}` }}
+                  onClick={() => onChange(c.hex)}
+                  title={c.label}
+                />
               ))}
             </div>
             <div className="divider my-1" />
             <label className="flex items-center gap-2 px-2 py-1.5 cursor-pointer hover:bg-base-200 rounded text-sm">
-              <span className="w-6 h-6 rounded-full border-2 border-dashed border-base-300 flex items-center justify-center text-[10px]">+</span>
+              <span className="w-6 h-6 rounded-full border-2 border-dashed border-base-300 flex items-center justify-center text-[10px]">
+                +
+              </span>
               <span>Custom</span>
-              <input type="color" className="absolute opacity-0 w-0 h-0"
-                value={`#${value || '000000'}`} onChange={(e) => onChange(e.target.value.replace('#', ''))} />
+              <input
+                type="color"
+                className="absolute opacity-0 w-0 h-0"
+                value={`#${value || '000000'}`}
+                onChange={(e) => onChange(e.target.value.replace('#', ''))}
+              />
             </label>
           </div>
         </div>
@@ -498,14 +623,42 @@ function IconPreview({ slug, hex }: { slug: string; hex: string }) {
   const [error, setError] = useState(false);
   const mountedRef = useRef(true);
   useEffect(() => {
-    mountedRef.current = true; setSvg(null); setError(false);
-    getIconSvg(slug).then((d) => { if (mountedRef.current) setSvg(d); }).catch(() => { if (mountedRef.current) setError(true); });
-    return () => { mountedRef.current = false; };
+    mountedRef.current = true;
+    setSvg(null);
+    setError(false);
+    getIconSvg(slug)
+      .then((d) => {
+        if (mountedRef.current) setSvg(d);
+      })
+      .catch(() => {
+        if (mountedRef.current) setError(true);
+      });
+    return () => {
+      mountedRef.current = false;
+    };
   }, [slug]);
-  if (error) return <span className="w-5 h-5 rounded shrink-0 ring-1 ring-base-300 ring-inset" style={{ backgroundColor: `#${hex}` }} />;
-  if (!svg) return <span className="w-5 h-5 rounded shrink-0 animate-pulse" style={{ backgroundColor: `${hex}40` }} />;
-  return <span className="w-5 h-5 shrink-0 inline-flex items-center justify-center"
-    dangerouslySetInnerHTML={{ __html: svg.replace(/width="[^"]*"/, 'width="20"').replace(/height="[^"]*"/, 'height="20"') }} />;
+  if (error)
+    return (
+      <span
+        className="w-5 h-5 rounded shrink-0 ring-1 ring-base-300 ring-inset"
+        style={{ backgroundColor: `#${hex}` }}
+      />
+    );
+  if (!svg)
+    return (
+      <span
+        className="w-5 h-5 rounded shrink-0 animate-pulse"
+        style={{ backgroundColor: `${hex}40` }}
+      />
+    );
+  return (
+    <span
+      className="w-5 h-5 shrink-0 inline-flex items-center justify-center"
+      dangerouslySetInnerHTML={{
+        __html: svg.replace(/width="[^"]*"/, 'width="20"').replace(/height="[^"]*"/, 'height="20"'),
+      }}
+    />
+  );
 }
 
 /* ── CopyTabs (inline) ───────────────────────────── */
@@ -521,16 +674,30 @@ const TABS: { id: TabId; label: string; Icon: typeof FileCode }[] = [
 function CopyTabs({ shieldsUrl, alt }: { shieldsUrl: string; alt?: string }) {
   const [tab, setTab] = useState<TabId>('md');
   const [copied, setCopied] = useState(false);
-  const snippets = useMemo(() => ({
-    md: toMarkdown(shieldsUrl, alt), rst: toRst(shieldsUrl, alt), adoc: toAsciiDoc(shieldsUrl, alt),
-    html: toHtml(shieldsUrl, alt), url: shieldsUrl,
-  }), [shieldsUrl, alt]);
+  const snippets = useMemo(
+    () => ({
+      md: toMarkdown(shieldsUrl, alt),
+      rst: toRst(shieldsUrl, alt),
+      adoc: toAsciiDoc(shieldsUrl, alt),
+      html: toHtml(shieldsUrl, alt),
+      url: shieldsUrl,
+    }),
+    [shieldsUrl, alt],
+  );
   const copy = useCallback(async () => {
-    try { await navigator.clipboard.writeText(snippets[tab]); } catch {
-      const ta = document.createElement('textarea'); ta.value = snippets[tab]; ta.style.cssText = 'position:fixed;opacity:0';
-      document.body.appendChild(ta); ta.select(); document.execCommand('copy'); document.body.removeChild(ta);
+    try {
+      await navigator.clipboard.writeText(snippets[tab]);
+    } catch {
+      const ta = document.createElement('textarea');
+      ta.value = snippets[tab];
+      ta.style.cssText = 'position:fixed;opacity:0';
+      document.body.appendChild(ta);
+      ta.select();
+      document.execCommand('copy');
+      document.body.removeChild(ta);
     }
-    setCopied(true); setTimeout(() => setCopied(false), 2000);
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2000);
   }, [snippets, tab]);
   return (
     <div className="card bg-base-200 border border-base-300 max-w-full overflow-hidden">
@@ -539,12 +706,22 @@ function CopyTabs({ shieldsUrl, alt }: { shieldsUrl: string; alt?: string }) {
           <div role="tablist" className="tabs tabs-lift">
             {TABS.map(({ id, label, Icon }) => (
               <label key={id} className={`tab gap-1 ${tab === id ? 'tab-active' : ''}`}>
-                <input type="radio" name="copy_tabs" className="tab hidden" checked={tab === id} onChange={() => setTab(id)} />
-                <Icon className="w-3 h-3" /><span className="text-[11px]">{label}</span>
+                <input
+                  type="radio"
+                  name="copy_tabs"
+                  className="tab hidden"
+                  checked={tab === id}
+                  onChange={() => setTab(id)}
+                />
+                <Icon className="w-3 h-3" />
+                <span className="text-[11px]">{label}</span>
               </label>
             ))}
           </div>
-          <button className={`btn btn-xs shrink-0 mt-1 ${copied ? 'btn-success' : 'btn-outline'}`} onClick={copy}>
+          <button
+            className={`btn btn-xs shrink-0 mt-1 ${copied ? 'btn-success' : 'btn-outline'}`}
+            onClick={copy}
+          >
             {copied ? '✓ Copied!' : 'Copy'}
           </button>
         </div>
@@ -555,4 +732,3 @@ function CopyTabs({ shieldsUrl, alt }: { shieldsUrl: string; alt?: string }) {
     </div>
   );
 }
-

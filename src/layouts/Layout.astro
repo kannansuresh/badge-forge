@@ -10,7 +10,9 @@ export interface Props {
 }
 
 const title = Astro.props.title || 'BadgeCraft — Build Beautiful Shields.io Badges';
-const description = Astro.props.description || 'Create, customize, and browse stunning markdown/HTML badges powered by shields.io. Local-first, developer-focused.';
+const description =
+  Astro.props.description ||
+  'Create, customize, and browse stunning markdown/HTML badges powered by shields.io. Local-first, developer-focused.';
 const currentPath = Astro.url.pathname;
 ---
 
@@ -43,11 +45,27 @@ const currentPath = Astro.url.pathname;
           <label tabindex="0" class="btn btn-ghost lg:hidden">
             <Icon name="lucide:menu" class="w-5 h-5" />
           </label>
-          <ul tabindex="0" class="menu menu-sm dropdown-content mt-3 z-10 p-2 shadow bg-base-100 rounded-box w-52">
+          <ul
+            tabindex="0"
+            class="menu menu-sm dropdown-content mt-3 z-10 p-2 shadow bg-base-100 rounded-box w-52"
+          >
             <li><a href="/" class:list={['', currentPath === '/' && 'menu-active']}>Home</a></li>
-            <li><a href="/builder" class:list={['', currentPath === '/builder' && 'menu-active']}>Live Studio</a></li>
-            <li><a href="/gallery" class:list={['', currentPath.startsWith('/gallery') && 'menu-active']}>Gallery</a></li>
-            <li><a href="/dashboard" class:list={['', currentPath === '/dashboard' && 'menu-active']}>My Backpack</a></li>
+            <li>
+              <a href="/builder" class:list={['', currentPath === '/builder' && 'menu-active']}
+                >Live Studio</a
+              >
+            </li>
+            <li>
+              <a
+                href="/gallery"
+                class:list={['', currentPath.startsWith('/gallery') && 'menu-active']}>Gallery</a
+              >
+            </li>
+            <li>
+              <a href="/dashboard" class:list={['', currentPath === '/dashboard' && 'menu-active']}
+                >My Backpack</a
+              >
+            </li>
           </ul>
         </div>
 
@@ -59,14 +77,33 @@ const currentPath = Astro.url.pathname;
 
       <div class="navbar-center hidden lg:flex">
         <ul class="menu menu-horizontal px-1 gap-1 text-sm font-medium">
-          <li><a href="/builder" class:list={['', currentPath === '/builder' && 'menu-active']}>Live Studio</a></li>
-          <li><a href="/gallery" class:list={['', currentPath.startsWith('/gallery') && 'menu-active']}>Gallery</a></li>
-          <li><a href="/dashboard" class:list={['', currentPath === '/dashboard' && 'menu-active']}>My Backpack</a></li>
+          <li>
+            <a href="/builder" class:list={['', currentPath === '/builder' && 'menu-active']}
+              >Live Studio</a
+            >
+          </li>
+          <li>
+            <a
+              href="/gallery"
+              class:list={['', currentPath.startsWith('/gallery') && 'menu-active']}>Gallery</a
+            >
+          </li>
+          <li>
+            <a href="/dashboard" class:list={['', currentPath === '/dashboard' && 'menu-active']}
+              >My Backpack</a
+            >
+          </li>
         </ul>
       </div>
 
       <div class="navbar-end gap-1">
-        <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="btn btn-ghost btn-circle" aria-label="GitHub">
+        <a
+          href="https://github.com"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="btn btn-ghost btn-circle"
+          aria-label="GitHub"
+        >
           <Icon name="lucide:github" class="w-5 h-5" />
         </a>
         <ThemeController />

@@ -3,25 +3,185 @@
   "categorySlug": "languages",
   "categoryDescription": "Popular programming and scripting languages",
   "badges": [
-    { "id": "python-lang", "label": "Language", "message": "Python", "color": "3776AB", "logo": "python", "logoColor": "ffffff", "style": "flat" },
-    { "id": "js-lang", "label": "Language", "message": "JavaScript", "color": "F7DF1E", "logo": "javascript", "logoColor": "000000", "style": "flat" },
-    { "id": "ts-lang", "label": "Language", "message": "TypeScript", "color": "3178C6", "logo": "typescript", "logoColor": "ffffff", "style": "flat" },
-    { "id": "rust-lang", "label": "Language", "message": "Rust", "color": "000000", "logo": "rust", "logoColor": "ffffff", "style": "flat" },
-    { "id": "go-lang", "label": "Language", "message": "Go", "color": "00ADD8", "logo": "go", "logoColor": "ffffff", "style": "flat" },
-    { "id": "java-lang", "label": "Language", "message": "Java", "color": "ED8B00", "logo": "openjdk", "logoColor": "ffffff", "style": "flat" },
-    { "id": "kotlin-lang", "label": "Language", "message": "Kotlin", "color": "7F52FF", "logo": "kotlin", "logoColor": "ffffff", "style": "flat" },
-    { "id": "swift-lang", "label": "Language", "message": "Swift", "color": "F05138", "logo": "swift", "logoColor": "ffffff", "style": "flat" },
-    { "id": "cpp-lang", "label": "Language", "message": "C++", "color": "00599C", "logo": "cplusplus", "logoColor": "ffffff", "style": "flat" },
-    { "id": "csharp-lang", "label": "Language", "message": "C#", "color": "239120", "logo": "csharp", "logoColor": "ffffff", "style": "flat" },
-    { "id": "ruby-lang", "label": "Language", "message": "Ruby", "color": "CC342D", "logo": "ruby", "logoColor": "ffffff", "style": "flat" },
-    { "id": "dart-lang", "label": "Language", "message": "Dart", "color": "0175C2", "logo": "dart", "logoColor": "ffffff", "style": "flat" },
-    { "id": "elixir-lang", "label": "Language", "message": "Elixir", "color": "4B275F", "logo": "elixir", "logoColor": "ffffff", "style": "flat" },
-    { "id": "zig-lang", "label": "Language", "message": "Zig", "color": "F7A41D", "logo": "zig", "logoColor": "ffffff", "style": "flat" },
-    { "id": "lua-lang", "label": "Language", "message": "Lua", "color": "2C2D72", "logo": "lua", "logoColor": "ffffff", "style": "flat" },
-    { "id": "php-lang", "label": "Language", "message": "PHP", "color": "777BB4", "logo": "php", "logoColor": "ffffff", "style": "flat" },
-    { "id": "r-lang", "label": "Language", "message": "R", "color": "276DC3", "logo": "r", "logoColor": "ffffff", "style": "flat" },
-    { "id": "scala-lang", "label": "Language", "message": "Scala", "color": "DC322F", "logo": "scala", "logoColor": "ffffff", "style": "flat" },
-    { "id": "haskell-lang", "label": "Language", "message": "Haskell", "color": "5D4F85", "logo": "haskell", "logoColor": "ffffff", "style": "flat" },
-    { "id": "c-lang", "label": "Language", "message": "C", "color": "555555", "logo": "c", "logoColor": "ffffff", "style": "flat" }
+    {
+      "id": "python-lang",
+      "label": "Language",
+      "message": "Python",
+      "color": "3776AB",
+      "logo": "python",
+      "logoColor": "ffffff",
+      "style": "flat"
+    },
+    {
+      "id": "js-lang",
+      "label": "Language",
+      "message": "JavaScript",
+      "color": "F7DF1E",
+      "logo": "javascript",
+      "logoColor": "000000",
+      "style": "flat"
+    },
+    {
+      "id": "ts-lang",
+      "label": "Language",
+      "message": "TypeScript",
+      "color": "3178C6",
+      "logo": "typescript",
+      "logoColor": "ffffff",
+      "style": "flat"
+    },
+    {
+      "id": "rust-lang",
+      "label": "Language",
+      "message": "Rust",
+      "color": "000000",
+      "logo": "rust",
+      "logoColor": "ffffff",
+      "style": "flat"
+    },
+    {
+      "id": "go-lang",
+      "label": "Language",
+      "message": "Go",
+      "color": "00ADD8",
+      "logo": "go",
+      "logoColor": "ffffff",
+      "style": "flat"
+    },
+    {
+      "id": "java-lang",
+      "label": "Language",
+      "message": "Java",
+      "color": "ED8B00",
+      "logo": "openjdk",
+      "logoColor": "ffffff",
+      "style": "flat"
+    },
+    {
+      "id": "kotlin-lang",
+      "label": "Language",
+      "message": "Kotlin",
+      "color": "7F52FF",
+      "logo": "kotlin",
+      "logoColor": "ffffff",
+      "style": "flat"
+    },
+    {
+      "id": "swift-lang",
+      "label": "Language",
+      "message": "Swift",
+      "color": "F05138",
+      "logo": "swift",
+      "logoColor": "ffffff",
+      "style": "flat"
+    },
+    {
+      "id": "cpp-lang",
+      "label": "Language",
+      "message": "C++",
+      "color": "00599C",
+      "logo": "cplusplus",
+      "logoColor": "ffffff",
+      "style": "flat"
+    },
+    {
+      "id": "csharp-lang",
+      "label": "Language",
+      "message": "C#",
+      "color": "239120",
+      "logo": "csharp",
+      "logoColor": "ffffff",
+      "style": "flat"
+    },
+    {
+      "id": "ruby-lang",
+      "label": "Language",
+      "message": "Ruby",
+      "color": "CC342D",
+      "logo": "ruby",
+      "logoColor": "ffffff",
+      "style": "flat"
+    },
+    {
+      "id": "dart-lang",
+      "label": "Language",
+      "message": "Dart",
+      "color": "0175C2",
+      "logo": "dart",
+      "logoColor": "ffffff",
+      "style": "flat"
+    },
+    {
+      "id": "elixir-lang",
+      "label": "Language",
+      "message": "Elixir",
+      "color": "4B275F",
+      "logo": "elixir",
+      "logoColor": "ffffff",
+      "style": "flat"
+    },
+    {
+      "id": "zig-lang",
+      "label": "Language",
+      "message": "Zig",
+      "color": "F7A41D",
+      "logo": "zig",
+      "logoColor": "ffffff",
+      "style": "flat"
+    },
+    {
+      "id": "lua-lang",
+      "label": "Language",
+      "message": "Lua",
+      "color": "2C2D72",
+      "logo": "lua",
+      "logoColor": "ffffff",
+      "style": "flat"
+    },
+    {
+      "id": "php-lang",
+      "label": "Language",
+      "message": "PHP",
+      "color": "777BB4",
+      "logo": "php",
+      "logoColor": "ffffff",
+      "style": "flat"
+    },
+    {
+      "id": "r-lang",
+      "label": "Language",
+      "message": "R",
+      "color": "276DC3",
+      "logo": "r",
+      "logoColor": "ffffff",
+      "style": "flat"
+    },
+    {
+      "id": "scala-lang",
+      "label": "Language",
+      "message": "Scala",
+      "color": "DC322F",
+      "logo": "scala",
+      "logoColor": "ffffff",
+      "style": "flat"
+    },
+    {
+      "id": "haskell-lang",
+      "label": "Language",
+      "message": "Haskell",
+      "color": "5D4F85",
+      "logo": "haskell",
+      "logoColor": "ffffff",
+      "style": "flat"
+    },
+    {
+      "id": "c-lang",
+      "label": "Language",
+      "message": "C",
+      "color": "555555",
+      "logo": "c",
+      "logoColor": "ffffff",
+      "style": "flat"
+    }
   ]
 }

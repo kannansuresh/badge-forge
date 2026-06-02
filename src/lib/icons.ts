@@ -74,11 +74,7 @@ export async function loadIcons(): Promise<SimpleIconData[]> {
  * Search icons by title, slug, or aliases.
  * Returns the best matches sorted by relevance.
  */
-export function searchIcons(
-  query: string,
-  icons: SimpleIconData[],
-  limit = 20,
-): SimpleIconData[] {
+export function searchIcons(query: string, icons: SimpleIconData[], limit = 20): SimpleIconData[] {
   const q = query.toLowerCase().trim();
   if (!q) return icons.slice(0, limit);
 

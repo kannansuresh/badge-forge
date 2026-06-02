@@ -15,7 +15,10 @@ const galleryCollection = defineCollection({
         color: z.string(),
         logo: z.string().optional(),
         logoColor: z.string().optional(),
-        style: z.enum(['flat', 'flat-square', 'plastic', 'for-the-badge', 'social']).optional().default('flat'),
+        style: z
+          .enum(['flat', 'flat-square', 'plastic', 'for-the-badge', 'social'])
+          .optional()
+          .default('flat'),
         labelColor: z.string().optional(),
       }),
     ),

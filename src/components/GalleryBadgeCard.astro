@@ -10,16 +10,7 @@ export interface Props {
   labelColor?: string;
 }
 
-const {
-  id,
-  label,
-  message,
-  color,
-  logo,
-  logoColor,
-  style = 'flat',
-  labelColor,
-} = Astro.props;
+const { label, message, color, logo, logoColor, style = 'flat', labelColor } = Astro.props;
 
 const params = new URLSearchParams();
 params.set('label', label);
@@ -37,7 +28,10 @@ const htmlSnippet = `<img src="${shieldsUrl}" alt="badge" />`;
 const clipboardData = JSON.stringify({ label, message, color, logo, logoColor, style, labelColor });
 ---
 
-<div class="card bg-base-100 shadow-sm border border-base-300 hover:shadow-md transition-shadow group" data-badgecard>
+<div
+  class="card bg-base-100 shadow-sm border border-base-300 hover:shadow-md transition-shadow group"
+  data-badgecard
+>
   <figure class="px-4 pt-4">
     <img
       src={shieldsUrl}
@@ -50,7 +44,9 @@ const clipboardData = JSON.stringify({ label, message, color, logo, logoColor, s
 
   <div class="card-body p-4 gap-2">
     <h3 class="card-title text-sm">
-      {label} <span class="text-base-content/40 font-normal">·</span> {message}
+      {label}
+      <span class="text-base-content/40 font-normal">·</span>
+      {message}
     </h3>
 
     <div class="flex flex-wrap gap-1">
@@ -60,20 +56,37 @@ const clipboardData = JSON.stringify({ label, message, color, logo, logoColor, s
 
     <div class="card-actions justify-end mt-1">
       <div class="join join-horizontal">
-        <button class="join-item btn btn-xs btn-ghost" data-copy="md" data-content={mdSnippet} title="Copy Markdown">MD</button>
-        <button class="join-item btn btn-xs btn-ghost" data-copy="html" data-content={htmlSnippet} title="Copy HTML">HTML</button>
-        <button class="join-item btn btn-xs btn-ghost" data-copy="url" data-content={shieldsUrl} title="Copy URL">URL</button>
+        <button
+          class="join-item btn btn-xs btn-ghost"
+          data-copy="md"
+          data-content={mdSnippet}
+          title="Copy Markdown">MD</button
+        >
+        <button
+          class="join-item btn btn-xs btn-ghost"
+          data-copy="html"
+          data-content={htmlSnippet}
+          title="Copy HTML">HTML</button
+        >
+        <button
+          class="join-item btn btn-xs btn-ghost"
+          data-copy="url"
+          data-content={shieldsUrl}
+          title="Copy URL">URL</button
+        >
       </div>
-      <button class="btn btn-xs btn-primary btn-outline" data-edit data-clipboard={clipboardData}>Edit</button>
+      <button class="btn btn-xs btn-primary btn-outline" data-edit data-clipboard={clipboardData}
+        >Edit</button
+      >
     </div>
   </div>
 </div>
 
 <script>
-  (function() {
+  (function () {
     const cards = document.querySelectorAll('[data-badgecard]');
-    cards.forEach(card => {
-      card.querySelectorAll('[data-copy]').forEach(btn => {
+    cards.forEach((card) => {
+      card.querySelectorAll('[data-copy]').forEach((btn) => {
         btn.addEventListener('click', async (e) => {
           e.preventDefault();
           const text = btn.getAttribute('data-content');

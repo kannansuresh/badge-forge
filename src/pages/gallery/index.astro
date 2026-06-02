@@ -6,12 +6,16 @@ const gallery = await getCollection('gallery');
 const esc = (s: string) => encodeURIComponent(s.replace(/-/g, '--').replace(/_/g, '__'));
 ---
 
-<Layout title="Gallery — BadgeCraft" description="Browse curated badge categories for tech stacks, project health, and social media.">
+<Layout
+  title="Gallery — BadgeCraft"
+  description="Browse curated badge categories for tech stacks, project health, and social media."
+>
   <div class="max-w-6xl mx-auto px-4 py-12">
     <div class="mb-12">
       <h1 class="text-3xl font-bold mb-2">Discovery Gallery</h1>
       <p class="text-base-content/60 max-w-2xl">
-        Curated badge collections. Click a category to explore, then click any badge to customize it in the Live Studio.
+        Curated badge collections. Click a category to explore, then click any badge to customize it
+        in the Live Studio.
       </p>
     </div>
 
@@ -28,10 +32,15 @@ const esc = (s: string) => encodeURIComponent(s.replace(/-/g, '--').replace(/_/g
             const badgeCount = entry.data.badges.length;
             const previewBadges = entry.data.badges.slice(0, 3);
             return (
-              <a href={`/gallery/${categorySlug}`} class="card bg-base-100 shadow-sm border border-base-300 hover:shadow-md transition-shadow no-underline">
+              <a
+                href={`/gallery/${categorySlug}`}
+                class="card bg-base-100 shadow-sm border border-base-300 hover:shadow-md transition-shadow no-underline"
+              >
                 <div class="card-body">
                   <h2 class="card-title">{categoryName}</h2>
-                  {categoryDescription && <p class="text-sm text-base-content/60 line-clamp-2">{categoryDescription}</p>}
+                  {categoryDescription && (
+                    <p class="text-sm text-base-content/60 line-clamp-2">{categoryDescription}</p>
+                  )}
                   <div class="flex flex-wrap gap-1.5 my-3 min-h-[28px]">
                     {previewBadges.map((badge) => (
                       <img
@@ -43,7 +52,9 @@ const esc = (s: string) => encodeURIComponent(s.replace(/-/g, '--').replace(/_/g
                     ))}
                   </div>
                   <div class="card-actions justify-between items-center">
-                    <span class="badge badge-outline badge-sm">{badgeCount} badge{badgeCount !== 1 ? 's' : ''}</span>
+                    <span class="badge badge-outline badge-sm">
+                      {badgeCount} badge{badgeCount !== 1 ? 's' : ''}
+                    </span>
                     <span class="text-sm text-primary font-medium">Browse →</span>
                   </div>
                 </div>

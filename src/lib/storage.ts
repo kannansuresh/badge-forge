@@ -186,21 +186,25 @@ export async function isDuplicate(params: {
   labelColor: string;
 }): Promise<boolean> {
   const match = await db.badges
-    .where('label').equals(params.label)
-    .and((b) =>
-      b.message === params.message &&
-      b.color === params.color &&
-      b.logo === params.logo &&
-      b.logoColor === params.logoColor &&
-      b.style === params.style &&
-      b.labelColor === params.labelColor
+    .where('label')
+    .equals(params.label)
+    .and(
+      (b) =>
+        b.message === params.message &&
+        b.color === params.color &&
+        b.logo === params.logo &&
+        b.logoColor === params.logoColor &&
+        b.style === params.style &&
+        b.labelColor === params.labelColor,
     )
     .first();
   return !!match;
 }
 
 /** Save a badge configuration to IndexedDB */
-export async function saveBadge(params: Omit<SavedBadge, 'id' | 'shieldsUrl' | 'savedAt'>): Promise<number> {
+export async function saveBadge(
+  params: Omit<SavedBadge, 'id' | 'shieldsUrl' | 'savedAt'>,
+): Promise<number> {
   const shieldsUrl = buildShieldsUrl(params);
   const id = await db.badges.add({
     ...params,
@@ -227,14 +231,14 @@ export async function clearAllBadges(): Promise<void> {
 
 /** Export entire database as a JSON blob */
 export async function exportDatabase(): Promise<Blob> {
-  const DexieExportImport = await import('dexie-export-import');
+  await import('dexie-export-import');
   const blob = await db.export();
   return blob;
 }
 
 /** Import a database from a JSON file, replacing current data */
 export async function importDatabase(file: File): Promise<void> {
-  const DexieExportImport = await import('dexie-export-import');
+  await import('dexie-export-import');
   await db.import(file);
 }
 

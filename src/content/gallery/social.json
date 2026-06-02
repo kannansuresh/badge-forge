@@ -3,24 +3,176 @@
   "categorySlug": "social",
   "categoryDescription": "Social media, messaging, and communication platforms",
   "badges": [
-    { "id": "github-social", "label": "GitHub", "message": "GitHub", "color": "181717", "logo": "github", "logoColor": "ffffff", "style": "flat" },
-    { "id": "gitlab-social", "label": "Git", "message": "GitLab", "color": "FC6D26", "logo": "gitlab", "logoColor": "ffffff", "style": "flat" },
-    { "id": "bitbucket-social", "label": "Git", "message": "Bitbucket", "color": "0052CC", "logo": "bitbucket", "logoColor": "ffffff", "style": "flat" },
-    { "id": "discord-social", "label": "Chat", "message": "Discord", "color": "5865F2", "logo": "discord", "logoColor": "ffffff", "style": "flat" },
-    { "id": "slack-social", "label": "Chat", "message": "Slack", "color": "4A154B", "logo": "slack", "logoColor": "ffffff", "style": "flat" },
-    { "id": "telegram-social", "label": "Chat", "message": "Telegram", "color": "26A5E4", "logo": "telegram", "logoColor": "ffffff", "style": "flat" },
-    { "id": "whatsapp-social", "label": "Chat", "message": "WhatsApp", "color": "25D366", "logo": "whatsapp", "logoColor": "ffffff", "style": "flat" },
-    { "id": "signal-social", "label": "Chat", "message": "Signal", "color": "3A76F0", "logo": "signal", "logoColor": "ffffff", "style": "flat" },
-    { "id": "teams-social", "label": "Chat", "message": "Teams", "color": "6264A7", "logo": "microsoftteams", "logoColor": "ffffff", "style": "flat" },
-    { "id": "zoom-social", "label": "Meet", "message": "Zoom", "color": "0B5CFF", "logo": "zoom", "logoColor": "ffffff", "style": "flat" },
-    { "id": "twitter-social", "label": "Social", "message": "X", "color": "000000", "logo": "x", "logoColor": "ffffff", "style": "flat" },
-    { "id": "linkedin-social", "label": "Social", "message": "LinkedIn", "color": "0A66C2", "logo": "linkedin", "logoColor": "ffffff", "style": "flat" },
-    { "id": "mastodon-social", "label": "Social", "message": "Mastodon", "color": "6364FF", "logo": "mastodon", "logoColor": "ffffff", "style": "flat" },
-    { "id": "youtube-social", "label": "Media", "message": "YouTube", "color": "FF0000", "logo": "youtube", "logoColor": "ffffff", "style": "flat" },
-    { "id": "twitch-social", "label": "Stream", "message": "Twitch", "color": "9146FF", "logo": "twitch", "logoColor": "ffffff", "style": "flat" },
-    { "id": "gmail-social", "label": "Mail", "message": "Gmail", "color": "EA4335", "logo": "gmail", "logoColor": "ffffff", "style": "flat" },
-    { "id": "outlook-social", "label": "Mail", "message": "Outlook", "color": "0078D4", "logo": "microsoftoutlook", "logoColor": "ffffff", "style": "flat" },
-    { "id": "bluesky-social", "label": "Social", "message": "Bluesky", "color": "1185FE", "logo": "bluesky", "logoColor": "ffffff", "style": "flat" },
-    { "id": "threads-social", "label": "Social", "message": "Threads", "color": "000000", "logo": "threads", "logoColor": "ffffff", "style": "flat" }
+    {
+      "id": "github-social",
+      "label": "GitHub",
+      "message": "GitHub",
+      "color": "181717",
+      "logo": "github",
+      "logoColor": "ffffff",
+      "style": "flat"
+    },
+    {
+      "id": "gitlab-social",
+      "label": "Git",
+      "message": "GitLab",
+      "color": "FC6D26",
+      "logo": "gitlab",
+      "logoColor": "ffffff",
+      "style": "flat"
+    },
+    {
+      "id": "bitbucket-social",
+      "label": "Git",
+      "message": "Bitbucket",
+      "color": "0052CC",
+      "logo": "bitbucket",
+      "logoColor": "ffffff",
+      "style": "flat"
+    },
+    {
+      "id": "discord-social",
+      "label": "Chat",
+      "message": "Discord",
+      "color": "5865F2",
+      "logo": "discord",
+      "logoColor": "ffffff",
+      "style": "flat"
+    },
+    {
+      "id": "slack-social",
+      "label": "Chat",
+      "message": "Slack",
+      "color": "4A154B",
+      "logo": "slack",
+      "logoColor": "ffffff",
+      "style": "flat"
+    },
+    {
+      "id": "telegram-social",
+      "label": "Chat",
+      "message": "Telegram",
+      "color": "26A5E4",
+      "logo": "telegram",
+      "logoColor": "ffffff",
+      "style": "flat"
+    },
+    {
+      "id": "whatsapp-social",
+      "label": "Chat",
+      "message": "WhatsApp",
+      "color": "25D366",
+      "logo": "whatsapp",
+      "logoColor": "ffffff",
+      "style": "flat"
+    },
+    {
+      "id": "signal-social",
+      "label": "Chat",
+      "message": "Signal",
+      "color": "3A76F0",
+      "logo": "signal",
+      "logoColor": "ffffff",
+      "style": "flat"
+    },
+    {
+      "id": "teams-social",
+      "label": "Chat",
+      "message": "Teams",
+      "color": "6264A7",
+      "logo": "microsoftteams",
+      "logoColor": "ffffff",
+      "style": "flat"
+    },
+    {
+      "id": "zoom-social",
+      "label": "Meet",
+      "message": "Zoom",
+      "color": "0B5CFF",
+      "logo": "zoom",
+      "logoColor": "ffffff",
+      "style": "flat"
+    },
+    {
+      "id": "twitter-social",
+      "label": "Social",
+      "message": "X",
+      "color": "000000",
+      "logo": "x",
+      "logoColor": "ffffff",
+      "style": "flat"
+    },
+    {
+      "id": "linkedin-social",
+      "label": "Social",
+      "message": "LinkedIn",
+      "color": "0A66C2",
+      "logo": "linkedin",
+      "logoColor": "ffffff",
+      "style": "flat"
+    },
+    {
+      "id": "mastodon-social",
+      "label": "Social",
+      "message": "Mastodon",
+      "color": "6364FF",
+      "logo": "mastodon",
+      "logoColor": "ffffff",
+      "style": "flat"
+    },
+    {
+      "id": "youtube-social",
+      "label": "Media",
+      "message": "YouTube",
+      "color": "FF0000",
+      "logo": "youtube",
+      "logoColor": "ffffff",
+      "style": "flat"
+    },
+    {
+      "id": "twitch-social",
+      "label": "Stream",
+      "message": "Twitch",
+      "color": "9146FF",
+      "logo": "twitch",
+      "logoColor": "ffffff",
+      "style": "flat"
+    },
+    {
+      "id": "gmail-social",
+      "label": "Mail",
+      "message": "Gmail",
+      "color": "EA4335",
+      "logo": "gmail",
+      "logoColor": "ffffff",
+      "style": "flat"
+    },
+    {
+      "id": "outlook-social",
+      "label": "Mail",
+      "message": "Outlook",
+      "color": "0078D4",
+      "logo": "microsoftoutlook",
+      "logoColor": "ffffff",
+      "style": "flat"
+    },
+    {
+      "id": "bluesky-social",
+      "label": "Social",
+      "message": "Bluesky",
+      "color": "1185FE",
+      "logo": "bluesky",
+      "logoColor": "ffffff",
+      "style": "flat"
+    },
+    {
+      "id": "threads-social",
+      "label": "Social",
+      "message": "Threads",
+      "color": "000000",
+      "logo": "threads",
+      "logoColor": "ffffff",
+      "style": "flat"
+    }
   ]
 }
