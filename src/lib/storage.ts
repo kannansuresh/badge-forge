@@ -150,6 +150,24 @@ export function toHtml(shieldsUrl: string, alt?: string): string {
   return `<img src="${shieldsUrl}" alt="${label}" />`;
 }
 
+/** Construct reStructuredText badge string */
+export function toRst(shieldsUrl: string, alt?: string): string {
+  const label = alt || 'badge';
+  return `.. image:: ${shieldsUrl}\n   :alt: ${label}`;
+}
+
+/** Construct AsciiDoc badge string */
+export function toAsciiDoc(shieldsUrl: string, alt?: string): string {
+  const label = alt || 'badge';
+  return `image:${shieldsUrl}[${label}]`;
+}
+
+/** Construct Textile badge string */
+export function toTextile(shieldsUrl: string, alt?: string): string {
+  const label = alt || 'badge';
+  return `!${shieldsUrl}(${label})!`;
+}
+
 /** Save a badge configuration to IndexedDB */
 export async function saveBadge(params: Omit<SavedBadge, 'id' | 'shieldsUrl' | 'savedAt'>): Promise<number> {
   const shieldsUrl = buildShieldsUrl(params);
