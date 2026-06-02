@@ -1,6 +1,7 @@
 ---
 import Layout from '../../layouts/Layout.astro';
 import { getCollection } from 'astro:content';
+import GalleryBadgeCard from '../../components/GalleryBadgeCard';
 
 export async function getStaticPaths() {
   const gallery = await getCollection('gallery');
@@ -34,36 +35,22 @@ const { categoryName, categoryDescription, badges } = entry.data;
       )}
     </div>
 
-    <!-- Badge grid -->
+    <!-- Badge grid with copy + edit actions -->
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
       {badges.map((badge) => (
-        <a
-          href={`/builder?label=${encodeURIComponent(badge.label)}&message=${encodeURIComponent(badge.message)}&color=${badge.color}${badge.logo ? `&logo=${badge.logo}` : ''}${badge.logoColor ? `&logoColor=${badge.logoColor}` : ''}&style=${badge.style || 'flat'}${badge.labelColor ? `&labelColor=${badge.labelColor}` : ''}`}
-          class="card bg-base-100 shadow-sm border border-base-300 card-hover no-underline cursor-pointer group"
-        >
-          <div class="card-body p-4 gap-2 items-center text-center">
-            <!-- Badge image -->
-            <div class="badge-preview-wrapper w-full min-h-[52px]">
-              <img
-                src={`https://img.shields.io/badge/${encodeURIComponent(badge.label)}-${encodeURIComponent(badge.message)}-${badge.color}?style=${badge.style || 'flat'}${badge.logo ? `&logo=${badge.logo}` : ''}${badge.logoColor ? `&logoColor=${badge.logoColor}` : ''}${badge.labelColor ? `&labelColor=${badge.labelColor}` : ''}`}
-                alt={`${badge.label}: ${badge.message}`}
-                class="max-w-full h-auto"
-                loading="lazy"
-              />
-            </div>
-
-            <!-- Label -->
-            <div class="text-sm font-medium text-base-content/70 group-hover:text-primary transition-colors">
-              {badge.label} · {badge.message}
-            </div>
-
-            <!-- Meta chips -->
-            <div class="flex flex-wrap gap-1 justify-center">
-              <span class="badge badge-xs badge-outline">{badge.style || 'flat'}</span>
-              {badge.logo && <span class="badge badge-xs badge-ghost">{badge.logo}</span>}
-            </div>
-          </div>
-        </a>
+        <GalleryBadgeCard
+          client:load
+          badge={{
+            id: badge.id,
+            label: badge.label,
+            message: badge.message,
+            color: badge.color,
+            logo: badge.logo || undefined,
+            logoColor: badge.logoColor || undefined,
+            style: badge.style || 'flat',
+            labelColor: badge.labelColor || undefined,
+          }}
+        />
       ))}
     </div>
 

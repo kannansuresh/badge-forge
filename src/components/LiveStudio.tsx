@@ -1,6 +1,5 @@
 import { useState, useEffect, useCallback, useMemo, useRef } from 'react';
-import BadgeCard from './BadgeCard';
-import { buildShieldsUrl, toMarkdown, toHtml, saveBadge, type SavedBadge } from '../lib/storage';
+import { buildShieldsUrl, toMarkdown, toHtml, saveBadge } from '../lib/storage';
 import { loadIcons, searchIcons, type SimpleIconData } from '../lib/icons';
 
 interface BadgeParams {
@@ -213,45 +212,15 @@ export default function LiveStudio({ initialParams }: LiveStudioProps) {
           </div>
         </div>
 
-        {/* Color */}
-        <div className="form-control">
-          <label className="label">
-            <span className="label-text font-semibold">Badge Color</span>
-            <span className="label-text-alt text-base-content/60">Hex without #</span>
-          </label>
-
-          {/* DaisyUI palette chips */}
-          <div className="flex flex-wrap gap-2 mb-2">
-            {DAISY_COLORS.map((c) => (
-              <button
-                key={c.hex}
-                className={`w-8 h-8 rounded-full border-2 transition-transform hover:scale-110 ${
-                  params.color === c.hex ? 'border-base-content scale-110 ring-2 ring-offset-2 ring-primary' : 'border-base-300'
-                }`}
-                style={{ backgroundColor: `#${c.hex}` }}
-                onClick={() => updateParam('color', c.hex)}
-                title={c.name}
-                aria-label={`Set color to ${c.name}`}
-              />
-            ))}
-          </div>
-
-          <div className="join">
-            <span className="join-item bg-base-200 px-3 flex items-center text-sm font-mono">#</span>
-            <input
-              type="text"
-              className="input input-bordered join-item w-full font-mono"
-              value={params.color}
-              onChange={(e) => updateParam('color', e.target.value.replace(/[^0-9a-fA-F]/g, '').slice(0, 6))}
-              placeholder="6366f1"
-              maxLength={6}
-            />
-            <span
-              className="join-item w-10 border border-base-300"
-              style={{ backgroundColor: `#${params.color || 'ccc'}` }}
-            />
-          </div>
-        </div>
+        {/* Badge Color */}
+        <ColorFieldInput
+          id="badge-color"
+          label="Badge Color"
+          subtitle="Hex without #"
+          value={params.color}
+          onChange={(v) => updateParam('color', v)}
+          placeholder="6366f1"
+        />
 
         {/* Logo Search */}
         <div className="form-control relative" ref={logoSearchRef}>
@@ -307,42 +276,21 @@ export default function LiveStudio({ initialParams }: LiveStudioProps) {
 
         {/* Logo Color + Label Color */}
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-          <div className="form-control">
-            <label className="label" htmlFor="logo-color">
-              <span className="label-text font-semibold">Logo Color</span>
-            </label>
-            <div className="join">
-              <span className="join-item bg-base-200 px-3 flex items-center text-sm font-mono">#</span>
-              <input
-                id="logo-color"
-                type="text"
-                className="input input-bordered join-item w-full font-mono"
-                value={params.logoColor}
-                onChange={(e) => updateParam('logoColor', e.target.value.replace(/[^0-9a-fA-F]/g, '').slice(0, 6))}
-                placeholder="white"
-                maxLength={6}
-              />
-            </div>
-          </div>
-
-          <div className="form-control">
-            <label className="label" htmlFor="label-color">
-              <span className="label-text font-semibold">Label Color</span>
-              <span className="label-text-alt text-base-content/60">Optional left bg</span>
-            </label>
-            <div className="join">
-              <span className="join-item bg-base-200 px-3 flex items-center text-sm font-mono">#</span>
-              <input
-                id="label-color"
-                type="text"
-                className="input input-bordered join-item w-full font-mono"
-                value={params.labelColor}
-                onChange={(e) => updateParam('labelColor', e.target.value.replace(/[^0-9a-fA-F]/g, '').slice(0, 6))}
-                placeholder="Optional"
-                maxLength={6}
-              />
-            </div>
-          </div>
+          <ColorFieldInput
+            id="logo-color"
+            label="Logo Color"
+            value={params.logoColor}
+            onChange={(v) => updateParam('logoColor', v)}
+            placeholder="white"
+          />
+          <ColorFieldInput
+            id="label-color"
+            label="Label Color"
+            subtitle="Optional left bg"
+            value={params.labelColor}
+            onChange={(v) => updateParam('labelColor', v)}
+            placeholder="Optional"
+          />
         </div>
 
         {/* Style Selector */}
@@ -442,6 +390,73 @@ export default function LiveStudio({ initialParams }: LiveStudioProps) {
             </button>
           </div>
         )}
+      </div>
+    </div>
+  );
+}
+
+/** Color field with palette chips + hex input + live preview swatch */
+function ColorFieldInput({
+  id,
+  label,
+  subtitle,
+  value,
+  onChange,
+  placeholder,
+}: {
+  id: string;
+  label: string;
+  subtitle?: string;
+  value: string;
+  onChange: (value: string) => void;
+  placeholder: string;
+}) {
+  return (
+    <div className="form-control">
+      <label className="label" htmlFor={id}>
+        <span className="label-text font-semibold">{label}</span>
+        {subtitle && (
+          <span className="label-text-alt text-base-content/60">{subtitle}</span>
+        )}
+      </label>
+
+      {/* DaisyUI palette chips */}
+      <div className="flex flex-wrap gap-2 mb-2">
+        {DAISY_COLORS.map((c) => (
+          <button
+            key={`${id}-${c.hex}`}
+            className={`w-8 h-8 rounded-full border-2 transition-transform hover:scale-110 ${
+              value === c.hex
+                ? 'border-base-content scale-110 ring-2 ring-offset-2 ring-primary'
+                : 'border-base-300'
+            }`}
+            style={{ backgroundColor: `#${c.hex}` }}
+            onClick={() => onChange(c.hex)}
+            title={c.name}
+            aria-label={`Set ${label.toLowerCase()} to ${c.name}`}
+          />
+        ))}
+      </div>
+
+      <div className="join">
+        <span className="join-item bg-base-200 px-3 flex items-center text-sm font-mono">#</span>
+        <input
+          id={id}
+          type="text"
+          className="input input-bordered join-item w-full font-mono"
+          value={value}
+          onChange={(e) =>
+            onChange(
+              e.target.value.replace(/[^0-9a-fA-F]/g, '').slice(0, 6),
+            )
+          }
+          placeholder={placeholder}
+          maxLength={6}
+        />
+        <span
+          className="join-item w-10 border border-base-300"
+          style={{ backgroundColor: `#${value || 'ccc'}` }}
+        />
       </div>
     </div>
   );
