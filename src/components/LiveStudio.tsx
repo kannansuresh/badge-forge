@@ -215,7 +215,7 @@ export default function LiveStudio({ initialParams }: LiveStudioProps) {
         </div>
 
         {/* ── Label + Message ────────────────────────────── */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 items-start">
           <fieldset className="fieldset">
             <legend className="fieldset-legend">Label</legend>
             <input
@@ -240,40 +240,30 @@ export default function LiveStudio({ initialParams }: LiveStudioProps) {
           </fieldset>
         </div>
 
-        {/* ── Badge Color + Label Color ──────────────────── */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-          <ColorInput
-            id="badge-color"
-            label="Badge Color"
-            value={params.color}
-            onChange={(v) => updateParam('color', v)}
-            placeholder="6366f1"
-            hint="Hex color for the message (right) side"
-          />
+        {/* ── Label Color + Message Color ────────────────── */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 items-start">
           <ColorInput
             id="label-color"
             label="Label Color"
             value={params.labelColor}
             onChange={(v) => updateParam('labelColor', v)}
             placeholder="Optional"
-            hint="Background for the label (left) side — leave blank for default"
+            hint="Background color for the label (left) side — leave blank for default"
+          />
+          <ColorInput
+            id="badge-color"
+            label="Message Color"
+            value={params.color}
+            onChange={(v) => updateParam('color', v)}
+            placeholder="6366f1"
+            hint="Background color for the message (right) side"
           />
         </div>
 
         {/* ── Logo Search + Logo Color ──────────────────── */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 items-start">
           <fieldset className="fieldset relative" ref={logoSearchRef}>
-            <legend className="fieldset-legend flex items-center gap-2">
-              Logo / Icon
-              {iconPreviewEnabled && (
-                <span className="inline-flex items-center gap-1">
-                  <span className="text-xs text-base-content/40 font-normal">{iconCacheCount > 0 ? `${iconCacheCount} cached` : ''}</span>
-                  <button className="btn btn-xs btn-ghost text-base-content/40" onClick={handleRefreshIcons} disabled={refreshingIcons} title="Refresh icon cache">
-                    {refreshingIcons ? <span className="loading loading-spinner loading-xs" /> : <RefreshCw className="w-3 h-3" />}
-                  </button>
-                </span>
-              )}
-            </legend>
+            <legend className="fieldset-legend">Logo / Icon</legend>
 
             {showIconOptIn && (
               <div className="alert alert-soft mb-2 text-sm">
@@ -316,7 +306,17 @@ export default function LiveStudio({ initialParams }: LiveStudioProps) {
                 {logoResults.length === 0 && <li className="px-3 py-2 text-sm text-base-content/50">No icons found</li>}
               </ul>
             )}
-            <p className="fieldset-label">Find a brand icon — auto-applies its official color to the badge</p>
+            <div className="fieldset-label flex items-center justify-between">
+              <span>Find a brand icon — auto-applies its official color</span>
+              {iconPreviewEnabled && (
+                <span className="inline-flex items-center gap-1 shrink-0">
+                  <span className="text-base-content/40">{iconCacheCount > 0 ? `${iconCacheCount} cached` : ''}</span>
+                  <button className="btn btn-xs btn-ghost text-base-content/40" onClick={handleRefreshIcons} disabled={refreshingIcons} title="Refresh icon cache">
+                    {refreshingIcons ? <span className="loading loading-spinner loading-xs" /> : <RefreshCw className="w-3 h-3" />}
+                  </button>
+                </span>
+              )}
+            </div>
           </fieldset>
 
           <ColorInput
