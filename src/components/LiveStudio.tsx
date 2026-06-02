@@ -67,7 +67,9 @@ export default function LiveStudio({ initialParams }: LiveStudioProps) {
     labelColor: initialParams?.labelColor || '',
   });
 
-  const [altText, setAltText] = useState('badge');
+  const [altCustom, setAltCustom] = useState<string | null>(null);
+  const [altEditing, setAltEditing] = useState(false);
+  const effectiveAlt = altCustom ?? params.message;
   const [logoQuery, setLogoQuery] = useState('');
   const [logoResults, setLogoResults] = useState<SimpleIconData[]>([]);
   const [iconsLoaded, setIconsLoaded] = useState(false);
@@ -377,20 +379,51 @@ export default function LiveStudio({ initialParams }: LiveStudioProps) {
 
           {/* Alt Text */}
           <div className="card bg-base-200 border border-base-300">
-            <div className="card-body p-3 sm:p-4">
-              <h3 className="card-title text-xs sm:text-sm opacity-70 font-medium uppercase tracking-wider">Alt Text</h3>
-              <input
-                type="text"
-                className="input input-bordered input-sm w-full"
-                value={altText}
-                onChange={(e) => setAltText(e.target.value)}
-                placeholder="badge"
-              />
-              <p className="text-[11px] text-base-content/50">Sets the alt/link text in the generated code</p>
+            <div className="card-body p-3 sm:p-4 gap-2">
+              <div className="flex items-center justify-between">
+                <h3 className="card-title text-xs sm:text-sm opacity-70 font-medium uppercase tracking-wider">Alt Text</h3>
+                <div className="flex gap-1">
+                  {altCustom !== null && (
+                    <button
+                      className="btn btn-xs btn-ghost text-base-content/40"
+                      onClick={() => { setAltCustom(null); setAltEditing(false); }}
+                      title="Reset to message text"
+                    >
+                      Reset
+                    </button>
+                  )}
+                  <button
+                    className="btn btn-xs btn-ghost"
+                    onClick={() => { if (altEditing) setAltEditing(false); else { setAltCustom(effectiveAlt); setAltEditing(true); } }}
+                    title={altEditing ? 'Done editing' : 'Edit alt text'}
+                  >
+                    {altEditing ? 'Done' : 'Edit'}
+                  </button>
+                </div>
+              </div>
+              {altEditing ? (
+                <input
+                  type="text"
+                  className="input input-bordered input-sm w-full"
+                  value={altCustom ?? ''}
+                  onChange={(e) => setAltCustom(e.target.value)}
+                  placeholder={params.message || 'badge'}
+                  autoFocus
+                />
+              ) : (
+                <div className="input input-bordered input-sm w-full flex items-center text-sm opacity-60 cursor-default select-none">
+                  {effectiveAlt}
+                </div>
+              )}
+              <p className="text-[11px] text-base-content/50">
+                {altCustom !== null
+                  ? 'Custom alt text — click Reset to track the message automatically'
+                  : 'Tracks the message text automatically — click Edit to customize'}
+              </p>
             </div>
           </div>
 
-          <CopyTabs shieldsUrl={shieldsUrl} alt={altText || undefined} />
+          <CopyTabs shieldsUrl={shieldsUrl} alt={effectiveAlt || undefined} />
         </div>
 
         {!mobilePreviewOpen && (
