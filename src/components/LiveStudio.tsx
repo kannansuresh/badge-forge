@@ -1,5 +1,6 @@
 import { useState, useEffect, useLayoutEffect, useCallback, useMemo, useRef } from 'react';
-import { buildShieldsUrl, toMarkdown, toHtml, saveBadge, readClipboard } from '../lib/storage';
+import { buildShieldsUrl, toMarkdown, toHtml, saveBadge, readClipboard, getIconPreviewPref, setIconPreviewPref, clearIconCache, getIconCacheCount } from '../lib/storage';
+import IconPreview from './IconPreview';
 import { loadIcons, searchIcons, type SimpleIconData } from '../lib/icons';
 
 interface BadgeParams {
@@ -81,11 +82,40 @@ export default function LiveStudio({ initialParams }: LiveStudioProps) {
   const [showLogoDropdown, setShowLogoDropdown] = useState(false);
   const [saveStatus, setSaveStatus] = useState<'idle' | 'saving' | 'saved'>('idle');
   const [mobilePreviewOpen, setMobilePreviewOpen] = useState(false);
+  const [iconPreviewEnabled, setIconPreviewEnabled] = useState(false);
+  const [showIconOptIn, setShowIconOptIn] = useState(false);
+  const [iconCacheCount, setIconCacheCount] = useState(0);
+  const [refreshingIcons, setRefreshingIcons] = useState(false);
 
   const allIconsRef = useRef<SimpleIconData[]>([]);
   const logoSearchRef = useRef<HTMLDivElement>(null);
   const saveTimerRef = useRef<ReturnType<typeof setTimeout>>();
   const iconsLoadingRef = useRef(false);
+
+  // Init icon preview preference
+  useEffect(() => {
+    setIconPreviewEnabled(getIconPreviewPref());
+    getIconCacheCount().then(setIconCacheCount);
+  }, []);
+
+  const handleEnablePreviews = useCallback(() => {
+    setIconPreviewPref(true);
+    setIconPreviewEnabled(true);
+    setShowIconOptIn(false);
+  }, []);
+
+  const handleDisablePreviews = useCallback(() => {
+    setIconPreviewPref(false);
+    setIconPreviewEnabled(false);
+    setShowIconOptIn(false);
+  }, []);
+
+  const handleRefreshIcons = useCallback(async () => {
+    setRefreshingIcons(true);
+    await clearIconCache();
+    setIconCacheCount(0);
+    setRefreshingIcons(false);
+  }, []);
 
   // Apply runtime params post-hydration (survives React hydration + Strict Mode)
   const didReadRuntime = useRef(false);
@@ -275,7 +305,45 @@ export default function LiveStudio({ initialParams }: LiveStudioProps) {
 
         {/* ── Logo / Icon ──────────────────────────────── */}
         <fieldset className="fieldset relative" ref={logoSearchRef}>
-          <legend className="fieldset-legend">Logo / Icon</legend>
+          <legend className="fieldset-legend flex items-center gap-2">
+            Logo / Icon
+            {iconPreviewEnabled && (
+              <span className="inline-flex items-center gap-1">
+                <span className="text-xs text-base-content/40 font-normal">
+                  {iconCacheCount > 0 ? `${iconCacheCount} cached` : ''}
+                </span>
+                <button
+                  className="btn btn-xs btn-ghost text-base-content/40"
+                  onClick={handleRefreshIcons}
+                  disabled={refreshingIcons}
+                  title="Refresh icon cache"
+                >
+                  {refreshingIcons ? (
+                    <span className="loading loading-spinner loading-xs" />
+                  ) : (
+                    <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
+                    </svg>
+                  )}
+                </button>
+              </span>
+            )}
+          </legend>
+
+          {/* Opt-in banner */}
+          {showIconOptIn && (
+            <div className="alert alert-soft mb-2 text-sm">
+              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
+              <span>Show brand icon previews in search? SVGs are cached locally.</span>
+              <div className="flex gap-1">
+                <button className="btn btn-xs btn-primary" onClick={handleEnablePreviews}>Yes</button>
+                <button className="btn btn-xs btn-ghost" onClick={handleDisablePreviews}>No</button>
+              </div>
+            </div>
+          )}
+
           <label className="input input-bordered flex items-center gap-2">
             <svg className="w-4 h-4 opacity-50" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
@@ -288,6 +356,10 @@ export default function LiveStudio({ initialParams }: LiveStudioProps) {
               onFocus={() => {
                 ensureIconsLoaded();
                 if (logoResults.length > 0) setShowLogoDropdown(true);
+                // Show opt-in only once, if preference not yet set
+                if (localStorage.getItem('badgecraft-icon-previews') === null) {
+                  setShowIconOptIn(true);
+                }
               }}
               placeholder="Search for a brand or logo…"
               autoComplete="off"
@@ -304,11 +376,15 @@ export default function LiveStudio({ initialParams }: LiveStudioProps) {
                     className="w-full text-left px-3 py-2 flex items-center gap-3 hover:bg-base-200 transition-colors"
                     onClick={() => selectLogo(icon)}
                   >
-                    <span
-                      className="w-5 h-5 rounded shrink-0 ring-1 ring-base-300 ring-inset"
-                      style={{ backgroundColor: `#${icon.hex}` }}
-                      title={`Brand color: #${icon.hex}`}
-                    />
+                    {iconPreviewEnabled ? (
+                      <IconPreview slug={icon.slug} hex={icon.hex} />
+                    ) : (
+                      <span
+                        className="w-5 h-5 rounded shrink-0 ring-1 ring-base-300 ring-inset"
+                        style={{ backgroundColor: `#${icon.hex}` }}
+                        title={`Brand color: #${icon.hex}`}
+                      />
+                    )}
                     <span className="font-medium text-sm truncate">{icon.title}</span>
                     <span className="text-xs text-base-content/40 ml-auto font-mono shrink-0">#{icon.hex}</span>
                   </button>

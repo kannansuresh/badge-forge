@@ -52,13 +52,67 @@ export interface SavedBadge {
 }
 
 // ── Dexie database declaration ───────────────────────────────────
+export interface CachedIcon {
+  slug: string;
+  svg: string;
+  cachedAt: string;
+}
+
 const db = new Dexie('BadgeCraftDB') as Dexie & {
   badges: EntityTable<SavedBadge, 'id'>;
+  icons: EntityTable<CachedIcon, 'slug'>;
 };
 
 db.version(1).stores({
   badges: '++id, savedAt, name, label, message',
 });
+
+db.version(2).stores({
+  badges: '++id, savedAt, name, label, message',
+  icons: 'slug',
+});
+
+// ── Icon preview cache ──────────────────────────────────────────
+const ICON_PREVIEW_KEY = 'badgecraft-icon-previews';
+const CDN_BASE = 'https://cdn.simpleicons.org';
+
+/** Whether the user has opted into icon previews */
+export function getIconPreviewPref(): boolean {
+  if (typeof window === 'undefined') return false;
+  return localStorage.getItem(ICON_PREVIEW_KEY) === 'true';
+}
+
+export function setIconPreviewPref(enabled: boolean): void {
+  if (typeof window === 'undefined') return;
+  localStorage.setItem(ICON_PREVIEW_KEY, String(enabled));
+}
+
+/** Fetch an SVG from CDN + cache to Dexie. Returns cached copy if available. */
+export async function getIconSvg(slug: string): Promise<string> {
+  // Check cache first
+  const cached = await db.icons.get(slug);
+  if (cached) return cached.svg;
+
+  // Fetch from CDN
+  const res = await fetch(`${CDN_BASE}/${encodeURIComponent(slug)}`);
+  if (!res.ok) throw new Error(`Failed to fetch icon: ${slug}`);
+  const svg = await res.text();
+
+  // Cache it (fire-and-forget — don't block on write)
+  db.icons.put({ slug, svg, cachedAt: new Date().toISOString() }).catch(() => {});
+
+  return svg;
+}
+
+/** Clear all cached icon SVGs */
+export async function clearIconCache(): Promise<void> {
+  await db.icons.clear();
+}
+
+/** Get count of cached icons */
+export async function getIconCacheCount(): Promise<number> {
+  return db.icons.count();
+}
 
 // ── Helper exports ────────────────────────────────────────────────
 export { db };
