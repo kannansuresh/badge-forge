@@ -1,4 +1,4 @@
-# 🛡️ BadgeForge
+# BadgeForge
 
 A high-performance, local-first web application for creating, customizing, and browsing markdown/HTML badges powered by [shields.io](https://shields.io). Built with Astro, React, Tailwind CSS, DaisyUI, and Dexie.js.
 
@@ -6,61 +6,81 @@ A high-performance, local-first web application for creating, customizing, and b
 
 ## Features
 
-### 🎨 Live Studio Builder
+### The Forge — Live Badge Builder
 
-- **Real-time dual preview** — magnified (2.5×) and actual-size views side by side
+- **Real-time dual preview** — magnified (2.5×) and actual-size views side by side on desktop, collapsible on mobile
+- **Seven configurable parameters** — label, message, badge color, logo, logo color, style (5 options), and label color
+- **Color picker with palette** — hex input with # prefix, 8 DaisyUI theme color swatches, and native OS color picker
 - **3,400+ brand icons** — smart fuzzy search powered by Simple Icons. Select a logo to auto-populate its official brand hex color
-- **Color picker with palette** — DaisyUI theme colors + native OS color picker via dropdown
-- **Five badge styles** — flat, flat-square, plastic, for-the-badge, social
-- **One-click copy** — Markdown, HTML, and raw URL with DaisyUI tabbed interface
-- **Save to backpack** — one click to persist to IndexedDB
+- **Optional SVG icon previews** — opt-in Dexie-backed cache via Simple Icons CDN with refresh button
+- **Five export formats** — Markdown, RST, AsciiDoc, HTML, and raw URL via tabbed interface with one-click copy
+- **Custom alt text** — auto-tracks message text, editable with one-click reset to default
+- **Category assignment** — organized dropdown with "Your Categories" and "Gallery Categories" sections, plus inline category creation
+- **Duplicate detection** — blocks identical saves (same visuals and category), shows "Already saved!" feedback
+- **Edit from gallery** — session-based clipboard transfers badge config from gallery cards to the builder
 
-### 🖼️ Curated Gallery
+### Curated Gallery — 328 Badges Across 19 Categories
 
-- **Data-driven** — powered by Astro Content Collections with Zod validation
-- **Three categories** — Tech Stack (15 badges), Project Health (12), Social & Community (10)
-- **Copy & Edit** — copy badge code directly from the gallery, or click Edit to customize in the Live Studio
-- **Zero JavaScript** — gallery cards render as pure static HTML with a single vanilla JS script
+- **Powered by Astro Content Collections** with Zod schema validation
+- **19 categories** — AI & Bots, Blockchain & Crypto, Blog & Publishing, Browsers, CAD & 3D, CI/CD, Cloud Storage, Databases, Design, Dev Community, DevOps & Cloud, Documentation, Education, Funding & Sponsorship, IDEs & Editors, Programming Languages, Project Health, Social & Communication, Frameworks & Libraries
+- **328 pre-configured badges** with correct colors, logos, and descriptions
+- **Copy & Edit** — copy Markdown, HTML, or URL directly from the gallery; click Edit to customize any badge in the Forge
+- **Category pre-fill** — editing a gallery badge automatically selects its category for organization
 
-### 🎒 My Backpack (Local Dashboard)
+### My Badges — Local Dashboard
 
-- **Local-first** — all data stored in IndexedDB via Dexie.js, never leaves your browser
-- **CRUD operations** — save, browse, edit, and delete your badge creations
-- **Data portability** — export all badges as JSON, import snapshots from other devices
-- **No accounts, no servers, no tracking**
+- **Local-first architecture** — all data stored in IndexedDB via Dexie.js (v3 schema), never leaves your browser
+- **Category filters** — tabbed interface showing only categories with badges (empty categories hidden)
+- **Full CRUD** — browse, edit, and delete saved badges with visual confirmation
+- **Import/Export** — portable JSON snapshots with category preservation and v1/v2 format compatibility
+- **Clear all** — modal with option to also remove user-created categories
+- **No accounts, no servers, no tracking** — 100% client-side
 
-### 🌓 Theme Support
+### Category Management
+
+- **Dedicated page** — `/categories` for full CRUD operations
+- **User categories** — create, rename, edit descriptions, delete with context-aware confirmations
+- **Gallery categories** — 19 pre-seeded readonly categories from the gallery taxonomy
+- **Smart deletion** — empty categories delete silently; categories with badges offer move-to-uncategorized or delete-all options
+- **Builder integration** — user categories appear above gallery categories in the Forge dropdown
+
+### Theme Support
 
 - **Light & Dark modes** — DaisyUI semantic theming with system preference detection
-- **Persistent** — theme preference saved to localStorage
-- **Self-hosted fonts** — Inter (body) and JetBrains Mono (code) via Astro Fonts
+- **Smooth transitions** — swap-rotate animation on toggle
+- **Persistent** — saves to localStorage, survives page refreshes and client-side navigation
+- **Flash prevention** — inline head script sets theme before first paint
+- **Self-hosted fonts** — Inter (body, 400–800) and JetBrains Mono (code, 400–600) via Astro Fonts
 
-### 🚀 Performance
+### Performance & Architecture
 
-- **Static site generation** — Astro builds fully static HTML with zero server code
-- **Minimal JavaScript** — React used only for interactive islands (builder, dashboard)
-- **Lazy-loaded icons** — Simple Icons JSON (372 KB / 100 KB gzipped) loaded on demand
-- **Icon preview caching** — optional Dexie-backed SVG cache with opt-in prompt
+- **Static site generation** — 24 pages build to static HTML in ~1.6s
+- **Islands architecture** — React used only for 4 interactive pages; the rest is pure static HTML
+- **Minimum JavaScript** — zero JS on landing page and gallery listing; gallery cards use a single TypeScript module
+- **Lazy-loaded icons** — Simple Icons JSON (372 KB / 100 KB gzipped) loaded on demand when logo search is focused
+- **Client-side navigation** — Astro ClientRouter enables SPA-like transitions between pages
+- **Icon SVG caching** — optional opt-in Dexie-backed cache to avoid repeated CDN fetches
 
 ## Tech Stack
 
-| Layer           | Technology                                                                            |
-| --------------- | ------------------------------------------------------------------------------------- |
-| Framework       | [Astro](https://astro.build) 6.x with React islands                                   |
-| Interactivity   | [React](https://react.dev) 19 (minimal — only interactive parts)                      |
-| Styling         | [Tailwind CSS](https://tailwindcss.com) 4 + [DaisyUI](https://daisyui.com) 5          |
-| Icons           | [astro-icon](https://github.com/natemoo-re/astro-icon) + [Lucide](https://lucide.dev) |
-| Fonts           | Inter & JetBrains Mono (Astro Fonts, self-hosted)                                     |
-| Local Database  | [Dexie.js](https://dexie.org) 4 (IndexedDB wrapper)                                   |
-| Icons Data      | [Simple Icons](https://simpleicons.org) 16 (3,400+ brand logos)                       |
-| Package Manager | [Bun](https://bun.sh)                                                                 |
-| Deployment      | GitHub Pages via GitHub Actions                                                       |
+| Layer | Technology |
+| --- | --- |
+| Framework | [Astro](https://astro.build) 6.x with React islands |
+| React | [React](https://react.dev) 19 (4 .tsx components) |
+| Styling | [Tailwind CSS](https://tailwindcss.com) 4 + [DaisyUI](https://daisyui.com) 5 |
+| Icons | [astro-icon](https://github.com/natemoo-re/astro-icon) + [Lucide](https://lucide.dev) |
+| Fonts | Inter & JetBrains Mono (Astro Fonts, self-hosted) |
+| Database | [Dexie.js](https://dexie.org) 4 (IndexedDB v3 schema) |
+| Icons Data | [Simple Icons](https://simpleicons.org) v16 (3,400+ brand logos) |
+| Linting | ESLint v10 (flat config) + Prettier v3 |
+| Package Manager | [Bun](https://bun.sh) ≥1.3 |
+| Deployment | GitHub Pages via GitHub Actions |
 
 ## Getting Started
 
 ### Prerequisites
 
-- [Bun](https://bun.sh) ≥ 1.0
+- [Bun](https://bun.sh) ≥ 1.3
 
 ### Install & Run
 
@@ -76,47 +96,52 @@ bun run build
 
 # Preview production build
 bun run preview
+
+# Lint
+bun run lint
+
+# Format
+bun run format
 ```
 
 ### Project Structure
 
 ```text
-├── .github/workflows/deploy.yml
-├── astro.config.mjs
-├── src/
-│   ├── content.config.ts           # Content Collections schema
-│   ├── content/gallery/            # Curated badge JSON files
-│   ├── components/
-│   │   ├── LiveStudio.tsx          # Builder (React island)
-│   │   ├── Dashboard.tsx           # Backpack (React island)
-│   │   ├── ThemeController.tsx     # Theme toggle (React island)
-│   │   ├── ColorInput.tsx          # Color picker (React)
-│   │   ├── CopyTabs.tsx            # Code tabs (React)
-│   │   ├── IconPreview.tsx         # Icon SVG loader (React)
-│   │   ├── BadgeCard.tsx           # Badge card (React, used in Dashboard)
-│   │   └── GalleryBadgeCard.astro  # Gallery card (Astro + vanilla JS)
-│   ├── layouts/Layout.astro        # Global page shell
-│   ├── lib/
-│   │   ├── storage.ts              # Dexie.js DB + clipboard + icon cache
-│   │   └── icons.ts               # Simple Icons loader + fuzzy search
-│   ├── pages/
-│   │   ├── index.astro             # Landing page
-│   │   ├── builder.astro           # Live Studio
-│   │   ├── dashboard.astro         # My Backpack
-│   │   └── gallery/
-│   │       ├── index.astro         # Category list
-│   │       └── [category].astro    # Dynamic category page
-│   └── styles/global.css           # Tailwind + DaisyUI themes
+src/
+├── content.config.ts               # Astro 6 Content Collections (glob + Zod)
+├── content/gallery/                # 19 JSON files (328 curated badges)
+├── components/
+│   ├── LiveStudio.tsx              # Forge builder (React island)
+│   ├── Dashboard.tsx               # My Badges CRUD + filters (React island)
+│   ├── BadgeCard.tsx               # Reusable badge card (React)
+│   ├── CategoryManager.tsx         # Category CRUD page (React island)
+│   ├── GalleryBadgeCard.astro      # Static gallery card + TS script
+│   └── ThemeController.astro       # DaisyUI swap toggle + TS script
+├── layouts/Layout.astro            # Shell: navbar, ClientRouter, theme, footer
+├── lib/
+│   ├── storage.ts                  # Dexie.js DB v3, clipboard, URL builder, CRUD
+│   ├── icons.ts                    # Simple Icons loader + fuzzy search
+│   ├── gallery-categories.ts       # 19 category definitions for seeding
+│   └── dom.ts                      # Browser DOM utilities (TypeScript)
+├── pages/
+│   ├── index.astro                 # Landing page
+│   ├── builder.astro               # Forge
+│   ├── dashboard.astro             # My Badges
+│   ├── categories.astro            # Category management
+│   └── gallery/
+│       ├── index.astro             # Category listing
+│       └── [category].astro        # Per-category badge grid
+└── styles/global.css               # Tailwind v4 + DaisyUI v5 themes
 ```
 
 ## Deployment
 
 The app deploys to GitHub Pages via GitHub Actions (`.github/workflows/deploy.yml`). Push to `main` to trigger:
 
-1. Checkout → Bun setup → Install → Build → Deploy to Pages
+1. Checkout → Setup Bun → Install → Build → Upload to Pages
 
-Set `SITE_URL` environment variable in the workflow to match your GitHub Pages URL.
+Set `SITE_URL` in the workflow to match your GitHub Pages URL.
 
 ## License
 
-MIT
+MIT — Built by [Kannan Suresh](https://github.com/kannansuresh/)

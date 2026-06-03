@@ -1,4 +1,4 @@
-# AGENTS.md — BadgeCraft
+# AGENTS.md — BadgeForge
 
 Instructions for AI coding agents (Claude Code, etc.) working on this codebase.
 
@@ -22,36 +22,43 @@ Instructions for AI coding agents (Claude Code, etc.) working on this codebase.
 ## Project Map
 
 ```text
-badgecraft/
-├── .github/workflows/deploy.yml    # GitHub Actions → Pages
-├── astro.config.mjs                # Astro 6 + React + Tailwind + astro-icon + fonts
-├── AGENTS.md                       # This file
-├── README.md                       # Project documentation
-├── package.json                    # Dependencies & scripts
+badgeforge/
+├── .github/workflows/deploy.yml         # GitHub Actions → Pages
+├── astro.config.mjs                     # Astro 6 + React + Tailwind + astro-icon + fonts
+├── tsconfig.json                        # TypeScript strict config (extends astro/tsconfigs/strictest)
+├── eslint.config.mjs                    # ESLint v10 flat config (js + typescript-eslint + astro)
+├── .prettierrc                          # Prettier with astro plugin
+├── AGENTS.md                            # This file
+├── README.md                            # Project documentation
+├── package.json                         # Dependencies & scripts (Bun)
+├── public/
+│   └── favicon.svg                      # Custom forge/anvil SVG icon
 ├── src/
-│   ├── content.config.ts           # Content Collections: gallery schema (glob + Zod)
-│   ├── content/gallery/            # 3 JSON files (37 curated badges)
+│   ├── content.config.ts                # Content Collections: gallery schema (glob + Zod)
+│   ├── env.d.ts                         # Astro client type reference
+│   ├── content/gallery/                 # 19 JSON files (328 curated badges)
 │   ├── components/
-│   │   ├── LiveStudio.tsx          # [React] Builder form + dual preview
-│   │   ├── Dashboard.tsx           # [React] IndexedDB CRUD + import/export
-│   │   ├── ThemeController.tsx     # [React] DaisyUI swap toggle + localStorage
-│   │   ├── ColorInput.tsx          # [React] Hex input + palette dropdown + color picker
-│   │   ├── CopyTabs.tsx            # [React] Tabbed Markdown/HTML/URL code display
-│   │   ├── IconPreview.tsx         # [React] Lazy SVG loader (Dexie cache → CDN fetch)
-│   │   ├── BadgeCard.tsx           # [React] Reusable badge card (used in Dashboard)
-│   │   └── GalleryBadgeCard.astro  # [Astro] Static card + vanilla JS copy/edit
-│   ├── layouts/Layout.astro        # Global shell: navbar, theme toggle, footer
+│   │   ├── LiveStudio.tsx               # [React] Builder form + dual preview + copy tabs
+│   │   ├── Dashboard.tsx                # [React] Saved badges grid + import/export + filter
+│   │   ├── BadgeCard.tsx                # [React] Reusable badge card (copy/edit/delete)
+│   │   ├── CategoryManager.tsx          # [React] Full category CRUD with modal confirmations
+│   │   ├── GalleryBadgeCard.astro       # [Astro] Static card + TS script for copy/edit
+│   │   └── ThemeController.astro        # [Astro] DaisyUI swap toggle + astro:page-load sync
+│   ├── layouts/Layout.astro             # Global shell: navbar, ClientRouter, theme, footer
 │   ├── lib/
-│   │   ├── storage.ts              # Dexie DB (badges v1, icons v2), clipboard, URL builder
-│   │   └── icons.ts               # Simple Icons loader, titleToSlug, fuzzy search
+│   │   ├── storage.ts                   # Dexie DB v3, clipboard, URL builder, formatters, CRUD
+│   │   ├── icons.ts                     # Simple Icons loader, titleToSlug, fuzzy search
+│   │   ├── gallery-categories.ts        # 19 gallery category definitions for seeding
+│   │   └── dom.ts                       # Browser DOM utils (clipboard, gallery cards)
 │   ├── pages/
-│   │   ├── index.astro             # Landing: hero + feature cards + CTA
-│   │   ├── builder.astro           # Live Studio page (React island)
-│   │   ├── dashboard.astro         # My Backpack page (React island)
+│   │   ├── index.astro                  # Landing: hero + feature cards + CTA
+│   │   ├── builder.astro                # Forge page (LiveStudio React island)
+│   │   ├── dashboard.astro              # My Badges page (Dashboard React island)
+│   │   ├── categories.astro             # Category management (CategoryManager React island)
 │   │   └── gallery/
-│   │       ├── index.astro         # Category list with preview strips
-│   │       └── [category].astro    # Dynamic category — GalleryBadgeCard grid
-│   └── styles/global.css           # Tailwind + DaisyUI v5 themes (light/dark)
+│   │       ├── index.astro              # Category list with preview strips
+│   │       └── [category].astro         # Dynamic category — GalleryBadgeCard grid
+│   └── styles/global.css                # Tailwind v4 + DaisyUI v5 themes (light/dark)
 ```
 
 ## Tech Stack
@@ -59,35 +66,45 @@ badgecraft/
 | Layer | Package | Version | Notes |
 | --- | --- | --- | --- |
 | Framework | `astro` | ^6.4 | SSG + React islands |
-| React | `@astrojs/react`, `react`, `react-dom` | ^5, ^19 | Islands only — minimal usage |
+| React | `@astrojs/react`, `react`, `react-dom` | ^5, ^19 | Islands only — 4 .tsx files |
 | CSS | `tailwindcss`, `daisyui`, `@tailwindcss/vite` | ^4, ^5 | DaisyUI v5 themes |
 | Icons (Astro) | `astro-icon`, `@iconify-json/lucide` | ^1 | Lucide icon set |
 | Icons (React) | `lucide-react` | ^1 | For React components only |
 | Database | `dexie`, `dexie-export-import` | ^4 | IndexedDB wrapper |
 | Brand Icons | `simple-icons` | ^16 | 3,400+ brand logos |
-| Package Manager | `bun` | ≥1.0 | Lockfile: bun.lock |
+| Linting | `eslint`, `typescript-eslint`, `eslint-plugin-astro` | ^10, ^8, ^1 | Flat config |
+| Formatting | `prettier`, `prettier-plugin-astro` | ^3, ^0.14 | |
+| Package Manager | `bun` | ≥1.3 | Lockfile: bun.lock |
 
 ## Architecture Rules
 
 ### React is for interactivity only
 
 - React components (`*.tsx`) should ONLY be used when state, effects, or complex event handling is needed
-- Static content with simple click handlers should use Astro components (`*.astro`) with vanilla JS `<script>` blocks
+- Static content with simple click handlers should use Astro components (`*.astro`) with imported TypeScript modules
+- All vanilla JS has been converted to TypeScript — use `src/lib/dom.ts` for shared DOM utilities
 - Never use `client:load` on a component that could be static HTML + a small script
 
 ### Content Collections
 
 - Config file: `src/content.config.ts` (Astro 6 path, NOT `src/content/config.ts`)
 - Must use `glob` loader (Astro 6 requirement)
-- Gallery JSON files: `src/content/gallery/*.json`
+- Gallery JSON files: `src/content/gallery/*.json` (19 files, 328 badges)
 - Schema: Zod validation in `defineCollection()`
+
+### Client-Side Navigation
+
+- `ClientRouter` from `astro:transitions` enables SPA-like navigation (no page reloads)
+- All interactive components must re-initialize on `astro:page-load` event
+- Theme restoration also uses `astro:after-swap` to prevent reset during navigation
 
 ### Styling
 
-- Use DaisyUI component classes (`btn`, `card`, `fieldset`, `input`, `join`, `tabs`, etc.)
+- Use DaisyUI component classes (`btn`, `card`, `fieldset`, `input`, `join`, `tabs`, `modal`, etc.)
 - No custom CSS classes unless DaisyUI genuinely doesn't provide the behavior
 - Theme colors use DaisyUI theme variables (`--color-primary`, `--color-base-100`, etc.)
 - Focus rings are removed globally — DaisyUI border transitions handle visual feedback
+- Two themes: light (default, indigo primary) and dark (lighter indigo, dark backgrounds)
 
 ### Fonts
 
@@ -98,16 +115,17 @@ badgecraft/
 
 ### Icon Preview Cache
 
-- Opt-in via localStorage key `badgecraft-icon-previews`
+- Opt-in via localStorage key `badgeforge-icon-previews`
 - SVGs cached in Dexie `icons` table (v2 store, keyed by `slug`)
 - Fetch from `https://cdn.simpleicons.org/{slug}`
 - Refresh button clears Dexie icons table
 
 ### Session Clipboard
 
-- Gallery → Builder handoff uses `sessionStorage` key `badgecraft-clipboard`
+- Gallery/Dashboard → Forge handoff uses `sessionStorage` key `badgeforge-clipboard`
 - `writeClipboard()` before navigation, `readClipboard()` on builder mount (one-shot, cleared after read)
 - Fallback: URL query params (for shared/bookmarked links)
+- Carries: label, message, color, logo, logoColor, style, labelColor, categorySlug, categoryId
 
 ## Patterns & Gotchas
 
@@ -115,22 +133,52 @@ badgecraft/
 
 - v1: `badges` table (`++id, savedAt, name, label, message`)
 - v2: adds `icons` table (`slug` primary key, `svg`, `cachedAt`)
+- v3: adds `categories` table (`++id, name, slug`), adds `categoryId` index on badges
 - Always use `.stores()` on the latest version number
+- New tables/indexes are additive — existing data is preserved across upgrades
+
+### Category System
+
+- Categories have a `readonly` boolean — gallery-seeded categories are readonly
+- `seedDefaultCategories()` is idempotent (skips if count > 0)
+- `deleteCategory()` reassigns badges to uncategorized; `deleteCategoryAndBadges()` deletes everything
+- Import v2: categories export with badges, old IDs are remapped to new auto-increment IDs
+- Export: readonly categories are excluded (they'll be re-seeded on import)
+- Builder dropdown: user categories shown above gallery categories (optgroup split)
+
+### Duplicate Detection
+
+- `isDuplicate()` checks all visual fields (label, message, color, logo, logoColor, style, labelColor) AND categoryId
+- Two badges with identical visuals but different categories are NOT duplicates
+- Used in `handleSave` to block exact duplicates and show "Already saved!" feedback
 
 ### Simple Icons data
 
 - Import path: `simple-icons/icons.json` → resolves to `data/simple-icons.json` (no SVG paths, ~372KB)
 - v16+ includes `slug` field natively; older versions need `titleToSlug()` fallback
 - SDK (`simple-icons/sdk`) uses Node.js APIs — cannot be bundled for browser
+- Lazy-loaded: only imported when user focuses the logo search field
 
 ### Astro 6 specifics
 
 - Content config must be `src/content.config.ts`, not `src/content/config.ts`
 - Fonts config is stable (not experimental) — use `fontProviders.google()`
 - `<Font />` component is from `astro:assets`
+- Client-side navigation: `ClientRouter` from `astro:transitions` (replaces deprecated `ViewTransitions`)
+- Component scripts: use `astro:page-load` for re-initialization after client-side navigation
+
+### Theme Controller
+
+- DaisyUI `theme-controller` checkbox in `ThemeController.astro`
+- Inline `<script is:inline>` in `<head>` sets `data-theme` before first paint (prevents flash)
+- `astro:after-swap` listener restores theme after ClientRouter navigation
+- `astro:page-load` listener syncs checkbox checked state
+- localStorage key: `theme`
 
 ### Build & Deploy
 
 - `bun run build` → static output in `dist/`
+- `bun run lint` → ESLint check (`eslint src --ext .ts,.tsx,.astro`)
+- `bun run format` → Prettier write (`src/**/*.{ts,tsx,astro,css,json,md}`)
 - GitHub Actions: `oven-sh/setup-bun@v2` → `bun install` → `bun run build` → deploy to Pages
 - `SITE_URL` env var controls the Astro `site` config
