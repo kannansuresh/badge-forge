@@ -6,9 +6,10 @@
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
-    "build": "astro build",
+    "build": "bun run validate && astro build",
     "preview": "astro preview",
     "astro": "astro",
+    "validate": "bun run scripts/validate-gallery.ts",
     "lint": "eslint src --ext .ts,.tsx,.astro",
     "lint:fix": "eslint src --ext .ts,.tsx,.astro --fix",
     "format": "prettier --write 'src/**/*.{ts,tsx,astro,css,json,md}'",

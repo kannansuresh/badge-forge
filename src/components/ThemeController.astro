@@ -29,17 +29,14 @@
 </label>
 
 <script>
+  import { resolveTheme, syncCheckbox, toggleTheme } from '../lib/theme';
+
+  const checkbox = document.getElementById('theme-toggle') as HTMLInputElement | null;
+  if (checkbox) {
+    checkbox.checked = resolveTheme() === 'dark';
+    checkbox.addEventListener('change', toggleTheme);
+  }
+
   // Re-sync checkbox state after client-side navigations
-  document.addEventListener('astro:page-load', () => {
-    const checkbox = document.getElementById('theme-toggle') as HTMLInputElement | null;
-    if (!checkbox) return;
-    const stored = localStorage.getItem('theme');
-    checkbox.checked = stored === 'dark';
-    // DaisyUI's theme-controller listens for change events
-    checkbox.addEventListener('change', () => {
-      const dark = checkbox.checked;
-      document.documentElement.setAttribute('data-theme', dark ? 'dark' : 'light');
-      localStorage.setItem('theme', dark ? 'dark' : 'light');
-    });
-  });
+  document.addEventListener('astro:page-load', () => syncCheckbox('theme-toggle'));
 </script>

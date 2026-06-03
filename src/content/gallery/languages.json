@@ -31,7 +31,7 @@
       "logoColor": "ffffff"
     },
     {
-      "id": "c",
+      "id": "c-lang",
       "label": "",
       "message": "c",
       "color": "00599C",
@@ -40,14 +40,14 @@
       "logoColor": "ffffff"
     },
     {
-      "id": "c",
+      "id": "c-sharp",
       "label": "",
       "message": "c#",
       "color": "239120",
       "style": "for-the-badge"
     },
     {
-      "id": "c",
+      "id": "c-plus-plus",
       "label": "",
       "message": "c++",
       "color": "00599C",
@@ -59,10 +59,10 @@
       "id": "clojure",
       "label": "",
       "message": "Clojure",
-      "color": "Clojure",
+      "color": "5881d8",
       "style": "for-the-badge",
       "logo": "Clojure",
-      "logoColor": "clojure"
+      "logoColor": "ffffff"
     },
     {
       "id": "coffeescript",
