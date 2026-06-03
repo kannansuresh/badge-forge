@@ -1,6 +1,8 @@
 ---
 import { Icon } from 'astro-icon/components';
 import Layout from '../layouts/Layout.astro';
+
+const base = import.meta.env.BASE_URL;
 ---
 
 <Layout title="BadgeForge — Build Beautiful Shields.io Badges">
@@ -34,8 +36,8 @@ import Layout from '../layouts/Layout.astro';
         </p>
 
         <div class="flex flex-col sm:flex-row gap-4 justify-center mb-16">
-          <a href="/builder" class="btn btn-primary btn-lg">Open Forge</a>
-          <a href="/gallery" class="btn btn-outline btn-lg">Browse Gallery</a>
+          <a href={`${base}builder`} class="btn btn-primary btn-lg">Open Forge</a>
+          <a href={`${base}gallery`} class="btn btn-outline btn-lg">Browse Gallery</a>
         </div>
 
         <!-- Live preview strip -->
@@ -187,7 +189,7 @@ import Layout from '../layouts/Layout.astro';
       <p class="text-base-content/60 text-lg mb-8">
         No sign-up required. Your badges stay private in your browser.
       </p>
-      <a href="/builder" class="btn btn-primary btn-lg">Launch Forge</a>
+      <a href={`${base}builder`} class="btn btn-primary btn-lg">Launch Forge</a>
     </div>
   </div>
 </Layout>

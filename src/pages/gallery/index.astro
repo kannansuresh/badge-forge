@@ -2,6 +2,7 @@
 import Layout from '../../layouts/Layout.astro';
 import { getCollection } from 'astro:content';
 
+const base = import.meta.env.BASE_URL;
 const gallery = await getCollection('gallery');
 const esc = (s: string) => encodeURIComponent(s.replace(/-/g, '--').replace(/_/g, '__'));
 ---
@@ -33,7 +34,7 @@ const esc = (s: string) => encodeURIComponent(s.replace(/-/g, '--').replace(/_/g
             const previewBadges = entry.data.badges.slice(0, 3);
             return (
               <a
-                href={`/gallery/${categorySlug}`}
+                href={`${base}gallery/${categorySlug}`}
                 class="card bg-base-100 shadow-sm border border-base-300 hover:shadow-md transition-shadow no-underline"
               >
                 <div class="card-body">

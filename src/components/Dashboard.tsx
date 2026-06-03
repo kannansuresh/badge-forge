@@ -16,6 +16,7 @@ import {
 import type { BadgeConfig } from './BadgeCard';
 
 export default function Dashboard({ onEditBadge }: { onEditBadge?: (badge: BadgeConfig) => void }) {
+  const base = import.meta.env.BASE_URL;
   const [badges, setBadges] = useState<SavedBadge[]>([]);
   const [loading, setLoading] = useState(true);
   const [importStatus, setImportStatus] = useState<{
@@ -46,7 +47,7 @@ export default function Dashboard({ onEditBadge }: { onEditBadge?: (badge: Badge
           labelColor: badge.labelColor,
           categoryId: badge.categoryId,
         });
-        window.location.href = '/builder';
+        window.location.href = `${base}builder`;
       }
     },
     [onEditBadge],
@@ -185,7 +186,7 @@ export default function Dashboard({ onEditBadge }: { onEditBadge?: (badge: Badge
             <Download className="w-3.5 h-3.5" />
             Export
           </button>
-          <a href="/categories" className="btn btn-sm btn-outline gap-1">
+          <a href={`${base}categories`} className="btn btn-sm btn-outline gap-1">
             Manage Categories
           </a>
           <button
@@ -265,7 +266,7 @@ export default function Dashboard({ onEditBadge }: { onEditBadge?: (badge: Badge
           <p className="text-base-content/60 mb-6">
             Create badges in the Forge or import a snapshot.
           </p>
-          <a href="/builder" className="btn btn-primary">
+          <a href={`${base}builder`} className="btn btn-primary">
             Go to Forge
           </a>
         </div>
