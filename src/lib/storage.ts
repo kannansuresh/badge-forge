@@ -158,21 +158,22 @@ export async function createCategory(
   return id as number;
 }
 
-/** Seed default categories from the gallery taxonomy (idempotent — skips if any exist). */
+/** Seed default categories from the gallery taxonomy (idempotent per category — only adds missing slugs). */
 export async function seedDefaultCategories(): Promise<void> {
-  const count = await db.categories.count();
-  if (count > 0) return;
-
   const { GALLERY_CATEGORIES } = await import('./gallery-categories');
+
   await db.transaction('rw', db.categories, async () => {
     for (const cat of GALLERY_CATEGORIES) {
-      await db.categories.add({
-        name: cat.name,
-        slug: cat.slug,
-        description: cat.description,
-        createdAt: new Date().toISOString(),
-        readonly: true,
-      });
+      const exists = await db.categories.where('slug').equals(cat.slug).first();
+      if (!exists) {
+        await db.categories.add({
+          name: cat.name,
+          slug: cat.slug,
+          description: cat.description,
+          createdAt: new Date().toISOString(),
+          readonly: true,
+        });
+      }
     }
   });
 }
