@@ -152,9 +152,22 @@ badgeforge/
 
 ### Duplicate Detection
 
-- `isDuplicate()` checks all visual fields (label, message, color, logo, logoColor, style, labelColor) AND categoryId
+- `isDuplicate()` checks all visual fields (label, message, color, logo, logoColor, logoSize, style, labelColor) AND categoryId
 - Two badges with identical visuals but different categories are NOT duplicates
 - Used in `handleSave` to block exact duplicates and show "Already saved!" feedback
+
+### Gallery Validation
+
+- `bun run validate` checks all gallery JSON files for: valid JSON, schema compliance, duplicate badge IDs (within/across files), duplicate category slugs, hex color convention, logo existence in simple-icons
+- Validation runs automatically before `bun run build`
+- Errors block the build; warnings are non-blocking (non-hex colors, logo case mismatches)
+- New JSON files in `src/content/gallery/` are auto-discovered by both the content collection and the validation script
+
+### shields.io Parameters
+
+- Full shield.io static badge parameters supported: `label`, `message`, `color`, `logo`, `logoColor`, `logoSize`, `style`, `labelColor`
+- `logoSize: "auto"` enables adaptive resizing for wider brand icons (toggle in builder UI)
+- `cacheSeconds` and `link` are intentionally excluded (caching is CDN-level; `link` only works with `<object>` tags, not `<img>` or markdown)
 
 ### Simple Icons data
 

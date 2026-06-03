@@ -27,6 +27,7 @@ interface BadgeParams {
   color: string;
   logo: string;
   logoColor: string;
+  logoSize: string;
   style: 'flat' | 'flat-square' | 'plastic' | 'for-the-badge' | 'social';
   labelColor: string;
 }
@@ -59,6 +60,7 @@ function resolveRuntimeParams(): {
     if ('color' in clipboard) r.color = clipboard.color;
     if ('logo' in clipboard) r.logo = clipboard.logo;
     if ('logoColor' in clipboard) r.logoColor = clipboard.logoColor;
+    if ('logoSize' in clipboard) r.logoSize = clipboard.logoSize;
     if (clipboard.style && STYLES.includes(clipboard.style)) r.style = clipboard.style;
     if ('labelColor' in clipboard) r.labelColor = clipboard.labelColor;
     return {
@@ -82,6 +84,8 @@ function resolveRuntimeParams(): {
     if (lo) r.logo = lo;
     const lc = v('logoColor');
     if (lc) r.logoColor = lc;
+    const ls = v('logoSize');
+    if (ls) r.logoSize = ls;
     const st = v('style') as BadgeParams['style'] | null;
     if (st && STYLES.includes(st)) r.style = st;
     const lb = v('labelColor');
@@ -99,6 +103,7 @@ export default function LiveStudio({ initialParams }: LiveStudioProps) {
     color: initialParams?.color ?? '6366f1',
     logo: initialParams?.logo ?? '',
     logoColor: initialParams?.logoColor ?? 'ffffff',
+    logoSize: initialParams?.logoSize ?? '',
     style: initialParams?.style ?? 'flat',
     labelColor: initialParams?.labelColor ?? '',
   });
@@ -230,7 +235,7 @@ export default function LiveStudio({ initialParams }: LiveStudioProps) {
         setLogoResults([]);
         setShowLogoDropdown(false);
         setLogoTitle(null);
-        setParams((prev) => ({ ...prev, logo: '' }));
+        setParams((prev) => ({ ...prev, logo: '', logoSize: '' }));
         return;
       }
       await ensureIconsLoaded();
@@ -488,6 +493,22 @@ export default function LiveStudio({ initialParams }: LiveStudioProps) {
             hint="Fill color for the selected icon"
           />
         </div>
+
+        {/* Logo size toggle (for wider logos) */}
+        {params.logo && (
+          <label class="flex items-center gap-2 cursor-pointer text-sm">
+            <input
+              type="checkbox"
+              class="toggle toggle-sm"
+              checked={params.logoSize === 'auto'}
+              onChange={(e) => updateParam('logoSize', e.target.checked ? 'auto' : '')}
+            />
+            <span>Auto-size logo</span>
+            <span class="text-base-content/40 text-xs">
+              — enables adaptive resizing for wider brand icons
+            </span>
+          </label>
+        )}
 
         {/* ── Badge Style ──────────────────────────────── */}
         <fieldset className="fieldset">

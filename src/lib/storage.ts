@@ -10,6 +10,7 @@ export interface BadgeClipboard {
   color: string;
   logo?: string | undefined;
   logoColor?: string | undefined;
+  logoSize?: string | undefined;
   style?: 'flat' | 'flat-square' | 'plastic' | 'for-the-badge' | 'social' | undefined;
   labelColor?: string | undefined;
   categorySlug?: string | undefined;
@@ -43,6 +44,7 @@ export interface SavedBadge {
   color: string;
   logo: string;
   logoColor: string;
+  logoSize: string;
   style: 'flat' | 'flat-square' | 'plastic' | 'for-the-badge' | 'social';
   labelColor: string;
   /** shields.io built URL at time of save */
@@ -89,6 +91,12 @@ db.version(2).stores({
 });
 
 db.version(3).stores({
+  badges: '++id, savedAt, name, label, message, categoryId',
+  icons: 'slug',
+  categories: '++id, name, slug',
+});
+
+db.version(4).stores({
   badges: '++id, savedAt, name, label, message, categoryId',
   icons: 'slug',
   categories: '++id, name, slug',
@@ -244,16 +252,18 @@ export function buildShieldsUrl(params: {
   color: string;
   logo?: string | undefined;
   logoColor?: string | undefined;
+  logoSize?: string | undefined;
   style?: string | undefined;
   labelColor?: string | undefined;
 }): string {
-  const { label, message, color, logo, logoColor, style, labelColor } = params;
+  const { label, message, color, logo, logoColor, logoSize, style, labelColor } = params;
   const escLabel = encodeURIComponent(escapeShieldsText(label));
   const escMessage = encodeURIComponent(escapeShieldsText(message));
   const base = `https://img.shields.io/badge/${escLabel}-${escMessage}-${color}`;
   const qs = new URLSearchParams();
   if (logo) qs.set('logo', logo);
   if (logoColor) qs.set('logoColor', logoColor);
+  if (logoSize) qs.set('logoSize', logoSize);
   if (style && style !== 'flat') qs.set('style', style);
   if (labelColor) qs.set('labelColor', labelColor);
   const qsStr = qs.toString();
@@ -297,6 +307,7 @@ export async function isDuplicate(params: {
   color: string;
   logo: string;
   logoColor: string;
+  logoSize: string;
   style: string;
   labelColor: string;
   categoryId?: number | undefined;
@@ -310,6 +321,7 @@ export async function isDuplicate(params: {
         b.color === params.color &&
         b.logo === params.logo &&
         b.logoColor === params.logoColor &&
+        b.logoSize === params.logoSize &&
         b.style === params.style &&
         b.labelColor === params.labelColor &&
         (b.categoryId ?? undefined) === (params.categoryId ?? undefined),

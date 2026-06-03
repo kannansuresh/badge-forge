@@ -1,5 +1,5 @@
-import { defineCollection, z } from 'astro:content';
 import { glob } from 'astro/loaders';
+import { defineCollection, z } from 'astro:content';
 
 const galleryCollection = defineCollection({
   loader: glob({ pattern: '**/*.json', base: './src/content/gallery' }),
@@ -15,6 +15,7 @@ const galleryCollection = defineCollection({
         color: z.string(),
         logo: z.string().optional(),
         logoColor: z.string().optional(),
+        logoSize: z.string().optional(),
         style: z
           .enum(['flat', 'flat-square', 'plastic', 'for-the-badge', 'social'])
           .optional()
