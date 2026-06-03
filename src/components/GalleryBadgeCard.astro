@@ -54,36 +54,33 @@ const base = import.meta.env.BASE_URL.replace(/\/?$/, '/');
 const detailUrl = `${base}gallery/${categoryPath || categorySlug}/${Astro.props.id}`;
 ---
 
-<div
-  class="card bg-base-100 shadow-sm border border-base-300 hover:shadow-md transition-shadow group"
-  data-badgecard
->
-  <figure class="px-4 pt-4">
+<div class="card bg-base-100 border border-base-300/50 card-lift group" data-badgecard>
+  <figure class="px-5 pt-5">
     <a href={detailUrl} class="block">
       <img
         src={shieldsUrl}
         alt={`${label}: ${message}`}
-        class="h-6 hover:opacity-80 transition-opacity"
+        class="h-6 group-hover:opacity-80 transition-opacity"
         loading="lazy"
         onerror="this.parentElement.innerHTML='<span class=&quot;font-mono text-xs text-base-content/50&quot;>${label}-${message}-${color}</span>'"
       />
     </a>
   </figure>
 
-  <div class="card-body p-4 gap-2">
+  <div class="card-body p-5 gap-2">
     <h3 class="card-title text-sm">
-      <a href={detailUrl} class="hover:underline">{label}</a>
-      <span class="text-base-content/40 font-normal">·</span>
-      {message}
+      <a href={detailUrl} class="group-hover:text-primary transition-colors">
+        {label || message}
+      </a>
     </h3>
 
     <div class="flex flex-wrap gap-1">
-      <span class="badge badge-xs badge-outline">{style}</span>
-      {logo && <span class="badge badge-xs badge-ghost">{logo}</span>}
+      <span class="badge badge-ghost badge-xs">{style}</span>
+      {logo && <span class="badge badge-xs badge-outline">{logo}</span>}
     </div>
 
-    <div class="card-actions justify-end mt-1">
-      <div class="join join-horizontal">
+    <div class="card-actions justify-end mt-2 pt-3 border-t border-base-300/30">
+      <div class="join join-horizontal shadow-sm">
         <button
           class="join-item btn btn-xs btn-ghost"
           data-copy="md"
@@ -103,9 +100,7 @@ const detailUrl = `${base}gallery/${categoryPath || categorySlug}/${Astro.props.
           title="Copy URL">URL</button
         >
       </div>
-      <button class="btn btn-xs btn-primary btn-outline" data-edit data-clipboard={clipboardData}
-        >Edit</button
-      >
+      <button class="btn btn-xs btn-primary" data-edit data-clipboard={clipboardData}>Edit</button>
     </div>
   </div>
 </div>

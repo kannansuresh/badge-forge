@@ -61,6 +61,7 @@
     -moz-osx-font-smoothing: grayscale;
   }
 
+  /* Remove default focus rings — DaisyUI border transitions suffice */
   input:focus,
   select:focus,
   textarea:focus,
@@ -75,4 +76,82 @@
   .input:not(.join-item):focus-within {
     border-color: var(--color-base-300);
   }
+}
+
+/* ── Utility animations ─────────────────────────────── */
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes gradient-shift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.animate-gradient {
+  background-size: 200% 200%;
+  animation: gradient-shift 8s ease infinite;
+}
+
+/* ── Glass morphism utility ─────────────────────────── */
+.glass-card {
+  background: oklch(from var(--color-base-100) l c h / 0.7);
+  backdrop-filter: blur(12px);
+  border: 1px solid oklch(from var(--color-base-300) l c h / 0.5);
+}
+
+/* ── Gradient text utility ──────────────────────────── */
+.gradient-text {
+  background: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ── Hero gradient backgrounds ──────────────────────── */
+.hero-glow {
+  background:
+    radial-gradient(
+      ellipse 80% 50% at 50% -20%,
+      oklch(from var(--color-primary) l c h / 0.15),
+      transparent
+    ),
+    radial-gradient(
+      ellipse 50% 80% at 20% 50%,
+      oklch(from var(--color-secondary) l c h / 0.08),
+      transparent
+    ),
+    radial-gradient(
+      ellipse 50% 80% at 80% 50%,
+      oklch(from var(--color-accent) l c h / 0.08),
+      transparent
+    );
+}
+
+/* ── Card hover lift ────────────────────────────────── */
+.card-lift {
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+.card-lift:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 24px -8px oklch(from var(--color-base-content) l c h / 0.1);
 }

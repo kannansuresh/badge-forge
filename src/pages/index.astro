@@ -5,191 +5,196 @@ import Layout from '../layouts/Layout.astro';
 const base = import.meta.env.BASE_URL.replace(/\/?$/, '/');
 ---
 
-<Layout title="BadgeForge — Build Beautiful Shields.io Badges">
+<Layout
+  description="A lightning-fast, local-first badge builder for developers. Create beautiful shields.io badges with 3,400+ brand icons — no accounts, no tracking."
+>
   <!-- ── Hero ──────────────────────────────────────────── -->
-  <div
-    class="hero min-h-[70vh]"
-    style="background-image: radial-gradient(circle at 50% 0%, oklch(0.7 0.15 265 / 0.08), transparent 60%);"
-  >
-    <div class="hero-content text-center max-w-4xl">
-      <div class="max-w-3xl">
-        <div class="mb-6">
-          <span class="badge badge-primary badge-lg gap-2 px-4 py-4 text-sm font-medium">
-            <span class="relative flex h-2 w-2">
-              <span
-                class="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary-content opacity-75"
-              ></span>
-              <span class="relative inline-flex rounded-full h-2 w-2 bg-primary-content"></span>
-            </span>
-            v1.0 — 3,400+ brand icons
-          </span>
+  <section class="hero-glow relative overflow-hidden">
+    <div class="max-w-7xl mx-auto px-4 pt-20 pb-24 sm:pt-28 sm:pb-32 text-center">
+      <!-- Status badge -->
+      <div
+        class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-primary/10 text-primary text-sm font-medium mb-8"
+      >
+        <span class="relative flex h-2 w-2">
+          <span
+            class="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"
+          ></span>
+          <span class="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
+        </span>
+        v1.0 • 3,400+ Brand Icons
+      </div>
+
+      <h1
+        class="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-extrabold tracking-tight leading-tight mb-6 max-w-5xl mx-auto"
+      >
+        Craft beautiful
+        <span class="gradient-text">README badges</span>
+        <br class="hidden sm:block" />
+        in seconds
+      </h1>
+
+      <p class="text-lg sm:text-xl text-base-content/60 max-w-2xl mx-auto mb-10 leading-relaxed">
+        A lightning-fast, local-first badge builder. Search thousands of brand icons, customize
+        every detail, and copy ready-to-use Markdown or HTML — all from your browser.
+      </p>
+
+      <div class="flex flex-col sm:flex-row gap-4 justify-center mb-16">
+        <a href={`${base}builder`} class="btn btn-primary btn-lg shadow-lg shadow-primary/25">
+          <Icon name="lucide:wand-sparkles" class="w-5 h-5" />
+          Open Forge
+        </a>
+        <a href={`${base}gallery`} class="btn btn-outline btn-lg">
+          <Icon name="lucide:layout-grid" class="w-5 h-5" />
+          Browse Gallery
+        </a>
+      </div>
+
+      <!-- Live preview badges -->
+      <div class="flex flex-wrap justify-center gap-3 opacity-70">
+        <img
+          src="https://img.shields.io/badge/Frontend-React-61DAFB?style=for-the-badge&logo=react&logoColor=white"
+          alt="React badge"
+          class="h-7"
+          loading="lazy"
+        />
+        <img
+          src="https://img.shields.io/badge/Style-Tailwind-06B6D4?style=for-the-badge&logo=tailwindcss&logoColor=white"
+          alt="Tailwind badge"
+          class="h-7"
+          loading="lazy"
+        />
+        <img
+          src="https://img.shields.io/badge/Code-TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white"
+          alt="TypeScript badge"
+          class="h-7"
+          loading="lazy"
+        />
+        <img
+          src="https://img.shields.io/badge/Build-Passing-22C55E?style=for-the-badge&logo=githubactions&logoColor=white"
+          alt="Build badge"
+          class="h-7"
+          loading="lazy"
+        />
+        <img
+          src="https://img.shields.io/badge/License-MIT-22C55E?style=for-the-badge"
+          alt="MIT badge"
+          class="h-7"
+          loading="lazy"
+        />
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Stats ─────────────────────────────────────────── -->
+  <section class="border-y border-base-300/50 bg-base-200/30">
+    <div class="max-w-5xl mx-auto px-4 py-10">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+        <div>
+          <div class="text-3xl font-bold text-primary">3,400+</div>
+          <div class="text-sm text-base-content/60 mt-1">Brand Icons</div>
         </div>
-
-        <h1 class="text-5xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight mb-6">
-          Craft beautiful
-          <span class="text-primary"> README badges</span>
-        </h1>
-
-        <p class="text-lg sm:text-xl text-base-content/60 max-w-2xl mx-auto mb-10 leading-relaxed">
-          A lightning-fast, local-first badge builder. Search thousands of brand icons, customize
-          colors and styles, and copy ready-to-use Markdown or HTML — all from your browser.
-        </p>
-
-        <div class="flex flex-col sm:flex-row gap-4 justify-center mb-16">
-          <a href={`${base}builder`} class="btn btn-primary btn-lg">Open Forge</a>
-          <a href={`${base}gallery`} class="btn btn-outline btn-lg">Browse Gallery</a>
+        <div>
+          <div class="text-3xl font-bold text-secondary">52</div>
+          <div class="text-sm text-base-content/60 mt-1">Categories</div>
         </div>
-
-        <!-- Live preview strip -->
-        <div class="flex flex-wrap justify-center gap-3 opacity-60">
-          <img
-            src="https://img.shields.io/badge/Frontend-React-61DAFB?style=flat&logo=react&logoColor=white"
-            alt="React badge"
-            class="h-5"
-            loading="lazy"
-          />
-          <img
-            src="https://img.shields.io/badge/Style-Tailwind_CSS-06B6D4?style=flat&logo=tailwindcss&logoColor=white"
-            alt="Tailwind badge"
-            class="h-5"
-            loading="lazy"
-          />
-          <img
-            src="https://img.shields.io/badge/Language-TypeScript-3178C6?style=flat&logo=typescript&logoColor=white"
-            alt="TypeScript badge"
-            class="h-5"
-            loading="lazy"
-          />
-          <img
-            src="https://img.shields.io/badge/Build-Passing-22C55E?style=flat&logo=githubactions&logoColor=white"
-            alt="Build badge"
-            class="h-5"
-            loading="lazy"
-          />
-          <img
-            src="https://img.shields.io/badge/License-MIT-22C55E?style=flat"
-            alt="MIT badge"
-            class="h-5"
-            loading="lazy"
-          />
+        <div>
+          <div class="text-3xl font-bold text-accent">940+</div>
+          <div class="text-sm text-base-content/60 mt-1">Curated Badges</div>
+        </div>
+        <div>
+          <div class="text-3xl font-bold text-success">0</div>
+          <div class="text-sm text-base-content/60 mt-1">Data Collected</div>
         </div>
       </div>
     </div>
-  </div>
+  </section>
 
   <!-- ── Features ─────────────────────────────────────── -->
-  <div class="bg-base-200 py-24">
+  <section class="py-24">
     <div class="max-w-6xl mx-auto px-4">
       <div class="text-center mb-16">
-        <h2 class="text-4xl font-bold mb-4">Why BadgeForge?</h2>
+        <h2 class="text-3xl sm:text-4xl font-bold mb-4">
+          Why <span class="gradient-text">BadgeForge</span>?
+        </h2>
         <p class="text-base-content/60 text-lg max-w-xl mx-auto">
-          Purpose-built for developers who care about their README
+          Built for developers who care about their README
         </p>
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        <!-- Card -->
-        <div class="card bg-base-100 shadow-sm border border-base-300">
-          <div class="card-body">
-            <div class="avatar">
-              <div class="w-10 rounded-lg bg-primary/10 flex items-center justify-center">
-                <Icon name="lucide:image" class="w-5 h-5 text-primary" />
+        {
+          [
+            {
+              icon: 'lucide:eye',
+              color: 'text-primary',
+              bg: 'bg-primary/10',
+              title: 'Real-Time Preview',
+              desc: 'Magnified and actual-size dual canvas. See exactly how your badge renders before committing.',
+            },
+            {
+              icon: 'lucide:package',
+              color: 'text-success',
+              bg: 'bg-success/10',
+              title: '3,400+ Brand Icons',
+              desc: 'Smart fuzzy search with auto-complete. Pick a logo to auto-populate its official brand color.',
+            },
+            {
+              icon: 'lucide:shield-check',
+              color: 'text-warning',
+              bg: 'bg-warning/10',
+              title: '100% Local & Private',
+              desc: 'Everything stays in your browser via IndexedDB. No accounts, servers, or tracking — ever.',
+            },
+            {
+              icon: 'lucide:clipboard-copy',
+              color: 'text-info',
+              bg: 'bg-info/10',
+              title: 'One-Click Copy',
+              desc: 'Markdown, HTML, URL, reST, AsciiDoc, Textile. Paste directly into your README or docs.',
+            },
+            {
+              icon: 'lucide:layout-grid',
+              color: 'text-secondary',
+              bg: 'bg-secondary/10',
+              title: 'Curated Gallery',
+              desc: 'Browse 50+ categories of pre-made badges. Click any to customize it instantly in the Forge.',
+            },
+            {
+              icon: 'lucide:sun-moon',
+              color: 'text-accent',
+              bg: 'bg-accent/10',
+              title: 'Light & Dark Modes',
+              desc: 'Respects your system preference with manual override. Beautiful in both themes.',
+            },
+          ].map((feature) => (
+            <div class="card bg-base-100 border border-base-300/50 card-lift">
+              <div class="card-body">
+                <div
+                  class={`w-10 h-10 rounded-xl ${feature.bg} flex items-center justify-center mb-2`}
+                >
+                  <Icon name={feature.icon} class={`w-5 h-5 ${feature.color}`} />
+                </div>
+                <h3 class="card-title text-lg">{feature.title}</h3>
+                <p class="text-base-content/60 text-sm leading-relaxed">{feature.desc}</p>
               </div>
             </div>
-            <h3 class="card-title">Real-Time Preview</h3>
-            <p>
-              Magnified and actual-size dual canvas — see exactly how your badge renders before you
-              commit.
-            </p>
-          </div>
-        </div>
-
-        <div class="card bg-base-100 shadow-sm border border-base-300">
-          <div class="card-body">
-            <div class="avatar">
-              <div class="w-10 rounded-lg bg-success/10 flex items-center justify-center">
-                <Icon name="lucide:package" class="w-5 h-5 text-success" />
-              </div>
-            </div>
-            <h3 class="card-title">3,400+ Brand Icons</h3>
-            <p>
-              Smart search with fuzzy matching. Pick a logo and auto-populate its official brand hex
-              color.
-            </p>
-          </div>
-        </div>
-
-        <div class="card bg-base-100 shadow-sm border border-base-300">
-          <div class="card-body">
-            <div class="avatar">
-              <div class="w-10 rounded-lg bg-warning/10 flex items-center justify-center">
-                <Icon name="lucide:shield-check" class="w-5 h-5 text-warning" />
-              </div>
-            </div>
-            <h3 class="card-title">Local-First &amp; Private</h3>
-            <p>
-              Everything stays in your browser via IndexedDB. No accounts, servers, or tracking.
-              Export and import JSON snapshots.
-            </p>
-          </div>
-        </div>
-
-        <div class="card bg-base-100 shadow-sm border border-base-300">
-          <div class="card-body">
-            <div class="avatar">
-              <div class="w-10 rounded-lg bg-info/10 flex items-center justify-center">
-                <Icon name="lucide:clipboard-copy" class="w-5 h-5 text-info" />
-              </div>
-            </div>
-            <h3 class="card-title">One-Click Copy</h3>
-            <p>
-              Instant Markdown, HTML, and raw URL copy buttons. Paste directly into your README,
-              profile, or documentation.
-            </p>
-          </div>
-        </div>
-
-        <div class="card bg-base-100 shadow-sm border border-base-300">
-          <div class="card-body">
-            <div class="avatar">
-              <div class="w-10 rounded-lg bg-secondary/10 flex items-center justify-center">
-                <Icon name="lucide:layout-grid" class="w-5 h-5 text-secondary" />
-              </div>
-            </div>
-            <h3 class="card-title">Curated Gallery</h3>
-            <p>
-              Browse Tech Stack, Project Health, and Social categories. Click any badge to customize
-              it instantly.
-            </p>
-          </div>
-        </div>
-
-        <div class="card bg-base-100 shadow-sm border border-base-300">
-          <div class="card-body">
-            <div class="avatar">
-              <div class="w-10 rounded-lg bg-accent/10 flex items-center justify-center">
-                <Icon name="lucide:sun-moon" class="w-5 h-5 text-accent" />
-              </div>
-            </div>
-            <h3 class="card-title">Light &amp; Dark Mode</h3>
-            <p>
-              Respects your system preference with manual override. Beautiful in both themes with
-              consistent contrast.
-            </p>
-          </div>
-        </div>
+          ))
+        }
       </div>
     </div>
-  </div>
+  </section>
 
   <!-- ── CTA ──────────────────────────────────────────── -->
-  <div class="py-24 text-center">
-    <div class="max-w-2xl mx-auto px-4">
-      <h2 class="text-4xl font-bold mb-4">Ready to build?</h2>
+  <section class="py-24 bg-base-200/50 border-t border-base-300/50">
+    <div class="max-w-2xl mx-auto px-4 text-center">
+      <h2 class="text-3xl sm:text-4xl font-bold mb-4">Ready to build?</h2>
       <p class="text-base-content/60 text-lg mb-8">
-        No sign-up required. Your badges stay private in your browser.
+        No sign-up required. Your badges stay private in your browser. Forever free.
       </p>
-      <a href={`${base}builder`} class="btn btn-primary btn-lg">Launch Forge</a>
+      <a href={`${base}builder`} class="btn btn-primary btn-lg shadow-lg shadow-primary/25">
+        <Icon name="lucide:wand-sparkles" class="w-5 h-5" />
+        Launch Forge
+      </a>
     </div>
-  </div>
+  </section>
 </Layout>

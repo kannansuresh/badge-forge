@@ -70,8 +70,8 @@ export default function BadgeCard({
   );
 
   return (
-    <div className="card bg-base-100 shadow-sm border border-base-300 hover:shadow-md transition-shadow">
-      <figure className="px-4 pt-4">
+    <div className="card bg-base-100 border border-base-300/50 card-lift">
+      <figure className="px-5 pt-5">
         {imgError ? (
           <span className="font-mono text-xs text-base-content/50">
             {badge.label}-{badge.message}-{badge.color}
@@ -97,7 +97,7 @@ export default function BadgeCard({
         )}
       </figure>
 
-      <div className="card-body p-4 gap-2">
+      <div className="card-body p-5 gap-2">
         {badge.name && <h3 className="card-title text-sm">{badge.name}</h3>}
 
         <div className="flex flex-wrap gap-1">
