@@ -105,6 +105,16 @@ const currentPath = Astro.url.pathname;
                 class:list={['', currentPath === '/dashboard' && 'menu-active']}>My Badges</a
               >
             </li>
+            <li>
+              <a
+                href="https://github.com/sponsors/kannansuresh"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="text-pink-500"
+              >
+                <Icon name="lucide:heart" class="w-4 h-4" /> Sponsor
+              </a>
+            </li>
           </ul>
         </div>
 
@@ -138,6 +148,17 @@ const currentPath = Astro.url.pathname;
       </div>
 
       <div class="navbar-end gap-1 pr-2">
+        <div class="tooltip tooltip-bottom" data-tip="Sponsor">
+          <a
+            href="https://github.com/sponsors/kannansuresh"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="btn btn-ghost btn-circle text-pink-500"
+            aria-label="Sponsor"
+          >
+            <Icon name="lucide:heart" class="w-5 h-5" />
+          </a>
+        </div>
         <a
           href="https://github.com/kannansuresh/badge-forge"
           target="_blank"
