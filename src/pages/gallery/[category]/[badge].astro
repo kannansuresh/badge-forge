@@ -1,0 +1,74 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+import { getCollection } from 'astro:content';
+import GalleryBadgeDetail from '../../../components/GalleryBadgeDetail.tsx';
+
+export async function getStaticPaths() {
+  const gallery = await getCollection('gallery');
+  const paths: Array<{
+    params: { category: string; badge: string };
+    props: Record<string, unknown>;
+  }> = [];
+
+  for (const entry of gallery) {
+    for (const badge of entry.data.badges) {
+      paths.push({
+        params: { category: entry.data.categorySlug, badge: badge.id },
+        props: {
+          badge: {
+            id: badge.id,
+            label: badge.label,
+            message: badge.message,
+            color: badge.color,
+            logo: badge.logo ?? null,
+            logoColor: badge.logoColor ?? null,
+            style: badge.style ?? 'flat',
+            labelColor: badge.labelColor ?? null,
+          },
+          category: {
+            name: entry.data.categoryName,
+            slug: entry.data.categorySlug,
+            description: entry.data.categoryDescription ?? null,
+          },
+        },
+      });
+    }
+  }
+  return paths;
+}
+
+const base = import.meta.env.BASE_URL.replace(/\/?$/, '/');
+const { badge, category } = Astro.props as {
+  badge: {
+    id: string;
+    label: string;
+    message: string;
+    color: string;
+    logo: string | null;
+    logoColor: string | null;
+    style: string;
+    labelColor: string | null;
+  };
+  category: {
+    name: string;
+    slug: string;
+    description: string | null;
+  };
+};
+---
+
+<Layout title={`${badge.label}: ${badge.message} — BadgeForge`}>
+  <div class="max-w-4xl mx-auto px-4 py-12">
+    <div class="text-sm breadcrumbs mb-6">
+      <ul>
+        <li><a href={`${base}gallery`}>Gallery</a></li>
+        <li><a href={`${base}gallery/${category.slug}`}>{category.name}</a></li>
+        <li>{badge.label}: {badge.message}</li>
+      </ul>
+    </div>
+
+    <div class="space-y-8">
+      <GalleryBadgeDetail badge={badge} category={category} client:load />
+    </div>
+  </div>
+</Layout>

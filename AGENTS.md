@@ -40,9 +40,11 @@ badgeforge/
 │   ├── components/
 │   │   ├── LiveStudio.tsx               # [React] Builder form + dual preview + copy tabs
 │   │   ├── Dashboard.tsx                # [React] Saved badges grid + import/export + filter
-│   │   ├── BadgeCard.tsx                # [React] Reusable badge card (copy/edit/delete)
+│   │   ├── BadgeCard.tsx                # [React] Reusable badge card (copy/edit/delete/details)
 │   │   ├── CategoryManager.tsx          # [React] Full category CRUD with modal confirmations
 │   │   ├── GalleryBadgeCard.astro       # [Astro] Static card + TS script for copy/edit
+│   │   ├── GalleryBadgeDetail.tsx       # [React] Read-only badge detail (gallery, static SSG)
+│   │   ├── UserBadgeDetail.tsx          # [React] Read-only badge detail (user-saved, client-side)
 │   │   └── ThemeController.astro        # [Astro] DaisyUI swap toggle + astro:page-load sync
 │   ├── layouts/Layout.astro             # Global shell: navbar, ClientRouter, theme, footer
 │   ├── lib/
@@ -54,27 +56,29 @@ badgeforge/
 │   │   ├── index.astro                  # Landing: hero + feature cards + CTA
 │   │   ├── builder.astro                # Forge page (LiveStudio React island)
 │   │   ├── dashboard.astro              # My Badges page (Dashboard React island)
+│   │   ├── badge.astro                  # User badge detail (UserBadgeDetail island, ?id= query)
 │   │   ├── categories.astro             # Category management (CategoryManager React island)
 │   │   └── gallery/
 │   │       ├── index.astro              # Category list with preview strips
-│   │       └── [category].astro         # Dynamic category — GalleryBadgeCard grid
+│   │       ├── [category].astro         # Dynamic category — GalleryBadgeCard grid
+│   │       └── [category]/[badge].astro # Static badge detail — GalleryBadgeDetail island
 │   └── styles/global.css                # Tailwind v4 + DaisyUI v5 themes (light/dark)
 ```
 
 ## Tech Stack
 
-| Layer | Package | Version | Notes |
-| --- | --- | --- | --- |
-| Framework | `astro` | ^6.4 | SSG + React islands |
-| React | `@astrojs/react`, `react`, `react-dom` | ^5, ^19 | Islands only — 4 .tsx files |
-| CSS | `tailwindcss`, `daisyui`, `@tailwindcss/vite` | ^4, ^5 | DaisyUI v5 themes |
-| Icons (Astro) | `astro-icon`, `@iconify-json/lucide` | ^1 | Lucide icon set |
-| Icons (React) | `lucide-react` | ^1 | For React components only |
-| Database | `dexie`, `dexie-export-import` | ^4 | IndexedDB wrapper |
-| Brand Icons | `simple-icons` | ^16 | 3,400+ brand logos |
-| Linting | `eslint`, `typescript-eslint`, `eslint-plugin-astro` | ^10, ^8, ^1 | Flat config |
-| Formatting | `prettier`, `prettier-plugin-astro` | ^3, ^0.14 | |
-| Package Manager | `bun` | ≥1.3 | Lockfile: bun.lock |
+| Layer           | Package                                              | Version     | Notes                       |
+| --------------- | ---------------------------------------------------- | ----------- | --------------------------- |
+| Framework       | `astro`                                              | ^6.4        | SSG + React islands         |
+| React           | `@astrojs/react`, `react`, `react-dom`               | ^5, ^19     | Islands only — 4 .tsx files |
+| CSS             | `tailwindcss`, `daisyui`, `@tailwindcss/vite`        | ^4, ^5      | DaisyUI v5 themes           |
+| Icons (Astro)   | `astro-icon`, `@iconify-json/lucide`                 | ^1          | Lucide icon set             |
+| Icons (React)   | `lucide-react`                                       | ^1          | For React components only   |
+| Database        | `dexie`, `dexie-export-import`                       | ^4          | IndexedDB wrapper           |
+| Brand Icons     | `simple-icons`                                       | ^16         | 3,400+ brand logos          |
+| Linting         | `eslint`, `typescript-eslint`, `eslint-plugin-astro` | ^10, ^8, ^1 | Flat config                 |
+| Formatting      | `prettier`, `prettier-plugin-astro`                  | ^3, ^0.14   |                             |
+| Package Manager | `bun`                                                | ≥1.3        | Lockfile: bun.lock          |
 
 ## Architecture Rules
 
@@ -182,3 +186,10 @@ badgeforge/
 - `bun run format` → Prettier write (`src/**/*.{ts,tsx,astro,css,json,md}`)
 - GitHub Actions: `oven-sh/setup-bun@v2` → `bun install` → `bun run build` → deploy to Pages
 - `SITE_URL` env var controls the Astro `site` config
+
+### Badge Detail Pages
+
+- **Gallery badges** are static SSG pages at `/gallery/[category]/[badgeId]` via `getStaticPaths` iterating all content collections. Each page uses `GalleryBadgeDetail` React island with: large badge preview, metadata grid, save-to-gallery button, edit-in-builder button, and 6 embed format copy options (Markdown, HTML, URL, reST, AsciiDoc, Textile).
+- **User badges** live in IndexedDB and cannot be SSG'd. They use a single `/badge` page with `?id=` query param. The `UserBadgeDetail` React island reads the `id` from `URLSearchParams`, fetches from Dexie, and renders the same full detail view plus a delete action with confirmation modal.
+- Gallery badge cards link to detail pages via clickable image + label text; user badge cards link via `ExternalLink` "Details" button.
+- `getBadgeById(id)` was added to `storage.ts` for single-badge lookup from Dexie.

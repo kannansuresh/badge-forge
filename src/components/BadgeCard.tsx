@@ -1,6 +1,6 @@
-import { useState, useCallback } from 'react';
-import { Pencil } from 'lucide-react';
-import { buildShieldsUrl, toMarkdown, toHtml } from '../lib/storage';
+import { ExternalLink, Pencil } from 'lucide-react';
+import { useCallback, useState } from 'react';
+import { buildShieldsUrl, toHtml, toMarkdown } from '../lib/storage';
 
 export interface BadgeConfig {
   id?: string | number | undefined;
@@ -32,8 +32,11 @@ export default function BadgeCard({
   onSave,
   showActions = true,
 }: BadgeCardProps) {
+  const base = import.meta.env.BASE_URL.replace(/\/?$/, '/');
   const [copied, setCopied] = useState<'md' | 'html' | 'url' | null>(null);
   const [imgError, setImgError] = useState(false);
+
+  const detailUrl = typeof badge.id === 'number' ? `${base}badge?id=${badge.id}` : null;
 
   const shieldsUrl = buildShieldsUrl({
     label: badge.label,
@@ -73,6 +76,16 @@ export default function BadgeCard({
           <span className="font-mono text-xs text-base-content/50">
             {badge.label}-{badge.message}-{badge.color}
           </span>
+        ) : detailUrl ? (
+          <a href={detailUrl} className="block">
+            <img
+              src={shieldsUrl}
+              alt={`${badge.label}: ${badge.message}`}
+              className="h-6 hover:opacity-80 transition-opacity"
+              loading="lazy"
+              onError={() => setImgError(true)}
+            />
+          </a>
         ) : (
           <img
             src={shieldsUrl}
@@ -107,6 +120,12 @@ export default function BadgeCard({
 
         {showActions && (
           <div className="card-actions justify-end mt-1 flex-wrap gap-1">
+            {detailUrl && (
+              <a href={detailUrl} className="btn btn-xs btn-ghost gap-1" title="View details">
+                <ExternalLink className="w-3 h-3" />
+                Details
+              </a>
+            )}
             <div className="join join-horizontal">
               <button
                 className={`join-item btn btn-xs ${copied === 'md' ? 'btn-success' : 'btn-ghost'}`}

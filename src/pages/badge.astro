@@ -1,0 +1,10 @@
+---
+import Layout from '../layouts/Layout.astro';
+import UserBadgeDetail from '../components/UserBadgeDetail.tsx';
+---
+
+<Layout title="Badge — BadgeForge">
+  <div class="max-w-4xl mx-auto px-4 py-12">
+    <UserBadgeDetail client:load />
+  </div>
+</Layout>

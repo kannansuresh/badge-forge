@@ -45,6 +45,8 @@ const clipboardData = JSON.stringify({
   labelColor,
   categorySlug,
 });
+const base = import.meta.env.BASE_URL.replace(/\/?$/, '/');
+const detailUrl = `${base}gallery/${categorySlug}/${Astro.props.id}`;
 ---
 
 <div
@@ -52,18 +54,20 @@ const clipboardData = JSON.stringify({
   data-badgecard
 >
   <figure class="px-4 pt-4">
-    <img
-      src={shieldsUrl}
-      alt={`${label}: ${message}`}
-      class="h-6"
-      loading="lazy"
-      onerror="this.parentElement.innerHTML='<span class=&quot;font-mono text-xs text-base-content/50&quot;>${label}-${message}-${color}</span>'"
-    />
+    <a href={detailUrl} class="block">
+      <img
+        src={shieldsUrl}
+        alt={`${label}: ${message}`}
+        class="h-6 hover:opacity-80 transition-opacity"
+        loading="lazy"
+        onerror="this.parentElement.innerHTML='<span class=&quot;font-mono text-xs text-base-content/50&quot;>${label}-${message}-${color}</span>'"
+      />
+    </a>
   </figure>
 
   <div class="card-body p-4 gap-2">
     <h3 class="card-title text-sm">
-      {label}
+      <a href={detailUrl} class="hover:underline">{label}</a>
       <span class="text-base-content/40 font-normal">·</span>
       {message}
     </h3>

@@ -344,6 +344,11 @@ export async function getAllBadges(
   return collection.toArray();
 }
 
+/** Get a single badge by id */
+export async function getBadgeById(id: number): Promise<SavedBadge | undefined> {
+  return db.badges.get(id);
+}
+
 /** Delete a badge by id */
 export async function deleteBadge(id: number): Promise<void> {
   await db.badges.delete(id);
