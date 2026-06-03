@@ -1,25 +1,25 @@
-import { useState, useEffect, useLayoutEffect, useCallback, useMemo, useRef } from 'react';
-import { Save, RefreshCw, FileCode, Code2, Link, FileText, BookOpen } from 'lucide-react';
-import {
-  buildShieldsUrl,
-  saveBadge,
-  isDuplicate,
-  readClipboard,
-  getIconPreviewPref,
-  setIconPreviewPref,
-  clearIconCache,
-  getIconCacheCount,
-  getIconSvg,
-  getAllCategories,
-  createCategory,
-  seedDefaultCategories,
-  toMarkdown,
-  toHtml,
-  toRst,
-  toAsciiDoc,
-} from '../lib/storage';
+import { BookOpen, Code2, FileCode, FileText, Link, RefreshCw, Save } from 'lucide-react';
+import { useCallback, useEffect, useLayoutEffect, useMemo, useRef, useState } from 'react';
 import { loadIcons, searchIcons, type SimpleIconData } from '../lib/icons';
 import type { UserCategory } from '../lib/storage';
+import {
+  buildShieldsUrl,
+  clearIconCache,
+  createCategory,
+  getAllCategories,
+  getIconCacheCount,
+  getIconPreviewPref,
+  getIconSvg,
+  isDuplicate,
+  readClipboard,
+  saveBadge,
+  seedDefaultCategories,
+  setIconPreviewPref,
+  toAsciiDoc,
+  toHtml,
+  toMarkdown,
+  toRst,
+} from '../lib/storage';
 
 interface BadgeParams {
   label: string;
@@ -106,7 +106,8 @@ export default function LiveStudio({ initialParams }: LiveStudioProps) {
   const [altCustom, setAltCustom] = useState<string | null>(null);
   const [altEditing, setAltEditing] = useState(false);
   const effectiveAlt = altCustom ?? params.message;
-  const [logoQuery, setLogoQuery] = useState('');
+  const [logoQuery, setLogoQuery] = useState(initialParams?.logo ?? '');
+  const [logoTitle, setLogoTitle] = useState<string | null>(null);
   const [logoResults, setLogoResults] = useState<SimpleIconData[]>([]);
 
   const [showLogoDropdown, setShowLogoDropdown] = useState(false);
@@ -177,6 +178,20 @@ export default function LiveStudio({ initialParams }: LiveStudioProps) {
     const { params, categorySlug, categoryId } = resolveRuntimeParams();
     if (Object.keys(params).length > 0) {
       setParams((prev) => ({ ...prev, ...params }));
+      if (params.logo) {
+        setLogoQuery(params.logo);
+        // Resolve human-readable title asynchronously
+        loadIcons().then((icons) => {
+          const match = icons.find(
+            (icon) =>
+              icon.slug === params.logo || icon.title.toLowerCase() === params.logo?.toLowerCase(),
+          );
+          if (match) {
+            setLogoTitle(match.title);
+            setLogoQuery(match.title);
+          }
+        });
+      }
     }
     if (categoryId !== undefined) {
       // Direct category ID from clipboard (e.g., editing a saved badge)
@@ -214,6 +229,8 @@ export default function LiveStudio({ initialParams }: LiveStudioProps) {
       if (value.trim().length === 0) {
         setLogoResults([]);
         setShowLogoDropdown(false);
+        setLogoTitle(null);
+        setParams((prev) => ({ ...prev, logo: '' }));
         return;
       }
       await ensureIconsLoaded();
@@ -227,6 +244,7 @@ export default function LiveStudio({ initialParams }: LiveStudioProps) {
   const selectLogo = useCallback((icon: SimpleIconData) => {
     setParams((prev) => ({ ...prev, logo: icon.slug, color: icon.hex.toLowerCase() }));
     setLogoQuery(icon.title);
+    setLogoTitle(icon.title);
     setShowLogoDropdown(false);
   }, []);
 
@@ -405,7 +423,9 @@ export default function LiveStudio({ initialParams }: LiveStudioProps) {
               autoComplete="off"
             />
             {params.logo && !showLogoDropdown && (
-              <p className="text-xs text-success mt-1 font-medium">Selected: {params.logo}</p>
+              <p className="text-xs text-success mt-1 font-medium">
+                Selected: {logoTitle ?? params.logo}
+              </p>
             )}
             {showLogoDropdown && (
               <ul className="absolute top-full mt-1 z-30 w-full bg-base-100 border border-base-300 rounded-box shadow-lg max-h-56 overflow-y-auto">
