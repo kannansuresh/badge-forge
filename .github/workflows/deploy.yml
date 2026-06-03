@@ -5,15 +5,16 @@ on:
     branches: [main, master]
   workflow_dispatch:
 
-# Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: 'true'
+
 permissions:
   contents: read
   pages: write
   id-token: write
 
-# Allow only one concurrent deployment
 concurrency:
-  group: "pages"
+  group: 'pages'
   cancel-in-progress: true
 
 jobs:
@@ -33,12 +34,15 @@ jobs:
           bun-version: latest
 
       - name: Install dependencies
-        run: bun install
+        run: bun install --frozen-lockfile
 
       - name: Build Astro site
         run: bun run build
         env:
-          SITE_URL: https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}
+          # If it's your repo, use your domain. Otherwise, auto-generate the fork's github.io URL.
+          SITE_URL: ${{ github.repository_owner == 'kannansuresh' && 'https://aneejian.com' || format('https://{0}.github.io', github.repository_owner) }}
+          # Dynamically set the subfolder name based on the repository name
+          BASE_PATH: /${{ github.event.repository.name }}
 
       - name: Setup Pages
         uses: actions/configure-pages@v5
