@@ -1,97 +1,100 @@
 {
   "categoryName": "Cloud Storage",
   "categorySlug": "cloud-storage",
-  "categoryDescription": "Cloud storage and file hosting services",
+  "categoryDescription": "Cloud file storage and sync services.",
   "badges": [
     {
-      "id": "googledrive-cloud",
-      "label": "Cloud",
-      "message": "Google Drive",
-      "color": "4285F4",
-      "logo": "googledrive",
-      "logoColor": "ffffff",
-      "style": "flat"
-    },
-    {
-      "id": "dropbox-cloud",
-      "label": "Cloud",
-      "message": "Dropbox",
-      "color": "3B4D98",
-      "logo": "dropbox",
-      "logoColor": "ffffff",
-      "style": "flat"
-    },
-    {
-      "id": "onedrive-cloud",
-      "label": "Cloud",
-      "message": "OneDrive",
-      "color": "0078D4",
-      "logo": "onedrive",
-      "logoColor": "ffffff",
-      "style": "flat"
-    },
-    {
-      "id": "icloud-cloud",
-      "label": "Cloud",
-      "message": "iCloud",
-      "color": "3693F3",
-      "logo": "icloud",
-      "logoColor": "ffffff",
-      "style": "flat"
-    },
-    {
-      "id": "mega-cloud",
-      "label": "Cloud",
-      "message": "MEGA",
-      "color": "D90007",
-      "logo": "mega",
-      "logoColor": "ffffff",
-      "style": "flat"
-    },
-    {
-      "id": "box-cloud",
-      "label": "Cloud",
-      "message": "Box",
-      "color": "0061D5",
-      "logo": "box",
-      "logoColor": "ffffff",
-      "style": "flat"
-    },
-    {
-      "id": "nextcloud-cloud",
-      "label": "Cloud",
-      "message": "Nextcloud",
-      "color": "0B94DE",
-      "logo": "nextcloud",
-      "logoColor": "ffffff",
-      "style": "flat"
-    },
-    {
-      "id": "amazons3-cloud",
-      "label": "Cloud",
+      "id": "amazon-s3",
+      "label": "",
       "message": "Amazon S3",
       "color": "FF9900",
-      "logo": "amazons3",
-      "logoColor": "ffffff",
-      "style": "flat"
+      "style": "for-the-badge"
     },
     {
-      "id": "backblaze-cloud",
-      "label": "Cloud",
+      "id": "backblaze",
+      "label": "",
       "message": "Backblaze",
       "color": "E21E29",
-      "logo": "backblaze",
-      "logoColor": "ffffff",
-      "style": "flat"
+      "style": "for-the-badge",
+      "logo": "Backblaze",
+      "logoColor": "ffffff"
     },
     {
-      "id": "protondrive-cloud",
-      "label": "Cloud",
+      "id": "box",
+      "label": "",
+      "message": "box",
+      "color": "0061D5",
+      "style": "for-the-badge",
+      "logo": "box",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "dropbox",
+      "label": "",
+      "message": "Dropbox",
+      "color": "3B4D98",
+      "style": "for-the-badge",
+      "logo": "Dropbox",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "google-drive",
+      "label": "",
+      "message": "Google Drive",
+      "color": "4285F4",
+      "style": "for-the-badge",
+      "logo": "googledrive",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "icloud",
+      "label": "",
+      "message": "icloud",
+      "color": "3693F3",
+      "style": "for-the-badge",
+      "logo": "icloud",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "mega-nz",
+      "label": "",
+      "message": "Mega",
+      "color": "D90007",
+      "style": "for-the-badge",
+      "logo": "Mega",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "microsoft-onedrive",
+      "label": "",
+      "message": "OneDrive",
+      "color": "white",
+      "style": "for-the-badge"
+    },
+    {
+      "id": "next-cloud",
+      "label": "",
+      "message": "Next Cloud",
+      "color": "0B94DE",
+      "style": "for-the-badge",
+      "logo": "nextcloud",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "onedrive",
+      "label": "",
+      "message": "OneDrive",
+      "color": "0078D4",
+      "style": "for-the-badge"
+    },
+    {
+      "id": "proton-drive",
+      "label": "",
       "message": "Proton Drive",
       "color": "6d4aff",
-      "logo": "protondrive",
-      "logoColor": "ffffff",
-      "style": "flat"
+      "style": "for-the-badge",
+      "logo": "proton drive",
+      "logoColor": "ffffff"
     }
   ]
 }

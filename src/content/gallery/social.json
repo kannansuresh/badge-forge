@@ -1,178 +1,463 @@
 {
-  "categoryName": "Social & Communication",
+  "categoryName": "Social",
   "categorySlug": "social",
-  "categoryDescription": "Social media, messaging, and communication platforms",
+  "categoryDescription": "Social media platforms and messaging apps.",
   "badges": [
     {
-      "id": "github-social",
-      "label": "GitHub",
-      "message": "GitHub",
-      "color": "181717",
-      "logo": "github",
-      "logoColor": "ffffff",
-      "style": "flat"
+      "id": "airtable",
+      "label": "",
+      "message": "Airtable",
+      "color": "18BFFF",
+      "style": "for-the-badge",
+      "logo": "Airtable",
+      "logoColor": "ffffff"
     },
     {
-      "id": "gitlab-social",
-      "label": "Git",
-      "message": "GitLab",
-      "color": "FC6D26",
-      "logo": "gitlab",
-      "logoColor": "ffffff",
-      "style": "flat"
+      "id": "bluesky",
+      "label": "",
+      "message": "Bluesky",
+      "color": "0285FF",
+      "style": "for-the-badge",
+      "logo": "Bluesky",
+      "logoColor": "ffffff"
     },
     {
-      "id": "bitbucket-social",
-      "label": "Git",
-      "message": "Bitbucket",
-      "color": "0052CC",
-      "logo": "bitbucket",
-      "logoColor": "ffffff",
-      "style": "flat"
+      "id": "buy-me-a-coffee",
+      "label": "",
+      "message": "Buy Me a Coffee",
+      "color": "ffdd00",
+      "style": "for-the-badge",
+      "logo": "buy-me-a-coffee",
+      "logoColor": "000000"
     },
     {
-      "id": "discord-social",
-      "label": "Chat",
+      "id": "calendly",
+      "label": "",
+      "message": "Calendly",
+      "color": "006BFF",
+      "style": "for-the-badge",
+      "logo": "Calendly",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "chess-com",
+      "label": "",
+      "message": "Chess.com",
+      "color": "81B64C",
+      "style": "for-the-badge",
+      "logo": "chessdotcom",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "discord",
+      "label": "",
       "message": "Discord",
       "color": "5865F2",
+      "style": "for-the-badge",
       "logo": "discord",
-      "logoColor": "ffffff",
-      "style": "flat"
+      "logoColor": "ffffff"
     },
     {
-      "id": "slack-social",
-      "label": "Chat",
+      "id": "element",
+      "label": "",
+      "message": "element",
+      "color": "0DBD8B",
+      "style": "for-the-badge",
+      "logo": "element",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "facebook",
+      "label": "",
+      "message": "Facebook",
+      "color": "1877F2",
+      "style": "for-the-badge",
+      "logo": "Facebook",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "gmail",
+      "label": "",
+      "message": "Gmail",
+      "color": "D14836",
+      "style": "for-the-badge",
+      "logo": "gmail",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "goodreads",
+      "label": "",
+      "message": "Goodreads",
+      "color": "F3F1EA",
+      "style": "for-the-badge",
+      "logo": "goodreads",
+      "logoColor": "372213"
+    },
+    {
+      "id": "google-meet",
+      "label": "",
+      "message": "Google Meet",
+      "color": "00897B",
+      "style": "for-the-badge",
+      "logo": "google-meet",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "instagram",
+      "label": "",
+      "message": "Instagram",
+      "color": "E4405F",
+      "style": "for-the-badge",
+      "logo": "Instagram",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "kakaotalk",
+      "label": "",
+      "message": "kakaotalk",
+      "color": "ffcd00",
+      "style": "for-the-badge",
+      "logo": "kakaotalk",
+      "logoColor": "000000"
+    },
+    {
+      "id": "lichess",
+      "label": "",
+      "message": "Lichess",
+      "color": "000000",
+      "style": "for-the-badge",
+      "logo": "lichess",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "line",
+      "label": "",
+      "message": "Line",
+      "color": "00C300",
+      "style": "for-the-badge",
+      "logo": "line",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "linkedin",
+      "label": "",
+      "message": "linkedin",
+      "color": "0077B5",
+      "style": "for-the-badge"
+    },
+    {
+      "id": "linktree",
+      "label": "",
+      "message": "linktree",
+      "color": "1de9b6",
+      "style": "for-the-badge",
+      "logo": "linktree",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "mastodon",
+      "label": "",
+      "message": "MASTODON",
+      "color": "2B90D9",
+      "style": "for-the-badge",
+      "logo": "mastodon",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "matrix",
+      "label": "",
+      "message": "matrix",
+      "color": "000000",
+      "style": "for-the-badge",
+      "logo": "matrix",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "meetup",
+      "label": "",
+      "message": "Meetup",
+      "color": "f64363",
+      "style": "for-the-badge",
+      "logo": "meetup",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "messenger",
+      "label": "",
+      "message": "Messenger",
+      "color": "00B2FF",
+      "style": "for-the-badge",
+      "logo": "messenger",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "misskey",
+      "label": "",
+      "message": "Misskey",
+      "color": "2EC866",
+      "style": "for-the-badge",
+      "logo": "misskey",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "odysee",
+      "label": "",
+      "message": "odysee",
+      "color": "EF1970",
+      "style": "for-the-badge",
+      "logo": "Odysee",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "outlook",
+      "label": "",
+      "message": "Microsoft Outlook",
+      "color": "0078D4",
+      "style": "for-the-badge"
+    },
+    {
+      "id": "pinterest",
+      "label": "",
+      "message": "Pinterest",
+      "color": "E60023",
+      "style": "for-the-badge",
+      "logo": "Pinterest",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "polywork",
+      "label": "",
+      "message": "Polywork",
+      "color": "543DE0",
+      "style": "for-the-badge",
+      "logo": "polywork",
+      "logoColor": "000000"
+    },
+    {
+      "id": "protonmail",
+      "label": "",
+      "message": "ProtonMail",
+      "color": "8B89CC",
+      "style": "for-the-badge",
+      "logo": "protonmail",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "reddit",
+      "label": "",
+      "message": "Reddit",
+      "color": "FF4500",
+      "style": "for-the-badge",
+      "logo": "reddit",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "session",
+      "label": "",
+      "message": "Session",
+      "color": "000000",
+      "style": "for-the-badge",
+      "logo": "Session",
+      "logoColor": "02f780"
+    },
+    {
+      "id": "showwcase",
+      "label": "",
+      "message": "showwcase",
+      "color": "0A0D14",
+      "style": "for-the-badge",
+      "logo": "showwcase",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "signal",
+      "label": "",
+      "message": "Signal",
+      "color": "039BE5",
+      "style": "for-the-badge",
+      "logo": "Signal",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "skype",
+      "label": "",
+      "message": "Skype",
+      "color": "00AFF0",
+      "style": "for-the-badge"
+    },
+    {
+      "id": "slack",
+      "label": "",
       "message": "Slack",
       "color": "4A154B",
-      "logo": "slack",
-      "logoColor": "ffffff",
-      "style": "flat"
+      "style": "for-the-badge"
     },
     {
-      "id": "telegram-social",
-      "label": "Chat",
+      "id": "snapchat",
+      "label": "",
+      "message": "Snapchat",
+      "color": "FFFC00",
+      "style": "for-the-badge",
+      "logo": "Snapchat",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "teamspeak",
+      "label": "",
+      "message": "TeamSpeak",
+      "color": "2580C3",
+      "style": "for-the-badge",
+      "logo": "teamspeak",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "telegram",
+      "label": "",
       "message": "Telegram",
-      "color": "26A5E4",
+      "color": "2CA5E0",
+      "style": "for-the-badge",
       "logo": "telegram",
-      "logoColor": "ffffff",
-      "style": "flat"
+      "logoColor": "ffffff"
     },
     {
-      "id": "whatsapp-social",
-      "label": "Chat",
-      "message": "WhatsApp",
-      "color": "25D366",
-      "logo": "whatsapp",
-      "logoColor": "ffffff",
-      "style": "flat"
+      "id": "tencent-qq",
+      "label": "",
+      "message": "Tencent QQ",
+      "color": "12B7F5",
+      "style": "for-the-badge",
+      "logo": "qq",
+      "logoColor": "ffffff"
     },
     {
-      "id": "signal-social",
-      "label": "Chat",
-      "message": "Signal",
-      "color": "3A76F0",
-      "logo": "signal",
-      "logoColor": "ffffff",
-      "style": "flat"
-    },
-    {
-      "id": "teams-social",
-      "label": "Chat",
-      "message": "Teams",
-      "color": "6264A7",
-      "logo": "microsoftteams",
-      "logoColor": "ffffff",
-      "style": "flat"
-    },
-    {
-      "id": "zoom-social",
-      "label": "Meet",
-      "message": "Zoom",
-      "color": "0B5CFF",
-      "logo": "zoom",
-      "logoColor": "ffffff",
-      "style": "flat"
-    },
-    {
-      "id": "twitter-social",
-      "label": "Social",
-      "message": "X",
-      "color": "000000",
-      "logo": "x",
-      "logoColor": "ffffff",
-      "style": "flat"
-    },
-    {
-      "id": "linkedin-social",
-      "label": "Social",
-      "message": "LinkedIn",
-      "color": "0A66C2",
-      "logo": "linkedin",
-      "logoColor": "ffffff",
-      "style": "flat"
-    },
-    {
-      "id": "mastodon-social",
-      "label": "Social",
-      "message": "Mastodon",
-      "color": "6364FF",
-      "logo": "mastodon",
-      "logoColor": "ffffff",
-      "style": "flat"
-    },
-    {
-      "id": "youtube-social",
-      "label": "Media",
-      "message": "YouTube",
-      "color": "FF0000",
-      "logo": "youtube",
-      "logoColor": "ffffff",
-      "style": "flat"
-    },
-    {
-      "id": "twitch-social",
-      "label": "Stream",
-      "message": "Twitch",
-      "color": "9146FF",
-      "logo": "twitch",
-      "logoColor": "ffffff",
-      "style": "flat"
-    },
-    {
-      "id": "gmail-social",
-      "label": "Mail",
-      "message": "Gmail",
-      "color": "EA4335",
-      "logo": "gmail",
-      "logoColor": "ffffff",
-      "style": "flat"
-    },
-    {
-      "id": "outlook-social",
-      "label": "Mail",
-      "message": "Outlook",
-      "color": "0078D4",
-      "logo": "microsoftoutlook",
-      "logoColor": "ffffff",
-      "style": "flat"
-    },
-    {
-      "id": "bluesky-social",
-      "label": "Social",
-      "message": "Bluesky",
-      "color": "1185FE",
-      "logo": "bluesky",
-      "logoColor": "ffffff",
-      "style": "flat"
-    },
-    {
-      "id": "threads-social",
-      "label": "Social",
+      "id": "threads",
+      "label": "",
       "message": "Threads",
       "color": "000000",
-      "logo": "threads",
-      "logoColor": "ffffff",
-      "style": "flat"
+      "style": "for-the-badge",
+      "logo": "Threads",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "thunderbird",
+      "label": "",
+      "message": "Thunderbird",
+      "color": "0A84FF",
+      "style": "for-the-badge",
+      "logo": "Thunderbird",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "tiktok",
+      "label": "",
+      "message": "TikTok",
+      "color": "000000",
+      "style": "for-the-badge",
+      "logo": "TikTok",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "tumblr",
+      "label": "",
+      "message": "Tumblr",
+      "color": "36465D",
+      "style": "for-the-badge",
+      "logo": "Tumblr",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "tutanota",
+      "label": "",
+      "message": "Tutanota",
+      "color": "840010",
+      "style": "for-the-badge"
+    },
+    {
+      "id": "twitch",
+      "label": "",
+      "message": "Twitch",
+      "color": "9146FF",
+      "style": "for-the-badge",
+      "logo": "Twitch",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "viber",
+      "label": "",
+      "message": "Viber",
+      "color": "8B66A9",
+      "style": "for-the-badge",
+      "logo": "viber",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "wechat",
+      "label": "",
+      "message": "WeChat",
+      "color": "07C160",
+      "style": "for-the-badge",
+      "logo": "wechat",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "whatsapp",
+      "label": "",
+      "message": "WhatsApp",
+      "color": "25D366",
+      "style": "for-the-badge",
+      "logo": "whatsapp",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "wire",
+      "label": "",
+      "message": "Wire",
+      "color": "B71C1C",
+      "style": "for-the-badge",
+      "logo": "wire",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "x",
+      "label": "",
+      "message": "X",
+      "color": "000000",
+      "style": "for-the-badge",
+      "logo": "X",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "xbox",
+      "label": "",
+      "message": "Xbox",
+      "color": "107C10",
+      "style": "for-the-badge"
+    },
+    {
+      "id": "xing",
+      "label": "",
+      "message": "xing",
+      "color": "006567",
+      "style": "for-the-badge",
+      "logo": "xing",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "youtube",
+      "label": "",
+      "message": "YouTube",
+      "color": "FF0000",
+      "style": "for-the-badge",
+      "logo": "YouTube",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "zoom",
+      "label": "",
+      "message": "Zoom",
+      "color": "2D8CFF",
+      "style": "for-the-badge",
+      "logo": "zoom",
+      "logoColor": "ffffff"
     }
   ]
 }

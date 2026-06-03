@@ -29,12 +29,13 @@ const esc = (s: string) => encodeURIComponent(s.replace(/-/g, '--').replace(/_/g
       ) : (
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {gallery.map((entry) => {
-            const { categoryName, categorySlug, categoryDescription } = entry.data;
+            const { categoryName, categoryDescription } = entry.data;
+            const categoryPath = entry.id;
             const badgeCount = entry.data.badges.length;
             const previewBadges = entry.data.badges.slice(0, 3);
             return (
               <a
-                href={`${base}gallery/${categorySlug}`}
+                href={`${base}gallery/${categoryPath}`}
                 class="card bg-base-100 shadow-sm border border-base-300 hover:shadow-md transition-shadow no-underline"
               >
                 <div class="card-body">

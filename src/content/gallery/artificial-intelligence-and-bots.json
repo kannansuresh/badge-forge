@@ -1,0 +1,174 @@
+{
+  "categoryName": "Artificial Intelligence and Bots",
+  "categorySlug": "artificial-intelligence-and-bots",
+  "categoryDescription": "AI assistants, chatbots, and machine learning platforms.",
+  "badges": [
+    {
+      "id": "amazon-alexa",
+      "label": "",
+      "message": "amazon alexa",
+      "color": "52b5f7",
+      "style": "for-the-badge"
+    },
+    {
+      "id": "chatgpt",
+      "label": "",
+      "message": "chatGPT",
+      "color": "74aa9c",
+      "style": "for-the-badge"
+    },
+    {
+      "id": "claude",
+      "label": "",
+      "message": "Claude",
+      "color": "D97757",
+      "style": "for-the-badge",
+      "logo": "claude",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "deepseek",
+      "label": "",
+      "message": "DeepSeek",
+      "color": "5786FE",
+      "style": "for-the-badge",
+      "logo": "deepseek",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "dependabot",
+      "label": "",
+      "message": "dependabot",
+      "color": "025E8C",
+      "style": "for-the-badge",
+      "logo": "dependabot",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "github-copilot",
+      "label": "",
+      "message": "github copilot",
+      "color": "8957E5",
+      "style": "for-the-badge",
+      "logo": "github-copilot",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "google-deepmind",
+      "label": "",
+      "message": "deepmind",
+      "color": "4285F4",
+      "style": "for-the-badge",
+      "logo": "deepmind",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "google-gemini",
+      "label": "",
+      "message": "google gemini",
+      "color": "8E75B2",
+      "style": "for-the-badge",
+      "logo": "google gemini",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "huggingface",
+      "label": "",
+      "message": "huggingface",
+      "color": "FFD21E",
+      "style": "for-the-badge",
+      "logo": "huggingface",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "langchain",
+      "label": "",
+      "message": "langchain",
+      "color": "1C3C3C",
+      "style": "for-the-badge",
+      "logo": "langchain",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "langflow",
+      "label": "",
+      "message": "langflow",
+      "color": "0066CC",
+      "style": "for-the-badge",
+      "logo": "langflow",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "langgraph",
+      "label": "",
+      "message": "langgraph",
+      "color": "1C3C3C",
+      "style": "for-the-badge",
+      "logo": "langgraph",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "minimax",
+      "label": "",
+      "message": "minimax",
+      "color": "B4393C",
+      "style": "for-the-badge",
+      "logo": "minimax",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "mistralai",
+      "label": "",
+      "message": "mistralai",
+      "color": "FA520F",
+      "style": "for-the-badge",
+      "logo": "mistralai",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "n8n",
+      "label": "",
+      "message": "n8n",
+      "color": "EA4B71",
+      "style": "for-the-badge",
+      "logo": "n8n",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "ollama",
+      "label": "",
+      "message": "ollama",
+      "color": "000000",
+      "style": "for-the-badge",
+      "logo": "ollama",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "perplexity",
+      "label": "",
+      "message": "perplexity",
+      "color": "000000",
+      "style": "for-the-badge",
+      "logo": "perplexity",
+      "logoColor": "088f8f"
+    },
+    {
+      "id": "qwen",
+      "label": "",
+      "message": "Qwen",
+      "color": "6950EF",
+      "style": "for-the-badge",
+      "logo": "qwen",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "yolo",
+      "label": "",
+      "message": "YOLO",
+      "color": "111F68",
+      "style": "for-the-badge",
+      "logo": "yolo",
+      "logoColor": "ffffff"
+    }
+  ]
+}

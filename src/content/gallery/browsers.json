@@ -1,106 +1,120 @@
 {
   "categoryName": "Browsers",
   "categorySlug": "browsers",
-  "categoryDescription": "Web browsers and privacy-focused alternatives",
+  "categoryDescription": "Web browsers.",
   "badges": [
     {
-      "id": "googlechrome-browser",
-      "label": "Browser",
-      "message": "Chrome",
-      "color": "4285F4",
-      "logo": "googlechrome",
-      "logoColor": "ffffff",
-      "style": "flat"
-    },
-    {
-      "id": "firefox-browser",
-      "label": "Browser",
-      "message": "Firefox",
-      "color": "FF7139",
-      "logo": "firefox",
-      "logoColor": "ffffff",
-      "style": "flat"
-    },
-    {
-      "id": "safari-browser",
-      "label": "Browser",
-      "message": "Safari",
-      "color": "000000",
-      "logo": "safari",
-      "logoColor": "ffffff",
-      "style": "flat"
-    },
-    {
-      "id": "microsoftedge-browser",
-      "label": "Browser",
-      "message": "Edge",
-      "color": "0078D7",
-      "logo": "microsoftedge",
-      "logoColor": "ffffff",
-      "style": "flat"
-    },
-    {
-      "id": "brave-browser",
-      "label": "Browser",
-      "message": "Brave",
-      "color": "FB542B",
-      "logo": "brave",
-      "logoColor": "ffffff",
-      "style": "flat"
-    },
-    {
-      "id": "opera-browser",
-      "label": "Browser",
-      "message": "Opera",
-      "color": "FF1B2D",
-      "logo": "opera",
-      "logoColor": "ffffff",
-      "style": "flat"
-    },
-    {
-      "id": "arc-browser",
-      "label": "Browser",
+      "id": "arc",
+      "label": "",
       "message": "Arc",
       "color": "000000",
+      "style": "for-the-badge",
       "logo": "arc",
-      "logoColor": "ffffff",
-      "style": "flat"
+      "logoColor": "ffffff"
     },
     {
-      "id": "torproject-browser",
-      "label": "Browser",
+      "id": "brave",
+      "label": "",
+      "message": "Brave",
+      "color": "FB542B",
+      "style": "for-the-badge",
+      "logo": "Brave",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "duckduckgo",
+      "label": "",
+      "message": "duckduckgo",
+      "color": "de5833",
+      "style": "for-the-badge",
+      "logo": "duckduckgo",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "edge",
+      "label": "",
+      "message": "Edge",
+      "color": "0078D7",
+      "style": "for-the-badge"
+    },
+    {
+      "id": "firefox",
+      "label": "",
+      "message": "Firefox",
+      "color": "FF7139",
+      "style": "for-the-badge",
+      "logo": "Firefox-Browser",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "google-chrome",
+      "label": "",
+      "message": "Google Chrome",
+      "color": "4285F4",
+      "style": "for-the-badge",
+      "logo": "GoogleChrome",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "icecat",
+      "label": "",
+      "message": "gnuicecat",
+      "color": "263A85",
+      "style": "for-the-badge",
+      "logo": "gnuicecat",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "ie",
+      "label": "",
+      "message": "Internet Explorer",
+      "color": "0076D6",
+      "style": "for-the-badge"
+    },
+    {
+      "id": "opera",
+      "label": "",
+      "message": "Opera",
+      "color": "FF1B2D",
+      "style": "for-the-badge",
+      "logo": "Opera",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "safari",
+      "label": "",
+      "message": "Safari",
+      "color": "000000",
+      "style": "for-the-badge",
+      "logo": "Safari",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "tor",
+      "label": "",
       "message": "Tor",
       "color": "7D4698",
-      "logo": "torproject",
-      "logoColor": "ffffff",
-      "style": "flat"
+      "style": "for-the-badge",
+      "logo": "Tor-Browser",
+      "logoColor": "ffffff"
     },
     {
-      "id": "vivaldi-browser",
-      "label": "Browser",
+      "id": "vivaldi",
+      "label": "",
       "message": "Vivaldi",
       "color": "EF3939",
-      "logo": "vivaldi",
-      "logoColor": "ffffff",
-      "style": "flat"
+      "style": "for-the-badge",
+      "logo": "Vivaldi",
+      "logoColor": "ffffff"
     },
     {
-      "id": "duckduckgo-browser",
-      "label": "Browser",
-      "message": "DuckDuckGo",
-      "color": "de5833",
-      "logo": "duckduckgo",
-      "logoColor": "ffffff",
-      "style": "flat"
-    },
-    {
-      "id": "zenbrowser-browser",
-      "label": "Browser",
+      "id": "zen",
+      "label": "",
       "message": "Zen",
       "color": "F76F53",
+      "style": "for-the-badge",
       "logo": "zenbrowser",
-      "logoColor": "ffffff",
-      "style": "flat"
+      "logoColor": "ffffff"
     }
   ]
 }

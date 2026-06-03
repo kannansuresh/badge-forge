@@ -27,7 +27,10 @@ interface GalleryBadgeDetailProps {
   };
   category: {
     name: string;
+    /** File-path-based slug for URL routing (e.g., "backup/ai-bots"). */
     slug: string;
+    /** JSON categorySlug for Dexie category lookup (e.g., "ai-bots"). */
+    dexieSlug?: string;
     description: string | null;
   };
 }
@@ -70,15 +73,16 @@ export default function GalleryBadgeDetail({ badge, category }: GalleryBadgeDeta
     labelColor: badge.labelColor ?? undefined,
   });
 
-  // Load categories and find matching one
+  // Load categories and find matching one (use dexieSlug for lookup)
+  const lookupSlug = category.dexieSlug || category.slug;
   useEffect(() => {
     (async () => {
       await seedDefaultCategories();
       const cats = await getAllCategories();
-      const match = cats.find((c) => c.slug === category.slug);
+      const match = cats.find((c) => c.slug === lookupSlug);
       if (match?.id) setCategoryId(match.id);
     })();
-  }, [category.slug]);
+  }, [lookupSlug]);
 
   // Check if already saved
   useEffect(() => {

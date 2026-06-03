@@ -1,187 +1,530 @@
 {
-  "categoryName": "Programming Languages",
+  "categoryName": "Languages",
   "categorySlug": "languages",
-  "categoryDescription": "Popular programming and scripting languages",
+  "categoryDescription": "Programming languages and scripting tools.",
   "badges": [
     {
-      "id": "python-lang",
-      "label": "Language",
-      "message": "Python",
-      "color": "3776AB",
-      "logo": "python",
-      "logoColor": "ffffff",
-      "style": "flat"
+      "id": "apache-groovy",
+      "label": "",
+      "message": "Apache Groovy",
+      "color": "4298B8",
+      "style": "for-the-badge",
+      "logo": "Apache Groovy",
+      "logoColor": "ffffff"
     },
     {
-      "id": "js-lang",
-      "label": "Language",
-      "message": "JavaScript",
-      "color": "F7DF1E",
-      "logo": "javascript",
-      "logoColor": "000000",
-      "style": "flat"
-    },
-    {
-      "id": "ts-lang",
-      "label": "Language",
-      "message": "TypeScript",
-      "color": "3178C6",
-      "logo": "typescript",
-      "logoColor": "ffffff",
-      "style": "flat"
-    },
-    {
-      "id": "rust-lang",
-      "label": "Language",
-      "message": "Rust",
+      "id": "assembly-script",
+      "label": "",
+      "message": "assembly script",
       "color": "000000",
-      "logo": "rust",
-      "logoColor": "ffffff",
-      "style": "flat"
+      "style": "for-the-badge",
+      "logo": "assemblyscript",
+      "logoColor": "ffffff"
     },
     {
-      "id": "go-lang",
-      "label": "Language",
-      "message": "Go",
-      "color": "00ADD8",
-      "logo": "go",
-      "logoColor": "ffffff",
-      "style": "flat"
+      "id": "bash-script",
+      "label": "",
+      "message": "bash script",
+      "color": "121011",
+      "style": "for-the-badge",
+      "logo": "gnu-bash",
+      "logoColor": "ffffff"
     },
     {
-      "id": "java-lang",
-      "label": "Language",
-      "message": "Java",
-      "color": "ED8B00",
-      "logo": "openjdk",
-      "logoColor": "ffffff",
-      "style": "flat"
-    },
-    {
-      "id": "kotlin-lang",
-      "label": "Language",
-      "message": "Kotlin",
-      "color": "7F52FF",
-      "logo": "kotlin",
-      "logoColor": "ffffff",
-      "style": "flat"
-    },
-    {
-      "id": "swift-lang",
-      "label": "Language",
-      "message": "Swift",
-      "color": "F05138",
-      "logo": "swift",
-      "logoColor": "ffffff",
-      "style": "flat"
-    },
-    {
-      "id": "cpp-lang",
-      "label": "Language",
-      "message": "C++",
+      "id": "c",
+      "label": "",
+      "message": "c",
       "color": "00599C",
-      "logo": "cplusplus",
-      "logoColor": "ffffff",
-      "style": "flat"
+      "style": "for-the-badge",
+      "logo": "c",
+      "logoColor": "ffffff"
     },
     {
-      "id": "csharp-lang",
-      "label": "Language",
-      "message": "C#",
+      "id": "c",
+      "label": "",
+      "message": "c#",
       "color": "239120",
-      "logo": "csharp",
-      "logoColor": "ffffff",
-      "style": "flat"
+      "style": "for-the-badge"
     },
     {
-      "id": "ruby-lang",
-      "label": "Language",
-      "message": "Ruby",
-      "color": "CC342D",
-      "logo": "ruby",
-      "logoColor": "ffffff",
-      "style": "flat"
+      "id": "c",
+      "label": "",
+      "message": "c++",
+      "color": "00599C",
+      "style": "for-the-badge",
+      "logo": "c++",
+      "logoColor": "ffffff"
     },
     {
-      "id": "dart-lang",
-      "label": "Language",
-      "message": "Dart",
+      "id": "clojure",
+      "label": "",
+      "message": "Clojure",
+      "color": "Clojure",
+      "style": "for-the-badge",
+      "logo": "Clojure",
+      "logoColor": "clojure"
+    },
+    {
+      "id": "coffeescript",
+      "label": "",
+      "message": "CoffeeScript",
+      "color": "2F2625",
+      "style": "for-the-badge",
+      "logo": "CoffeeScript",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "crystal",
+      "label": "",
+      "message": "crystal",
+      "color": "000000",
+      "style": "for-the-badge",
+      "logo": "crystal",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "css",
+      "label": "",
+      "message": "css",
+      "color": "663399",
+      "style": "for-the-badge",
+      "logo": "css",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "css3",
+      "label": "",
+      "message": "css3",
+      "color": "1572B6",
+      "style": "for-the-badge"
+    },
+    {
+      "id": "dart",
+      "label": "",
+      "message": "dart",
       "color": "0175C2",
+      "style": "for-the-badge",
       "logo": "dart",
-      "logoColor": "ffffff",
-      "style": "flat"
+      "logoColor": "ffffff"
     },
     {
-      "id": "elixir-lang",
-      "label": "Language",
-      "message": "Elixir",
+      "id": "delphi",
+      "label": "",
+      "message": "delphi",
+      "color": "B21F24",
+      "style": "for-the-badge",
+      "logo": "delphi",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "dgraph",
+      "label": "",
+      "message": "dgraph",
+      "color": "E50695",
+      "style": "for-the-badge",
+      "logo": "dgraph",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "elixir",
+      "label": "",
+      "message": "elixir",
       "color": "4B275F",
+      "style": "for-the-badge",
       "logo": "elixir",
-      "logoColor": "ffffff",
-      "style": "flat"
+      "logoColor": "ffffff"
     },
     {
-      "id": "zig-lang",
-      "label": "Language",
+      "id": "elm",
+      "label": "",
+      "message": "Elm",
+      "color": "60B5CC",
+      "style": "for-the-badge",
+      "logo": "elm",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "erlang",
+      "label": "",
+      "message": "Erlang",
+      "color": "white",
+      "style": "for-the-badge",
+      "logo": "erlang",
+      "logoColor": "a90533"
+    },
+    {
+      "id": "fortran",
+      "label": "",
+      "message": "Fortran",
+      "color": "734F96",
+      "style": "for-the-badge",
+      "logo": "fortran",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "gdscript",
+      "label": "",
+      "message": "GDScript",
+      "color": "74267B",
+      "style": "for-the-badge",
+      "logo": "godotengine",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "gleam",
+      "label": "",
+      "message": "gleam",
+      "color": "FFAFF3",
+      "style": "for-the-badge",
+      "logo": "gleam",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "go-golang",
+      "label": "",
+      "message": "go",
+      "color": "00ADD8",
+      "style": "for-the-badge",
+      "logo": "go",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "graphql",
+      "label": "",
+      "message": "GraphQL",
+      "color": "E10098",
+      "style": "for-the-badge",
+      "logo": "graphql",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "haskell",
+      "label": "",
+      "message": "Haskell",
+      "color": "5e5086",
+      "style": "for-the-badge",
+      "logo": "haskell",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "html5",
+      "label": "",
+      "message": "html5",
+      "color": "E34F26",
+      "style": "for-the-badge",
+      "logo": "html5",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "java",
+      "label": "",
+      "message": "java",
+      "color": "ED8B00",
+      "style": "for-the-badge",
+      "logo": "openjdk",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "javascript",
+      "label": "",
+      "message": "javascript",
+      "color": "323330",
+      "style": "for-the-badge",
+      "logo": "javascript",
+      "logoColor": "f7df1e"
+    },
+    {
+      "id": "julia",
+      "label": "",
+      "message": "Julia",
+      "color": "9558B2",
+      "style": "for-the-badge",
+      "logo": "julia",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "kotlin",
+      "label": "",
+      "message": "kotlin",
+      "color": "7F52FF",
+      "style": "for-the-badge",
+      "logo": "kotlin",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "labview",
+      "label": "",
+      "message": "labview",
+      "color": "FFDB00",
+      "style": "for-the-badge",
+      "logo": "labview",
+      "logoColor": "000000"
+    },
+    {
+      "id": "latex",
+      "label": "",
+      "message": "latex",
+      "color": "008080",
+      "style": "for-the-badge",
+      "logo": "latex",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "lua",
+      "label": "",
+      "message": "lua",
+      "color": "2C2D72",
+      "style": "for-the-badge",
+      "logo": "lua",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "markdown",
+      "label": "",
+      "message": "markdown",
+      "color": "000000",
+      "style": "for-the-badge",
+      "logo": "markdown",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "micropython",
+      "label": "",
+      "message": "micropython",
+      "color": "2B2728",
+      "style": "for-the-badge",
+      "logo": "micropython",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "nim",
+      "label": "",
+      "message": "nim",
+      "color": "FFE953",
+      "style": "for-the-badge",
+      "logo": "nim",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "nix",
+      "label": "",
+      "message": "NIX",
+      "color": "5277C3",
+      "style": "for-the-badge",
+      "logo": "NixOS",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "objective-c",
+      "label": "",
+      "message": "OBJECTIVE-C",
+      "color": "3A95E3",
+      "style": "for-the-badge",
+      "logo": "apple",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "ocaml",
+      "label": "",
+      "message": "OCaml",
+      "color": "E98407",
+      "style": "for-the-badge",
+      "logo": "ocaml",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "octave",
+      "label": "",
+      "message": "OCTAVE",
+      "color": "darkblue",
+      "style": "for-the-badge",
+      "logo": "octave",
+      "logoColor": "fcd683"
+    },
+    {
+      "id": "org-mode",
+      "label": "",
+      "message": "orgmode",
+      "color": "77AA99",
+      "style": "for-the-badge",
+      "logo": "org",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "pascal",
+      "label": "",
+      "message": "pascal",
+      "color": "0288d1",
+      "style": "for-the-badge",
+      "logo": "lazarus",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "perl",
+      "label": "",
+      "message": "perl",
+      "color": "39457E",
+      "style": "for-the-badge",
+      "logo": "perl",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "php",
+      "label": "",
+      "message": "php",
+      "color": "777BB4",
+      "style": "for-the-badge",
+      "logo": "php",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "powershell",
+      "label": "",
+      "message": "PowerShell",
+      "color": "5391FE",
+      "style": "for-the-badge"
+    },
+    {
+      "id": "python",
+      "label": "",
+      "message": "python",
+      "color": "3670A0",
+      "style": "for-the-badge",
+      "logo": "python",
+      "logoColor": "ffdd54"
+    },
+    {
+      "id": "r",
+      "label": "",
+      "message": "r",
+      "color": "276DC3",
+      "style": "for-the-badge",
+      "logo": "r",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "racket",
+      "label": "",
+      "message": "Racket",
+      "color": "9F1D20",
+      "style": "for-the-badge",
+      "logo": "racket",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "rescript",
+      "label": "",
+      "message": "rescript",
+      "color": "14162c",
+      "style": "for-the-badge",
+      "logo": "rescript",
+      "logoColor": "e34c4c"
+    },
+    {
+      "id": "ruby",
+      "label": "",
+      "message": "ruby",
+      "color": "CC342D",
+      "style": "for-the-badge",
+      "logo": "ruby",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "rust",
+      "label": "",
+      "message": "rust",
+      "color": "000000",
+      "style": "for-the-badge",
+      "logo": "rust",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "scala",
+      "label": "",
+      "message": "scala",
+      "color": "DC322F",
+      "style": "for-the-badge",
+      "logo": "scala",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "scratch",
+      "label": "",
+      "message": "Scratch",
+      "color": "FF6600",
+      "style": "for-the-badge",
+      "logo": "scratch",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "solidity",
+      "label": "",
+      "message": "Solidity",
+      "color": "363636",
+      "style": "for-the-badge",
+      "logo": "solidity",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "swift",
+      "label": "",
+      "message": "swift",
+      "color": "F54A2A",
+      "style": "for-the-badge",
+      "logo": "swift",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "typescript",
+      "label": "",
+      "message": "typescript",
+      "color": "007ACC",
+      "style": "for-the-badge",
+      "logo": "typescript",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "typst",
+      "label": "",
+      "message": "typst",
+      "color": "239DAD",
+      "style": "for-the-badge",
+      "logo": "typst",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "webassembly",
+      "label": "",
+      "message": "webassembly",
+      "color": "654FF0",
+      "style": "for-the-badge",
+      "logo": "webassembly",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "windows-terminal",
+      "label": "",
+      "message": "Windows Terminal",
+      "color": "4D4D4D",
+      "style": "for-the-badge"
+    },
+    {
+      "id": "yaml",
+      "label": "",
+      "message": "yaml",
+      "color": "ffffff",
+      "style": "for-the-badge",
+      "logo": "yaml",
+      "logoColor": "151515"
+    },
+    {
+      "id": "zig",
+      "label": "",
       "message": "Zig",
       "color": "F7A41D",
+      "style": "for-the-badge",
       "logo": "zig",
-      "logoColor": "ffffff",
-      "style": "flat"
-    },
-    {
-      "id": "lua-lang",
-      "label": "Language",
-      "message": "Lua",
-      "color": "2C2D72",
-      "logo": "lua",
-      "logoColor": "ffffff",
-      "style": "flat"
-    },
-    {
-      "id": "php-lang",
-      "label": "Language",
-      "message": "PHP",
-      "color": "777BB4",
-      "logo": "php",
-      "logoColor": "ffffff",
-      "style": "flat"
-    },
-    {
-      "id": "r-lang",
-      "label": "Language",
-      "message": "R",
-      "color": "276DC3",
-      "logo": "r",
-      "logoColor": "ffffff",
-      "style": "flat"
-    },
-    {
-      "id": "scala-lang",
-      "label": "Language",
-      "message": "Scala",
-      "color": "DC322F",
-      "logo": "scala",
-      "logoColor": "ffffff",
-      "style": "flat"
-    },
-    {
-      "id": "haskell-lang",
-      "label": "Language",
-      "message": "Haskell",
-      "color": "5D4F85",
-      "logo": "haskell",
-      "logoColor": "ffffff",
-      "style": "flat"
-    },
-    {
-      "id": "c-lang",
-      "label": "Language",
-      "message": "C",
-      "color": "555555",
-      "logo": "c",
-      "logoColor": "ffffff",
-      "style": "flat"
+      "logoColor": "ffffff"
     }
   ]
 }

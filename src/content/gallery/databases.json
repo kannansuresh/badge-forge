@@ -1,223 +1,253 @@
 {
   "categoryName": "Databases",
   "categorySlug": "databases",
-  "categoryDescription": "Relational, NoSQL, and analytics databases",
+  "categoryDescription": "Database management systems.",
   "badges": [
     {
-      "id": "postgresql-db",
-      "label": "Database",
-      "message": "PostgreSQL",
-      "color": "316192",
-      "logo": "postgresql",
-      "logoColor": "ffffff",
-      "style": "flat"
-    },
-    {
-      "id": "mysql-db",
-      "label": "Database",
-      "message": "MySQL",
-      "color": "4479A1",
-      "logo": "mysql",
-      "logoColor": "ffffff",
-      "style": "flat"
-    },
-    {
-      "id": "sqlite-db",
-      "label": "Database",
-      "message": "SQLite",
-      "color": "07405e",
-      "logo": "sqlite",
-      "logoColor": "ffffff",
-      "style": "flat"
-    },
-    {
-      "id": "mongodb-db",
-      "label": "Database",
-      "message": "MongoDB",
-      "color": "4ea94b",
-      "logo": "mongodb",
-      "logoColor": "ffffff",
-      "style": "flat"
-    },
-    {
-      "id": "redis-db",
-      "label": "Database",
-      "message": "Redis",
-      "color": "DD0031",
-      "logo": "redis",
-      "logoColor": "ffffff",
-      "style": "flat"
-    },
-    {
-      "id": "firebase-db",
-      "label": "Database",
-      "message": "Firebase",
-      "color": "DD2C00",
-      "logo": "firebase",
-      "logoColor": "ffffff",
-      "style": "flat"
-    },
-    {
-      "id": "supabase-db",
-      "label": "Database",
-      "message": "Supabase",
-      "color": "3ECF8E",
-      "logo": "supabase",
-      "logoColor": "ffffff",
-      "style": "flat"
-    },
-    {
-      "id": "mariadb-db",
-      "label": "Database",
-      "message": "MariaDB",
-      "color": "003545",
-      "logo": "mariadb",
-      "logoColor": "ffffff",
-      "style": "flat"
-    },
-    {
-      "id": "neo4j-db",
-      "label": "Database",
-      "message": "Neo4j",
-      "color": "008CC1",
-      "logo": "neo4j",
-      "logoColor": "ffffff",
-      "style": "flat"
-    },
-    {
-      "id": "apachecassandra-db",
-      "label": "Database",
-      "message": "Cassandra",
-      "color": "1287B1",
-      "logo": "apachecassandra",
-      "logoColor": "ffffff",
-      "style": "flat"
-    },
-    {
-      "id": "clickhouse-db",
-      "label": "Database",
-      "message": "ClickHouse",
-      "color": "FFCC01",
-      "logo": "clickhouse",
-      "logoColor": "ffffff",
-      "style": "flat"
-    },
-    {
-      "id": "duckdb-db",
-      "label": "Database",
-      "message": "DuckDB",
-      "color": "FFF000",
-      "logo": "duckdb",
-      "logoColor": "ffffff",
-      "style": "flat"
-    },
-    {
-      "id": "planetscale-db",
-      "label": "Database",
-      "message": "PlanetScale",
-      "color": "000000",
-      "logo": "planetscale",
-      "logoColor": "ffffff",
-      "style": "flat"
-    },
-    {
-      "id": "cockroachlabs-db",
-      "label": "Database",
-      "message": "CockroachDB",
-      "color": "6933FF",
-      "logo": "cockroachlabs",
-      "logoColor": "ffffff",
-      "style": "flat"
-    },
-    {
-      "id": "influxdb-db",
-      "label": "Database",
-      "message": "InfluxDB",
-      "color": "22ADF6",
-      "logo": "influxdb",
-      "logoColor": "ffffff",
-      "style": "flat"
-    },
-    {
-      "id": "databricks-db",
-      "label": "Database",
-      "message": "Databricks",
-      "color": "FF3621",
-      "logo": "databricks",
-      "logoColor": "ffffff",
-      "style": "flat"
-    },
-    {
-      "id": "microsoftsqlserver-db",
-      "label": "Database",
-      "message": "SQL Server",
-      "color": "CC2927",
-      "logo": "microsoftsqlserver",
-      "logoColor": "ffffff",
-      "style": "flat"
-    },
-    {
-      "id": "amazondynamodb-db",
-      "label": "Database",
-      "message": "DynamoDB",
+      "id": "amazon-dynamodb",
+      "label": "",
+      "message": "Amazon DynamoDB",
       "color": "4053D6",
-      "logo": "amazondynamodb",
-      "logoColor": "ffffff",
-      "style": "flat"
+      "style": "for-the-badge"
     },
     {
-      "id": "couchbase-db",
-      "label": "Database",
-      "message": "Couchbase",
-      "color": "EA2328",
-      "logo": "couchbase",
-      "logoColor": "ffffff",
-      "style": "flat"
-    },
-    {
-      "id": "appwrite-db",
-      "label": "Database",
+      "id": "appwrite",
+      "label": "",
       "message": "Appwrite",
       "color": "FD366E",
+      "style": "for-the-badge",
       "logo": "appwrite",
-      "logoColor": "ffffff",
-      "style": "flat"
+      "logoColor": "ffffff"
     },
     {
-      "id": "surrealdb-db",
-      "label": "Database",
-      "message": "SurrealDB",
-      "color": "FF00A0",
-      "logo": "surrealdb",
-      "logoColor": "ffffff",
-      "style": "flat"
-    },
-    {
-      "id": "singlestore-db",
-      "label": "Database",
-      "message": "SingleStore",
-      "color": "AA00FF",
-      "logo": "singlestore",
-      "logoColor": "ffffff",
-      "style": "flat"
-    },
-    {
-      "id": "teradata-db",
-      "label": "Database",
-      "message": "Teradata",
-      "color": "F37440",
-      "logo": "teradata",
-      "logoColor": "ffffff",
-      "style": "flat"
-    },
-    {
-      "id": "arangodb-db",
-      "label": "Database",
+      "id": "arangodb",
+      "label": "",
       "message": "ArangoDB",
       "color": "DDE072",
+      "style": "for-the-badge",
       "logo": "arangodb",
-      "logoColor": "ffffff",
-      "style": "flat"
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "cassandra",
+      "label": "",
+      "message": "cassandra",
+      "color": "1287B1",
+      "style": "for-the-badge",
+      "logo": "apache-cassandra",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "clickhouse",
+      "label": "",
+      "message": "ClickHouse",
+      "color": "FFCC01",
+      "style": "for-the-badge",
+      "logo": "clickhouse",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "cockroach-labs",
+      "label": "",
+      "message": "Cockroach Labs",
+      "color": "6933FF",
+      "style": "for-the-badge",
+      "logo": "Cockroach Labs",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "couchbase",
+      "label": "",
+      "message": "Couchbase",
+      "color": "EA2328",
+      "style": "for-the-badge",
+      "logo": "couchbase",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "cratedb",
+      "label": "",
+      "message": "CrateDB",
+      "color": "009DC7",
+      "style": "for-the-badge",
+      "logo": "CrateDB",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "databricks",
+      "label": "",
+      "message": "Databricks",
+      "color": "FF3621",
+      "style": "for-the-badge",
+      "logo": "databricks",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "duckdb",
+      "label": "",
+      "message": "duckdb",
+      "color": "FFF000",
+      "style": "for-the-badge",
+      "logo": "duckdb",
+      "logoColor": "000000"
+    },
+    {
+      "id": "firebase",
+      "label": "",
+      "message": "firebase",
+      "color": "a08021",
+      "style": "for-the-badge",
+      "logo": "firebase",
+      "logoColor": "ffcd34"
+    },
+    {
+      "id": "influxdb",
+      "label": "",
+      "message": "InfluxDB",
+      "color": "22ADF6",
+      "style": "for-the-badge",
+      "logo": "InfluxDB",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "mariadb",
+      "label": "",
+      "message": "MariaDB",
+      "color": "003545",
+      "style": "for-the-badge",
+      "logo": "mariadb",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "microsoft-sql-server",
+      "label": "",
+      "message": "Microsoft SQL Server",
+      "color": "CC2927",
+      "style": "for-the-badge"
+    },
+    {
+      "id": "mongodb",
+      "label": "",
+      "message": "MongoDB",
+      "color": "4ea94b",
+      "style": "for-the-badge",
+      "logo": "mongodb",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "musicbrainz",
+      "label": "",
+      "message": "Musicbrainz",
+      "color": "EB743B",
+      "style": "for-the-badge",
+      "logo": "musicbrainz",
+      "logoColor": "ba478f"
+    },
+    {
+      "id": "mysql",
+      "label": "",
+      "message": "mysql",
+      "color": "4479A1",
+      "style": "for-the-badge",
+      "logo": "mysql",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "neo4j",
+      "label": "",
+      "message": "Neo4j",
+      "color": "008CC1",
+      "style": "for-the-badge",
+      "logo": "neo4j",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "planetscale",
+      "label": "",
+      "message": "planetscale",
+      "color": "000000",
+      "style": "for-the-badge",
+      "logo": "planetscale",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "pocketbase",
+      "label": "",
+      "message": "pocketbase",
+      "color": "b8dbe4",
+      "style": "for-the-badge",
+      "logo": "Pocketbase",
+      "logoColor": "000000"
+    },
+    {
+      "id": "postgres",
+      "label": "",
+      "message": "postgres",
+      "color": "316192",
+      "style": "for-the-badge",
+      "logo": "postgresql",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "realm",
+      "label": "",
+      "message": "Realm",
+      "color": "39477F",
+      "style": "for-the-badge"
+    },
+    {
+      "id": "redis",
+      "label": "",
+      "message": "redis",
+      "color": "DD0031",
+      "style": "for-the-badge",
+      "logo": "redis",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "single-store",
+      "label": "",
+      "message": "Single Store",
+      "color": "AA00FF",
+      "style": "for-the-badge",
+      "logo": "singlestore",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "sqlite",
+      "label": "",
+      "message": "sqlite",
+      "color": "07405e",
+      "style": "for-the-badge",
+      "logo": "sqlite",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "supabase",
+      "label": "",
+      "message": "Supabase",
+      "color": "3ECF8E",
+      "style": "for-the-badge",
+      "logo": "supabase",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "surrealdb",
+      "label": "",
+      "message": "SurrealDB",
+      "color": "FF00A0",
+      "style": "for-the-badge",
+      "logo": "surrealdb",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "teradata",
+      "label": "",
+      "message": "Teradata",
+      "color": "F37440",
+      "style": "for-the-badge",
+      "logo": "teradata",
+      "logoColor": "ffffff"
     }
   ]
 }

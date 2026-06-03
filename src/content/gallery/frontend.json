@@ -1,0 +1,69 @@
+{
+  "categoryName": "Frontend",
+  "categorySlug": "frontend",
+  "categoryDescription": "Frontend frameworks and UI libraries.",
+  "badges": [
+    {
+      "id": "angular",
+      "label": "",
+      "message": "angular",
+      "color": "DD0031",
+      "style": "for-the-badge",
+      "logo": "angular",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "astro",
+      "label": "",
+      "message": "astro",
+      "color": "2C2052",
+      "style": "for-the-badge",
+      "logo": "astro",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "next-js",
+      "label": "",
+      "message": "Next",
+      "color": "black",
+      "style": "for-the-badge",
+      "logo": "next.js",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "nuxt-js",
+      "label": "",
+      "message": "Nuxt",
+      "color": "002E3B",
+      "style": "for-the-badge",
+      "logo": "nuxt"
+    },
+    {
+      "id": "react",
+      "label": "",
+      "message": "react",
+      "color": "20232a",
+      "style": "for-the-badge",
+      "logo": "react",
+      "logoColor": "61dafb"
+    },
+    {
+      "id": "svelte",
+      "label": "",
+      "message": "svelte",
+      "color": "f1413d",
+      "style": "for-the-badge",
+      "logo": "svelte",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "vue-js",
+      "label": "",
+      "message": "vue.js",
+      "color": "35495e",
+      "style": "for-the-badge",
+      "logo": "vuedotjs",
+      "logoColor": "4fc08d"
+    }
+  ]
+}

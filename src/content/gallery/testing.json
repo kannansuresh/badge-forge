@@ -1,0 +1,113 @@
+{
+  "categoryName": "Testing",
+  "categorySlug": "testing",
+  "categoryDescription": "Testing frameworks and quality assurance tools.",
+  "badges": [
+    {
+      "id": "apifox",
+      "label": "",
+      "message": "Apifox",
+      "color": "FF6600",
+      "style": "for-the-badge",
+      "logo": "apifox",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "cypress",
+      "label": "",
+      "message": "cypress",
+      "color": "E5E5E5",
+      "style": "for-the-badge",
+      "logo": "cypress",
+      "logoColor": "058a5e"
+    },
+    {
+      "id": "jasmine",
+      "label": "",
+      "message": "Jasmine",
+      "color": "8A4182",
+      "style": "for-the-badge",
+      "logo": "Jasmine",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "jest",
+      "label": "",
+      "message": "jest",
+      "color": "C21325",
+      "style": "for-the-badge",
+      "logo": "jest",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "mocha",
+      "label": "",
+      "message": "mocha",
+      "color": "8D6748",
+      "style": "for-the-badge",
+      "logo": "mocha",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "playwright",
+      "label": "",
+      "message": "playwright",
+      "color": "2EAD33",
+      "style": "for-the-badge"
+    },
+    {
+      "id": "puppeteer",
+      "label": "",
+      "message": "Puppeteer",
+      "color": "40B5A4",
+      "style": "for-the-badge",
+      "logo": "Puppeteer",
+      "logoColor": "000000"
+    },
+    {
+      "id": "pytest",
+      "label": "",
+      "message": "pytest",
+      "color": "ffffff",
+      "style": "for-the-badge",
+      "logo": "pytest",
+      "logoColor": "2f9fe3"
+    },
+    {
+      "id": "selenium",
+      "label": "",
+      "message": "selenium",
+      "color": "CB02A",
+      "style": "for-the-badge",
+      "logo": "selenium",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "sentry",
+      "label": "",
+      "message": "sentry",
+      "color": "362D59",
+      "style": "for-the-badge",
+      "logo": "sentry",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "testing-library",
+      "label": "",
+      "message": "TestingLibrary",
+      "color": "E33332",
+      "style": "for-the-badge",
+      "logo": "testing-library",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "vitest",
+      "label": "",
+      "message": "Vitest",
+      "color": "252529",
+      "style": "for-the-badge",
+      "logo": "vitest",
+      "logoColor": "fcc72b"
+    }
+  ]
+}

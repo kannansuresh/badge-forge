@@ -1,0 +1,75 @@
+{
+  "categoryName": "CI",
+  "categorySlug": "ci",
+  "categoryDescription": "Continuous integration and deployment services.",
+  "badges": [
+    {
+      "id": "chipperci",
+      "label": "",
+      "message": "chipperci",
+      "color": "1e394e",
+      "style": "for-the-badge"
+    },
+    {
+      "id": "circleci",
+      "label": "",
+      "message": "circle ci",
+      "color": "161616",
+      "style": "for-the-badge",
+      "logo": "circleci",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "cloudbees",
+      "label": "",
+      "message": "CloudBees",
+      "color": "1997B5&",
+      "style": "for-the-badge",
+      "logo": "cloudbees",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "fastlane",
+      "label": "",
+      "message": "fastlane",
+      "color": "82bd4e",
+      "style": "for-the-badge",
+      "logo": "fastlane",
+      "logoColor": "000000"
+    },
+    {
+      "id": "github-actions",
+      "label": "",
+      "message": "github actions",
+      "color": "2671E5",
+      "style": "for-the-badge",
+      "logo": "githubactions",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "gitlab-ci",
+      "label": "",
+      "message": "gitlab ci",
+      "color": "181717",
+      "style": "for-the-badge",
+      "logo": "gitlab",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "teamcity",
+      "label": "",
+      "message": "teamcity",
+      "color": "000000",
+      "style": "for-the-badge",
+      "logo": "teamcity",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "travis-ci",
+      "label": "",
+      "message": "travis ci",
+      "color": "2B2F33",
+      "style": "for-the-badge"
+    }
+  ]
+}

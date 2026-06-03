@@ -1,0 +1,51 @@
+{
+  "categoryName": "Mobile",
+  "categorySlug": "mobile",
+  "categoryDescription": "Mobile development frameworks.",
+  "badges": [
+    {
+      "id": "expo",
+      "label": "",
+      "message": "expo",
+      "color": "1C1E24",
+      "style": "for-the-badge",
+      "logo": "expo"
+    },
+    {
+      "id": "flutter",
+      "label": "",
+      "message": "Flutter",
+      "color": "02569B",
+      "style": "for-the-badge",
+      "logo": "Flutter",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "ionic",
+      "label": "",
+      "message": "Ionic",
+      "color": "3880FF",
+      "style": "for-the-badge",
+      "logo": "Ionic",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "react-native",
+      "label": "",
+      "message": "react native",
+      "color": "20232a",
+      "style": "for-the-badge",
+      "logo": "react",
+      "logoColor": "61dafb"
+    },
+    {
+      "id": "tauri",
+      "label": "",
+      "message": "tauri",
+      "color": "24C8DB",
+      "style": "for-the-badge",
+      "logo": "tauri",
+      "logoColor": "ffffff"
+    }
+  ]
+}

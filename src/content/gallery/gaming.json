@@ -1,0 +1,208 @@
+{
+  "categoryName": "Gaming",
+  "categorySlug": "gaming",
+  "categoryDescription": "Game engines and gaming platforms.",
+  "badges": [
+    {
+      "id": "amd",
+      "label": "",
+      "message": "AMD",
+      "color": "000000",
+      "style": "for-the-badge",
+      "logo": "amd",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "analogue",
+      "label": "",
+      "message": "Analogue",
+      "color": "1A1A1A",
+      "style": "for-the-badge",
+      "logo": "Analogue",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "battle-net",
+      "label": "",
+      "message": "battle.net",
+      "color": "00AEFF",
+      "style": "for-the-badge",
+      "logo": "battle.net",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "bevy",
+      "label": "",
+      "message": "bevy",
+      "color": "232326",
+      "style": "for-the-badge",
+      "logo": "bevy",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "ea",
+      "label": "",
+      "message": "ea",
+      "color": "000000",
+      "style": "for-the-badge",
+      "logo": "ea",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "epic-games",
+      "label": "",
+      "message": "epicgames",
+      "color": "313131",
+      "style": "for-the-badge",
+      "logo": "epicgames",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "godot-engine",
+      "label": "",
+      "message": "GODOT",
+      "color": "FFFFFF",
+      "style": "for-the-badge",
+      "logo": "godot-engine"
+    },
+    {
+      "id": "hearthstone-collection",
+      "label": "",
+      "message": "Hearthstone",
+      "color": "FA830D",
+      "style": "for-the-badge"
+    },
+    {
+      "id": "humble-bundle",
+      "label": "",
+      "message": "HumbleBundle",
+      "color": "494F5C",
+      "style": "for-the-badge",
+      "logo": "HumbleBundle",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "intel",
+      "label": "",
+      "message": "intel",
+      "color": "0068B5 ",
+      "style": "for-the-badge",
+      "logo": "intel",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "itch-io",
+      "label": "",
+      "message": "Itch",
+      "color": "FF0B34",
+      "style": "for-the-badge",
+      "logo": "Itch.io",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "nvidia",
+      "label": "",
+      "message": "nVIDIA",
+      "color": "76B900",
+      "style": "for-the-badge",
+      "logo": "nVIDIA",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "opengl",
+      "label": "",
+      "message": "OpenGL",
+      "color": "white",
+      "style": "for-the-badge",
+      "logo": "OpenGL"
+    },
+    {
+      "id": "playstation-network",
+      "label": "",
+      "message": "PSN",
+      "color": "0070D1",
+      "style": "for-the-badge",
+      "logo": "Playstation",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "riot-games",
+      "label": "",
+      "message": "riotgames",
+      "color": "D32936",
+      "style": "for-the-badge",
+      "logo": "riotgames",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "roblox",
+      "label": "",
+      "message": "Roblox",
+      "color": "0a0b0b",
+      "style": "for-the-badge",
+      "logo": "Roblox",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "sidequest",
+      "label": "",
+      "message": "sidequest",
+      "color": "101227",
+      "style": "for-the-badge",
+      "logo": "sidequest",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "square-enix",
+      "label": "",
+      "message": "SquareEnix",
+      "color": "ED1C24",
+      "style": "for-the-badge",
+      "logo": "SquareEnix",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "steam",
+      "label": "",
+      "message": "steam",
+      "color": "000000",
+      "style": "for-the-badge",
+      "logo": "steam",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "ubisoft",
+      "label": "",
+      "message": "Ubisoft",
+      "color": "F5F5F5",
+      "style": "for-the-badge",
+      "logo": "Ubisoft",
+      "logoColor": "000000"
+    },
+    {
+      "id": "unity",
+      "label": "",
+      "message": "unity",
+      "color": "000000",
+      "style": "for-the-badge",
+      "logo": "unity",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "unreal-engine",
+      "label": "",
+      "message": "unrealengine",
+      "color": "313131",
+      "style": "for-the-badge",
+      "logo": "unrealengine",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "xbox",
+      "label": "",
+      "message": "xbox",
+      "color": "107C10",
+      "style": "for-the-badge"
+    }
+  ]
+}

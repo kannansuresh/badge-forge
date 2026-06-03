@@ -1,0 +1,34 @@
+{
+  "categoryName": "Hardware",
+  "categorySlug": "hardware",
+  "categoryDescription": "Computer hardware manufacturers.",
+  "badges": [
+    {
+      "id": "adafruit",
+      "label": "",
+      "message": "Adafruit",
+      "color": "000000",
+      "style": "for-the-badge",
+      "logo": "adafruit",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "alienware",
+      "label": "",
+      "message": "Alienware",
+      "color": "541BAE",
+      "style": "for-the-badge",
+      "logo": "alienware",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "msi",
+      "label": "",
+      "message": "msi",
+      "color": "000000",
+      "style": "for-the-badge",
+      "logo": "msi",
+      "logoColor": "ff0000"
+    }
+  ]
+}

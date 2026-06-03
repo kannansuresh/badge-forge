@@ -1,0 +1,124 @@
+{
+  "categoryName": "Servers",
+  "categorySlug": "servers",
+  "categoryDescription": "Web servers and application servers.",
+  "badges": [
+    {
+      "id": "apache",
+      "label": "",
+      "message": "apache",
+      "color": "D42029",
+      "style": "for-the-badge",
+      "logo": "apache",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "apache-airflow",
+      "label": "",
+      "message": "Apache Airflow",
+      "color": "017CEE",
+      "style": "for-the-badge",
+      "logo": "Apache Airflow",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "apache-ant",
+      "label": "",
+      "message": "Apache Ant",
+      "color": "A81C7D",
+      "style": "for-the-badge",
+      "logo": "Apache Ant",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "apache-flink",
+      "label": "",
+      "message": "Apache Flink",
+      "color": "E6526F",
+      "style": "for-the-badge",
+      "logo": "Apache Flink",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "apache-maven",
+      "label": "",
+      "message": "Apache Maven",
+      "color": "C71A36",
+      "style": "for-the-badge",
+      "logo": "Apache Maven",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "apache-tomcat",
+      "label": "",
+      "message": "apache tomcat",
+      "color": "F8DC75",
+      "style": "for-the-badge",
+      "logo": "apache-tomcat",
+      "logoColor": "000000"
+    },
+    {
+      "id": "gunicorn",
+      "label": "",
+      "message": "gunicorn",
+      "color": ")8729",
+      "style": "for-the-badge",
+      "logo": "gunicorn",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "jenkins",
+      "label": "",
+      "message": "jenkins",
+      "color": "2C5263",
+      "style": "for-the-badge",
+      "logo": "jenkins",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "nginx",
+      "label": "",
+      "message": "nginx",
+      "color": "009639",
+      "style": "for-the-badge",
+      "logo": "nginx",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "nginx-proxy-manager",
+      "label": "",
+      "message": "nginx proxy manager",
+      "color": "F15833",
+      "style": "for-the-badge",
+      "logo": "nginxproxymanager",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "portainer",
+      "label": "",
+      "message": "portainer",
+      "color": "13BEF9",
+      "style": "for-the-badge",
+      "logo": "portainer",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "progress-kemp-virtual-loadmaster",
+      "label": "",
+      "message": "Kemp VLM",
+      "color": "fedd00",
+      "style": "for-the-badge",
+      "logo": "progress",
+      "logoColor": "5ce500"
+    },
+    {
+      "id": "traefikproxy",
+      "label": "",
+      "message": "Traefik",
+      "color": "%2300314b",
+      "style": "for-the-badge",
+      "logo": "traefikproxy",
+      "logoColor": "ffffff"
+    }
+  ]
+}

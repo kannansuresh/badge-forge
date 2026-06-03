@@ -1,196 +1,283 @@
 {
   "categoryName": "Design",
   "categorySlug": "design",
-  "categoryDescription": "Design tools, creative software, and prototyping",
+  "categoryDescription": "Design tools and creative software.",
   "badges": [
     {
-      "id": "figma-design",
-      "label": "Design",
-      "message": "Figma",
-      "color": "F24E1E",
-      "logo": "figma",
-      "logoColor": "ffffff",
-      "style": "flat"
+      "id": "adobe",
+      "label": "",
+      "message": "adobe",
+      "color": "FF0000",
+      "style": "for-the-badge"
     },
     {
-      "id": "adobephotoshop-design",
-      "label": "Design",
-      "message": "Adobe Photoshop",
-      "color": "31A8FF",
-      "logo": "adobephotoshop",
-      "logoColor": "ffffff",
-      "style": "flat"
+      "id": "adobe-acrobat-reader",
+      "label": "",
+      "message": "Adobe Acrobat Reader",
+      "color": "EC1C24",
+      "style": "for-the-badge"
     },
     {
-      "id": "adobeillustrator-design",
-      "label": "Design",
-      "message": "Adobe Illustrator",
-      "color": "FF9A00",
-      "logo": "adobeillustrator",
-      "logoColor": "ffffff",
-      "style": "flat"
-    },
-    {
-      "id": "blender-design",
-      "label": "Design",
-      "message": "Blender",
-      "color": "F5792A",
-      "logo": "blender",
-      "logoColor": "ffffff",
-      "style": "flat"
-    },
-    {
-      "id": "canva-design",
-      "label": "Design",
-      "message": "Canva",
-      "color": "00C4CC",
-      "logo": "canva",
-      "logoColor": "ffffff",
-      "style": "flat"
-    },
-    {
-      "id": "sketch-design",
-      "label": "Design",
-      "message": "Sketch",
-      "color": "FFB387",
-      "logo": "sketch",
-      "logoColor": "ffffff",
-      "style": "flat"
-    },
-    {
-      "id": "gimp-design",
-      "label": "Design",
-      "message": "GIMP",
-      "color": "657D8B",
-      "logo": "gimp",
-      "logoColor": "ffffff",
-      "style": "flat"
-    },
-    {
-      "id": "inkscape-design",
-      "label": "Design",
-      "message": "Inkscape",
-      "color": "000000",
-      "logo": "inkscape",
-      "logoColor": "ffffff",
-      "style": "flat"
-    },
-    {
-      "id": "affinitydesigner-design",
-      "label": "Design",
-      "message": "Affinity Designer",
-      "color": "1B72BE",
-      "logo": "affinitydesigner",
-      "logoColor": "ffffff",
-      "style": "flat"
-    },
-    {
-      "id": "davinciresolve-design",
-      "label": "Design",
-      "message": "DaVinci Resolve",
-      "color": "233A51",
-      "logo": "davinciresolve",
-      "logoColor": "ffffff",
-      "style": "flat"
-    },
-    {
-      "id": "aseprite-design",
-      "label": "Design",
-      "message": "Aseprite",
-      "color": "7D929E",
-      "logo": "aseprite",
-      "logoColor": "ffffff",
-      "style": "flat"
-    },
-    {
-      "id": "krita-design",
-      "label": "Design",
-      "message": "Krita",
-      "color": "203759",
-      "logo": "krita",
-      "logoColor": "ffffff",
-      "style": "flat"
-    },
-    {
-      "id": "dribbble-design",
-      "label": "Design",
-      "message": "Dribbble",
-      "color": "EA4C89",
-      "logo": "dribbble",
-      "logoColor": "ffffff",
-      "style": "flat"
-    },
-    {
-      "id": "adobexd-design",
-      "label": "Design",
-      "message": "Adobe XD",
-      "color": "470137",
-      "logo": "adobexd",
-      "logoColor": "ffffff",
-      "style": "flat"
-    },
-    {
-      "id": "adobepremierepro-design",
-      "label": "Design",
-      "message": "Adobe Premiere Pro",
-      "color": "9999FF",
-      "logo": "adobepremierepro",
-      "logoColor": "ffffff",
-      "style": "flat"
-    },
-    {
-      "id": "adobeaftereffects-design",
-      "label": "Design",
+      "id": "adobe-after-effects",
+      "label": "",
       "message": "Adobe After Effects",
       "color": "9999FF",
-      "logo": "adobeaftereffects",
-      "logoColor": "ffffff",
-      "style": "flat"
+      "style": "for-the-badge"
     },
     {
-      "id": "adobelightroom-design",
-      "label": "Design",
-      "message": "Adobe Lightroom",
-      "color": "31A8FF",
-      "logo": "adobelightroom",
-      "logoColor": "ffffff",
-      "style": "flat"
+      "id": "adobe-audition",
+      "label": "",
+      "message": "Adobe Audition",
+      "color": "9999FF",
+      "style": "for-the-badge"
     },
     {
-      "id": "adobeindesign-design",
-      "label": "Design",
+      "id": "adobe-creative-cloud",
+      "label": "",
+      "message": "Adobe Creative Cloud",
+      "color": "DA1F26",
+      "style": "for-the-badge"
+    },
+    {
+      "id": "adobe-dreamweaver",
+      "label": "",
+      "message": "Adobe Dreamweaver",
+      "color": "FF61F6",
+      "style": "for-the-badge"
+    },
+    {
+      "id": "adobe-fonts",
+      "label": "",
+      "message": "Adobe Fonts",
+      "color": "000B1D",
+      "style": "for-the-badge"
+    },
+    {
+      "id": "adobe-illustrator",
+      "label": "",
+      "message": "adobe illustrator",
+      "color": "FF9A00",
+      "style": "for-the-badge"
+    },
+    {
+      "id": "adobe-indesign",
+      "label": "",
       "message": "Adobe InDesign",
       "color": "49021F",
-      "logo": "adobeindesign",
-      "logoColor": "ffffff",
-      "style": "flat"
+      "style": "for-the-badge"
     },
     {
-      "id": "storybook-design",
-      "label": "Design",
+      "id": "adobe-lightroom",
+      "label": "",
+      "message": "Adobe Lightroom",
+      "color": "31A8FF",
+      "style": "for-the-badge"
+    },
+    {
+      "id": "adobe-lightroom-classic",
+      "label": "",
+      "message": "Adobe Lightroom Classic",
+      "color": "31A8FF",
+      "style": "for-the-badge"
+    },
+    {
+      "id": "adobe-photoshop",
+      "label": "",
+      "message": "adobe photoshop",
+      "color": "31A8FF",
+      "style": "for-the-badge"
+    },
+    {
+      "id": "adobe-premiere-pro",
+      "label": "",
+      "message": "Adobe Premiere Pro",
+      "color": "9999FF",
+      "style": "for-the-badge"
+    },
+    {
+      "id": "adobe-xd",
+      "label": "",
+      "message": "Adobe XD",
+      "color": "470137",
+      "style": "for-the-badge"
+    },
+    {
+      "id": "affinity-designer",
+      "label": "",
+      "message": "affinity desginer",
+      "color": "1B72BE",
+      "style": "for-the-badge"
+    },
+    {
+      "id": "affinity-photo",
+      "label": "",
+      "message": "affinityphoto",
+      "color": "7E4DD2",
+      "style": "for-the-badge"
+    },
+    {
+      "id": "aseprite",
+      "label": "",
+      "message": "Aseprite",
+      "color": "FFFFFF",
+      "style": "for-the-badge",
+      "logo": "Aseprite"
+    },
+    {
+      "id": "blender",
+      "label": "",
+      "message": "blender",
+      "color": "F5792A",
+      "style": "for-the-badge",
+      "logo": "blender",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "canva",
+      "label": "",
+      "message": "Canva",
+      "color": "00C4CC",
+      "style": "for-the-badge"
+    },
+    {
+      "id": "clip-studio-paint",
+      "label": "",
+      "message": "ClipStudioPaint",
+      "color": "CFD3D3",
+      "style": "for-the-badge"
+    },
+    {
+      "id": "davinci-resolve",
+      "label": "",
+      "message": "davinci resolve",
+      "color": "233A51",
+      "style": "for-the-badge",
+      "logo": "davinciresolve",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "drawio",
+      "label": "",
+      "message": "drawio",
+      "color": "F08705",
+      "style": "for-the-badge",
+      "logo": "diagrams.net",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "dribbble",
+      "label": "",
+      "message": "Dribbble",
+      "color": "EA4C89",
+      "style": "for-the-badge",
+      "logo": "dribbble",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "figma",
+      "label": "",
+      "message": "figma",
+      "color": "F24E1E",
+      "style": "for-the-badge",
+      "logo": "figma",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "framer",
+      "label": "",
+      "message": "Framer",
+      "color": "black",
+      "style": "for-the-badge",
+      "logo": "framer",
+      "logoColor": "0000ff"
+    },
+    {
+      "id": "gimp",
+      "label": "",
+      "message": "Gimp",
+      "color": "657D8B",
+      "style": "for-the-badge",
+      "logo": "gimp",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "inkscape",
+      "label": "",
+      "message": "Inkscape",
+      "color": "e0e0e0",
+      "style": "for-the-badge",
+      "logo": "inkscape",
+      "logoColor": "080a13"
+    },
+    {
+      "id": "invision",
+      "label": "",
+      "message": "invision",
+      "color": "FF3366",
+      "style": "for-the-badge"
+    },
+    {
+      "id": "krita",
+      "label": "",
+      "message": "Krita",
+      "color": "203759",
+      "style": "for-the-badge",
+      "logo": "krita",
+      "logoColor": "eef37b"
+    },
+    {
+      "id": "penpot",
+      "label": "",
+      "message": "penpot",
+      "color": "FFFFFF",
+      "style": "for-the-badge",
+      "logo": "penpot",
+      "logoColor": "000000"
+    },
+    {
+      "id": "proto-io",
+      "label": "",
+      "message": "Proto.io",
+      "color": "161637",
+      "style": "for-the-badge",
+      "logo": "proto.io",
+      "logoColor": "00e5ff"
+    },
+    {
+      "id": "rhinoceros",
+      "label": "",
+      "message": "Rhinoceros",
+      "color": "801010",
+      "style": "for-the-badge",
+      "logo": "rhinoceros",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "sketch",
+      "label": "",
+      "message": "Sketch",
+      "color": "FFB387",
+      "style": "for-the-badge",
+      "logo": "sketch",
+      "logoColor": "000000"
+    },
+    {
+      "id": "sketch-up",
+      "label": "",
+      "message": "SketchUp",
+      "color": "005F9E",
+      "style": "for-the-badge",
+      "logo": "sketchup",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "storybook",
+      "label": "",
       "message": "Storybook",
       "color": "FF4785",
+      "style": "for-the-badge",
       "logo": "storybook",
-      "logoColor": "ffffff",
-      "style": "flat"
-    },
-    {
-      "id": "framer-design",
-      "label": "Design",
-      "message": "Framer",
-      "color": "0055FF",
-      "logo": "framer",
-      "logoColor": "ffffff",
-      "style": "flat"
-    },
-    {
-      "id": "penpot-design",
-      "label": "Design",
-      "message": "Penpot",
-      "color": "000000",
-      "logo": "penpot",
-      "logoColor": "ffffff",
-      "style": "flat"
+      "logoColor": "ffffff"
     }
   ]
 }

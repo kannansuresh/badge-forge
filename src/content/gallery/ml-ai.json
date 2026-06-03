@@ -1,0 +1,61 @@
+{
+  "categoryName": "ML/AI",
+  "categorySlug": "ml-ai",
+  "categoryDescription": "Machine learning and AI libraries.",
+  "badges": [
+    {
+      "id": "keras",
+      "label": "",
+      "message": "Keras",
+      "color": "D00000",
+      "style": "for-the-badge",
+      "logo": "keras",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "numpy",
+      "label": "",
+      "message": "NumPy",
+      "color": "013243",
+      "style": "for-the-badge",
+      "logo": "numpy",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "opencv",
+      "label": "",
+      "message": "opencv",
+      "color": "white",
+      "style": "for-the-badge",
+      "logo": "opencv",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "pandas",
+      "label": "",
+      "message": "Pandas",
+      "color": "150458",
+      "style": "for-the-badge",
+      "logo": "pandas",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "pytorch",
+      "label": "",
+      "message": "PyTorch",
+      "color": "EE4C2C",
+      "style": "for-the-badge",
+      "logo": "pytorch",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "tensorflow",
+      "label": "",
+      "message": "TensorFlow",
+      "color": "FF6F00",
+      "style": "for-the-badge",
+      "logo": "tensorflow",
+      "logoColor": "ffffff"
+    }
+  ]
+}

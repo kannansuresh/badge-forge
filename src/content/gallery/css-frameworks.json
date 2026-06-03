@@ -1,0 +1,78 @@
+{
+  "categoryName": "CSS Frameworks",
+  "categorySlug": "css-frameworks",
+  "categoryDescription": "CSS frameworks and utility libraries.",
+  "badges": [
+    {
+      "id": "ant-design",
+      "label": "",
+      "message": "AntDesign",
+      "color": "0170FE",
+      "style": "for-the-badge",
+      "logo": "ant-design",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "bootstrap",
+      "label": "",
+      "message": "bootstrap",
+      "color": "8511FA",
+      "style": "for-the-badge",
+      "logo": "bootstrap",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "bulma",
+      "label": "",
+      "message": "bulma",
+      "color": "00D0B1",
+      "style": "for-the-badge",
+      "logo": "bulma",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "mantine",
+      "label": "",
+      "message": "Mantine",
+      "color": "ffffff",
+      "style": "for-the-badge",
+      "logo": "Mantine",
+      "logoColor": "339af0"
+    },
+    {
+      "id": "material-ui",
+      "label": "",
+      "message": "Material UI",
+      "color": "FFFFFF",
+      "style": "for-the-badge",
+      "logo": "MUI"
+    },
+    {
+      "id": "shadcn-ui",
+      "label": "",
+      "message": "shadcn/ui",
+      "color": "000000",
+      "style": "for-the-badge",
+      "logo": "shadcnui",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "tailwindcss",
+      "label": "",
+      "message": "tailwindcss",
+      "color": "38B2AC",
+      "style": "for-the-badge",
+      "logo": "tailwind-css",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "vuetify",
+      "label": "",
+      "message": "Vuetify",
+      "color": "1867C0",
+      "style": "for-the-badge",
+      "logo": "vuetify",
+      "logoColor": "aeddff"
+    }
+  ]
+}

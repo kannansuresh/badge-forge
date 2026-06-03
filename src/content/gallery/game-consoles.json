@@ -1,0 +1,103 @@
+{
+  "categoryName": "Game Consoles",
+  "categorySlug": "game-consoles",
+  "categoryDescription": "Video game consoles and handheld devices.",
+  "badges": [
+    {
+      "id": "3ds",
+      "label": "",
+      "message": "3DS",
+      "color": "D12228",
+      "style": "for-the-badge"
+    },
+    {
+      "id": "gamecube",
+      "label": "",
+      "message": "Gamecube",
+      "color": "6A5FBB",
+      "style": "for-the-badge"
+    },
+    {
+      "id": "playstation",
+      "label": "",
+      "message": "Playstation",
+      "color": "003791",
+      "style": "for-the-badge",
+      "logo": "playstation",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "playstation-2",
+      "label": "",
+      "message": "Playstation 2",
+      "color": "003791",
+      "style": "for-the-badge",
+      "logo": "playstation-2",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "playstation-3",
+      "label": "",
+      "message": "Playstation 3",
+      "color": "003791",
+      "style": "for-the-badge",
+      "logo": "playstation-3",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "playstation-4",
+      "label": "",
+      "message": "Playstation 4",
+      "color": "003791",
+      "style": "for-the-badge",
+      "logo": "playstation-4",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "playstation-5",
+      "label": "",
+      "message": "Playstation 5",
+      "color": "003791",
+      "style": "for-the-badge",
+      "logo": "playstation-5",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "playstation-vita",
+      "label": "",
+      "message": "Playstation Vita",
+      "color": "003791",
+      "style": "for-the-badge",
+      "logo": "playstation-vita",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "switch",
+      "label": "",
+      "message": "Switch",
+      "color": "E60012",
+      "style": "for-the-badge"
+    },
+    {
+      "id": "wii",
+      "label": "",
+      "message": "Wii",
+      "color": "8B8B8B",
+      "style": "for-the-badge"
+    },
+    {
+      "id": "wii-u",
+      "label": "",
+      "message": "Wii U",
+      "color": "8B8B8B",
+      "style": "for-the-badge"
+    },
+    {
+      "id": "xbox",
+      "label": "",
+      "message": "xbox",
+      "color": "107C10",
+      "style": "for-the-badge"
+    }
+  ]
+}

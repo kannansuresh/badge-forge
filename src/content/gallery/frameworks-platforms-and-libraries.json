@@ -1,0 +1,1219 @@
+{
+  "categoryName": "Frameworks, Platforms and Libraries",
+  "categorySlug": "frameworks-platforms-and-libraries",
+  "categoryDescription": "Web frameworks, libraries, and development platforms.",
+  "badges": [
+    {
+      "id": "net",
+      "label": "",
+      "message": ".NET",
+      "color": "5C2D91",
+      "style": "for-the-badge",
+      "logo": ".net",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "adonisjs",
+      "label": "",
+      "message": "adonisjs",
+      "color": "220052",
+      "style": "for-the-badge",
+      "logo": "adonisjs",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "ajv",
+      "label": "",
+      "message": "ajv",
+      "color": "C21325",
+      "style": "for-the-badge",
+      "logo": "ajv",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "alpine-js",
+      "label": "",
+      "message": "alpinejs",
+      "color": "white",
+      "style": "for-the-badge",
+      "logo": "alpinedotjs",
+      "logoColor": "8bc0d0"
+    },
+    {
+      "id": "amd",
+      "label": "",
+      "message": "amd",
+      "color": "ED1C24",
+      "style": "for-the-badge",
+      "logo": "amd",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "anaconda",
+      "label": "",
+      "message": "Anaconda",
+      "color": "44A833",
+      "style": "for-the-badge",
+      "logo": "anaconda",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "angular-js",
+      "label": "",
+      "message": "angular.js",
+      "color": "E23237",
+      "style": "for-the-badge"
+    },
+    {
+      "id": "apache-hadoop",
+      "label": "",
+      "message": "Apache Hadoop",
+      "color": "66CCFF",
+      "style": "for-the-badge",
+      "logo": "apachehadoop",
+      "logoColor": "000000"
+    },
+    {
+      "id": "apache-hive",
+      "label": "",
+      "message": "Apache Hive",
+      "color": "FDEE21",
+      "style": "for-the-badge",
+      "logo": "apachehive",
+      "logoColor": "000000"
+    },
+    {
+      "id": "apache-kafka",
+      "label": "",
+      "message": "Apache Kafka",
+      "color": "000",
+      "style": "for-the-badge",
+      "logo": "apachekafka"
+    },
+    {
+      "id": "apache-spark",
+      "label": "",
+      "message": "Apache Spark",
+      "color": "FDEE21",
+      "style": "flat-square",
+      "logo": "apachespark",
+      "logoColor": "000000"
+    },
+    {
+      "id": "apollo-graphql",
+      "label": "",
+      "message": "ApolloGraphQL",
+      "color": "311C87",
+      "style": "for-the-badge",
+      "logo": "apollo-graphql"
+    },
+    {
+      "id": "arm",
+      "label": "",
+      "message": "arm",
+      "color": "0091BD",
+      "style": "for-the-badge",
+      "logo": "arm",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "aurelia",
+      "label": "",
+      "message": "aurelia",
+      "color": "ED2B88",
+      "style": "for-the-badge",
+      "logo": "aurelia",
+      "logoColor": "fff"
+    },
+    {
+      "id": "biome",
+      "label": "",
+      "message": "biome",
+      "color": "60A5FA",
+      "style": "for-the-badge",
+      "logo": "biome",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "black",
+      "label": "",
+      "message": "black",
+      "color": "000000",
+      "style": "for-the-badge",
+      "logo": "black",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "blazor",
+      "label": "",
+      "message": "blazor",
+      "color": "5C2D91",
+      "style": "for-the-badge",
+      "logo": "blazor",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "buefy",
+      "label": "",
+      "message": "Buefy",
+      "color": "7957D5",
+      "style": "for-the-badge",
+      "logo": "buefy",
+      "logoColor": "48289e"
+    },
+    {
+      "id": "celery",
+      "label": "",
+      "message": "celery",
+      "color": "a9cc54",
+      "style": "for-the-badge",
+      "logo": "celery",
+      "logoColor": "ddf4a4"
+    },
+    {
+      "id": "chakra-ui",
+      "label": "",
+      "message": "chakra",
+      "color": "4ED1C5",
+      "style": "for-the-badge",
+      "logo": "chakraui",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "chart-js",
+      "label": "",
+      "message": "chart.js",
+      "color": "F5788D",
+      "style": "for-the-badge",
+      "logo": "chart.js",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "code-igniter",
+      "label": "",
+      "message": "CodeIgniter",
+      "color": "EF4223",
+      "style": "for-the-badge",
+      "logo": "codeIgniter",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "composer",
+      "label": "",
+      "message": "composer",
+      "color": "885630",
+      "style": "for-the-badge",
+      "logo": "composer",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "conan",
+      "label": "",
+      "message": "conan",
+      "color": "6699CB",
+      "style": "for-the-badge",
+      "logo": "conan",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "context-api",
+      "label": "",
+      "message": "Context-Api",
+      "color": "000000",
+      "style": "for-the-badge",
+      "logo": "react"
+    },
+    {
+      "id": "cuda",
+      "label": "",
+      "message": "cuda",
+      "color": "000000",
+      "style": "for-the-badge",
+      "logo": "nVIDIA",
+      "logoColor": "00ff00"
+    },
+    {
+      "id": "d3-js",
+      "label": "",
+      "message": "D3.JS",
+      "color": "000000",
+      "style": "for-the-badge",
+      "logo": "D3"
+    },
+    {
+      "id": "daisyui",
+      "label": "",
+      "message": "daisyui",
+      "color": "5A0EF8",
+      "style": "for-the-badge",
+      "logo": "daisyui",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "deno-js",
+      "label": "",
+      "message": "deno js",
+      "color": "000000",
+      "style": "for-the-badge",
+      "logo": "deno",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "directus",
+      "label": "",
+      "message": "directus",
+      "color": "64f",
+      "style": "for-the-badge",
+      "logo": "directus",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "djangorest",
+      "label": "DJANGO",
+      "message": "REST",
+      "color": "ff1709",
+      "style": "for-the-badge",
+      "logo": "django",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "drupal",
+      "label": "",
+      "message": "drupal",
+      "color": "0678BE",
+      "style": "for-the-badge",
+      "logo": "drupal",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "ejs",
+      "label": "",
+      "message": "ejs",
+      "color": "B4CA65",
+      "style": "for-the-badge",
+      "logo": "ejs",
+      "logoColor": "000000"
+    },
+    {
+      "id": "elasticsearch",
+      "label": "",
+      "message": "elasticsearch",
+      "color": "0377CC",
+      "style": "for-the-badge",
+      "logo": "elasticsearch",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "electron-js",
+      "label": "",
+      "message": "Electron",
+      "color": "191970",
+      "style": "for-the-badge",
+      "logo": "Electron",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "ember",
+      "label": "",
+      "message": "ember",
+      "color": "1C1E24",
+      "style": "for-the-badge",
+      "logo": "ember.js"
+    },
+    {
+      "id": "fastify",
+      "label": "",
+      "message": "fastify",
+      "color": "000000",
+      "style": "for-the-badge",
+      "logo": "fastify",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "filament",
+      "label": "",
+      "message": "filament",
+      "color": "FDAE4B",
+      "style": "for-the-badge",
+      "logo": "filament",
+      "logoColor": "000000"
+    },
+    {
+      "id": "flatpak",
+      "label": "",
+      "message": "flatpak",
+      "color": "4A90D9",
+      "style": "for-the-badge",
+      "logo": "flatpak",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "font-awesome",
+      "label": "",
+      "message": "Font Awesome",
+      "color": "538DD7",
+      "style": "for-the-badge",
+      "logo": "fontawesome",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "framework7",
+      "label": "",
+      "message": "framework7",
+      "color": "EE350F",
+      "style": "for-the-badge",
+      "logo": "framework7",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "gatsby-js",
+      "label": "",
+      "message": "Gatsby",
+      "color": "663399",
+      "style": "for-the-badge",
+      "logo": "gatsby",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "grav",
+      "label": "",
+      "message": "grav",
+      "color": "FFFFFF",
+      "style": "for-the-badge",
+      "logo": "grav",
+      "logoColor": "221e1f"
+    },
+    {
+      "id": "green-sock",
+      "label": "",
+      "message": "green sock",
+      "color": "88CE02",
+      "style": "for-the-badge",
+      "logo": "greensock",
+      "logoColor": "000000"
+    },
+    {
+      "id": "gsap",
+      "label": "",
+      "message": "GSAP",
+      "color": "88CE02",
+      "style": "for-the-badge",
+      "logo": "greensock",
+      "logoColor": "000000"
+    },
+    {
+      "id": "gutenberg",
+      "label": "",
+      "message": "gutenberg",
+      "color": "077CB2",
+      "style": "for-the-badge",
+      "logo": "gutenberg",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "handlebars",
+      "label": "",
+      "message": "Handlebars",
+      "color": "000000",
+      "style": "for-the-badge",
+      "logo": "Handlebars.js",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "helm",
+      "label": "",
+      "message": "helm",
+      "color": "0F1689",
+      "style": "for-the-badge",
+      "logo": "helm",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "homebrew",
+      "label": "",
+      "message": "homebrew",
+      "color": "FBB040",
+      "style": "for-the-badge",
+      "logo": "homebrew",
+      "logoColor": "000000"
+    },
+    {
+      "id": "hono",
+      "label": "",
+      "message": "hono",
+      "color": "E36002",
+      "style": "for-the-badge",
+      "logo": "hono",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "htmx",
+      "label": "",
+      "message": "htmx",
+      "color": "3366CC",
+      "style": "for-the-badge",
+      "logo": "htmx",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "hugo",
+      "label": "",
+      "message": "Hugo",
+      "color": "black",
+      "style": "for-the-badge",
+      "logo": "Hugo"
+    },
+    {
+      "id": "insomnia",
+      "label": "",
+      "message": "Insomnia",
+      "color": "black",
+      "style": "for-the-badge",
+      "logo": "insomnia",
+      "logoColor": "5849be"
+    },
+    {
+      "id": "jamstack",
+      "label": "",
+      "message": "jamstack",
+      "color": "F0047F",
+      "style": "for-the-badge",
+      "logo": "jamstack",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "jasmine",
+      "label": "",
+      "message": "jasmine",
+      "color": "8A4182",
+      "style": "for-the-badge",
+      "logo": "jasmine",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "javafx",
+      "label": "",
+      "message": "javafx",
+      "color": "FF0000",
+      "style": "for-the-badge"
+    },
+    {
+      "id": "jinja",
+      "label": "",
+      "message": "jinja",
+      "color": "white",
+      "style": "for-the-badge",
+      "logo": "jinja",
+      "logoColor": "000000"
+    },
+    {
+      "id": "joomla",
+      "label": "",
+      "message": "joomla",
+      "color": "5091CD",
+      "style": "for-the-badge",
+      "logo": "joomla",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "jquery",
+      "label": "",
+      "message": "jquery",
+      "color": "0769AD",
+      "style": "for-the-badge",
+      "logo": "jquery",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "junit5",
+      "label": "",
+      "message": "JUnit5",
+      "color": "f5f5f5",
+      "style": "for-the-badge",
+      "logo": "junit5",
+      "logoColor": "dc524a"
+    },
+    {
+      "id": "jwt-json-web-token",
+      "label": "",
+      "message": "JWT",
+      "color": "black",
+      "style": "for-the-badge",
+      "logo": "JSON web tokens"
+    },
+    {
+      "id": "ktor",
+      "label": "",
+      "message": "Ktor",
+      "color": "087CFA",
+      "style": "for-the-badge",
+      "logo": "Ktor",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "less",
+      "label": "",
+      "message": "less",
+      "color": "2B4C80",
+      "style": "for-the-badge",
+      "logo": "less",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "lit",
+      "label": "",
+      "message": "lit",
+      "color": "324FFF",
+      "style": "for-the-badge",
+      "logo": "lit",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "livewire",
+      "label": "",
+      "message": "livewire",
+      "color": "4e56a6",
+      "style": "for-the-badge",
+      "logo": "livewire",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "maven",
+      "label": "",
+      "message": "apachemaven",
+      "color": "C71A36",
+      "style": "for-the-badge",
+      "logo": "apachemaven",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "maxcompute",
+      "label": "",
+      "message": "MaxCompute",
+      "color": "FF6701",
+      "style": "for-the-badge",
+      "logo": "alibabacloud",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "nativescript",
+      "label": "",
+      "message": "NativeScript",
+      "color": "65ADF1",
+      "style": "for-the-badge",
+      "logo": "nativescript",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "node-red",
+      "label": "",
+      "message": "Node-RED",
+      "color": "8F0000",
+      "style": "for-the-badge",
+      "logo": "node-red",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "nodemon",
+      "label": "",
+      "message": "NODEMON",
+      "color": "323330",
+      "style": "for-the-badge",
+      "logo": "nodemon",
+      "logoColor": "\ufffddead"
+    },
+    {
+      "id": "npm",
+      "label": "",
+      "message": "NPM",
+      "color": "CB3837",
+      "style": "for-the-badge",
+      "logo": "npm",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "nuget",
+      "label": "",
+      "message": "nuget",
+      "color": "004880",
+      "style": "for-the-badge",
+      "logo": "nuget",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "opengl",
+      "label": "",
+      "message": "OpenGL",
+      "color": "FFFFFF",
+      "style": "for-the-badge",
+      "logo": "opengl"
+    },
+    {
+      "id": "oxc",
+      "label": "",
+      "message": "oxc",
+      "color": "3451b2",
+      "style": "for-the-badge",
+      "logo": "oxc",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "p5js",
+      "label": "",
+      "message": "p5.js",
+      "color": "ED225D",
+      "style": "for-the-badge",
+      "logo": "p5.js",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "pantheon",
+      "label": "",
+      "message": "pantheon",
+      "color": "FFDC28",
+      "style": "for-the-badge",
+      "logo": "pantheon",
+      "logoColor": "000000"
+    },
+    {
+      "id": "phoenix-framework",
+      "label": "",
+      "message": "phoenixframework",
+      "color": "FD4F00",
+      "style": "for-the-badge",
+      "logo": "phoenixframework",
+      "logoColor": "000000"
+    },
+    {
+      "id": "photon",
+      "label": "",
+      "message": "photon",
+      "color": "004480",
+      "style": "for-the-badge",
+      "logo": "photon",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "pipx",
+      "label": "",
+      "message": "pipx",
+      "color": "2CFFAA",
+      "style": "for-the-badge",
+      "logo": "pipx",
+      "logoColor": "000000"
+    },
+    {
+      "id": "pkgsrc",
+      "label": "",
+      "message": "pkgsrc",
+      "color": "FF6600",
+      "style": "for-the-badge",
+      "logo": "pkgsrc",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "platformio",
+      "label": "",
+      "message": "platformio",
+      "color": "000",
+      "style": "for-the-badge",
+      "logo": "platformio",
+      "logoColor": "f5822a"
+    },
+    {
+      "id": "plotly-dash",
+      "label": "",
+      "message": "plotly",
+      "color": "3F4F75",
+      "style": "for-the-badge",
+      "logo": "plotly",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "pnpm",
+      "label": "",
+      "message": "pnpm",
+      "color": "4a4a4a",
+      "style": "for-the-badge",
+      "logo": "pnpm",
+      "logoColor": "f69220"
+    },
+    {
+      "id": "poetry",
+      "label": "",
+      "message": "Poetry",
+      "color": "3B82F6",
+      "style": "for-the-badge",
+      "logo": "poetry",
+      "logoColor": "0b3d8d"
+    },
+    {
+      "id": "postcss",
+      "label": "",
+      "message": "PostCSS",
+      "color": "DD3A0A",
+      "style": "for-the-badge",
+      "logo": "postcss",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "prefect",
+      "label": "",
+      "message": "Prefect",
+      "color": "ffffff",
+      "style": "for-the-badge",
+      "logo": "prefect",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "prettier",
+      "label": "",
+      "message": "prettier",
+      "color": "192a32",
+      "style": "for-the-badge",
+      "logo": "prettier",
+      "logoColor": "dc524a"
+    },
+    {
+      "id": "primefaces",
+      "label": "",
+      "message": "primefaces",
+      "color": "263238",
+      "style": "for-the-badge"
+    },
+    {
+      "id": "pug",
+      "label": "",
+      "message": "Pug",
+      "color": "FFF",
+      "style": "for-the-badge",
+      "logo": "pug",
+      "logoColor": "a86454"
+    },
+    {
+      "id": "pydantic",
+      "label": "",
+      "message": "pydantic",
+      "color": "E92063",
+      "style": "for-the-badge",
+      "logo": "pydantic",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "qt",
+      "label": "",
+      "message": "Qt",
+      "color": "217346",
+      "style": "for-the-badge",
+      "logo": "Qt",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "quarkus",
+      "label": "",
+      "message": "quarkus",
+      "color": "4794EB",
+      "style": "for-the-badge",
+      "logo": "quarkus",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "quasar",
+      "label": "",
+      "message": "Quasar",
+      "color": "16B7FB",
+      "style": "for-the-badge",
+      "logo": "quasar",
+      "logoColor": "000000"
+    },
+    {
+      "id": "qwik",
+      "label": "",
+      "message": "qwik",
+      "color": "AC7EF4",
+      "style": "for-the-badge",
+      "logo": "qwik",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "rabbitmq",
+      "label": "",
+      "message": "Rabbitmq",
+      "color": "FF6600",
+      "style": "for-the-badge",
+      "logo": "rabbitmq",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "radix-ui",
+      "label": "",
+      "message": "radix ui",
+      "color": "161618",
+      "style": "for-the-badge",
+      "logo": "radix-ui",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "raylib",
+      "label": "",
+      "message": "RAYLIB",
+      "color": "FFFFFF",
+      "style": "for-the-badge",
+      "logo": "raylib",
+      "logoColor": "000000"
+    },
+    {
+      "id": "react-hook-form",
+      "label": "",
+      "message": "React Hook Form",
+      "color": "EC5990",
+      "style": "for-the-badge",
+      "logo": "reacthookform",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "react-query",
+      "label": "",
+      "message": "React Query",
+      "color": "FF4154",
+      "style": "for-the-badge",
+      "logo": "react query",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "react-router",
+      "label": "",
+      "message": "React Router",
+      "color": "CA4245",
+      "style": "for-the-badge",
+      "logo": "react-router",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "redux",
+      "label": "",
+      "message": "redux",
+      "color": "593d88",
+      "style": "for-the-badge",
+      "logo": "redux",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "remix",
+      "label": "",
+      "message": "remix",
+      "color": "000",
+      "style": "for-the-badge",
+      "logo": "remix",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "risc-v",
+      "label": "",
+      "message": "riscv",
+      "color": "283272",
+      "style": "for-the-badge",
+      "logo": "riscv",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "ros",
+      "label": "",
+      "message": "ros",
+      "color": "0A0FF9",
+      "style": "for-the-badge",
+      "logo": "ros",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "rxdb",
+      "label": "",
+      "message": "rxjs",
+      "color": "B7178C",
+      "style": "for-the-badge",
+      "logo": "reactivex",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "rxjs",
+      "label": "",
+      "message": "rxjs",
+      "color": "B7178C",
+      "style": "for-the-badge",
+      "logo": "reactivex",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "sap-commerce-cloud",
+      "label": "",
+      "message": "SAP Commerce Cloud",
+      "color": "0057D2",
+      "style": "for-the-badge",
+      "logo": "sap",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "sass",
+      "label": "",
+      "message": "SASS",
+      "color": "hotpink",
+      "style": "for-the-badge",
+      "logo": "SASS",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "scrapy",
+      "label": "",
+      "message": "scrapy",
+      "color": "60a839",
+      "style": "for-the-badge",
+      "logo": "scrapy",
+      "logoColor": "d1d2d3"
+    },
+    {
+      "id": "semantic-ui-react",
+      "label": "",
+      "message": "Semantic UI React",
+      "color": "35BDB2",
+      "style": "for-the-badge",
+      "logo": "SemanticUIReact",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "snowflake",
+      "label": "",
+      "message": "snowflake",
+      "color": "29B5E8",
+      "style": "for-the-badge",
+      "logo": "snowflake",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "socket-io",
+      "label": "",
+      "message": "Socket.io",
+      "color": "black",
+      "style": "for-the-badge",
+      "logo": "socket.io"
+    },
+    {
+      "id": "solidjs",
+      "label": "",
+      "message": "SolidJS",
+      "color": "2c4f7c",
+      "style": "for-the-badge",
+      "logo": "solid",
+      "logoColor": "c8c9cb"
+    },
+    {
+      "id": "strapi",
+      "label": "",
+      "message": "strapi",
+      "color": "2E7EEA",
+      "style": "for-the-badge",
+      "logo": "strapi",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "streamlit",
+      "label": "",
+      "message": "Streamlit",
+      "color": "FE4B4B",
+      "style": "for-the-badge",
+      "logo": "streamlit",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "styled-components",
+      "label": "",
+      "message": "styled-components",
+      "color": "DB7093",
+      "style": "for-the-badge",
+      "logo": "styled-components",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "stylus",
+      "label": "",
+      "message": "stylus",
+      "color": "ff6347",
+      "style": "for-the-badge",
+      "logo": "stylus",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "sveltekit",
+      "label": "",
+      "message": "sveltekit",
+      "color": "f1413d",
+      "style": "for-the-badge",
+      "logo": "svelte",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "symfony",
+      "label": "",
+      "message": "symfony",
+      "color": "000000",
+      "style": "for-the-badge",
+      "logo": "symfony",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "three-js",
+      "label": "",
+      "message": "threejs",
+      "color": "black",
+      "style": "for-the-badge",
+      "logo": "three.js",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "thymeleaf",
+      "label": "",
+      "message": "Thymeleaf",
+      "color": "005C0F",
+      "style": "for-the-badge",
+      "logo": "Thymeleaf",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "turborepo",
+      "label": "",
+      "message": "turborepo",
+      "color": "EF4444",
+      "style": "for-the-badge",
+      "logo": "turborepo",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "typegraphql",
+      "label": "",
+      "message": "TypeGraphQL",
+      "color": "C04392",
+      "style": "for-the-badge"
+    },
+    {
+      "id": "uikit",
+      "label": "",
+      "message": "UIkit",
+      "color": "2396F3",
+      "style": "for-the-badge",
+      "logo": "uikit",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "unjs",
+      "label": "",
+      "message": "UnJs",
+      "color": "ECDC5A",
+      "style": "for-the-badge",
+      "logo": "UnJs",
+      "logoColor": "000000"
+    },
+    {
+      "id": "unocss",
+      "label": "",
+      "message": "unocss",
+      "color": "333333",
+      "style": "for-the-badge",
+      "logo": "unocss",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "unpkg",
+      "label": "",
+      "message": "unpkg",
+      "color": "000000",
+      "style": "for-the-badge",
+      "logo": "unpkg",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "uv",
+      "label": "",
+      "message": "uv",
+      "color": "DE5FE9",
+      "style": "for-the-badge",
+      "logo": "uv",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "vulkan",
+      "label": "",
+      "message": "Vulkan",
+      "color": "AC162C",
+      "style": "for-the-badge",
+      "logo": "vulkan",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "web3-js",
+      "label": "",
+      "message": "web3.js",
+      "color": "F16822",
+      "style": "for-the-badge",
+      "logo": "web3.js",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "webflow",
+      "label": "",
+      "message": "webflow",
+      "color": "146EF5",
+      "style": "for-the-badge",
+      "logo": "webflow",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "webgl",
+      "label": "",
+      "message": "WebGL",
+      "color": "990000",
+      "style": "for-the-badge",
+      "logo": "webgl",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "windicss",
+      "label": "",
+      "message": "windicss",
+      "color": "48B0F1",
+      "style": "for-the-badge"
+    },
+    {
+      "id": "wordpress",
+      "label": "",
+      "message": "WordPress",
+      "color": "117AC9",
+      "style": "for-the-badge",
+      "logo": "WordPress",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "xamarin",
+      "label": "",
+      "message": "Xamarin",
+      "color": "3199DC",
+      "style": "for-the-badge"
+    },
+    {
+      "id": "yarn",
+      "label": "",
+      "message": "yarn",
+      "color": "2C8EBB",
+      "style": "for-the-badge",
+      "logo": "yarn",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "zod",
+      "label": "",
+      "message": "zod",
+      "color": "3068b7",
+      "style": "for-the-badge",
+      "logo": "zod",
+      "logoColor": "ffffff"
+    }
+  ]
+}

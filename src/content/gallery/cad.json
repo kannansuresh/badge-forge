@@ -1,106 +1,113 @@
 {
-  "categoryName": "CAD & 3D",
+  "categoryName": "CAD",
   "categorySlug": "cad",
-  "categoryDescription": "CAD software, 3D modeling, and engineering tools",
+  "categoryDescription": "Computer-aided design software.",
   "badges": [
     {
-      "id": "autocad-cad",
-      "label": "CAD",
-      "message": "AutoCAD",
+      "id": "altium-designer",
+      "label": "",
+      "message": "altium designer",
+      "color": "A5915F",
+      "style": "for-the-badge"
+    },
+    {
+      "id": "archicad",
+      "label": "",
+      "message": "archicad",
+      "color": "2D50A5",
+      "style": "for-the-badge",
+      "logo": "archicad",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "autocad",
+      "label": "",
+      "message": "autocad",
       "color": "E51050",
+      "style": "for-the-badge",
       "logo": "autocad",
-      "logoColor": "ffffff",
-      "style": "flat"
+      "logoColor": "ffffff"
     },
     {
-      "id": "autodesk-cad",
-      "label": "CAD",
-      "message": "Autodesk",
+      "id": "autodesk",
+      "label": "",
+      "message": "autodesk",
       "color": "000000",
+      "style": "for-the-badge",
       "logo": "autodesk",
-      "logoColor": "ffffff",
-      "style": "flat"
+      "logoColor": "ffffff"
     },
     {
-      "id": "freecad-cad",
-      "label": "CAD",
-      "message": "FreeCAD",
-      "color": "418FDE",
-      "logo": "freecad",
-      "logoColor": "ffffff",
-      "style": "flat"
-    },
-    {
-      "id": "kicad-cad",
-      "label": "CAD",
-      "message": "KiCad",
-      "color": "314CB0",
-      "logo": "kicad",
-      "logoColor": "ffffff",
-      "style": "flat"
-    },
-    {
-      "id": "sketchup-cad",
-      "label": "CAD",
-      "message": "SketchUp",
-      "color": "005F9E",
-      "logo": "sketchup",
-      "logoColor": "ffffff",
-      "style": "flat"
-    },
-    {
-      "id": "autodeskrevit-cad",
-      "label": "CAD",
-      "message": "Revit",
+      "id": "autodesk-revit",
+      "label": "",
+      "message": "Autodesk Revit",
       "color": "186BFF",
+      "style": "for-the-badge",
       "logo": "autodeskrevit",
-      "logoColor": "ffffff",
-      "style": "flat"
+      "logoColor": "ffffff"
     },
     {
-      "id": "tinkercad-cad",
-      "label": "CAD",
-      "message": "Tinkercad",
-      "color": "1477D1",
-      "logo": "tinkercad",
-      "logoColor": "ffffff",
-      "style": "flat"
+      "id": "freecad",
+      "label": "",
+      "message": "freecad",
+      "color": "418FDE",
+      "style": "for-the-badge",
+      "logo": "freecad",
+      "logoColor": "ffffff"
     },
     {
-      "id": "rhinoceros-cad",
-      "label": "CAD",
+      "id": "kicad",
+      "label": "",
+      "message": "kicad",
+      "color": "314CB0",
+      "style": "for-the-badge",
+      "logo": "kicad",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "microstation",
+      "label": "",
+      "message": "microstation",
+      "color": "62BB47",
+      "style": "for-the-badge",
+      "logo": "microstation",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "openscad",
+      "label": "",
+      "message": "openscad",
+      "color": "F9D72C",
+      "style": "for-the-badge",
+      "logo": "openscad",
+      "logoColor": "000000"
+    },
+    {
+      "id": "rhinoceros",
+      "label": "",
       "message": "Rhinoceros",
       "color": "801010",
+      "style": "for-the-badge",
       "logo": "rhinoceros",
-      "logoColor": "ffffff",
-      "style": "flat"
+      "logoColor": "ffffff"
     },
     {
-      "id": "openscad-cad",
-      "label": "CAD",
-      "message": "OpenSCAD",
-      "color": "F9D72C",
-      "logo": "openscad",
-      "logoColor": "ffffff",
-      "style": "flat"
+      "id": "sketchup",
+      "label": "",
+      "message": "SketchUp",
+      "color": "005F9E",
+      "style": "for-the-badge",
+      "logo": "sketchup",
+      "logoColor": "ffffff"
     },
     {
-      "id": "altiumdesigner-cad",
-      "label": "CAD",
-      "message": "Altium Designer",
-      "color": "A5915F",
-      "logo": "altiumdesigner",
-      "logoColor": "ffffff",
-      "style": "flat"
-    },
-    {
-      "id": "archicad-cad",
-      "label": "CAD",
-      "message": "Archicad",
-      "color": "2D50A5",
-      "logo": "archicad",
-      "logoColor": "ffffff",
-      "style": "flat"
+      "id": "tinkercad",
+      "label": "",
+      "message": "Tinkercad",
+      "color": "1477D1",
+      "style": "for-the-badge",
+      "logo": "tinkercad",
+      "logoColor": "ffffff"
     }
   ]
 }

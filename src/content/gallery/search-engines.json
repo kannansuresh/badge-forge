@@ -1,0 +1,120 @@
+{
+  "categoryName": "Search Engines",
+  "categorySlug": "search-engines",
+  "categoryDescription": "Web search engines.",
+  "badges": [
+    {
+      "id": "baidu",
+      "label": "",
+      "message": "Baidu",
+      "color": "2932E1",
+      "style": "for-the-badge",
+      "logo": "Baidu",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "bing",
+      "label": "",
+      "message": "Microsoft Bing",
+      "color": "258FFA",
+      "style": "for-the-badge"
+    },
+    {
+      "id": "brave",
+      "label": "",
+      "message": "Brave",
+      "color": "FB542B",
+      "style": "for-the-badge",
+      "logo": "Brave",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "duckduckgo",
+      "label": "",
+      "message": "DuckDuckGo",
+      "color": "DE5833",
+      "style": "for-the-badge",
+      "logo": "DuckDuckGo",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "ecosia",
+      "label": "",
+      "message": "ecosia",
+      "color": "008009",
+      "style": "for-the-badge",
+      "logo": "ecosia",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "google",
+      "label": "",
+      "message": "google",
+      "color": "4285F4",
+      "style": "for-the-badge",
+      "logo": "google",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "kagi",
+      "label": "",
+      "message": "kagi",
+      "color": "FFB319",
+      "style": "for-the-badge",
+      "logo": "kagi",
+      "logoColor": "000000"
+    },
+    {
+      "id": "mojeek",
+      "label": "",
+      "message": "mojeek",
+      "color": "7AB93C",
+      "style": "for-the-badge",
+      "logo": "mojeek",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "naver",
+      "label": "",
+      "message": "naver",
+      "color": "03C75A",
+      "style": "for-the-badge",
+      "logo": "naver",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "qwant",
+      "label": "",
+      "message": "qwant",
+      "color": "282B2F",
+      "style": "for-the-badge",
+      "logo": "qwant",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "searxng",
+      "label": "",
+      "message": "searxng",
+      "color": "3050FF",
+      "style": "for-the-badge",
+      "logo": "searxng",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "startpage",
+      "label": "",
+      "message": "startpage",
+      "color": "6563FF",
+      "style": "for-the-badge",
+      "logo": "startpage",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "yahoo",
+      "label": "",
+      "message": "Yahoo!",
+      "color": "6001D2",
+      "style": "for-the-badge"
+    }
+  ]
+}

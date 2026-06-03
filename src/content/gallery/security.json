@@ -1,0 +1,33 @@
+{
+  "categoryName": "Security",
+  "categorySlug": "security",
+  "categoryDescription": "Security tools, access management, and compliance.",
+  "badges": [
+    {
+      "id": "aqua-sec",
+      "label": "",
+      "message": "aqua",
+      "color": "1904DA",
+      "style": "for-the-badge",
+      "logo": "aqua"
+    },
+    {
+      "id": "bitwarden",
+      "label": "",
+      "message": "bitwarden",
+      "color": "175DDC",
+      "style": "for-the-badge",
+      "logo": "bitwarden",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "tor",
+      "label": "",
+      "message": "tor",
+      "color": "7E4798",
+      "style": "for-the-badge",
+      "logo": "tor-project",
+      "logoColor": "ffffff"
+    }
+  ]
+}

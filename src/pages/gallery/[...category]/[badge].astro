@@ -13,7 +13,7 @@ export async function getStaticPaths() {
   for (const entry of gallery) {
     for (const badge of entry.data.badges) {
       paths.push({
-        params: { category: entry.data.categorySlug, badge: badge.id },
+        params: { category: entry.id, badge: badge.id },
         props: {
           badge: {
             id: badge.id,
@@ -27,7 +27,8 @@ export async function getStaticPaths() {
           },
           category: {
             name: entry.data.categoryName,
-            slug: entry.data.categorySlug,
+            slug: entry.id,
+            dexieSlug: entry.data.categorySlug,
             description: entry.data.categoryDescription ?? null,
           },
         },

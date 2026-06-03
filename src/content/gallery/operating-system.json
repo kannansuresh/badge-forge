@@ -1,0 +1,385 @@
+{
+  "categoryName": "Operating System",
+  "categorySlug": "operating-system",
+  "categoryDescription": "Operating systems and Linux distributions.",
+  "badges": [
+    {
+      "id": "alpine-linux",
+      "label": "",
+      "message": "Alpine Linux",
+      "color": "0D597F",
+      "style": "for-the-badge",
+      "logo": "alpine-linux",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "android",
+      "label": "",
+      "message": "Android",
+      "color": "3DDC84",
+      "style": "for-the-badge",
+      "logo": "android",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "arch",
+      "label": "",
+      "message": "Arch Linux",
+      "color": "1793D1",
+      "style": "for-the-badge",
+      "logo": "arch-linux",
+      "logoColor": "fff"
+    },
+    {
+      "id": "cent-os",
+      "label": "",
+      "message": "cent os",
+      "color": "002260",
+      "style": "for-the-badge",
+      "logo": "centos",
+      "logoColor": "f0f0f0"
+    },
+    {
+      "id": "chrome-os",
+      "label": "",
+      "message": "chrome os",
+      "color": "3d89fc",
+      "style": "for-the-badge",
+      "logo": "google chrome",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "debian",
+      "label": "",
+      "message": "Debian",
+      "color": "D70A53",
+      "style": "for-the-badge",
+      "logo": "debian",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "deepin",
+      "label": "",
+      "message": "Deepin",
+      "color": "007CFF",
+      "style": "for-the-badge",
+      "logo": "deepin",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "elementary-os",
+      "label": "",
+      "message": "elementary OS",
+      "color": "black",
+      "style": "for-the-badge",
+      "logo": "elementary",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "fedora",
+      "label": "",
+      "message": "Fedora",
+      "color": "294172",
+      "style": "for-the-badge",
+      "logo": "fedora",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "freebsd",
+      "label": "",
+      "message": "FreeBSD",
+      "color": "870000",
+      "style": "for-the-badge",
+      "logo": "freebsd",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "gentoo",
+      "label": "",
+      "message": "Gentoo",
+      "color": "54487A",
+      "style": "for-the-badge",
+      "logo": "gentoo",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "gnu",
+      "label": "",
+      "message": "gnu",
+      "color": "A42E2B",
+      "style": "for-the-badge",
+      "logo": "gnu",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "ios",
+      "label": "",
+      "message": "iOS",
+      "color": "000000",
+      "style": "for-the-badge",
+      "logo": "ios",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "kali",
+      "label": "",
+      "message": "Kali",
+      "color": "268BEE",
+      "style": "for-the-badge",
+      "logo": "kalilinux",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "kubuntu",
+      "label": "",
+      "message": "KUbuntu",
+      "color": "0079C1",
+      "style": "for-the-badge",
+      "logo": "kubuntu",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "lineageos",
+      "label": "",
+      "message": "lineageos",
+      "color": "167C80",
+      "style": "for-the-badge",
+      "logo": "lineageos",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "linux",
+      "label": "",
+      "message": "Linux",
+      "color": "FCC624",
+      "style": "for-the-badge",
+      "logo": "linux",
+      "logoColor": "000000"
+    },
+    {
+      "id": "linux-mint",
+      "label": "",
+      "message": "Linux Mint",
+      "color": "87CF3E",
+      "style": "for-the-badge",
+      "logo": "Linux Mint",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "lubuntu",
+      "label": "",
+      "message": "Lubuntu",
+      "color": "0065C2",
+      "style": "for-the-badge",
+      "logo": "lubuntu",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "macos",
+      "label": "",
+      "message": "mac os",
+      "color": "000000",
+      "style": "for-the-badge",
+      "logo": "macos",
+      "logoColor": "f0f0f0"
+    },
+    {
+      "id": "manjaro",
+      "label": "",
+      "message": "Manjaro",
+      "color": "35BF5C",
+      "style": "for-the-badge",
+      "logo": "Manjaro",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "mx-linux",
+      "label": "",
+      "message": "MX Linux",
+      "color": "000000",
+      "style": "for-the-badge",
+      "logo": "MXlinux",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "nixos",
+      "label": "",
+      "message": "NIXOS",
+      "color": "5277C3",
+      "style": "for-the-badge",
+      "logo": "NixOS",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "openbsd",
+      "label": "",
+      "message": "OpenBSD",
+      "color": "FCC771",
+      "style": "for-the-badge",
+      "logo": "openbsd",
+      "logoColor": "000000"
+    },
+    {
+      "id": "opensuse",
+      "label": "",
+      "message": "openSUSE",
+      "color": "64B345",
+      "style": "for-the-badge",
+      "logo": "openSUSE",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "openwrt",
+      "label": "",
+      "message": "OpenWRT",
+      "color": "00B5E2",
+      "style": "for-the-badge",
+      "logo": "OpenWrt",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "parrot-security",
+      "label": "",
+      "message": "parrot security",
+      "color": "000000",
+      "style": "for-the-badge",
+      "logo": "parrotsecurity"
+    },
+    {
+      "id": "pop-os",
+      "label": "",
+      "message": "Pop! OS",
+      "color": "48B9C7",
+      "style": "for-the-badge",
+      "logo": "Pop!_OS",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "red-hat",
+      "label": "",
+      "message": "Red Hat",
+      "color": "EE0000",
+      "style": "for-the-badge",
+      "logo": "redhat",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "rocky-linux",
+      "label": "",
+      "message": "Rocky Linux",
+      "color": "10B981",
+      "style": "for-the-badge",
+      "logo": "rockylinux",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "slackware",
+      "label": "",
+      "message": "Slackware",
+      "color": "1357BD",
+      "style": "for-the-badge",
+      "logo": "slackware",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "solus",
+      "label": "",
+      "message": "Solus",
+      "color": "f2f2f2",
+      "style": "for-the-badge",
+      "logo": "solus",
+      "logoColor": "5294e2"
+    },
+    {
+      "id": "suse",
+      "label": "",
+      "message": "SUSE",
+      "color": "0C322C",
+      "style": "for-the-badge",
+      "logo": "SUSE",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "tails",
+      "label": "",
+      "message": "Tails ",
+      "color": "56347C",
+      "style": "for-the-badge",
+      "logo": "tails",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "ubuntu",
+      "label": "",
+      "message": "Ubuntu",
+      "color": "E95420",
+      "style": "for-the-badge",
+      "logo": "ubuntu",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "ubuntu-mate",
+      "label": "",
+      "message": "Ubuntu MATE",
+      "color": "84A454",
+      "style": "for-the-badge",
+      "logo": "Ubuntu-MATE",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "unraid",
+      "label": "",
+      "message": "unraid",
+      "color": "F15A2C",
+      "style": "for-the-badge",
+      "logo": "unraid",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "wear-os",
+      "label": "",
+      "message": "Wear OS",
+      "color": "4285F4",
+      "style": "for-the-badge",
+      "logo": "wear-os",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "windows",
+      "label": "",
+      "message": "Windows",
+      "color": "0078D6",
+      "style": "for-the-badge"
+    },
+    {
+      "id": "windows-11",
+      "label": "",
+      "message": "Windows 11",
+      "color": "0079d5",
+      "style": "for-the-badge"
+    },
+    {
+      "id": "windows-95",
+      "label": "",
+      "message": "Windows 95",
+      "color": "008484",
+      "style": "for-the-badge"
+    },
+    {
+      "id": "windows-xp",
+      "label": "",
+      "message": "Windows xp",
+      "color": "003399",
+      "style": "for-the-badge"
+    },
+    {
+      "id": "zorin-os",
+      "label": "",
+      "message": "Zorin OS",
+      "color": "10AAEB",
+      "style": "for-the-badge",
+      "logo": "zorin",
+      "logoColor": "ffffff"
+    }
+  ]
+}

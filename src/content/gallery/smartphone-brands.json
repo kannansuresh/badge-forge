@@ -1,0 +1,124 @@
+{
+  "categoryName": "Smartphone Brands",
+  "categorySlug": "smartphone-brands",
+  "categoryDescription": "Mobile device manufacturers.",
+  "badges": [
+    {
+      "id": "apple",
+      "label": "",
+      "message": "Apple",
+      "color": "000000",
+      "style": "for-the-badge",
+      "logo": "apple",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "asus",
+      "label": "",
+      "message": "asus",
+      "color": "000080",
+      "style": "for-the-badge",
+      "logo": "asus",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "blackberry",
+      "label": "",
+      "message": "blackberry",
+      "color": "808080",
+      "style": "for-the-badge",
+      "logo": "blackberry",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "huawei",
+      "label": "",
+      "message": "Huawei",
+      "color": "FF0000",
+      "style": "for-the-badge",
+      "logo": "huawei",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "lenovo",
+      "label": "",
+      "message": "lenovo",
+      "color": "E2231A",
+      "style": "for-the-badge",
+      "logo": "lenovo",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "lg",
+      "label": "",
+      "message": "lg",
+      "color": "a50034",
+      "style": "for-the-badge",
+      "logo": "lg",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "motorola",
+      "label": "",
+      "message": "Motorola",
+      "color": "E1140A",
+      "style": "for-the-badge",
+      "logo": "motorola",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "nokia",
+      "label": "",
+      "message": "Nokia",
+      "color": "124191",
+      "style": "for-the-badge",
+      "logo": "nokia",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "oneplus",
+      "label": "",
+      "message": "OnePlus",
+      "color": "F5010C",
+      "style": "for-the-badge",
+      "logo": "oneplus",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "oppo",
+      "label": "",
+      "message": "Oppo",
+      "color": "1EA366",
+      "style": "for-the-badge",
+      "logo": "oppo",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "samsung",
+      "label": "",
+      "message": "Samsung",
+      "color": "1428A0",
+      "style": "for-the-badge",
+      "logo": "samsung",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "vivo",
+      "label": "",
+      "message": "Vivo",
+      "color": "00BFFF",
+      "style": "for-the-badge",
+      "logo": "vivo",
+      "logoColor": "000000"
+    },
+    {
+      "id": "xiaomi",
+      "label": "",
+      "message": "Xiaomi",
+      "color": "FF6900",
+      "style": "for-the-badge",
+      "logo": "xiaomi",
+      "logoColor": "ffffff"
+    }
+  ]
+}

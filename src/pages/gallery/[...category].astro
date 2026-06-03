@@ -6,7 +6,7 @@ import GalleryBadgeCard from '../../components/GalleryBadgeCard.astro';
 export async function getStaticPaths() {
   const gallery = await getCollection('gallery');
   return gallery.map((entry) => ({
-    params: { category: entry.data.categorySlug },
+    params: { category: entry.id },
     props: { entry },
   }));
 }
@@ -14,6 +14,7 @@ export async function getStaticPaths() {
 const base = import.meta.env.BASE_URL.replace(/\/?$/, '/');
 const { entry } = Astro.props;
 const { categoryName, categoryDescription, badges } = entry.data;
+const categoryPath = entry.id;
 ---
 
 <Layout title={`${categoryName} — BadgeForge Gallery`}>
@@ -42,6 +43,7 @@ const { categoryName, categoryDescription, badges } = entry.data;
             logoColor={badge.logoColor}
             style={badge.style}
             labelColor={badge.labelColor}
+            categoryPath={categoryPath}
             categorySlug={entry.data.categorySlug}
           />
         ))

@@ -1,0 +1,25 @@
+{
+  "categoryName": "Quantum Programming Frameworks and Libraries",
+  "categorySlug": "quantum-programming-frameworks-and-libraries",
+  "categoryDescription": "Quantum computing platforms.",
+  "badges": [
+    {
+      "id": "d-wave",
+      "label": "",
+      "message": "dwave",
+      "color": "008CD7",
+      "style": "for-the-badge",
+      "logo": "dwavesystems",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "qiskit",
+      "label": "",
+      "message": "Qiskit",
+      "color": "6929C4",
+      "style": "for-the-badge",
+      "logo": "Qiskit",
+      "logoColor": "ffffff"
+    }
+  ]
+}

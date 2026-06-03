@@ -1,0 +1,95 @@
+{
+  "categoryName": "Music",
+  "categorySlug": "music",
+  "categoryDescription": "Music streaming and audio production.",
+  "badges": [
+    {
+      "id": "apple-music",
+      "label": "",
+      "message": "Apple Music",
+      "color": "9933CC",
+      "style": "for-the-badge",
+      "logo": "apple-music",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "audacity",
+      "label": "",
+      "message": "Audacity",
+      "color": "0000CC",
+      "style": "for-the-badge",
+      "logo": "audacity",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "deezer",
+      "label": "",
+      "message": "Deezer",
+      "color": "FEAA2D",
+      "style": "for-the-badge",
+      "logo": "deezer",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "last-fm",
+      "label": "",
+      "message": "last.fm",
+      "color": "D51007",
+      "style": "for-the-badge",
+      "logo": "last.fm",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "musixmatch",
+      "label": "",
+      "message": "Musixmatch",
+      "color": "FF5353",
+      "style": "for-the-badge"
+    },
+    {
+      "id": "shazam",
+      "label": "",
+      "message": "shazam",
+      "color": "1476FE",
+      "style": "for-the-badge",
+      "logo": "shazam",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "soundcloud",
+      "label": "",
+      "message": "soundcloud",
+      "color": "FF5500",
+      "style": "for-the-badge",
+      "logo": "soundcloud",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "spotify",
+      "label": "",
+      "message": "Spotify",
+      "color": "1ED760",
+      "style": "for-the-badge",
+      "logo": "spotify",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "tidal",
+      "label": "",
+      "message": "tidal",
+      "color": "00FFFF",
+      "style": "for-the-badge",
+      "logo": "tidal",
+      "logoColor": "000000"
+    },
+    {
+      "id": "youtube-music",
+      "label": "",
+      "message": "YouTube Music",
+      "color": "FF0000",
+      "style": "for-the-badge",
+      "logo": "youtube-music",
+      "logoColor": "ffffff"
+    }
+  ]
+}

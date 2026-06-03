@@ -1,0 +1,43 @@
+{
+  "categoryName": "Store",
+  "categorySlug": "store",
+  "categoryDescription": "App stores and marketplaces.",
+  "badges": [
+    {
+      "id": "app-store",
+      "label": "",
+      "message": "App Store",
+      "color": "0D96F6",
+      "style": "for-the-badge",
+      "logo": "app-store",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "appgallery",
+      "label": "",
+      "message": "AppGallery",
+      "color": "C80A2D",
+      "style": "for-the-badge",
+      "logo": "huawei",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "f-droid",
+      "label": "",
+      "message": "F Droid",
+      "color": "1976D2",
+      "style": "for-the-badge",
+      "logo": "f-droid",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "shopify",
+      "label": "",
+      "message": "shopify",
+      "color": "7AB55C",
+      "style": "for-the-badge",
+      "logo": "shopify",
+      "logoColor": "ffffff"
+    }
+  ]
+}

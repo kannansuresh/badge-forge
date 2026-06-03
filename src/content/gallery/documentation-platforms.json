@@ -1,0 +1,122 @@
+{
+  "categoryName": "Documentation Platforms",
+  "categorySlug": "documentation-platforms",
+  "categoryDescription": "Documentation and knowledge bases.",
+  "badges": [
+    {
+      "id": "bookstack",
+      "label": "",
+      "message": "Bookstack",
+      "color": "0288D1",
+      "style": "for-the-badge",
+      "logo": "bookstack",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "coda",
+      "label": "",
+      "message": "coda",
+      "color": "F46A54",
+      "style": "for-the-badge",
+      "logo": "coda",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "confluence",
+      "label": "",
+      "message": "confluence",
+      "color": "172BF4",
+      "style": "for-the-badge",
+      "logo": "confluence",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "docsify",
+      "label": "",
+      "message": "docsify",
+      "color": "2ECE53",
+      "style": "for-the-badge",
+      "logo": "docsify",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "docusaurus",
+      "label": "",
+      "message": "docusaurus",
+      "color": "3ECC5F",
+      "style": "for-the-badge",
+      "logo": "docusaurus",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "gitbook",
+      "label": "",
+      "message": "GitBook",
+      "color": "000000",
+      "style": "for-the-badge",
+      "logo": "gitbook",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "quip",
+      "label": "",
+      "message": "quip",
+      "color": "F27557",
+      "style": "for-the-badge"
+    },
+    {
+      "id": "read-the-docs",
+      "label": "",
+      "message": "Read the Docs",
+      "color": "000000",
+      "style": "for-the-badge",
+      "logo": "readthedocs",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "swagger",
+      "label": "",
+      "message": "Swagger",
+      "color": "Clojure",
+      "style": "for-the-badge",
+      "logo": "swagger",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "tiddlywiki",
+      "label": "",
+      "message": "tiddlywiki",
+      "color": "111111",
+      "style": "for-the-badge",
+      "logo": "tiddlywiki",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "wiki-js",
+      "label": "",
+      "message": "wiki.js",
+      "color": "1976D2",
+      "style": "for-the-badge",
+      "logo": "wikidotjs",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "wikipedia",
+      "label": "",
+      "message": "Wikipedia",
+      "color": "000000",
+      "style": "for-the-badge",
+      "logo": "wikipedia",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "zettlr",
+      "label": "",
+      "message": "zettlr",
+      "color": "1CB27E",
+      "style": "for-the-badge",
+      "logo": "zettlr",
+      "logoColor": "ffffff"
+    }
+  ]
+}

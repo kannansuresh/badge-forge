@@ -1,0 +1,344 @@
+{
+  "categoryName": "IDEs/Editors",
+  "categorySlug": "ides-editors",
+  "categoryDescription": "Code editors and integrated development environments.",
+  "badges": [
+    {
+      "id": "android-studio",
+      "label": "",
+      "message": "Android Studio",
+      "color": "3DDC84",
+      "style": "for-the-badge",
+      "logo": "android-studio",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "arduino-ide",
+      "label": "",
+      "message": "Arduino IDE",
+      "color": "00979D",
+      "style": "for-the-badge",
+      "logo": "Arduino",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "atom",
+      "label": "",
+      "message": "Atom",
+      "color": "66595C",
+      "style": "for-the-badge"
+    },
+    {
+      "id": "clion",
+      "label": "",
+      "message": "CLion",
+      "color": "black",
+      "style": "for-the-badge",
+      "logo": "clion",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "codepen",
+      "label": "",
+      "message": "CodePen",
+      "color": "white",
+      "style": "for-the-badge"
+    },
+    {
+      "id": "codesandbox",
+      "label": "",
+      "message": "Codesandbox",
+      "color": "040404",
+      "style": "for-the-badge",
+      "logo": "codesandbox",
+      "logoColor": "dbdbdb"
+    },
+    {
+      "id": "cursor",
+      "label": "",
+      "message": "Cursor",
+      "color": "000000",
+      "style": "for-the-badge",
+      "logo": "Cursor",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "datagrip",
+      "label": "",
+      "message": "DataGrip",
+      "color": "000000",
+      "style": "for-the-badge",
+      "logo": "DataGrip",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "doxygen",
+      "label": "",
+      "message": "doxygen",
+      "color": "2C4AA8",
+      "style": "for-the-badge",
+      "logo": "doxygen",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "eclipse",
+      "label": "",
+      "message": "Eclipse",
+      "color": "FE7A16",
+      "style": "for-the-badge"
+    },
+    {
+      "id": "emacs",
+      "label": "",
+      "message": "Emacs",
+      "color": "7F5AB6",
+      "style": "for-the-badge",
+      "logo": "gnu-emacs",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "goland",
+      "label": "",
+      "message": "GoLand",
+      "color": "0f0f0f",
+      "style": "for-the-badge",
+      "logo": "goland",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "google-colab",
+      "label": "",
+      "message": "Google Colab",
+      "color": "F9A825",
+      "style": "for-the-badge",
+      "logo": "googlecolab",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "helix",
+      "label": "",
+      "message": "Helix",
+      "color": "28153e",
+      "style": "for-the-badge",
+      "logo": "helix",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "intellij-idea",
+      "label": "",
+      "message": "IntelliJIDEA",
+      "color": "000000",
+      "style": "for-the-badge",
+      "logo": "intellij-idea",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "jetbrains",
+      "label": "",
+      "message": "jetbrains",
+      "color": "000000",
+      "style": "for-the-badge",
+      "logo": "jetbrains",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "jupyter-notebook",
+      "label": "",
+      "message": "jupyter",
+      "color": "FA0F00",
+      "style": "for-the-badge",
+      "logo": "jupyter",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "neovim",
+      "label": "",
+      "message": "NeoVim",
+      "color": "57A143",
+      "style": "for-the-badge",
+      "logo": "neovim",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "netbeans-ide",
+      "label": "",
+      "message": "NetBeansIDE",
+      "color": "1B6AC6",
+      "style": "for-the-badge",
+      "logo": "apache-netbeans-ide",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "notepad",
+      "label": "",
+      "message": "Notepad++",
+      "color": "90E59A",
+      "style": "for-the-badge",
+      "logo": "notepad++",
+      "logoColor": "000000"
+    },
+    {
+      "id": "obsidian",
+      "label": "",
+      "message": "Obsidian",
+      "color": "483699",
+      "style": "for-the-badge",
+      "logo": "obsidian",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "p5js-editor",
+      "label": "",
+      "message": "p5.js",
+      "color": "ED225D",
+      "style": "for-the-badge",
+      "logo": "p5.js",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "phpstorm",
+      "label": "",
+      "message": "phpstorm",
+      "color": "143",
+      "style": "for-the-badge",
+      "logo": "phpstorm",
+      "logoColor": "000000"
+    },
+    {
+      "id": "pycharm",
+      "label": "",
+      "message": "pycharm",
+      "color": "143",
+      "style": "for-the-badge",
+      "logo": "pycharm",
+      "logoColor": "000000"
+    },
+    {
+      "id": "replit",
+      "label": "",
+      "message": "Replit",
+      "color": "DD1200",
+      "style": "for-the-badge",
+      "logo": "Replit",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "resharper",
+      "label": "",
+      "message": "ReSharper",
+      "color": "000000",
+      "style": "for-the-badge",
+      "logo": "ReSharper",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "rider",
+      "label": "",
+      "message": "Rider",
+      "color": "000000",
+      "style": "for-the-badge",
+      "logo": "Rider",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "rstudio",
+      "label": "",
+      "message": "RStudio",
+      "color": "4285F4",
+      "style": "for-the-badge"
+    },
+    {
+      "id": "rubymine",
+      "label": "",
+      "message": "RubyMine",
+      "color": "000000",
+      "style": "for-the-badge",
+      "logo": "RubyMine",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "spyder",
+      "label": "",
+      "message": "Spyder",
+      "color": "838485",
+      "style": "for-the-badge",
+      "logo": "spyder ide",
+      "logoColor": "maroon"
+    },
+    {
+      "id": "sublime-text",
+      "label": "",
+      "message": "sublime text",
+      "color": "575757",
+      "style": "for-the-badge",
+      "logo": "sublime-text",
+      "logoColor": "important"
+    },
+    {
+      "id": "vim",
+      "label": "",
+      "message": "VIM",
+      "color": "11AB00",
+      "style": "for-the-badge",
+      "logo": "vim",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "visual-studio",
+      "label": "",
+      "message": "Visual Studio",
+      "color": "5C2D91",
+      "style": "for-the-badge"
+    },
+    {
+      "id": "visual-studio-code",
+      "label": "",
+      "message": "Visual Studio Code",
+      "color": "0078d7",
+      "style": "for-the-badge"
+    },
+    {
+      "id": "vs-code-insiders",
+      "label": "",
+      "message": "VS Code Insiders",
+      "color": "35b393",
+      "style": "for-the-badge"
+    },
+    {
+      "id": "webstorm",
+      "label": "",
+      "message": "webstorm",
+      "color": "143",
+      "style": "for-the-badge",
+      "logo": "webstorm",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "xcode",
+      "label": "",
+      "message": "Xcode",
+      "color": "007ACC",
+      "style": "for-the-badge",
+      "logo": "Xcode",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "zed",
+      "label": "",
+      "message": "zedindustries",
+      "color": "084CCF",
+      "style": "for-the-badge",
+      "logo": "zedindustries",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "zend",
+      "label": "",
+      "message": "Zend",
+      "color": "fff",
+      "style": "for-the-badge",
+      "logo": "zend",
+      "logoColor": "0679ea"
+    }
+  ]
+}

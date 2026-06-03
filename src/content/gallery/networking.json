@@ -1,0 +1,43 @@
+{
+  "categoryName": "Networking",
+  "categorySlug": "networking",
+  "categoryDescription": "Networking hardware, VPN, and network protocols.",
+  "badges": [
+    {
+      "id": "cisco",
+      "label": "",
+      "message": "cisco",
+      "color": "049fd9",
+      "style": "for-the-badge",
+      "logo": "cisco",
+      "logoColor": "000000"
+    },
+    {
+      "id": "pi-hole",
+      "label": "",
+      "message": "pihole",
+      "color": "96060C",
+      "style": "for-the-badge",
+      "logo": "pi-hole",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "ubiquiti",
+      "label": "",
+      "message": "ubiquiti",
+      "color": "0559C9",
+      "style": "for-the-badge",
+      "logo": "ubiquiti",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "wireguard",
+      "label": "",
+      "message": "wireguard",
+      "color": "88171A",
+      "style": "for-the-badge",
+      "logo": "wireguard",
+      "logoColor": "ffffff"
+    }
+  ]
+}

@@ -1,0 +1,87 @@
+{
+  "categoryName": "Backend",
+  "categorySlug": "backend",
+  "categoryDescription": "Backend frameworks and server-side libraries.",
+  "badges": [
+    {
+      "id": "django",
+      "label": "",
+      "message": "django",
+      "color": "092E20",
+      "style": "for-the-badge",
+      "logo": "django",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "express-js",
+      "label": "",
+      "message": "express.js",
+      "color": "404d59",
+      "style": "for-the-badge",
+      "logo": "express",
+      "logoColor": "61dafb"
+    },
+    {
+      "id": "fastapi",
+      "label": "",
+      "message": "FastAPI",
+      "color": "005571",
+      "style": "for-the-badge",
+      "logo": "fastapi"
+    },
+    {
+      "id": "flask",
+      "label": "",
+      "message": "flask",
+      "color": "000",
+      "style": "for-the-badge",
+      "logo": "flask",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "laravel",
+      "label": "",
+      "message": "laravel",
+      "color": "FF2D20",
+      "style": "for-the-badge",
+      "logo": "laravel",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "nestjs",
+      "label": "",
+      "message": "nestjs",
+      "color": "E0234E",
+      "style": "for-the-badge",
+      "logo": "nestjs",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "node-js",
+      "label": "",
+      "message": "node.js",
+      "color": "6DA55F",
+      "style": "for-the-badge",
+      "logo": "node.js",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "rails",
+      "label": "",
+      "message": "rails",
+      "color": "CC0000",
+      "style": "for-the-badge",
+      "logo": "ruby-on-rails",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "spring",
+      "label": "",
+      "message": "spring",
+      "color": "6DB33F",
+      "style": "for-the-badge",
+      "logo": "spring",
+      "logoColor": "ffffff"
+    }
+  ]
+}

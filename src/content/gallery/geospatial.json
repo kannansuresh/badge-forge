@@ -1,0 +1,25 @@
+{
+  "categoryName": "Geospatial",
+  "categorySlug": "geospatial",
+  "categoryDescription": "Geographic information systems.",
+  "badges": [
+    {
+      "id": "google-earth-engine",
+      "label": "",
+      "message": "google earth engine",
+      "color": "4285F4",
+      "style": "for-the-badge",
+      "logo": "googleearthengine",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "qgis",
+      "label": "",
+      "message": "qgis",
+      "color": "93b023",
+      "style": "for-the-badge",
+      "logo": "qgis",
+      "logoColor": "ffffff"
+    }
+  ]
+}

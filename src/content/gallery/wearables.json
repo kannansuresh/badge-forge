@@ -1,0 +1,16 @@
+{
+  "categoryName": "Wearables",
+  "categorySlug": "wearables",
+  "categoryDescription": "Wearable technology devices.",
+  "badges": [
+    {
+      "id": "fitbit",
+      "label": "",
+      "message": "fitbit",
+      "color": "00B0B9",
+      "style": "for-the-badge",
+      "logo": "fitbit",
+      "logoColor": "ffffff"
+    }
+  ]
+}

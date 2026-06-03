@@ -1,0 +1,140 @@
+{
+  "categoryName": "ML/DL",
+  "categorySlug": "ml-dl",
+  "categoryDescription": "Machine learning and deep learning frameworks.",
+  "badges": [
+    {
+      "id": "keras",
+      "label": "",
+      "message": "Keras",
+      "color": "D00000",
+      "style": "for-the-badge",
+      "logo": "Keras",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "matplotlib",
+      "label": "",
+      "message": "Matplotlib",
+      "color": "ffffff",
+      "style": "for-the-badge"
+    },
+    {
+      "id": "mlflow",
+      "label": "",
+      "message": "mlflow",
+      "color": "d9ead3",
+      "style": "for-the-badge",
+      "logo": "numpy",
+      "logoColor": "0000ff"
+    },
+    {
+      "id": "numpy",
+      "label": "",
+      "message": "numpy",
+      "color": "013243",
+      "style": "for-the-badge",
+      "logo": "numpy",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "onnx",
+      "label": "",
+      "message": "onnx",
+      "color": "ffffff",
+      "style": "for-the-badge",
+      "logo": "onnx",
+      "logoColor": "000000"
+    },
+    {
+      "id": "pandas",
+      "label": "",
+      "message": "pandas",
+      "color": "150458",
+      "style": "for-the-badge",
+      "logo": "pandas",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "plotly",
+      "label": "",
+      "message": "Plotly",
+      "color": "3F4F75",
+      "style": "for-the-badge",
+      "logo": "plotly",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "polars",
+      "label": "",
+      "message": "polars",
+      "color": "0075ff",
+      "style": "for-the-badge",
+      "logo": "polars",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "pytorch",
+      "label": "",
+      "message": "PyTorch",
+      "color": "EE4C2C",
+      "style": "for-the-badge",
+      "logo": "PyTorch",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "pytorch-geometric",
+      "label": "",
+      "message": "PyTorch Geometric",
+      "color": "3C2179",
+      "style": "for-the-badge",
+      "logo": "pyg",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "roboflow",
+      "label": "",
+      "message": "roboflow",
+      "color": "EE4C2C",
+      "style": "for-the-badge",
+      "logo": "roboflow",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "scikit-learn",
+      "label": "",
+      "message": "scikit-learn",
+      "color": "F7931E",
+      "style": "for-the-badge",
+      "logo": "scikit-learn",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "scipy",
+      "label": "",
+      "message": "SciPy",
+      "color": "0C55A5",
+      "style": "for-the-badge",
+      "logo": "scipy",
+      "logoColor": "%white"
+    },
+    {
+      "id": "tensorflow",
+      "label": "",
+      "message": "TensorFlow",
+      "color": "FF6F00",
+      "style": "for-the-badge",
+      "logo": "TensorFlow",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "ultralytics",
+      "label": "",
+      "message": "ultralytics",
+      "color": "111F68",
+      "style": "for-the-badge",
+      "logo": "ultralytics",
+      "logoColor": "ffffff"
+    }
+  ]
+}

@@ -1,0 +1,147 @@
+{
+  "categoryName": "Developer/Forums",
+  "categorySlug": "developer-forums",
+  "categoryDescription": "Developer communities and forums.",
+  "badges": [
+    {
+      "id": "backstage",
+      "label": "",
+      "message": "Backstage",
+      "color": "7A3CF8",
+      "style": "for-the-badge",
+      "logo": "backstage",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "codechef",
+      "label": "",
+      "message": "CodeChef",
+      "color": "964B00",
+      "style": "for-the-badge",
+      "logo": "CodeChef",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "codeforces",
+      "label": "",
+      "message": "Codeforces",
+      "color": "445f9d",
+      "style": "for-the-badge",
+      "logo": "Codeforces",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "codepen",
+      "label": "",
+      "message": "Codepen",
+      "color": "000000",
+      "style": "for-the-badge"
+    },
+    {
+      "id": "frontend-mentor",
+      "label": "",
+      "message": "Frontend Mentor",
+      "color": "3F54A3",
+      "style": "for-the-badge",
+      "logo": "frontendmentor",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "hackerearth",
+      "label": "",
+      "message": "HackerEarth",
+      "color": "2C3454",
+      "style": "for-the-badge",
+      "logo": "HackerEarth",
+      "logoColor": "0000ff"
+    },
+    {
+      "id": "hackerrank",
+      "label": "",
+      "message": "Hackerrank",
+      "color": "2EC866",
+      "style": "for-the-badge",
+      "logo": "HackerRank",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "kaggle",
+      "label": "",
+      "message": "Kaggle",
+      "color": "035a7d",
+      "style": "for-the-badge",
+      "logo": "kaggle",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "leetcode",
+      "label": "",
+      "message": "LeetCode",
+      "color": "000000",
+      "style": "for-the-badge",
+      "logo": "LeetCode"
+    },
+    {
+      "id": "oneplus-forums",
+      "label": "",
+      "message": "OnePlusForums",
+      "color": "EB0028",
+      "style": "for-the-badge",
+      "logo": "OnePlus",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "quora",
+      "label": "",
+      "message": "Quora",
+      "color": "B92B27",
+      "style": "for-the-badge",
+      "logo": "Quora",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "reddit",
+      "label": "",
+      "message": "Reddit",
+      "color": "FF4500",
+      "style": "for-the-badge",
+      "logo": "Reddit",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "researchgate",
+      "label": "",
+      "message": "ResearchGate",
+      "color": "00CCBB",
+      "style": "for-the-badge",
+      "logo": "ResearchGate",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "stack-exchange",
+      "label": "",
+      "message": "StackExchange",
+      "color": "ffffff",
+      "style": "for-the-badge",
+      "logo": "StackExchange"
+    },
+    {
+      "id": "stack-overflow",
+      "label": "",
+      "message": "Stackoverflow",
+      "color": "FE7A16",
+      "style": "for-the-badge",
+      "logo": "stack-overflow",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "xda-developers",
+      "label": "",
+      "message": "XDA-Developers",
+      "color": "AC6E2F",
+      "style": "for-the-badge",
+      "logo": "XDA-Developers",
+      "logoColor": "ffffff"
+    }
+  ]
+}

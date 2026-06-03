@@ -1,0 +1,106 @@
+{
+  "categoryName": "Version Control",
+  "categorySlug": "version-control",
+  "categoryDescription": "Version control systems and code hosting.",
+  "badges": [
+    {
+      "id": "apache-subversion",
+      "label": "",
+      "message": "subversion",
+      "color": "809CC9",
+      "style": "for-the-badge",
+      "logo": "subversion",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "bitbucket",
+      "label": "",
+      "message": "bitbucket",
+      "color": "0047B3",
+      "style": "for-the-badge",
+      "logo": "bitbucket",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "forgejo",
+      "label": "",
+      "message": "forgejo",
+      "color": "FB923C",
+      "style": "for-the-badge",
+      "logo": "forgejo",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "git",
+      "label": "",
+      "message": "git",
+      "color": "F05033",
+      "style": "for-the-badge",
+      "logo": "git",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "gitea",
+      "label": "",
+      "message": "Gitea",
+      "color": "34495E",
+      "style": "for-the-badge",
+      "logo": "gitea",
+      "logoColor": "5d9425"
+    },
+    {
+      "id": "gitee",
+      "label": "",
+      "message": "Gitee",
+      "color": "C71D23",
+      "style": "for-the-badge",
+      "logo": "gitee",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "github",
+      "label": "",
+      "message": "github",
+      "color": "121011",
+      "style": "for-the-badge",
+      "logo": "github",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "gitlab",
+      "label": "",
+      "message": "gitlab",
+      "color": "181717",
+      "style": "for-the-badge",
+      "logo": "gitlab",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "gitpod",
+      "label": "",
+      "message": "gitpod",
+      "color": "f06611",
+      "style": "for-the-badge",
+      "logo": "gitpod",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "mercurial",
+      "label": "",
+      "message": "mercurial",
+      "color": "999999",
+      "style": "for-the-badge",
+      "logo": "mercurial",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "perforce-helix",
+      "label": "",
+      "message": "PERFORCE HELIX",
+      "color": "00AEEF",
+      "style": "for-the-badge",
+      "logo": "Perforce",
+      "logoColor": "ffffff"
+    }
+  ]
+}

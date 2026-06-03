@@ -8,6 +8,9 @@ export interface Props {
   logoColor?: string;
   style?: 'flat' | 'flat-square' | 'plastic' | 'for-the-badge' | 'social';
   labelColor?: string;
+  /** File-path-based category identifier for URL routing (e.g., "backup/ai-bots"). */
+  categoryPath?: string;
+  /** JSON categorySlug for Dexie category seeding reference. */
   categorySlug?: string;
 }
 
@@ -19,6 +22,7 @@ const {
   logoColor,
   style = 'flat',
   labelColor,
+  categoryPath,
   categorySlug,
 } = Astro.props;
 
@@ -44,9 +48,10 @@ const clipboardData = JSON.stringify({
   style,
   labelColor,
   categorySlug,
+  categoryPath,
 });
 const base = import.meta.env.BASE_URL.replace(/\/?$/, '/');
-const detailUrl = `${base}gallery/${categorySlug}/${Astro.props.id}`;
+const detailUrl = `${base}gallery/${categoryPath || categorySlug}/${Astro.props.id}`;
 ---
 
 <div

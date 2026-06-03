@@ -1,0 +1,152 @@
+{
+  "categoryName": "Streaming",
+  "categorySlug": "streaming",
+  "categoryDescription": "Video streaming platforms.",
+  "badges": [
+    {
+      "id": "amazon-prime",
+      "label": "",
+      "message": "Amazon Prime",
+      "color": "0F79AF",
+      "style": "for-the-badge"
+    },
+    {
+      "id": "apple-tv",
+      "label": "",
+      "message": "Apple TV",
+      "color": "000000",
+      "style": "for-the-badge",
+      "logo": "Apple TV",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "bilibili",
+      "label": "",
+      "message": "bilibili",
+      "color": "00A1D6",
+      "style": "for-the-badge",
+      "logo": "bilibili",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "crunchyroll",
+      "label": "",
+      "message": "Crunchyroll",
+      "color": "F47521",
+      "style": "for-the-badge",
+      "logo": "crunchyroll",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "disney",
+      "label": "",
+      "message": "Disney",
+      "color": "006E99",
+      "style": "for-the-badge"
+    },
+    {
+      "id": "facebook-gaming",
+      "label": "",
+      "message": "Facebook Gaming",
+      "color": "015BE5",
+      "style": "for-the-badge",
+      "logo": "facebookgaming",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "facebook-live",
+      "label": "",
+      "message": "Facebook Live",
+      "color": "ED4242",
+      "style": "for-the-badge",
+      "logo": "Facebook Live",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "fandango-at-home",
+      "label": "",
+      "message": "Fandango At Home",
+      "color": "3478C1",
+      "style": "for-the-badge",
+      "logo": "fandango",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "fire-tv",
+      "label": "",
+      "message": "fire tv",
+      "color": "fc3b2d",
+      "style": "for-the-badge"
+    },
+    {
+      "id": "fubo",
+      "label": "",
+      "message": "Fubo",
+      "color": "E64526",
+      "style": "for-the-badge",
+      "logo": "fubo",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "hulu",
+      "label": "",
+      "message": "hulu",
+      "color": "1CE783",
+      "style": "for-the-badge"
+    },
+    {
+      "id": "kick",
+      "label": "",
+      "message": "kick",
+      "color": "53FC18",
+      "style": "for-the-badge",
+      "logo": "kick",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "netflix",
+      "label": "",
+      "message": "Netflix",
+      "color": "E50914",
+      "style": "for-the-badge",
+      "logo": "netflix",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "roku",
+      "label": "",
+      "message": "roku",
+      "color": "6f1ab1",
+      "style": "for-the-badge",
+      "logo": "roku",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "tubi",
+      "label": "",
+      "message": "Tubi",
+      "color": "6A18F5",
+      "style": "for-the-badge",
+      "logo": "tubi",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "twitch",
+      "label": "",
+      "message": "Twitch",
+      "color": "9347FF",
+      "style": "for-the-badge",
+      "logo": "twitch",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "youtube-gaming",
+      "label": "",
+      "message": "Youtube Gaming",
+      "color": "FF0000",
+      "style": "for-the-badge",
+      "logo": "Youtubegaming",
+      "logoColor": "ffffff"
+    }
+  ]
+}

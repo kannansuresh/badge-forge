@@ -1,169 +1,124 @@
 {
-  "categoryName": "DevOps & Cloud",
+  "categoryName": "DevOps",
   "categorySlug": "devops",
-  "categoryDescription": "Containerization, orchestration, monitoring, and cloud platforms",
+  "categoryDescription": "DevOps tools, containerization, and infrastructure automation.",
   "badges": [
     {
-      "id": "docker-do",
-      "label": "Container",
-      "message": "Docker",
-      "color": "2496ED",
-      "logo": "docker",
-      "logoColor": "ffffff",
-      "style": "flat"
-    },
-    {
-      "id": "k8s-do",
-      "label": "Orchestration",
-      "message": "Kubernetes",
-      "color": "326CE5",
-      "logo": "kubernetes",
-      "logoColor": "ffffff",
-      "style": "flat"
-    },
-    {
-      "id": "aws-do",
-      "label": "Cloud",
-      "message": "AWS",
-      "color": "232F3E",
-      "logo": "amazonwebservices",
-      "logoColor": "ffffff",
-      "style": "flat"
-    },
-    {
-      "id": "azure-do",
-      "label": "Cloud",
-      "message": "Azure",
-      "color": "0078D4",
-      "logo": "microsoftazure",
-      "logoColor": "ffffff",
-      "style": "flat"
-    },
-    {
-      "id": "gcp-do",
-      "label": "Cloud",
-      "message": "GCP",
-      "color": "4285F4",
-      "logo": "googlecloud",
-      "logoColor": "ffffff",
-      "style": "flat"
-    },
-    {
-      "id": "vercel-do",
-      "label": "Platform",
-      "message": "Vercel",
-      "color": "000000",
-      "logo": "vercel",
-      "logoColor": "ffffff",
-      "style": "flat"
-    },
-    {
-      "id": "netlify-do",
-      "label": "Platform",
-      "message": "Netlify",
-      "color": "00C7B7",
-      "logo": "netlify",
-      "logoColor": "ffffff",
-      "style": "flat"
-    },
-    {
-      "id": "heroku-do",
-      "label": "Platform",
-      "message": "Heroku",
-      "color": "430098",
-      "logo": "heroku",
-      "logoColor": "ffffff",
-      "style": "flat"
-    },
-    {
-      "id": "digitalocean-do",
-      "label": "Cloud",
-      "message": "DigitalOcean",
-      "color": "0080FF",
-      "logo": "digitalocean",
-      "logoColor": "ffffff",
-      "style": "flat"
-    },
-    {
-      "id": "cloudflare-do",
-      "label": "Network",
-      "message": "Cloudflare",
-      "color": "F38020",
-      "logo": "cloudflare",
-      "logoColor": "ffffff",
-      "style": "flat"
-    },
-    {
-      "id": "terraform-do",
-      "label": "IaC",
-      "message": "Terraform",
-      "color": "7B42BC",
-      "logo": "terraform",
-      "logoColor": "ffffff",
-      "style": "flat"
-    },
-    {
-      "id": "ansible-do",
-      "label": "Config",
-      "message": "Ansible",
-      "color": "EE0000",
+      "id": "ansible",
+      "label": "",
+      "message": "ansible",
+      "color": "1A1918",
+      "style": "for-the-badge",
       "logo": "ansible",
-      "logoColor": "ffffff",
-      "style": "flat"
+      "logoColor": "ffffff"
     },
     {
-      "id": "nginx-do",
-      "label": "Server",
-      "message": "Nginx",
-      "color": "009639",
-      "logo": "nginx",
-      "logoColor": "ffffff",
-      "style": "flat"
+      "id": "docker",
+      "label": "",
+      "message": "docker",
+      "color": "0db7ed",
+      "style": "for-the-badge",
+      "logo": "docker",
+      "logoColor": "ffffff"
     },
     {
-      "id": "apache-do",
-      "label": "Server",
-      "message": "Apache",
-      "color": "D22128",
-      "logo": "apache",
-      "logoColor": "ffffff",
-      "style": "flat"
-    },
-    {
-      "id": "grafana-do",
-      "label": "Monitor",
-      "message": "Grafana",
+      "id": "grafana",
+      "label": "",
+      "message": "grafana",
       "color": "F46800",
+      "style": "for-the-badge",
       "logo": "grafana",
-      "logoColor": "ffffff",
-      "style": "flat"
+      "logoColor": "ffffff"
     },
     {
-      "id": "prometheus-do",
-      "label": "Monitor",
+      "id": "jira",
+      "label": "",
+      "message": "jira",
+      "color": "0A0FFF",
+      "style": "for-the-badge",
+      "logo": "jira",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "kubernetes",
+      "label": "",
+      "message": "kubernetes",
+      "color": "326ce5",
+      "style": "for-the-badge",
+      "logo": "kubernetes",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "opentelemetry",
+      "label": "",
+      "message": "OpenTelemetry",
+      "color": "FFFFFF",
+      "style": "for-the-badge",
+      "logo": "opentelemetry",
+      "logoColor": "000000"
+    },
+    {
+      "id": "packer",
+      "label": "",
+      "message": "packer",
+      "color": "E7EEF0",
+      "style": "for-the-badge",
+      "logo": "packer",
+      "logoColor": "02a8ef"
+    },
+    {
+      "id": "prometheus",
+      "label": "",
       "message": "Prometheus",
       "color": "E6522C",
-      "logo": "prometheus",
-      "logoColor": "ffffff",
-      "style": "flat"
+      "style": "for-the-badge",
+      "logo": "Prometheus",
+      "logoColor": "ffffff"
     },
     {
-      "id": "rabbitmq-do",
-      "label": "Queue",
-      "message": "RabbitMQ",
-      "color": "FF6600",
-      "logo": "rabbitmq",
-      "logoColor": "ffffff",
-      "style": "flat"
+      "id": "pulumi",
+      "label": "",
+      "message": "Pulumi",
+      "color": "8A3391",
+      "style": "for-the-badge",
+      "logo": "Pulumi",
+      "logoColor": "f7bf2a"
     },
     {
-      "id": "kafka-do",
-      "label": "Stream",
-      "message": "Kafka",
-      "color": "231F20",
-      "logo": "apachekafka",
-      "logoColor": "ffffff",
-      "style": "flat"
+      "id": "rancher",
+      "label": "",
+      "message": "rancher",
+      "color": "0075A8",
+      "style": "for-the-badge",
+      "logo": "rancher",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "splunk",
+      "label": "",
+      "message": "splunk",
+      "color": "000000",
+      "style": "for-the-badge",
+      "logo": "splunk",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "terraform",
+      "label": "",
+      "message": "terraform",
+      "color": "5835CC",
+      "style": "for-the-badge",
+      "logo": "terraform",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "vagrant",
+      "label": "",
+      "message": "vagrant",
+      "color": "1563FF",
+      "style": "for-the-badge",
+      "logo": "vagrant",
+      "logoColor": "ffffff"
     }
   ]
 }

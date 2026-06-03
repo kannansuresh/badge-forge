@@ -1,79 +1,106 @@
 {
-  "categoryName": "Blog & Publishing",
+  "categoryName": "Blog",
   "categorySlug": "blog",
-  "categoryDescription": "Blogging platforms, CMS, and publishing tools",
+  "categoryDescription": "Blogging platforms and publishing tools.",
   "badges": [
     {
-      "id": "substack-blog",
-      "label": "Blog",
-      "message": "Substack",
-      "color": "006f5c",
-      "logo": "substack",
-      "logoColor": "ffffff",
-      "style": "flat"
-    },
-    {
-      "id": "ghost-blog",
-      "label": "Blog",
-      "message": "Ghost",
-      "color": "15171A",
-      "logo": "ghost",
-      "logoColor": "ffffff",
-      "style": "flat"
-    },
-    {
-      "id": "blogger-blog",
-      "label": "Blog",
+      "id": "blogger",
+      "label": "",
       "message": "Blogger",
       "color": "FF5722",
+      "style": "for-the-badge",
       "logo": "blogger",
-      "logoColor": "ffffff",
-      "style": "flat"
+      "logoColor": "ffffff"
     },
     {
-      "id": "rss-blog",
-      "label": "Blog",
-      "message": "RSS",
-      "color": "F88900",
-      "logo": "rss",
-      "logoColor": "ffffff",
-      "style": "flat"
-    },
-    {
-      "id": "wix-blog",
-      "label": "Blog",
-      "message": "Wix",
-      "color": "000000",
-      "logo": "wix",
-      "logoColor": "ffffff",
-      "style": "flat"
-    },
-    {
-      "id": "dailydotdev-blog",
-      "label": "Blog",
+      "id": "daily-dev",
+      "label": "",
       "message": "daily.dev",
       "color": "CE3DF3",
-      "logo": "dailydotdev",
-      "logoColor": "ffffff",
-      "style": "flat"
+      "style": "for-the-badge",
+      "logo": "daily.dev",
+      "logoColor": "ffffff"
     },
     {
-      "id": "microdotblog-blog",
-      "label": "Blog",
+      "id": "dev",
+      "label": "",
+      "message": "dev.to",
+      "color": "0A0A0A",
+      "style": "for-the-badge",
+      "logo": "dev.to",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "ghost",
+      "label": "",
+      "message": "ghost",
+      "color": "000",
+      "style": "for-the-badge",
+      "logo": "ghost",
+      "logoColor": "f7df1e"
+    },
+    {
+      "id": "hashnode",
+      "label": "",
+      "message": "Hashnode",
+      "color": "2962FF",
+      "style": "for-the-badge",
+      "logo": "hashnode",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "medium",
+      "label": "",
+      "message": "Medium",
+      "color": "12100E",
+      "style": "for-the-badge",
+      "logo": "medium",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "micro-blog",
+      "label": "",
       "message": "Micro.blog",
       "color": "FF8800",
-      "logo": "microdotblog",
-      "logoColor": "ffffff",
-      "style": "flat"
+      "style": "for-the-badge",
+      "logo": "micro.blog",
+      "logoColor": "ffffff"
     },
     {
-      "id": "zola-blog",
-      "label": "Blog",
+      "id": "rss",
+      "label": "",
+      "message": "rss",
+      "color": "F88900",
+      "style": "for-the-badge",
+      "logo": "rss",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "substack",
+      "label": "",
+      "message": "Substack",
+      "color": "006f5c",
+      "style": "for-the-badge",
+      "logo": "substack",
+      "logoColor": "ff6719"
+    },
+    {
+      "id": "wix",
+      "label": "",
+      "message": "wix",
+      "color": "000",
+      "style": "for-the-badge",
+      "logo": "wix",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "zola",
+      "label": "",
       "message": "Zola",
-      "color": "000000",
+      "color": "black",
+      "style": "for-the-badge",
       "logo": "zola",
-      "logoColor": "ffffff",
-      "style": "flat"
+      "logoColor": "ffffff"
     }
   ]
 }

@@ -1,0 +1,311 @@
+{
+  "categoryName": "Other",
+  "categorySlug": "other",
+  "categoryDescription": "Miscellaneous tools and services that don't fit other categories.",
+  "badges": [
+    {
+      "id": "accessibility",
+      "label": "",
+      "message": "Accessibility",
+      "color": "0170EA",
+      "style": "for-the-badge"
+    },
+    {
+      "id": "airbnb",
+      "label": "",
+      "message": "Airbnb",
+      "color": "ff5a5f",
+      "style": "for-the-badge",
+      "logo": "Airbnb",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "alfred",
+      "label": "",
+      "message": "alfred",
+      "color": "5C1F87",
+      "style": "for-the-badge",
+      "logo": "alfred"
+    },
+    {
+      "id": "apex",
+      "label": "",
+      "message": "Apex",
+      "color": "blue",
+      "style": "for-the-badge"
+    },
+    {
+      "id": "codecov",
+      "label": "",
+      "message": "codecov",
+      "color": "ff0077",
+      "style": "for-the-badge",
+      "logo": "codecov",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "crowdin",
+      "label": "",
+      "message": "Crowdin",
+      "color": "2E3340",
+      "style": "for-the-badge",
+      "logo": "Crowdin",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "elasticsearch",
+      "label": "",
+      "message": "ElasticSearch",
+      "color": "005571",
+      "style": "for-the-badge",
+      "logo": "elasticsearch"
+    },
+    {
+      "id": "eslint",
+      "label": "",
+      "message": "ESLint",
+      "color": "4B3263",
+      "style": "for-the-badge",
+      "logo": "eslint",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "ffmpeg",
+      "label": "",
+      "message": "FFmpeg",
+      "color": "171717",
+      "style": "for-the-badge",
+      "logo": "ffmpeg",
+      "logoColor": "5cb85c"
+    },
+    {
+      "id": "google-talkback",
+      "label": "",
+      "message": "Google TalkBack",
+      "color": "6636B4",
+      "style": "for-the-badge"
+    },
+    {
+      "id": "jaws",
+      "label": "",
+      "message": "JAWS",
+      "color": "1962AA",
+      "style": "for-the-badge"
+    },
+    {
+      "id": "jellyfin",
+      "label": "",
+      "message": "jellyfin",
+      "color": "000B25",
+      "style": "for-the-badge",
+      "logo": "Jellyfin",
+      "logoColor": "00a4dc"
+    },
+    {
+      "id": "meta",
+      "label": "",
+      "message": "Meta",
+      "color": "0467DF",
+      "style": "for-the-badge",
+      "logo": "Meta",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "miro",
+      "label": "",
+      "message": "Miro",
+      "color": "F2CA02",
+      "style": "for-the-badge",
+      "logo": "miro",
+      "logoColor": "000000"
+    },
+    {
+      "id": "narrator",
+      "label": "",
+      "message": "Narrator",
+      "color": "0771D0",
+      "style": "for-the-badge"
+    },
+    {
+      "id": "notion",
+      "label": "",
+      "message": "Notion",
+      "color": "000000",
+      "style": "for-the-badge",
+      "logo": "notion",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "nvda",
+      "label": "",
+      "message": "NVDA",
+      "color": "630093",
+      "style": "for-the-badge"
+    },
+    {
+      "id": "openapi-specification",
+      "label": "",
+      "message": "openapiinitiative",
+      "color": "000000",
+      "style": "for-the-badge",
+      "logo": "openapiinitiative",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "plex",
+      "label": "",
+      "message": "plex",
+      "color": "E5A00D",
+      "style": "for-the-badge",
+      "logo": "plex",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "portfolio",
+      "label": "",
+      "message": "Portfolio",
+      "color": "000000",
+      "style": "for-the-badge",
+      "logo": "firefox"
+    },
+    {
+      "id": "postman",
+      "label": "",
+      "message": "Postman",
+      "color": "FF6C37",
+      "style": "for-the-badge",
+      "logo": "postman",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "power-bi",
+      "label": "",
+      "message": "power bi",
+      "color": "F2C811",
+      "style": "for-the-badge"
+    },
+    {
+      "id": "prettier",
+      "label": "",
+      "message": "prettier",
+      "color": "F7B93E",
+      "style": "for-the-badge",
+      "logo": "prettier",
+      "logoColor": "000000"
+    },
+    {
+      "id": "prezi",
+      "label": "",
+      "message": "Prezi",
+      "color": "000000",
+      "style": "for-the-badge",
+      "logo": "Prezi",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "pypi",
+      "label": "",
+      "message": "pypi",
+      "color": "ececec",
+      "style": "for-the-badge",
+      "logo": "pypi",
+      "logoColor": "1f73b7"
+    },
+    {
+      "id": "salesforce",
+      "label": "",
+      "message": "Salesforce",
+      "color": "blue",
+      "style": "for-the-badge"
+    },
+    {
+      "id": "sonarlint",
+      "label": "",
+      "message": "SonarLint",
+      "color": "CB2029",
+      "style": "for-the-badge"
+    },
+    {
+      "id": "sonarqube",
+      "label": "",
+      "message": "SonarQube",
+      "color": "black",
+      "style": "for-the-badge"
+    },
+    {
+      "id": "tampermonkey",
+      "label": "",
+      "message": "tampermonkey",
+      "color": "00485B",
+      "style": "for-the-badge",
+      "logo": "tampermonkey",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "trello",
+      "label": "",
+      "message": "Trello",
+      "color": "026AA7",
+      "style": "for-the-badge",
+      "logo": "Trello",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "twilio",
+      "label": "",
+      "message": "Twilio",
+      "color": "F22F46",
+      "style": "for-the-badge"
+    },
+    {
+      "id": "uber",
+      "label": "",
+      "message": "Uber",
+      "color": "000000",
+      "style": "for-the-badge",
+      "logo": "Uber",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "virtualbox",
+      "label": "",
+      "message": "virtualbox",
+      "color": "183A61",
+      "style": "for-the-badge",
+      "logo": "virtualbox",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "voiceover",
+      "label": "",
+      "message": "VoiceOver",
+      "color": "484848",
+      "style": "for-the-badge"
+    },
+    {
+      "id": "wcag",
+      "label": "",
+      "message": "WCAG",
+      "color": "015A69",
+      "style": "for-the-badge"
+    },
+    {
+      "id": "xfce",
+      "label": "",
+      "message": "XFCE",
+      "color": "2284F2",
+      "style": "for-the-badge",
+      "logo": "xfce",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "xo",
+      "label": "",
+      "message": "XO",
+      "color": "5ED9C7",
+      "style": "for-the-badge",
+      "logo": "xo",
+      "logoColor": "000000"
+    }
+  ]
+}

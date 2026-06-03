@@ -1,0 +1,70 @@
+{
+  "categoryName": "Build Tools",
+  "categorySlug": "build-tools",
+  "categoryDescription": "Build tools and bundlers.",
+  "badges": [
+    {
+      "id": "bun",
+      "label": "",
+      "message": "Bun",
+      "color": "000000",
+      "style": "for-the-badge",
+      "logo": "bun",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "esbuild",
+      "label": "",
+      "message": "esbuild",
+      "color": "FFCF00",
+      "style": "for-the-badge",
+      "logo": "esbuild",
+      "logoColor": "000000"
+    },
+    {
+      "id": "gulp",
+      "label": "",
+      "message": "GULP",
+      "color": "CF4647",
+      "style": "for-the-badge",
+      "logo": "gulp",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "nx",
+      "label": "",
+      "message": "nx",
+      "color": "143055",
+      "style": "for-the-badge",
+      "logo": "nx",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "rollupjs",
+      "label": "",
+      "message": "RollupJS",
+      "color": "ef3335",
+      "style": "for-the-badge",
+      "logo": "rollup.js",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "vite",
+      "label": "",
+      "message": "vite",
+      "color": "646CFF",
+      "style": "for-the-badge",
+      "logo": "vite",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "webpack",
+      "label": "",
+      "message": "webpack",
+      "color": "8DD6F9",
+      "style": "for-the-badge",
+      "logo": "webpack",
+      "logoColor": "000000"
+    }
+  ]
+}

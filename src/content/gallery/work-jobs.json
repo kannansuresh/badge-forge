@@ -1,0 +1,77 @@
+{
+  "categoryName": "Work/Jobs",
+  "categorySlug": "work-jobs",
+  "categoryDescription": "Job boards, freelancing, and professional networks.",
+  "badges": [
+    {
+      "id": "angellist",
+      "label": "",
+      "message": "AngelList",
+      "color": "D4D4D4",
+      "style": "for-the-badge"
+    },
+    {
+      "id": "behance",
+      "label": "",
+      "message": "Behance",
+      "color": "1769ff",
+      "style": "for-the-badge",
+      "logo": "behance",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "freelancer",
+      "label": "",
+      "message": "Freelancer",
+      "color": "29B2FE",
+      "style": "for-the-badge",
+      "logo": "Freelancer",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "glassdoor",
+      "label": "",
+      "message": "Glassdoor",
+      "color": "00A162",
+      "style": "for-the-badge",
+      "logo": "Glassdoor",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "hacker-earth",
+      "label": "",
+      "message": "HackerEarth",
+      "color": "2C3454",
+      "style": "for-the-badge",
+      "logo": "HackerEarth",
+      "logoColor": "0000ff"
+    },
+    {
+      "id": "hackerrank",
+      "label": "",
+      "message": "Hackerrank",
+      "color": "2EC866",
+      "style": "for-the-badge",
+      "logo": "HackerRank",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "indeed",
+      "label": "",
+      "message": "indeed",
+      "color": "003A9B",
+      "style": "for-the-badge",
+      "logo": "indeed",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "upwork",
+      "label": "",
+      "message": "UpWork",
+      "color": "6FDA44",
+      "style": "for-the-badge",
+      "logo": "Upwork",
+      "logoColor": "ffffff"
+    }
+  ]
+}

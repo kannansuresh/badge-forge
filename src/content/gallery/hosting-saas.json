@@ -1,0 +1,245 @@
+{
+  "categoryName": "Hosting/SaaS",
+  "categorySlug": "hosting-saas",
+  "categoryDescription": "Cloud providers, hosting services, and SaaS platforms.",
+  "badges": [
+    {
+      "id": "alibaba-cloud",
+      "label": "",
+      "message": "AlibabaCloud",
+      "color": "FF6701",
+      "style": "for-the-badge",
+      "logo": "alibabacloud",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "asana",
+      "label": "",
+      "message": "asana",
+      "color": "F06A6A",
+      "style": "for-the-badge",
+      "logo": "asana",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "aws",
+      "label": "",
+      "message": "AWS",
+      "color": "FF9900",
+      "style": "for-the-badge"
+    },
+    {
+      "id": "azure",
+      "label": "",
+      "message": "azure",
+      "color": "0072C6",
+      "style": "for-the-badge"
+    },
+    {
+      "id": "clickup",
+      "label": "",
+      "message": "clickup",
+      "color": "7B68EE",
+      "style": "for-the-badge",
+      "logo": "clickup",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "cloudflare",
+      "label": "",
+      "message": "Cloudflare",
+      "color": "F38020",
+      "style": "for-the-badge",
+      "logo": "Cloudflare",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "codeberg",
+      "label": "",
+      "message": "Codeberg",
+      "color": "2185D0",
+      "style": "for-the-badge",
+      "logo": "Codeberg",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "datadog",
+      "label": "",
+      "message": "datadog",
+      "color": "632CA6",
+      "style": "for-the-badge",
+      "logo": "datadog",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "digitalocean",
+      "label": "",
+      "message": "DigitalOcean",
+      "color": "0167ff",
+      "style": "for-the-badge",
+      "logo": "digitalOcean",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "firebase",
+      "label": "",
+      "message": "firebase",
+      "color": "039BE5",
+      "style": "for-the-badge",
+      "logo": "firebase"
+    },
+    {
+      "id": "github-pages",
+      "label": "",
+      "message": "github pages",
+      "color": "121013",
+      "style": "for-the-badge",
+      "logo": "github",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "glitch",
+      "label": "",
+      "message": "glitch",
+      "color": "3333FF",
+      "style": "for-the-badge",
+      "logo": "glitch",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "google-cloud",
+      "label": "",
+      "message": "GoogleCloud",
+      "color": "4285F4",
+      "style": "for-the-badge",
+      "logo": "google-cloud",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "heroku",
+      "label": "",
+      "message": "heroku",
+      "color": "430098",
+      "style": "for-the-badge"
+    },
+    {
+      "id": "hostinger",
+      "label": "",
+      "message": "hostinger",
+      "color": "673DE6",
+      "style": "for-the-badge",
+      "logo": "hostinger",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "infomaniak",
+      "label": "",
+      "message": "infomaniak",
+      "color": "0098FF",
+      "style": "for-the-badge",
+      "logo": "infomaniak",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "linear",
+      "label": "",
+      "message": "linear",
+      "color": "5E6AD2",
+      "style": "for-the-badge",
+      "logo": "linear",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "linode",
+      "label": "",
+      "message": "linode",
+      "color": "00A95C",
+      "style": "for-the-badge"
+    },
+    {
+      "id": "netlify",
+      "label": "",
+      "message": "netlify",
+      "color": "000000",
+      "style": "for-the-badge",
+      "logo": "netlify"
+    },
+    {
+      "id": "openstack",
+      "label": "",
+      "message": "Openstack",
+      "color": "f01742",
+      "style": "for-the-badge",
+      "logo": "openstack",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "oracle",
+      "label": "",
+      "message": "Oracle",
+      "color": "F80000",
+      "style": "for-the-badge"
+    },
+    {
+      "id": "ovh",
+      "label": "",
+      "message": "ovh",
+      "color": "123F6D",
+      "style": "for-the-badge",
+      "logo": "ovh"
+    },
+    {
+      "id": "proxmox",
+      "label": "",
+      "message": "proxmox",
+      "color": "proxmox",
+      "style": "for-the-badge",
+      "logo": "proxmox",
+      "logoColor": "e57000"
+    },
+    {
+      "id": "pythonanywhere",
+      "label": "",
+      "message": "pythonanywhere",
+      "color": "2F9FD7",
+      "style": "for-the-badge",
+      "logo": "pythonanywhere",
+      "logoColor": "151515"
+    },
+    {
+      "id": "render",
+      "label": "",
+      "message": "Render",
+      "color": "FE3B7",
+      "style": "for-the-badge",
+      "logo": "render",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "scaleway",
+      "label": "",
+      "message": "SCALEWAY",
+      "color": "4f0599",
+      "style": "for-the-badge",
+      "logo": "scaleway",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "vercel",
+      "label": "",
+      "message": "vercel",
+      "color": "000000",
+      "style": "for-the-badge",
+      "logo": "vercel",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "vultr",
+      "label": "",
+      "message": "Vultr",
+      "color": "007BFC",
+      "style": "for-the-badge",
+      "logo": "vultr"
+    }
+  ]
+}
