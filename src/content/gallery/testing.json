@@ -1,7 +1,7 @@
 {
   "categoryName": "Testing",
   "categorySlug": "testing",
-  "categoryDescription": "Testing frameworks and quality assurance tools.",
+  "categoryDescription": "Testing frameworks, end-to-end testing, and QA tools.",
   "badges": [
     {
       "id": "apifox",
@@ -108,6 +108,33 @@
       "style": "for-the-badge",
       "logo": "vitest",
       "logoColor": "fcc72b"
+    },
+    {
+      "id": "vitest-test",
+      "label": "",
+      "message": "Vitest",
+      "color": "6E9F18",
+      "style": "for-the-badge",
+      "logo": "vitest",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "storybook-test",
+      "label": "",
+      "message": "Storybook",
+      "color": "FF4785",
+      "style": "for-the-badge",
+      "logo": "storybook",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "playwright-test",
+      "label": "",
+      "message": "Playwright",
+      "color": "2EAD33",
+      "style": "for-the-badge",
+      "logo": "playwright",
+      "logoColor": "ffffff"
     }
   ]
 }

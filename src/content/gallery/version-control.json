@@ -1,7 +1,7 @@
 {
   "categoryName": "Version Control",
   "categorySlug": "version-control",
-  "categoryDescription": "Version control systems and code hosting.",
+  "categoryDescription": "Version control systems, Git platforms, and code collaboration tools.",
   "badges": [
     {
       "id": "apache-subversion",
@@ -100,6 +100,24 @@
       "color": "00AEEF",
       "style": "for-the-badge",
       "logo": "Perforce",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "github-copilot-vcs",
+      "label": "",
+      "message": "GitHub Copilot",
+      "color": "8957E5",
+      "style": "for-the-badge",
+      "logo": "githubcopilot",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "coderabbit",
+      "label": "",
+      "message": "CodeRabbit",
+      "color": "FF6B35",
+      "style": "for-the-badge",
+      "logo": "coderabbit",
       "logoColor": "ffffff"
     }
   ]

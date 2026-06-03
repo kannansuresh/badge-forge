@@ -1,7 +1,7 @@
 {
-  "categoryName": "Developer/Forums",
-  "categorySlug": "developer-forums",
-  "categoryDescription": "Developer communities and forums.",
+  "categoryName": "Developer Community",
+  "categorySlug": "developer-community",
+  "categoryDescription": "Developer forums, Q&A platforms, and coding communities.",
   "badges": [
     {
       "id": "backstage",

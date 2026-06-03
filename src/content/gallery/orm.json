@@ -1,7 +1,7 @@
 {
   "categoryName": "ORM",
   "categorySlug": "orm",
-  "categoryDescription": "Object-relational mapping tools.",
+  "categoryDescription": "Object-relational mapping and database query builders.",
   "badges": [
     {
       "id": "doctrine",

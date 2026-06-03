@@ -1,0 +1,97 @@
+{
+  "categoryName": "Analytics",
+  "categorySlug": "analytics",
+  "categoryDescription": "Web analytics, product analytics, and event tracking tools.",
+  "badges": [
+    {
+      "id": "google-analytics",
+      "label": "",
+      "message": "Google Analytics",
+      "color": "E37400",
+      "style": "for-the-badge",
+      "logo": "googleanalytics",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "plausible",
+      "label": "",
+      "message": "Plausible",
+      "color": "5850EC",
+      "style": "for-the-badge",
+      "logo": "plausibleanalytics",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "posthog",
+      "label": "",
+      "message": "PostHog",
+      "color": "000000",
+      "style": "for-the-badge",
+      "logo": "posthog",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "mixpanel",
+      "label": "",
+      "message": "Mixpanel",
+      "color": "7856FF",
+      "style": "for-the-badge",
+      "logo": "mixpanel",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "amplitude",
+      "label": "",
+      "message": "Amplitude",
+      "color": "0050FF",
+      "style": "for-the-badge",
+      "logo": "amplitude",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "hotjar",
+      "label": "",
+      "message": "Hotjar",
+      "color": "FF3E00",
+      "style": "for-the-badge",
+      "logo": "hotjar",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "matomo",
+      "label": "",
+      "message": "Matomo",
+      "color": "3152A0",
+      "style": "for-the-badge",
+      "logo": "matomo",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "heap",
+      "label": "",
+      "message": "Heap",
+      "color": "FF5A60",
+      "style": "for-the-badge",
+      "logo": "heap",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "clarity",
+      "label": "",
+      "message": "Microsoft Clarity",
+      "color": "157EFA",
+      "style": "for-the-badge",
+      "logo": "microsoftclarity",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "segment",
+      "label": "",
+      "message": "Segment",
+      "color": "52BD95",
+      "style": "for-the-badge",
+      "logo": "segment",
+      "logoColor": "ffffff"
+    }
+  ]
+}

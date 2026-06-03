@@ -1,7 +1,7 @@
 {
   "categoryName": "Cloud Storage",
   "categorySlug": "cloud-storage",
-  "categoryDescription": "Cloud file storage and sync services.",
+  "categoryDescription": "Cloud file storage, object storage, and file sync services.",
   "badges": [
     {
       "id": "amazon-s3",

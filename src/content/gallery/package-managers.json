@@ -1,0 +1,124 @@
+{
+  "categoryName": "Package Managers",
+  "categorySlug": "package-managers",
+  "categoryDescription": "Package managers and dependency management tools.",
+  "badges": [
+    {
+      "id": "npm",
+      "label": "",
+      "message": "npm",
+      "color": "CB3837",
+      "style": "for-the-badge",
+      "logo": "npm",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "yarn",
+      "label": "",
+      "message": "Yarn",
+      "color": "2C8EBB",
+      "style": "for-the-badge",
+      "logo": "yarn",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "pnpm",
+      "label": "",
+      "message": "pnpm",
+      "color": "F69220",
+      "style": "for-the-badge",
+      "logo": "pnpm",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "bun-sh",
+      "label": "",
+      "message": "Bun",
+      "color": "FBF0DF",
+      "style": "for-the-badge",
+      "logo": "bun",
+      "logoColor": "000000"
+    },
+    {
+      "id": "pip",
+      "label": "",
+      "message": "pip",
+      "color": "3775A9",
+      "style": "for-the-badge",
+      "logo": "pypi",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "cargo",
+      "label": "",
+      "message": "Cargo",
+      "color": "000000",
+      "style": "for-the-badge",
+      "logo": "rust",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "composer",
+      "label": "",
+      "message": "Composer",
+      "color": "885630",
+      "style": "for-the-badge",
+      "logo": "composer",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "homebrew",
+      "label": "",
+      "message": "Homebrew",
+      "color": "FBB040",
+      "style": "for-the-badge",
+      "logo": "homebrew",
+      "logoColor": "000000"
+    },
+    {
+      "id": "chocolatey",
+      "label": "",
+      "message": "Chocolatey",
+      "color": "80B5E3",
+      "style": "for-the-badge",
+      "logo": "chocolatey",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "nuget",
+      "label": "",
+      "message": "NuGet",
+      "color": "004880",
+      "style": "for-the-badge",
+      "logo": "nuget",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "conda",
+      "label": "",
+      "message": "Conda",
+      "color": "43B02A",
+      "style": "for-the-badge",
+      "logo": "anaconda",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "snapcraft",
+      "label": "",
+      "message": "Snapcraft",
+      "color": "82BEA0",
+      "style": "for-the-badge",
+      "logo": "snapcraft",
+      "logoColor": "000000"
+    },
+    {
+      "id": "flatpak",
+      "label": "",
+      "message": "Flatpak",
+      "color": "4A90D9",
+      "style": "for-the-badge",
+      "logo": "flatpak",
+      "logoColor": "ffffff"
+    }
+  ]
+}

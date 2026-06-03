@@ -1,7 +1,7 @@
 {
   "categoryName": "Databases",
   "categorySlug": "databases",
-  "categoryDescription": "Database management systems.",
+  "categoryDescription": "Relational, NoSQL, vector, and analytics databases.",
   "badges": [
     {
       "id": "amazon-dynamodb",
@@ -247,6 +247,60 @@
       "color": "F37440",
       "style": "for-the-badge",
       "logo": "teradata",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "supabase-db",
+      "label": "",
+      "message": "Supabase",
+      "color": "3FCF8E",
+      "style": "for-the-badge",
+      "logo": "supabase",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "neon",
+      "label": "",
+      "message": "Neon",
+      "color": "00E599",
+      "style": "for-the-badge",
+      "logo": "neon",
+      "logoColor": "000000"
+    },
+    {
+      "id": "turso",
+      "label": "",
+      "message": "Turso",
+      "color": "4FF0C9",
+      "style": "for-the-badge",
+      "logo": "turso",
+      "logoColor": "000000"
+    },
+    {
+      "id": "meilisearch",
+      "label": "",
+      "message": "Meilisearch",
+      "color": "FF5CAA",
+      "style": "for-the-badge",
+      "logo": "meilisearch",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "upstash",
+      "label": "",
+      "message": "Upstash",
+      "color": "00E9A3",
+      "style": "for-the-badge",
+      "logo": "upstash",
+      "logoColor": "000000"
+    },
+    {
+      "id": "singlestore",
+      "label": "",
+      "message": "SingleStore",
+      "color": "AA00FF",
+      "style": "for-the-badge",
+      "logo": "singlestore",
       "logoColor": "ffffff"
     }
   ]

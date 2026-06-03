@@ -1,7 +1,7 @@
 {
-  "categoryName": "Work/Jobs",
-  "categorySlug": "work-jobs",
-  "categoryDescription": "Job boards, freelancing, and professional networks.",
+  "categoryName": "Jobs & Hiring",
+  "categorySlug": "jobs-hiring",
+  "categoryDescription": "Job boards, freelancing platforms, and professional networks.",
   "badges": [
     {
       "id": "angellist",

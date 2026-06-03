@@ -1,0 +1,113 @@
+{
+  "categoryName": "Auth & Security",
+  "categorySlug": "auth-security",
+  "categoryDescription": "Authentication providers, identity management, and security platforms.",
+  "badges": [
+    {
+      "id": "auth0",
+      "label": "",
+      "message": "Auth0",
+      "color": "EB5424",
+      "style": "for-the-badge",
+      "logo": "auth0",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "clerk-auth",
+      "label": "",
+      "message": "Clerk",
+      "color": "6C47FF",
+      "style": "for-the-badge",
+      "logo": "clerk",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "firebase-auth",
+      "label": "",
+      "message": "Firebase Auth",
+      "color": "FFCA28",
+      "style": "for-the-badge",
+      "logo": "firebase",
+      "logoColor": "000000"
+    },
+    {
+      "id": "nextauth",
+      "label": "",
+      "message": "NextAuth.js",
+      "color": "000000",
+      "style": "for-the-badge",
+      "logo": "nextdotjs",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "okta",
+      "label": "",
+      "message": "Okta",
+      "color": "007DC1",
+      "style": "for-the-badge",
+      "logo": "okta",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "supabase-auth",
+      "label": "",
+      "message": "Supabase Auth",
+      "color": "3FCF8E",
+      "style": "for-the-badge",
+      "logo": "supabase",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "keycloak",
+      "label": "",
+      "message": "Keycloak",
+      "color": "4D4D4D",
+      "style": "for-the-badge",
+      "logo": "keycloak",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "passkeys",
+      "label": "",
+      "message": "Passkeys",
+      "color": "000000",
+      "style": "for-the-badge",
+      "logo": "webauthn",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "oauth",
+      "label": "",
+      "message": "OAuth 2.0",
+      "color": "333333",
+      "style": "for-the-badge"
+    },
+    {
+      "id": "jwt",
+      "label": "",
+      "message": "JWT",
+      "color": "000000",
+      "style": "for-the-badge",
+      "logo": "jsonwebtokens",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "cloudflare-turnstile",
+      "label": "",
+      "message": "Turnstile",
+      "color": "F38020",
+      "style": "for-the-badge",
+      "logo": "cloudflare",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "1password",
+      "label": "",
+      "message": "1Password",
+      "color": "0094F5",
+      "style": "for-the-badge",
+      "logo": "1password",
+      "logoColor": "ffffff"
+    }
+  ]
+}

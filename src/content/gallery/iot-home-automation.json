@@ -1,7 +1,7 @@
 {
-  "categoryName": "Home Automation",
-  "categorySlug": "home-automation",
-  "categoryDescription": "Smart home and IoT platforms.",
+  "categoryName": "IoT & Home Automation",
+  "categorySlug": "iot-home-automation",
+  "categoryDescription": "Internet of Things, smart home, and embedded platforms.",
   "badges": [
     {
       "id": "arduino",

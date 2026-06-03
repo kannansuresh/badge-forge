@@ -1,0 +1,133 @@
+{
+  "categoryName": "CMS",
+  "categorySlug": "cms",
+  "categoryDescription": "Content management systems and headless CMS platforms.",
+  "badges": [
+    {
+      "id": "wordpress",
+      "label": "",
+      "message": "WordPress",
+      "color": "21759B",
+      "style": "for-the-badge",
+      "logo": "wordpress",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "strapi",
+      "label": "",
+      "message": "Strapi",
+      "color": "4945FF",
+      "style": "for-the-badge",
+      "logo": "strapi",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "contentful",
+      "label": "",
+      "message": "Contentful",
+      "color": "2478CC",
+      "style": "for-the-badge",
+      "logo": "contentful",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "sanity",
+      "label": "",
+      "message": "Sanity",
+      "color": "F03E2F",
+      "style": "for-the-badge",
+      "logo": "sanity",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "ghost-cms",
+      "label": "",
+      "message": "Ghost",
+      "color": "15171A",
+      "style": "for-the-badge",
+      "logo": "ghost",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "drupal",
+      "label": "",
+      "message": "Drupal",
+      "color": "0678BE",
+      "style": "for-the-badge",
+      "logo": "drupal",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "joomla",
+      "label": "",
+      "message": "Joomla",
+      "color": "5091CD",
+      "style": "for-the-badge",
+      "logo": "joomla",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "payload-cms",
+      "label": "",
+      "message": "Payload CMS",
+      "color": "000000",
+      "style": "for-the-badge",
+      "logo": "payloadcms",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "directus",
+      "label": "",
+      "message": "Directus",
+      "color": "374151",
+      "style": "for-the-badge",
+      "logo": "directus",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "hygraph",
+      "label": "",
+      "message": "Hygraph",
+      "color": "14144B",
+      "style": "for-the-badge",
+      "logo": "hygraph",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "prismic",
+      "label": "",
+      "message": "Prismic",
+      "color": "5163BA",
+      "style": "for-the-badge",
+      "logo": "prismic",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "statamic",
+      "label": "",
+      "message": "Statamic",
+      "color": "FF5A5F",
+      "style": "for-the-badge",
+      "logo": "statamic",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "wix-cms",
+      "label": "",
+      "message": "Wix",
+      "color": "FAAD4D",
+      "style": "for-the-badge",
+      "logo": "wix",
+      "logoColor": "000000"
+    },
+    {
+      "id": "webflow",
+      "label": "",
+      "message": "Webflow",
+      "color": "146EF5",
+      "style": "for-the-badge",
+      "logo": "webflow",
+      "logoColor": "ffffff"
+    }
+  ]
+}

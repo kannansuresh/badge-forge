@@ -1,7 +1,7 @@
 {
   "categoryName": "Frontend",
   "categorySlug": "frontend",
-  "categoryDescription": "Frontend frameworks and UI libraries.",
+  "categoryDescription": "Frontend frameworks and meta-frameworks for web development.",
   "badges": [
     {
       "id": "angular",
@@ -64,6 +64,60 @@
       "style": "for-the-badge",
       "logo": "vuedotjs",
       "logoColor": "4fc08d"
+    },
+    {
+      "id": "solidjs",
+      "label": "",
+      "message": "SolidJS",
+      "color": "2C4F7C",
+      "style": "for-the-badge",
+      "logo": "solid",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "qwik",
+      "label": "",
+      "message": "Qwik",
+      "color": "AC7EF4",
+      "style": "for-the-badge",
+      "logo": "qwik",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "htmx",
+      "label": "",
+      "message": "htmx",
+      "color": "3366CC",
+      "style": "for-the-badge",
+      "logo": "htmx",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "remix",
+      "label": "",
+      "message": "Remix",
+      "color": "000000",
+      "style": "for-the-badge",
+      "logo": "remix",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "lit",
+      "label": "",
+      "message": "Lit",
+      "color": "324FFF",
+      "style": "for-the-badge",
+      "logo": "lit",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "preact",
+      "label": "",
+      "message": "Preact",
+      "color": "673AB8",
+      "style": "for-the-badge",
+      "logo": "preact",
+      "logoColor": "ffffff"
     }
   ]
 }

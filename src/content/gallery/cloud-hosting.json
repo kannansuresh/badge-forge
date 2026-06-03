@@ -1,7 +1,7 @@
 {
-  "categoryName": "Hosting/SaaS",
-  "categorySlug": "hosting-saas",
-  "categoryDescription": "Cloud providers, hosting services, and SaaS platforms.",
+  "categoryName": "Cloud & Hosting",
+  "categorySlug": "cloud-hosting",
+  "categoryDescription": "Cloud providers, hosting platforms, and SaaS services.",
   "badges": [
     {
       "id": "alibaba-cloud",

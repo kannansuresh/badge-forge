@@ -1,7 +1,7 @@
 {
-  "categoryName": "IDEs/Editors",
+  "categoryName": "IDEs & Editors",
   "categorySlug": "ides-editors",
-  "categoryDescription": "Code editors and integrated development environments.",
+  "categoryDescription": "Code editors, IDEs, and development environments.",
   "badges": [
     {
       "id": "android-studio",

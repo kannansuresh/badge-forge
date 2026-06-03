@@ -1,0 +1,131 @@
+{
+  "categoryName": "API & Backend",
+  "categorySlug": "api-backend",
+  "categoryDescription": "API platforms, backend-as-a-service, and API development tools.",
+  "badges": [
+    {
+      "id": "graphql-api",
+      "label": "",
+      "message": "GraphQL",
+      "color": "E10098",
+      "style": "for-the-badge",
+      "logo": "graphql",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "rest-api",
+      "label": "",
+      "message": "REST API",
+      "color": "009688",
+      "style": "for-the-badge"
+    },
+    {
+      "id": "grpc",
+      "label": "",
+      "message": "gRPC",
+      "color": "2DAA9E",
+      "style": "for-the-badge",
+      "logo": "grpc",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "trpc-api",
+      "label": "",
+      "message": "tRPC",
+      "color": "2596BE",
+      "style": "for-the-badge",
+      "logo": "trpc",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "postman",
+      "label": "",
+      "message": "Postman",
+      "color": "FF6C37",
+      "style": "for-the-badge",
+      "logo": "postman",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "insomnia",
+      "label": "",
+      "message": "Insomnia",
+      "color": "4000BF",
+      "style": "for-the-badge",
+      "logo": "insomnia",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "swagger-api",
+      "label": "",
+      "message": "Swagger",
+      "color": "85EA2D",
+      "style": "for-the-badge",
+      "logo": "swagger",
+      "logoColor": "000000"
+    },
+    {
+      "id": "openapi",
+      "label": "",
+      "message": "OpenAPI",
+      "color": "6BA539",
+      "style": "for-the-badge",
+      "logo": "openapiinitiative",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "supabase-api",
+      "label": "",
+      "message": "Supabase",
+      "color": "3FCF8E",
+      "style": "for-the-badge",
+      "logo": "supabase",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "hasura",
+      "label": "",
+      "message": "Hasura",
+      "color": "1EB4D4",
+      "style": "for-the-badge",
+      "logo": "hasura",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "hoppscotch",
+      "label": "",
+      "message": "Hoppscotch",
+      "color": "31C48D",
+      "style": "for-the-badge",
+      "logo": "hoppscotch",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "apache-kafka-api",
+      "label": "",
+      "message": "Apache Kafka",
+      "color": "000000",
+      "style": "for-the-badge",
+      "logo": "apachekafka",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "rabbitmq",
+      "label": "",
+      "message": "RabbitMQ",
+      "color": "FF6600",
+      "style": "for-the-badge",
+      "logo": "rabbitmq",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "nginx-api",
+      "label": "",
+      "message": "Nginx",
+      "color": "009639",
+      "style": "for-the-badge",
+      "logo": "nginx",
+      "logoColor": "ffffff"
+    }
+  ]
+}

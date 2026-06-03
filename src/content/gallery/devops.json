@@ -1,7 +1,7 @@
 {
   "categoryName": "DevOps",
   "categorySlug": "devops",
-  "categoryDescription": "DevOps tools, containerization, and infrastructure automation.",
+  "categoryDescription": "Containerization, orchestration, monitoring, and infrastructure as code.",
   "badges": [
     {
       "id": "ansible",
@@ -118,6 +118,42 @@
       "color": "1563FF",
       "style": "for-the-badge",
       "logo": "vagrant",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "argocd",
+      "label": "",
+      "message": "Argo CD",
+      "color": "EF7B4D",
+      "style": "for-the-badge",
+      "logo": "argo",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "helm",
+      "label": "",
+      "message": "Helm",
+      "color": "0F1689",
+      "style": "for-the-badge",
+      "logo": "helm",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "traefik",
+      "label": "",
+      "message": "Traefik",
+      "color": "24A1C1",
+      "style": "for-the-badge",
+      "logo": "traefikproxy",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "github-actions-devops",
+      "label": "",
+      "message": "GitHub Actions",
+      "color": "2088FF",
+      "style": "for-the-badge",
+      "logo": "githubactions",
       "logoColor": "ffffff"
     }
   ]

@@ -1,7 +1,7 @@
 {
   "categoryName": "Languages",
   "categorySlug": "languages",
-  "categoryDescription": "Programming languages and scripting tools.",
+  "categoryDescription": "Programming, scripting, and markup languages.",
   "badges": [
     {
       "id": "apache-groovy",
@@ -524,6 +524,15 @@
       "color": "F7A41D",
       "style": "for-the-badge",
       "logo": "zig",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "go",
+      "label": "",
+      "message": "Go",
+      "color": "00ADD8",
+      "style": "for-the-badge",
+      "logo": "go",
       "logoColor": "ffffff"
     }
   ]

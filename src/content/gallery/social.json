@@ -1,7 +1,7 @@
 {
   "categoryName": "Social",
   "categorySlug": "social",
-  "categoryDescription": "Social media platforms and messaging apps.",
+  "categoryDescription": "Social media platforms, messaging apps, and community tools.",
   "badges": [
     {
       "id": "airtable",

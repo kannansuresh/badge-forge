@@ -1,7 +1,7 @@
 {
-  "categoryName": "CSS Frameworks",
-  "categorySlug": "css-frameworks",
-  "categoryDescription": "CSS frameworks and utility libraries.",
+  "categoryName": "CSS & UI Frameworks",
+  "categorySlug": "css-ui-frameworks",
+  "categoryDescription": "CSS frameworks, component libraries, and design systems.",
   "badges": [
     {
       "id": "ant-design",

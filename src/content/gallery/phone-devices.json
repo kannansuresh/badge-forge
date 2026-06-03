@@ -1,7 +1,7 @@
 {
-  "categoryName": "Smartphone Brands",
-  "categorySlug": "smartphone-brands",
-  "categoryDescription": "Mobile device manufacturers.",
+  "categoryName": "Phone & Devices",
+  "categorySlug": "phone-devices",
+  "categoryDescription": "Smartphone manufacturers and mobile device brands.",
   "badges": [
     {
       "id": "apple",

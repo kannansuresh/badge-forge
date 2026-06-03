@@ -1,7 +1,7 @@
 {
-  "categoryName": "Frameworks, Platforms and Libraries",
-  "categorySlug": "frameworks-platforms-and-libraries",
-  "categoryDescription": "Web frameworks, libraries, and development platforms.",
+  "categoryName": "Frameworks & Libraries",
+  "categorySlug": "frameworks-libraries",
+  "categoryDescription": "Web frameworks, runtime platforms, and core development libraries.",
   "badges": [
     {
       "id": "net",
@@ -620,7 +620,7 @@
       "color": "323330",
       "style": "for-the-badge",
       "logo": "nodemon",
-      "logoColor": "\ufffddead"
+      "logoColor": "�dead"
     },
     {
       "id": "npm",

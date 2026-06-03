@@ -1,7 +1,7 @@
 {
   "categoryName": "Terminals",
   "categorySlug": "terminals",
-  "categoryDescription": "Terminal emulators and shell tools.",
+  "categoryDescription": "Terminal emulators, shell prompts, and CLI tools.",
   "badges": [
     {
       "id": "alacritty",

@@ -1,7 +1,7 @@
 {
-  "categoryName": "CI",
-  "categorySlug": "ci",
-  "categoryDescription": "Continuous integration and deployment services.",
+  "categoryName": "CI/CD",
+  "categorySlug": "ci-cd",
+  "categoryDescription": "Continuous integration, delivery, and deployment tools.",
   "badges": [
     {
       "id": "chipperci",
@@ -70,6 +70,15 @@
       "message": "travis ci",
       "color": "2B2F33",
       "style": "for-the-badge"
+    },
+    {
+      "id": "octopus-deploy",
+      "label": "",
+      "message": "octopus deploy",
+      "color": "0D80D8",
+      "style": "for-the-badge",
+      "logo": "octopusdeploy",
+      "logoColor": "ffffff"
     }
   ]
 }

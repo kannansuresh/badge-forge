@@ -1,7 +1,7 @@
 {
   "categoryName": "Mobile",
   "categorySlug": "mobile",
-  "categoryDescription": "Mobile development frameworks.",
+  "categoryDescription": "Cross-platform mobile and desktop app development frameworks.",
   "badges": [
     {
       "id": "expo",

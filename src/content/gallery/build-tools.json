@@ -1,7 +1,7 @@
 {
   "categoryName": "Build Tools",
   "categorySlug": "build-tools",
-  "categoryDescription": "Build tools and bundlers.",
+  "categoryDescription": "Build systems, bundlers, compilers, and developer tooling.",
   "badges": [
     {
       "id": "bun",
@@ -65,6 +65,42 @@
       "style": "for-the-badge",
       "logo": "webpack",
       "logoColor": "000000"
+    },
+    {
+      "id": "babel",
+      "label": "",
+      "message": "Babel",
+      "color": "F9DC3e",
+      "style": "for-the-badge",
+      "logo": "babel",
+      "logoColor": "000000"
+    },
+    {
+      "id": "cmake",
+      "label": "",
+      "message": "CMake",
+      "color": "008FBA",
+      "style": "for-the-badge",
+      "logo": "cmake",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "gradle",
+      "label": "",
+      "message": "Gradle",
+      "color": "02303A",
+      "style": "for-the-badge",
+      "logo": "Gradle",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "platformio",
+      "label": "",
+      "message": "PlatformIO",
+      "color": "222",
+      "style": "for-the-badge",
+      "logo": "platformio",
+      "logoColor": "f5822a"
     }
   ]
 }

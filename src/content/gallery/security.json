@@ -1,7 +1,7 @@
 {
   "categoryName": "Security",
   "categorySlug": "security",
-  "categoryDescription": "Security tools, access management, and compliance.",
+  "categoryDescription": "Security tools, password managers, VPNs, and compliance.",
   "badges": [
     {
       "id": "aqua-sec",

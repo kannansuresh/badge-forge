@@ -1,7 +1,7 @@
 {
   "categoryName": "Music",
   "categorySlug": "music",
-  "categoryDescription": "Music streaming and audio production.",
+  "categoryDescription": "Music streaming services and audio production tools.",
   "badges": [
     {
       "id": "apple-music",

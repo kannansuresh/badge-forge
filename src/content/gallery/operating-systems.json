@@ -1,7 +1,7 @@
 {
-  "categoryName": "Operating System",
-  "categorySlug": "operating-system",
-  "categoryDescription": "Operating systems and Linux distributions.",
+  "categoryName": "Operating Systems",
+  "categorySlug": "operating-systems",
+  "categoryDescription": "Desktop, mobile, and server operating systems.",
   "badges": [
     {
       "id": "alpine-linux",

@@ -82,6 +82,60 @@
       "style": "for-the-badge",
       "logo": "spring",
       "logoColor": "ffffff"
+    },
+    {
+      "id": "gin",
+      "label": "",
+      "message": "Gin",
+      "color": "008ECF",
+      "style": "for-the-badge",
+      "logo": "gin",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "echo",
+      "label": "",
+      "message": "Echo",
+      "color": "00ADD8",
+      "style": "for-the-badge",
+      "logo": "go",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "actix",
+      "label": "",
+      "message": "Actix Web",
+      "color": "000000",
+      "style": "for-the-badge",
+      "logo": "rust",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "axum",
+      "label": "",
+      "message": "Axum",
+      "color": "000000",
+      "style": "for-the-badge",
+      "logo": "rust",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "hono",
+      "label": "",
+      "message": "Hono",
+      "color": "E36002",
+      "style": "for-the-badge",
+      "logo": "hono",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "elysia",
+      "label": "",
+      "message": "Elysia",
+      "color": "000000",
+      "style": "for-the-badge",
+      "logo": "elysia",
+      "logoColor": "ffffff"
     }
   ]
 }
