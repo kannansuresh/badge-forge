@@ -18,38 +18,38 @@ Badges are organized as JSON files in `src/content/gallery/`. Each file represen
 ```jsonc
 {
   // Category metadata
-  "categoryName": "Cloud Storage",           // required — display name
-  "categorySlug": "cloud-storage",           // required — URL slug (kebab-case: a-z, 0-9, hyphens)
-  "categoryDescription": "Cloud storage…",   // optional — shown on category card
+  "categoryName": "Cloud Storage", // required — display name
+  "categorySlug": "cloud-storage", // required — URL slug (kebab-case: a-z, 0-9, hyphens)
+  "categoryDescription": "Cloud storage…", // optional — shown on category card
 
   // Badges in this category (non-empty array)
   "badges": [
     {
-      "id": "amazon-s3",                     // required — unique within file (kebab-case)
-      "label": "",                           // required — left side text ("" for brand-only)
-      "message": "Amazon S3",               // required — right side text
-      "color": "FF9900",                     // required — hex color WITHOUT # (e.g. FF9900)
-      "logo": "amazons3",                    // optional — simple-icons slug (lowercase)
-      "logoColor": "ffffff",                 // optional — logo color hex (default: white)
-      "style": "for-the-badge",              // optional — flat | flat-square | plastic | for-the-badge | social
-      "labelColor": "333333"                 // optional — label background hex
-    }
-  ]
+      "id": "amazon-s3", // required — unique within file (kebab-case)
+      "label": "", // required — left side text ("" for brand-only)
+      "message": "Amazon S3", // required — right side text
+      "color": "FF9900", // required — hex color WITHOUT # (e.g. FF9900)
+      "logo": "amazons3", // optional — simple-icons slug (lowercase)
+      "logoColor": "ffffff", // optional — logo color hex (default: white)
+      "style": "for-the-badge", // optional — flat | flat-square | plastic | for-the-badge | social
+      "labelColor": "333333", // optional — label background hex
+    },
+  ],
 }
 ```
 
 ### Rules
 
-| Rule | Severity | Checked By |
-|---|---|---|
-| Valid JSON syntax | ❌ Error | `bun run validate` |
-| Required fields present | ❌ Error | `bun run validate` |
-| `badges` is non-empty array | ❌ Error | `bun run validate` |
-| No duplicate badge `id` within same file | ❌ Error | `bun run validate` |
-| No duplicate `categorySlug` across files | ❌ Error | `bun run validate` |
-| Colors should be hex codes | ⚠️ Warning | `bun run validate` |
-| Logo slugs should match simple-icons | ⚠️ Warning | `bun run validate` |
-| `categorySlug` should be kebab-case | ⚠️ Warning | `bun run validate` |
+| Rule                                     | Severity   | Checked By         |
+| ---------------------------------------- | ---------- | ------------------ |
+| Valid JSON syntax                        | ❌ Error   | `bun run validate` |
+| Required fields present                  | ❌ Error   | `bun run validate` |
+| `badges` is non-empty array              | ❌ Error   | `bun run validate` |
+| No duplicate badge `id` within same file | ❌ Error   | `bun run validate` |
+| No duplicate `categorySlug` across files | ❌ Error   | `bun run validate` |
+| Colors should be hex codes               | ⚠️ Warning | `bun run validate` |
+| Logo slugs should match simple-icons     | ⚠️ Warning | `bun run validate` |
+| `categorySlug` should be kebab-case      | ⚠️ Warning | `bun run validate` |
 
 ### Validation
 

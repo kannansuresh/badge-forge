@@ -70,10 +70,16 @@ function validateCategory(data: unknown, file: string, errors: Issue[]): data is
   const obj = data as Record<string, unknown>;
 
   if (typeof obj.categoryName !== 'string' || !obj.categoryName.trim()) {
-    errors.push({ file, message: 'Missing or invalid "categoryName" (must be a non-empty string)' });
+    errors.push({
+      file,
+      message: 'Missing or invalid "categoryName" (must be a non-empty string)',
+    });
   }
   if (typeof obj.categorySlug !== 'string' || !obj.categorySlug.trim()) {
-    errors.push({ file, message: 'Missing or invalid "categorySlug" (must be a non-empty string)' });
+    errors.push({
+      file,
+      message: 'Missing or invalid "categorySlug" (must be a non-empty string)',
+    });
   }
   if (obj.categoryDescription !== undefined && typeof obj.categoryDescription !== 'string') {
     errors.push({ file, message: '"categoryDescription" must be a string if provided' });
@@ -109,8 +115,14 @@ function validateCategory(data: unknown, file: string, errors: Issue[]): data is
       errors.push({ file, message: `${pfx}: "labelColor" must be a string if provided` });
     }
     if (badge.style !== undefined) {
-      if (typeof badge.style !== 'string' || !ALLOWED_STYLES.includes(badge.style as typeof ALLOWED_STYLES[number])) {
-        errors.push({ file, message: `${pfx}: invalid "style" "${String(badge.style)}" — must be: ${ALLOWED_STYLES.join(', ')}` });
+      if (
+        typeof badge.style !== 'string' ||
+        !ALLOWED_STYLES.includes(badge.style as (typeof ALLOWED_STYLES)[number])
+      ) {
+        errors.push({
+          file,
+          message: `${pfx}: invalid "style" "${String(badge.style)}" — must be: ${ALLOWED_STYLES.join(', ')}`,
+        });
       }
     }
   }
@@ -140,7 +152,10 @@ async function validate(): Promise<boolean> {
       const raw = readFileSync(file, 'utf-8');
       parsed.push({ file, data: JSON.parse(raw) });
     } catch (e) {
-      errors.push({ file: relPath(file), message: `Invalid JSON: ${e instanceof Error ? e.message : String(e)}` });
+      errors.push({
+        file: relPath(file),
+        message: `Invalid JSON: ${e instanceof Error ? e.message : String(e)}`,
+      });
     }
   }
 
@@ -166,7 +181,10 @@ async function validate(): Promise<boolean> {
   }
   for (const [slug, fileList] of slugMap) {
     if (fileList.length > 1) {
-      errors.push({ file: fileList[0], message: `Duplicate categorySlug "${slug}" in: ${fileList.join(', ')}` });
+      errors.push({
+        file: fileList[0],
+        message: `Duplicate categorySlug "${slug}" in: ${fileList.join(', ')}`,
+      });
     }
   }
 
@@ -179,7 +197,10 @@ async function validate(): Promise<boolean> {
     for (const badge of data.badges) seen.set(badge.id, (seen.get(badge.id) ?? 0) + 1);
     for (const [id, count] of seen) {
       if (count > 1) {
-        errors.push({ file: relPath(file), message: `Duplicate badge id "${id}" (${count}× in this file)` });
+        errors.push({
+          file: relPath(file),
+          message: `Duplicate badge id "${id}" (${count}× in this file)`,
+        });
       }
     }
 
@@ -193,26 +214,41 @@ async function validate(): Promise<boolean> {
     // Hex color validation (warning only — shields.io accepts named colors)
     for (const badge of data.badges) {
       if (!HEX_RE.test(badge.color)) {
-        warnings.push({ file: relPath(file), message: `Badge "${badge.id}": color "${badge.color}" is not a hex code (renders fine on shields.io, but hex is preferred)` });
+        warnings.push({
+          file: relPath(file),
+          message: `Badge "${badge.id}": color "${badge.color}" is not a hex code (renders fine on shields.io, but hex is preferred)`,
+        });
       }
       if (badge.logoColor && !HEX_RE.test(badge.logoColor)) {
-        warnings.push({ file: relPath(file), message: `Badge "${badge.id}": logoColor "${badge.logoColor}" is not a hex code` });
+        warnings.push({
+          file: relPath(file),
+          message: `Badge "${badge.id}": logoColor "${badge.logoColor}" is not a hex code`,
+        });
       }
       if (badge.labelColor && !HEX_RE.test(badge.labelColor)) {
-        warnings.push({ file: relPath(file), message: `Badge "${badge.id}": labelColor "${badge.labelColor}" is not a hex code` });
+        warnings.push({
+          file: relPath(file),
+          message: `Badge "${badge.id}": labelColor "${badge.labelColor}" is not a hex code`,
+        });
       }
     }
 
     // Slug convention
     if (!SLUG_RE.test(data.categorySlug)) {
-      warnings.push({ file: relPath(file), message: `categorySlug "${data.categorySlug}" should be kebab-case (a-z, 0-9, hyphens)` });
+      warnings.push({
+        file: relPath(file),
+        message: `categorySlug "${data.categorySlug}" should be kebab-case (a-z, 0-9, hyphens)`,
+      });
     }
   }
 
   // 5. Cross-file badge ID duplicates (warning)
   for (const [id, fileList] of allBadgeIds) {
     if (fileList.length > 1) {
-      warnings.push({ file: fileList[0], message: `Badge id "${id}" appears in multiple files: ${fileList.join(', ')}` });
+      warnings.push({
+        file: fileList[0],
+        message: `Badge id "${id}" appears in multiple files: ${fileList.join(', ')}`,
+      });
     }
   }
 
@@ -230,15 +266,24 @@ async function validate(): Promise<boolean> {
           const lookup = badge.logo.toLowerCase();
           const official = logoSlugMap.get(lookup);
           if (!official) {
-            warnings.push({ file: relPath(file), message: `Badge "${badge.id}": logo "${badge.logo}" not found in simple-icons (will render as text on badge)` });
+            warnings.push({
+              file: relPath(file),
+              message: `Badge "${badge.id}": logo "${badge.logo}" not found in simple-icons (will render as text on badge)`,
+            });
           } else if (official !== badge.logo) {
-            warnings.push({ file: relPath(file), message: `Badge "${badge.id}": logo "${badge.logo}" case-mismatch — simple-icons slug is "${official}"` });
+            warnings.push({
+              file: relPath(file),
+              message: `Badge "${badge.id}": logo "${badge.logo}" case-mismatch — simple-icons slug is "${official}"`,
+            });
           }
         }
       }
     }
   } catch {
-    warnings.push({ file: '(global)', message: 'Could not load simple-icons data for logo validation (offline?)' });
+    warnings.push({
+      file: '(global)',
+      message: 'Could not load simple-icons data for logo validation (offline?)',
+    });
   }
 
   printResults(errors, warnings);
