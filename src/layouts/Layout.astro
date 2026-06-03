@@ -88,8 +88,9 @@ const currentPath = Astro.url.pathname;
           >
             <li><a href={base} class:list={['', currentPath === '/' && 'menu-active']}>Home</a></li>
             <li>
-              <a href={`${base}builder`} class:list={['', currentPath === '/builder' && 'menu-active']}
-                >Forge</a
+              <a
+                href={`${base}builder`}
+                class:list={['', currentPath === '/builder' && 'menu-active']}>Forge</a
               >
             </li>
             <li>
@@ -99,8 +100,9 @@ const currentPath = Astro.url.pathname;
               >
             </li>
             <li>
-              <a href={`${base}dashboard`} class:list={['', currentPath === '/dashboard' && 'menu-active']}
-                >My Badges</a
+              <a
+                href={`${base}dashboard`}
+                class:list={['', currentPath === '/dashboard' && 'menu-active']}>My Badges</a
               >
             </li>
           </ul>
@@ -115,8 +117,9 @@ const currentPath = Astro.url.pathname;
       <div class="navbar-center hidden lg:flex">
         <ul class="menu menu-horizontal px-1 gap-1">
           <li>
-            <a href={`${base}builder`} class:list={['', currentPath === '/builder' && 'menu-active']}
-              >Forge</a
+            <a
+              href={`${base}builder`}
+              class:list={['', currentPath === '/builder' && 'menu-active']}>Forge</a
             >
           </li>
           <li>
@@ -126,8 +129,9 @@ const currentPath = Astro.url.pathname;
             >
           </li>
           <li>
-            <a href={`${base}dashboard`} class:list={['', currentPath === '/dashboard' && 'menu-active']}
-              >My Badges</a
+            <a
+              href={`${base}dashboard`}
+              class:list={['', currentPath === '/dashboard' && 'menu-active']}>My Badges</a
             >
           </li>
         </ul>
@@ -135,7 +139,7 @@ const currentPath = Astro.url.pathname;
 
       <div class="navbar-end gap-1 pr-2">
         <a
-          href="https://github.com"
+          href="https://github.com/kannansuresh/badge-forge"
           target="_blank"
           rel="noopener noreferrer"
           class="btn btn-ghost btn-circle"
@@ -153,10 +157,20 @@ const currentPath = Astro.url.pathname;
     </main>
 
     <!-- Footer -->
-    <footer class="border-t border-base-300 bg-base-100 text-base-content/50 text-xs text-center py-4">
+    <footer
+      class="border-t border-base-300 bg-base-100 text-base-content/50 text-xs text-center py-4"
+    >
       <span>
-        BadgeForge by <a href="https://github.com/kannansuresh/" class="link link-hover" target="_blank">Kannan Suresh</a>
-        &mdash; Powered by <a href="https://shields.io" class="link link-hover" target="_blank">shields.io</a> &amp; <a href="https://simpleicons.org" class="link link-hover" target="_blank">Simple Icons</a>
+        BadgeForge by <a
+          href="https://github.com/kannansuresh/"
+          class="link link-hover"
+          target="_blank">Kannan Suresh</a
+        >
+        &mdash; Powered by <a href="https://shields.io" class="link link-hover" target="_blank"
+          >shields.io</a
+        > &amp; <a href="https://simpleicons.org" class="link link-hover" target="_blank"
+          >Simple Icons</a
+        >
       </span>
     </footer>
   </body>
