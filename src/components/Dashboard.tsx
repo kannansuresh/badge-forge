@@ -16,7 +16,7 @@ import {
 import type { BadgeConfig } from './BadgeCard';
 
 export default function Dashboard({ onEditBadge }: { onEditBadge?: (badge: BadgeConfig) => void }) {
-  const base = import.meta.env.BASE_URL;
+  const base = import.meta.env.BASE_URL.replace(/\/?$/, '/');
   const [badges, setBadges] = useState<SavedBadge[]>([]);
   const [loading, setLoading] = useState(true);
   const [importStatus, setImportStatus] = useState<{

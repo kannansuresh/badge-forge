@@ -42,7 +42,7 @@ jobs:
           # If it's your repo, use your domain. Otherwise, auto-generate the fork's github.io URL.
           SITE_URL: ${{ github.repository_owner == 'kannansuresh' && 'https://aneejian.com' || format('https://{0}.github.io', github.repository_owner) }}
           # Dynamically set the subfolder name based on the repository name
-          BASE_PATH: /${{ github.event.repository.name }}
+          BASE_PATH: /${{ github.event.repository.name }}/
 
       - name: Setup Pages
         uses: actions/configure-pages@v5

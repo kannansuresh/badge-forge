@@ -14,7 +14,7 @@ const title = Astro.props.title || 'BadgeForge — Build Beautiful Shields.io Ba
 const description =
   Astro.props.description ||
   'Create, customize, and browse stunning markdown/HTML badges powered by shields.io. Local-first, developer-focused.';
-const base = import.meta.env.BASE_URL;
+const base = import.meta.env.BASE_URL.replace(/\/?$/, '/');
 const currentPath = Astro.url.pathname;
 ---
 

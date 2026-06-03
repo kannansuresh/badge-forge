@@ -2,7 +2,7 @@
 import { Icon } from 'astro-icon/components';
 import Layout from '../layouts/Layout.astro';
 
-const base = import.meta.env.BASE_URL;
+const base = import.meta.env.BASE_URL.replace(/\/?$/, '/');
 ---
 
 <Layout title="BadgeForge — Build Beautiful Shields.io Badges">
