@@ -801,7 +801,6 @@ function ColorInput({
           type="text"
           className="input join-item w-full font-mono"
           value={value}
-          maxLength={6}
           onChange={(e) => onChange(e.target.value.replace(/[^0-9a-fA-F]/g, '').slice(0, 6))}
           placeholder={placeholder}
         />
