@@ -800,11 +800,20 @@ function ColorInput({
           <div
             tabIndex={0}
             role="button"
-            className="tooltip w-10 h-full cursor-pointer rounded-r-box ring-1 ring-inset ring-base-300 flex items-center justify-center hover:ring-2 hover:ring-base-content/30 transition-all"
-            style={{ backgroundColor: value ? `#${value}` : '#ccc' }}
+            className={`tooltip w-10 h-full cursor-pointer rounded-r-box ring-1 ring-inset ring-base-300 flex items-center justify-center hover:ring-2 hover:ring-base-content/30 transition-all ${value ? '' : 'bg-base-100'}`}
+            style={
+              value
+                ? { backgroundColor: `#${value}` }
+                : {
+                    backgroundImage:
+                      'linear-gradient(135deg, transparent 47%, var(--color-base-300) 47%, var(--color-base-300) 53%, transparent 53%)',
+                  }
+            }
             data-tip="Pick a color"
           >
-            <ChevronDown className="w-3.5 h-3.5 text-white drop-shadow-[0_1px_2px_rgba(0,0,0,0.6)] pointer-events-none" />
+            <ChevronDown
+              className={`w-3.5 h-3.5 pointer-events-none drop-shadow-[0_1px_2px_rgba(0,0,0,0.6)] ${value ? 'text-white' : 'text-base-content/30'}`}
+            />
           </div>
           <div
             tabIndex={0}
