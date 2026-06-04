@@ -2,10 +2,10 @@
 import { Icon } from 'astro-icon/components';
 import Layout from '../../layouts/Layout.astro';
 import { getCollection } from 'astro:content';
+import { buildShieldsUrl } from '../../lib/storage';
 
 const base = import.meta.env.BASE_URL.replace(/\/?$/, '/');
 const gallery = await getCollection('gallery');
-const esc = (s: string) => encodeURIComponent(s.replace(/-/g, '--').replace(/_/g, '__'));
 const totalBadges = gallery.reduce((sum, e) => sum + e.data.badges.length, 0);
 ---
 
@@ -65,7 +65,14 @@ const totalBadges = gallery.reduce((sum, e) => sum + e.data.badges.length, 0);
                   <div class="flex flex-wrap gap-1.5 my-4 min-h-7">
                     {previewBadges.map((badge) => (
                       <img
-                        src={`https://img.shields.io/badge/${esc(badge.label)}-${esc(badge.message)}-${badge.color}?style=${badge.style || 'flat'}${badge.logo ? `&logo=${badge.logo}` : ''}${badge.logoColor ? `&logoColor=${badge.logoColor}` : ''}`}
+                        src={buildShieldsUrl({
+                          label: badge.label,
+                          message: badge.message,
+                          color: badge.color,
+                          logo: badge.logo,
+                          logoColor: badge.logoColor,
+                          style: badge.style || 'flat',
+                        })}
                         alt={`${badge.label}: ${badge.message}`}
                         class="h-5"
                         loading="lazy"

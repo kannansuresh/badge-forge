@@ -241,7 +241,7 @@ export async function deleteCategoryAndBadges(id: number): Promise<number> {
 export { db };
 
 /** Escape shields.io path text: - → --, _ → __ */
-function escapeShieldsText(text: string): string {
+export function escapeShieldsText(text: string): string {
   return text.replace(/-/g, '--').replace(/_/g, '__');
 }
 
@@ -253,7 +253,6 @@ export function buildShieldsUrl(params: {
   logo?: string | undefined;
   logoColor?: string | undefined;
   logoSize?: string | undefined;
-  link?: string | undefined;
   style?: string | undefined;
   labelColor?: string | undefined;
 }): string {

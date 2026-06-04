@@ -10,6 +10,7 @@ import {
   ZoomOut,
 } from 'lucide-react';
 import { useCallback, useEffect, useState } from 'react';
+import { copyToClipboard } from '../lib/dom';
 import { COPY_FORMATS, downloadSvg, getSnippet, type CopyFormatKey } from '../lib/formats';
 import {
   buildShieldsUrl,
@@ -73,18 +74,7 @@ export default function UserBadgeDetail() {
     : '';
   const copy = useCallback(
     async (f: CopyFormatKey) => {
-      const t = getSnippet(f, shieldsUrl);
-      try {
-        await navigator.clipboard.writeText(t);
-      } catch {
-        const ta = document.createElement('textarea');
-        ta.value = t;
-        ta.style.cssText = 'position:fixed;opacity:0;';
-        document.body.appendChild(ta);
-        ta.select();
-        document.execCommand('copy');
-        document.body.removeChild(ta);
-      }
+      await copyToClipboard(getSnippet(f, shieldsUrl));
       setCopiedKey(f);
       setTimeout(() => setCopiedKey(null), 2000);
     },

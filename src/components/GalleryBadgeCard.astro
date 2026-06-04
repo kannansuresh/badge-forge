@@ -1,5 +1,6 @@
 ---
 import { Icon } from 'astro-icon/components';
+import { buildShieldsUrl } from '../lib/storage';
 import { getSnippet, COPY_FORMATS } from '../lib/formats';
 import type { CopyFormatKey } from '../lib/formats';
 
@@ -30,17 +31,15 @@ const {
   categorySlug,
 } = Astro.props;
 
-const params = new URLSearchParams();
-params.set('label', label);
-params.set('message', message);
-params.set('color', color);
-if (logo) params.set('logo', logo);
-if (logoColor) params.set('logoColor', logoColor);
-params.set('style', style);
-if (labelColor) params.set('labelColor', labelColor);
-
-const esc = (s: string) => encodeURIComponent(s.replace(/-/g, '--').replace(/_/g, '__'));
-const shieldsUrl = `https://img.shields.io/badge/${esc(label)}-${esc(message)}-${color}?style=${style}${logo ? `&logo=${logo}` : ''}${logoColor ? `&logoColor=${logoColor}` : ''}${labelColor ? `&labelColor=${labelColor}` : ''}`;
+const shieldsUrl = buildShieldsUrl({
+  label,
+  message,
+  color,
+  logo,
+  logoColor,
+  style,
+  labelColor,
+});
 
 // Pre-compute snippets for quick-copy buttons
 const quickSnippets: Record<CopyFormatKey, string> = {} as Record<CopyFormatKey, string>;

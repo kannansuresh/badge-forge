@@ -37,14 +37,22 @@
 </div>
 
 <script>
-  let pagefindSearch:
-    | ((
-        query: string,
-        opts?: Record<string, unknown>,
-      ) => Promise<{
-        results: Array<{ data: () => Promise<{ url: string; meta?: { title?: string } }> }>;
-      }>)
-    | null = null;
+  // ── Pagefind type definitions ──────────────────────────────
+  interface PagefindResultData {
+    url: string;
+    meta?: { title?: string };
+    content?: string;
+  }
+
+  interface PagefindResult {
+    data: () => Promise<PagefindResultData>;
+  }
+
+  interface PagefindSearchFn {
+    (query: string, opts?: Record<string, unknown>): Promise<{ results: PagefindResult[] }>;
+  }
+
+  let pagefindSearch: PagefindSearchFn | null = null;
   let loading = false;
   let debounceId: ReturnType<typeof setTimeout>;
 
@@ -61,14 +69,18 @@
     loading = true;
     try {
       const dynamicImport = new Function('specifier', 'return import(specifier)');
-      const mod: any = await dynamicImport('/pagefind/pagefind.js');
-      pagefindSearch = mod.search ?? mod.default?.search ?? mod;
-      if (typeof pagefindSearch !== 'function') {
+      const mod: Record<string, unknown> = await dynamicImport('/pagefind/pagefind.js');
+      const resolved =
+        (mod.search as PagefindSearchFn | undefined) ??
+        (mod.default as { search?: PagefindSearchFn } | undefined)?.search ??
+        (mod as unknown as PagefindSearchFn);
+      if (typeof resolved !== 'function') {
         console.error('Pagefind: search function not found', Object.keys(mod));
         pagefindSearch = null;
         loading = false;
         return false;
       }
+      pagefindSearch = resolved;
       return true;
     } catch (e) {
       console.warn('Pagefind unavailable (run bun run build && bun preview):', e);
@@ -77,7 +89,7 @@
     }
   }
 
-  async function doSearch() {
+  async function doSearch(): Promise<void> {
     const input = getInput();
     const results = getResults();
     if (!input || !results) return;
@@ -109,7 +121,7 @@
         return;
       }
       const items = await Promise.all(
-        pfResult.results.slice(0, 8).map(async (r: any) => {
+        pfResult.results.slice(0, 8).map(async (r: PagefindResult) => {
           const data = await r.data();
           return `<a href="${data.url}" class="block p-3 hover:bg-base-200 transition-colors no-underline text-sm font-medium truncate">${data.meta?.title || data.url || 'Untitled'}</a>`;
         }),

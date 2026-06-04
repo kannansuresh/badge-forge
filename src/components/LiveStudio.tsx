@@ -1,5 +1,6 @@
 import { BookOpen, Code2, FileCode, FileText, Link, RefreshCw, Save } from 'lucide-react';
 import { useCallback, useEffect, useLayoutEffect, useMemo, useRef, useState } from 'react';
+import { copyToClipboard } from '../lib/dom';
 import { COPY_FORMATS, getSnippet, type CopyFormatKey } from '../lib/formats';
 import { loadIcons, searchIcons, type SimpleIconData } from '../lib/icons';
 import type { UserCategory } from '../lib/storage';
@@ -257,8 +258,6 @@ export default function LiveStudio({ initialParams }: LiveStudioProps) {
   const shieldsUrl = useMemo(() => buildShieldsUrl(params), [params]);
 
   const [saveStatus, setSaveStatus] = useState<'idle' | 'saving' | 'saved' | 'duplicate'>('idle');
-
-  // ... (keep the existing state declarations after)
 
   const handleSave = useCallback(async () => {
     setSaveStatus('saving');
@@ -896,17 +895,7 @@ function CopyTabs({ shieldsUrl, alt }: { shieldsUrl: string; alt?: string | unde
     return result;
   }, [shieldsUrl, alt]);
   const copy = useCallback(async () => {
-    try {
-      await navigator.clipboard.writeText(snippets[tab]);
-    } catch {
-      const ta = document.createElement('textarea');
-      ta.value = snippets[tab];
-      ta.style.cssText = 'position:fixed;opacity:0';
-      document.body.appendChild(ta);
-      ta.select();
-      document.execCommand('copy');
-      document.body.removeChild(ta);
-    }
+    await copyToClipboard(snippets[tab]);
     setCopied(true);
     setTimeout(() => setCopied(false), 2000);
   }, [snippets, tab]);

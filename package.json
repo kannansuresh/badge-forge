@@ -1,5 +1,5 @@
 {
-  "name": "badgecraft",
+  "name": "badge-forge",
   "type": "module",
   "version": "1.0.0",
   "description": "BadgeForge — A high-performance, developer-focused, local-first web app for creating and browsing markdown/HTML badges powered by shields.io",
