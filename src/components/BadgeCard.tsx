@@ -37,7 +37,6 @@ export default function BadgeCard({
   const [imgError, setImgError] = useState(false);
 
   const detailUrl = typeof badge.id === 'number' ? `${base}badge?id=${badge.id}` : null;
-
   const shieldsUrl = buildShieldsUrl({
     label: badge.label,
     message: badge.message,
@@ -70,79 +69,102 @@ export default function BadgeCard({
   );
 
   return (
-    <div className="card bg-base-100 border border-base-300/50 card-lift">
-      <figure className="px-5 pt-5">
-        {imgError ? (
-          <span className="font-mono text-xs text-base-content/50">
-            {badge.label}-{badge.message}-{badge.color}
-          </span>
-        ) : detailUrl ? (
-          <a href={detailUrl} className="block">
+    <div className="card bg-base-100 border border-base-300/50 card-lift group overflow-hidden">
+      {/* Badge preview — matching GalleryBadgeCard */}
+      {detailUrl ? (
+        <a href={detailUrl} className="bg-base-200/50 px-5 py-6 flex items-center justify-center">
+          {imgError ? (
+            <span className="font-mono text-xs text-base-content/50">
+              {badge.label}-{badge.message}-{badge.color}
+            </span>
+          ) : (
             <img
               src={shieldsUrl}
               alt={`${badge.label}: ${badge.message}`}
-              className="h-6 hover:opacity-80 transition-opacity"
+              className="h-7 group-hover:scale-105 transition-transform"
               loading="lazy"
               onError={() => setImgError(true)}
             />
-          </a>
-        ) : (
-          <img
-            src={shieldsUrl}
-            alt={`${badge.label}: ${badge.message}`}
-            className="h-6"
-            loading="lazy"
-            onError={() => setImgError(true)}
-          />
-        )}
-      </figure>
+          )}
+        </a>
+      ) : (
+        <div className="bg-base-200/50 px-5 py-6 flex items-center justify-center">
+          {imgError ? (
+            <span className="font-mono text-xs text-base-content/50">
+              {badge.label}-{badge.message}-{badge.color}
+            </span>
+          ) : (
+            <img
+              src={shieldsUrl}
+              alt={`${badge.label}: ${badge.message}`}
+              className="h-7 group-hover:scale-105 transition-transform"
+              loading="lazy"
+              onError={() => setImgError(true)}
+            />
+          )}
+        </div>
+      )}
 
-      <div className="card-body p-5 gap-2">
-        {badge.name && <h3 className="card-title text-sm">{badge.name}</h3>}
+      <div className="p-4 space-y-2">
+        {/* Title */}
+        <h3 className="text-sm font-semibold truncate">
+          {detailUrl ? (
+            <a href={detailUrl} className="group-hover:text-primary transition-colors">
+              {badge.name || badge.message}
+            </a>
+          ) : (
+            <span>{badge.name || badge.message}</span>
+          )}
+        </h3>
 
-        <div className="flex flex-wrap gap-1">
-          <span className="badge badge-xs badge-outline">{badge.style || 'flat'}</span>
-          <span
-            className="badge badge-xs"
-            style={{ backgroundColor: `#${badge.color}`, color: '#fff' }}
-          >
-            #{badge.color}
+        {/* Meta row: color swatch + logo + category */}
+        <div className="flex items-center gap-2 text-xs text-base-content/50 flex-wrap">
+          <span className="inline-flex items-center gap-1">
+            <span
+              className="w-3 h-3 rounded-sm inline-block"
+              style={{ backgroundColor: `#${badge.color}` }}
+            />
+            <span className="font-mono text-xs">#{badge.color}</span>
           </span>
-          {badge.logo && <span className="badge badge-xs badge-ghost">{badge.logo}</span>}
+          {badge.logo && (
+            <span className="badge badge-ghost badge-xs font-normal">{badge.logo}</span>
+          )}
           {badge.categoryName && (
             <span className="badge badge-xs badge-primary badge-outline">{badge.categoryName}</span>
           )}
         </div>
 
         {badge.savedAt && (
-          <p className="text-xs text-base-content/50">{new Date(badge.savedAt).toLocaleString()}</p>
+          <p className="text-xs text-base-content/50">
+            {new Date(badge.savedAt).toLocaleDateString()}
+          </p>
         )}
 
+        {/* Actions — matching GalleryBadgeCard */}
         {showActions && (
-          <div className="card-actions justify-end mt-1 flex-wrap gap-1">
+          <div className="flex items-center justify-end gap-1 mt-2 pt-2 border-t border-base-300/30 flex-wrap">
             {detailUrl && (
               <a href={detailUrl} className="btn btn-xs btn-ghost gap-1" title="View details">
-                <ExternalLink className="w-3 h-3" />
-                Details
+                <ExternalLink className="w-3 h-3" /> Details
               </a>
             )}
             <div className="join join-horizontal">
               <button
-                className={`join-item btn btn-xs ${copied === 'md' ? 'btn-success' : 'btn-ghost'}`}
+                className={`join-item btn btn-xs px-2 ${copied === 'md' ? 'btn-success' : 'btn-ghost'}`}
                 onClick={() => copy('md')}
                 title="Copy Markdown"
               >
                 {copied === 'md' ? '✓' : 'MD'}
               </button>
               <button
-                className={`join-item btn btn-xs ${copied === 'html' ? 'btn-success' : 'btn-ghost'}`}
+                className={`join-item btn btn-xs px-2 ${copied === 'html' ? 'btn-success' : 'btn-ghost'}`}
                 onClick={() => copy('html')}
                 title="Copy HTML"
               >
                 {copied === 'html' ? '✓' : 'HTML'}
               </button>
               <button
-                className={`join-item btn btn-xs ${copied === 'url' ? 'btn-success' : 'btn-ghost'}`}
+                className={`join-item btn btn-xs px-2 ${copied === 'url' ? 'btn-success' : 'btn-ghost'}`}
                 onClick={() => copy('url')}
                 title="Copy URL"
               >
@@ -150,12 +172,8 @@ export default function BadgeCard({
               </button>
             </div>
             {onEdit && (
-              <button
-                className="btn btn-xs btn-primary btn-outline gap-1"
-                onClick={() => onEdit(badge)}
-              >
-                <Pencil className="w-3 h-3" />
-                Edit
+              <button className="btn btn-xs btn-primary" onClick={() => onEdit(badge)}>
+                <Pencil className="w-3 h-3" /> Edit
               </button>
             )}
             {onSave && (
