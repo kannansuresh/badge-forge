@@ -165,9 +165,9 @@ const navItems: NavItem[] = [
           </div>
 
           <!-- Logo -->
-          <a href={base} class="btn btn-ghost text-xl font-bold gap-2.5 hover:bg-transparent">
-            <div class="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center">
-              <img src={`${base}favicon.svg`} alt="BadgeForge" class="w-5 h-5" />
+          <a href={base} class="flex items-center text-xl font-bold gap-2.5">
+            <div class="w-9 h-9 rounded-lg bg-primary/10 flex items-center justify-center">
+              <img src={`${base}favicon.svg`} alt="BadgeForge" class="w-6 h-6" />
             </div>
             <span class="hidden sm:inline">Badge<span class="text-primary">Forge</span></span>
           </a>
@@ -219,15 +219,17 @@ const navItems: NavItem[] = [
               <Icon name="lucide:heart" class="w-5 h-5" />
             </a>
           </div>
-          <a
-            href="https://github.com/kannansuresh/badge-forge"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="btn btn-ghost btn-circle"
-            aria-label="GitHub"
-          >
-            <Icon name="lucide:github" class="w-5 h-5" />
-          </a>
+          <div class="tooltip tooltip-bottom hidden sm:inline-flex" data-tip="GitHub">
+            <a
+              href="https://github.com/kannansuresh/badge-forge"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="btn btn-ghost btn-circle"
+              aria-label="GitHub"
+            >
+              <Icon name="lucide:github" class="w-5 h-5" />
+            </a>
+          </div>
           <ThemeController />
         </div>
       </div>
