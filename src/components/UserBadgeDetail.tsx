@@ -279,9 +279,8 @@ export default function UserBadgeDetail() {
                         )}
                       </button>
                     </div>
-                    <pre className="text-xs font-mono text-base-content/80 overflow-x-auto whitespace-pre-wrap break-all">
-                      {getSnippet(key, shieldsUrl)}
-                    </pre>
+                    {/* prettier-ignore */}
+                    <pre className="text-xs font-mono text-base-content/80 overflow-x-auto whitespace-pre-wrap break-all">{getSnippet(key, shieldsUrl)}</pre>
                   </div>
                 ))}
               </div>
