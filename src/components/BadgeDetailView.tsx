@@ -103,8 +103,8 @@ export default function BadgeDetailView({
 
       {/* Unified detail card */}
       <div className="card bg-base-100 border border-base-300/50 card-lift overflow-hidden">
-        {/* Badge preview hero */}
-        <div className="bg-base-200/50 px-6 py-10 flex flex-col items-center justify-center gap-4">
+        {/* Badge preview hero — badge centered, zoom floating */}
+        <div className="bg-base-200/50 px-6 py-14 flex items-center justify-center relative">
           {imgError ? (
             <span className="font-mono text-sm text-base-content/50">
               {badge.label}-{badge.message}-{badge.color}
@@ -118,7 +118,8 @@ export default function BadgeDetailView({
               onError={() => setImgError(true)}
             />
           )}
-          <div className="join join-horizontal">
+          {/* Zoom controls — floating bottom-right, doesn't affect centering */}
+          <div className="join join-horizontal absolute bottom-3 right-3 opacity-70 hover:opacity-100 transition-opacity">
             <button
               className={`join-item btn btn-xs gap-1 ${zoom === 1 ? 'btn-active' : 'btn-ghost'}`}
               onClick={() => setZoom(1)}
