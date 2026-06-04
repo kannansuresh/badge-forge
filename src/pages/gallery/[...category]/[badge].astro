@@ -1,7 +1,7 @@
 ---
 import Layout from '../../../layouts/Layout.astro';
 import { getCollection } from 'astro:content';
-import GalleryBadgeDetail from '../../../components/GalleryBadgeDetail.tsx';
+import GalleryBadgeDetail from '../../../components/GalleryBadgeDetail.astro';
 
 export async function getStaticPaths() {
   const gallery = await getCollection('gallery');
@@ -15,22 +15,17 @@ export async function getStaticPaths() {
       paths.push({
         params: { category: entry.id, badge: badge.id },
         props: {
-          badge: {
-            id: badge.id,
-            label: badge.label,
-            message: badge.message,
-            color: badge.color,
-            logo: badge.logo ?? null,
-            logoColor: badge.logoColor ?? null,
-            style: badge.style ?? 'flat',
-            labelColor: badge.labelColor ?? null,
-          },
-          category: {
-            name: entry.data.categoryName,
-            slug: entry.id,
-            dexieSlug: entry.data.categorySlug,
-            description: entry.data.categoryDescription ?? null,
-          },
+          label: badge.label,
+          message: badge.message,
+          color: badge.color,
+          logo: badge.logo ?? undefined,
+          logoColor: badge.logoColor ?? undefined,
+          logoSize: badge.logoSize ?? undefined,
+          style: badge.style ?? 'flat',
+          labelColor: badge.labelColor ?? undefined,
+          categorySlug: entry.id,
+          categoryName: entry.data.categoryName,
+          dexieSlug: entry.data.categorySlug,
         },
       });
     }
@@ -38,38 +33,11 @@ export async function getStaticPaths() {
   return paths;
 }
 
-const base = import.meta.env.BASE_URL.replace(/\/?$/, '/');
-const { badge, category } = Astro.props as {
-  badge: {
-    id: string;
-    label: string;
-    message: string;
-    color: string;
-    logo: string | null;
-    logoColor: string | null;
-    style: string;
-    labelColor: string | null;
-  };
-  category: {
-    name: string;
-    slug: string;
-    description: string | null;
-  };
-};
+const props = Astro.props;
 ---
 
-<Layout title={`${badge.label}: ${badge.message} — BadgeForge`}>
+<Layout title={`${props.label}: ${props.message} — BadgeForge`}>
   <div class="max-w-4xl mx-auto px-4 py-12">
-    <div class="text-sm breadcrumbs mb-6">
-      <ul>
-        <li><a href={`${base}gallery`}>Gallery</a></li>
-        <li><a href={`${base}gallery/${category.slug}`}>{category.name}</a></li>
-        <li>{badge.label}: {badge.message}</li>
-      </ul>
-    </div>
-
-    <div class="space-y-8">
-      <GalleryBadgeDetail badge={badge} category={category} client:load />
-    </div>
+    <GalleryBadgeDetail {...props} />
   </div>
 </Layout>
