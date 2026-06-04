@@ -78,6 +78,42 @@ export default function BadgeCard({
 
   return (
     <div className="card bg-base-100 border border-base-300/50 card-lift group overflow-hidden">
+      {/* Floating action buttons — appear on hover */}
+      {showActions && (
+        <div className="absolute top-2 right-2 z-10 opacity-40 hover:opacity-100 transition-opacity flex gap-1">
+          {onEdit && (
+            <div className="tooltip tooltip-left [&::before]:text-[10px]" data-tip="Edit in Forge">
+              <button
+                className="btn btn-xs btn-ghost hover:bg-base-100/80"
+                onClick={() => onEdit(badge)}
+              >
+                <Pencil className="w-3 h-3" />
+              </button>
+            </div>
+          )}
+          {onDelete && (
+            <div
+              className="tooltip tooltip-left [&::before]:text-[10px]"
+              data-tip="Delete from My Badges"
+            >
+              <button
+                className="btn btn-xs btn-ghost hover:bg-base-100/80 text-error"
+                onClick={() => onDelete(badge)}
+              >
+                <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"
+                  />
+                </svg>
+              </button>
+            </div>
+          )}
+        </div>
+      )}
+
       {/* Badge preview — matching GalleryBadgeCard */}
       {detailUrl ? (
         <a href={detailUrl} className="bg-base-200/50 px-5 py-6 flex items-center justify-center">
@@ -150,7 +186,7 @@ export default function BadgeCard({
 
         {/* Actions — matching GalleryBadgeCard */}
         {showActions && (
-          <div className="flex items-center justify-end gap-1 mt-2 pt-2 border-t border-base-300/30 flex-wrap">
+          <div className="card-actions justify-center mt-2 pt-2 border-t border-base-300/30">
             <div className="join join-horizontal">
               {COPY_FORMATS.map(({ key, label }) => (
                 <button
@@ -163,31 +199,10 @@ export default function BadgeCard({
                 </button>
               ))}
             </div>
-            {onEdit && (
-              <div className="tooltip tooltip-top" data-tip="Edit in Forge">
-                <button className="btn btn-xs btn-ghost" onClick={() => onEdit(badge)}>
-                  <Pencil className="w-3 h-3" />
-                </button>
-              </div>
-            )}
             {onSave && (
               <button className="btn btn-xs btn-primary" onClick={() => onSave(badge)}>
                 Save
               </button>
-            )}
-            {onDelete && (
-              <div className="tooltip tooltip-top" data-tip="Delete from My Badges">
-                <button className="btn btn-xs btn-ghost text-error" onClick={() => onDelete(badge)}>
-                  <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"
-                    />
-                  </svg>
-                </button>
-              </div>
             )}
           </div>
         )}

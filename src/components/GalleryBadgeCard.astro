@@ -67,6 +67,21 @@ const detailUrl = `${base}gallery/${categoryPath || categorySlug}/${Astro.props.
   class="card bg-base-100 border border-base-300/50 card-lift group overflow-hidden"
   data-badgecard
 >
+  <!-- Floating edit button — appears on hover -->
+  <div
+    class="absolute top-2 right-2 z-10 opacity-40 hover:opacity-100 transition-opacity flex gap-1"
+  >
+    <div class="tooltip tooltip-left [&::before]:text-[10px]" data-tip="Edit in Forge">
+      <button
+        class="btn btn-xs btn-ghost hover:bg-base-100/80"
+        data-edit
+        data-clipboard={clipboardData}
+      >
+        <Icon name="lucide:pencil" class="w-3 h-3" />
+      </button>
+    </div>
+  </div>
+
   <!-- Badge preview — the hero of the card -->
   <a href={detailUrl} class="bg-base-200/50 px-5 py-6 flex items-center justify-center">
     <img
@@ -96,7 +111,7 @@ const detailUrl = `${base}gallery/${categoryPath || categorySlug}/${Astro.props.
     </div>
 
     <!-- Actions -->
-    <div class="card-actions justify-end mt-2 pt-2 border-t border-base-300/30">
+    <div class="card-actions justify-center mt-2 pt-2 border-t border-base-300/30">
       <div class="join join-horizontal">
         {
           COPY_FORMATS.map(({ key, label: lbl }) => (
@@ -110,11 +125,6 @@ const detailUrl = `${base}gallery/${categoryPath || categorySlug}/${Astro.props.
             </button>
           ))
         }
-      </div>
-      <div class="tooltip tooltip-top" data-tip="Edit in Forge">
-        <button class="btn btn-xs btn-ghost" data-edit data-clipboard={clipboardData}>
-          <Icon name="lucide:pencil" class="w-3 h-3" />
-        </button>
       </div>
     </div>
   </div>
