@@ -253,6 +253,7 @@ export function buildShieldsUrl(params: {
   logo?: string | undefined;
   logoColor?: string | undefined;
   logoSize?: string | undefined;
+  link?: string | undefined;
   style?: string | undefined;
   labelColor?: string | undefined;
 }): string {
