@@ -18,7 +18,7 @@
       "message": "Analogue",
       "color": "1A1A1A",
       "style": "for-the-badge",
-      "logo": "Analogue",
+      "logo": "analogue",
       "logoColor": "ffffff"
     },
     {
@@ -27,7 +27,7 @@
       "message": "battle.net",
       "color": "00AEFF",
       "style": "for-the-badge",
-      "logo": "battle.net",
+      "logo": "battledotnet",
       "logoColor": "ffffff"
     },
     {
@@ -63,7 +63,8 @@
       "message": "GODOT",
       "color": "FFFFFF",
       "style": "for-the-badge",
-      "logo": "godot-engine"
+      "logo": "godotengine",
+      "logoColor": "ffffff"
     },
     {
       "id": "hearthstone-collection",
@@ -78,14 +79,14 @@
       "message": "HumbleBundle",
       "color": "494F5C",
       "style": "for-the-badge",
-      "logo": "HumbleBundle",
+      "logo": "humblebundle",
       "logoColor": "ffffff"
     },
     {
       "id": "intel",
       "label": "",
       "message": "intel",
-      "color": "0068B5 ",
+      "color": "0068B5",
       "style": "for-the-badge",
       "logo": "intel",
       "logoColor": "ffffff"
@@ -105,16 +106,17 @@
       "message": "nVIDIA",
       "color": "76B900",
       "style": "for-the-badge",
-      "logo": "nVIDIA",
+      "logo": "nvidia",
       "logoColor": "ffffff"
     },
     {
       "id": "opengl",
       "label": "",
       "message": "OpenGL",
-      "color": "white",
+      "color": "ffffff",
       "style": "for-the-badge",
-      "logo": "OpenGL"
+      "logo": "opengl",
+      "logoColor": "ffffff"
     },
     {
       "id": "playstation-network",
@@ -122,7 +124,7 @@
       "message": "PSN",
       "color": "0070D1",
       "style": "for-the-badge",
-      "logo": "Playstation",
+      "logo": "playstation",
       "logoColor": "ffffff"
     },
     {
@@ -140,7 +142,7 @@
       "message": "Roblox",
       "color": "0a0b0b",
       "style": "for-the-badge",
-      "logo": "Roblox",
+      "logo": "roblox",
       "logoColor": "ffffff"
     },
     {
@@ -158,7 +160,7 @@
       "message": "SquareEnix",
       "color": "ED1C24",
       "style": "for-the-badge",
-      "logo": "SquareEnix",
+      "logo": "squareenix",
       "logoColor": "ffffff"
     },
     {
@@ -176,8 +178,8 @@
       "message": "Ubisoft",
       "color": "F5F5F5",
       "style": "for-the-badge",
-      "logo": "Ubisoft",
-      "logoColor": "000000"
+      "logo": "ubisoft",
+      "logoColor": "ffffff"
     },
     {
       "id": "unity",

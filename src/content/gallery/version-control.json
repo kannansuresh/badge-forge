@@ -46,7 +46,7 @@
       "color": "34495E",
       "style": "for-the-badge",
       "logo": "gitea",
-      "logoColor": "5d9425"
+      "logoColor": "ffffff"
     },
     {
       "id": "gitee",
@@ -99,7 +99,7 @@
       "message": "PERFORCE HELIX",
       "color": "00AEEF",
       "style": "for-the-badge",
-      "logo": "Perforce",
+      "logo": "perforce",
       "logoColor": "ffffff"
     },
     {

@@ -25,7 +25,7 @@
       "id": "bitcoin",
       "label": "",
       "message": "Bitcoin",
-      "color": "000",
+      "color": "000000",
       "style": "for-the-badge",
       "logo": "bitcoin",
       "logoColor": "ffffff"
@@ -36,7 +36,7 @@
       "message": "Bitcoin Cash",
       "color": "0AC18E",
       "style": "for-the-badge",
-      "logo": "Bitcoin Cash",
+      "logo": "bitcoincash",
       "logoColor": "ffffff"
     },
     {
@@ -45,7 +45,7 @@
       "message": "Bitcoin SV",
       "color": "EAB300",
       "style": "for-the-badge",
-      "logo": "Bitcoin SV",
+      "logo": "bitcoinsv",
       "logoColor": "ffffff"
     },
     {
@@ -54,7 +54,7 @@
       "message": "Chainlink",
       "color": "375BD2",
       "style": "for-the-badge",
-      "logo": "Chainlink",
+      "logo": "chainlink",
       "logoColor": "ffffff"
     },
     {
@@ -81,7 +81,7 @@
       "message": "Ethereum",
       "color": "3C3C3D",
       "style": "for-the-badge",
-      "logo": "Ethereum",
+      "logo": "ethereum",
       "logoColor": "ffffff"
     },
     {
@@ -99,7 +99,7 @@
       "message": "Litecoin",
       "color": "A6A9AA",
       "style": "for-the-badge",
-      "logo": "Litecoin",
+      "logo": "litecoin",
       "logoColor": "ffffff"
     },
     {
@@ -127,7 +127,7 @@
       "color": "FEDA03",
       "style": "for-the-badge",
       "logo": "rarible",
-      "logoColor": "000000"
+      "logoColor": "ffffff"
     },
     {
       "id": "stellar",
@@ -135,7 +135,7 @@
       "message": "Stellar",
       "color": "7D00FF",
       "style": "for-the-badge",
-      "logo": "Stellar",
+      "logo": "stellar",
       "logoColor": "ffffff"
     },
     {
@@ -151,7 +151,7 @@
       "id": "xrp",
       "label": "",
       "message": "Xrp",
-      "color": "black",
+      "color": "000000",
       "style": "for-the-badge",
       "logo": "xrp",
       "logoColor": "ffffff"

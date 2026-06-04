@@ -9,7 +9,7 @@
       "message": "Apache Groovy",
       "color": "4298B8",
       "style": "for-the-badge",
-      "logo": "Apache Groovy",
+      "logo": "apachegroovy",
       "logoColor": "ffffff"
     },
     {
@@ -27,7 +27,7 @@
       "message": "bash script",
       "color": "121011",
       "style": "for-the-badge",
-      "logo": "gnu-bash",
+      "logo": "gnubash",
       "logoColor": "ffffff"
     },
     {
@@ -52,7 +52,7 @@
       "message": "c++",
       "color": "00599C",
       "style": "for-the-badge",
-      "logo": "c++",
+      "logo": "c",
       "logoColor": "ffffff"
     },
     {
@@ -61,7 +61,7 @@
       "message": "Clojure",
       "color": "5881d8",
       "style": "for-the-badge",
-      "logo": "Clojure",
+      "logo": "clojure",
       "logoColor": "ffffff"
     },
     {
@@ -70,7 +70,7 @@
       "message": "CoffeeScript",
       "color": "2F2625",
       "style": "for-the-badge",
-      "logo": "CoffeeScript",
+      "logo": "coffeescript",
       "logoColor": "ffffff"
     },
     {
@@ -147,10 +147,10 @@
       "id": "erlang",
       "label": "",
       "message": "Erlang",
-      "color": "white",
+      "color": "ffffff",
       "style": "for-the-badge",
       "logo": "erlang",
-      "logoColor": "a90533"
+      "logoColor": "ffffff"
     },
     {
       "id": "fortran",
@@ -231,7 +231,7 @@
       "color": "323330",
       "style": "for-the-badge",
       "logo": "javascript",
-      "logoColor": "f7df1e"
+      "logoColor": "ffffff"
     },
     {
       "id": "julia",
@@ -258,7 +258,7 @@
       "color": "FFDB00",
       "style": "for-the-badge",
       "logo": "labview",
-      "logoColor": "000000"
+      "logoColor": "ffffff"
     },
     {
       "id": "latex",
@@ -311,7 +311,7 @@
       "message": "NIX",
       "color": "5277C3",
       "style": "for-the-badge",
-      "logo": "NixOS",
+      "logo": "nixos",
       "logoColor": "ffffff"
     },
     {
@@ -336,10 +336,10 @@
       "id": "octave",
       "label": "",
       "message": "OCTAVE",
-      "color": "darkblue",
+      "color": "00008B",
       "style": "for-the-badge",
       "logo": "octave",
-      "logoColor": "fcd683"
+      "logoColor": "ffffff"
     },
     {
       "id": "org-mode",
@@ -391,7 +391,7 @@
       "color": "3670A0",
       "style": "for-the-badge",
       "logo": "python",
-      "logoColor": "ffdd54"
+      "logoColor": "ffffff"
     },
     {
       "id": "r",
@@ -418,7 +418,7 @@
       "color": "14162c",
       "style": "for-the-badge",
       "logo": "rescript",
-      "logoColor": "e34c4c"
+      "logoColor": "ffffff"
     },
     {
       "id": "ruby",
@@ -515,7 +515,7 @@
       "color": "ffffff",
       "style": "for-the-badge",
       "logo": "yaml",
-      "logoColor": "151515"
+      "logoColor": "ffffff"
     },
     {
       "id": "zig",

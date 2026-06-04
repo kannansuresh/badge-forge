@@ -37,7 +37,7 @@
       "color": "FBF0DF",
       "style": "for-the-badge",
       "logo": "bun",
-      "logoColor": "000000"
+      "logoColor": "ffffff"
     },
     {
       "id": "pip",
@@ -73,7 +73,7 @@
       "color": "FBB040",
       "style": "for-the-badge",
       "logo": "homebrew",
-      "logoColor": "000000"
+      "logoColor": "ffffff"
     },
     {
       "id": "chocolatey",
@@ -109,7 +109,7 @@
       "color": "82BEA0",
       "style": "for-the-badge",
       "logo": "snapcraft",
-      "logoColor": "000000"
+      "logoColor": "ffffff"
     },
     {
       "id": "flatpak",

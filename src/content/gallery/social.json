@@ -9,7 +9,7 @@
       "message": "Airtable",
       "color": "18BFFF",
       "style": "for-the-badge",
-      "logo": "Airtable",
+      "logo": "airtable",
       "logoColor": "ffffff"
     },
     {
@@ -18,7 +18,7 @@
       "message": "Bluesky",
       "color": "0285FF",
       "style": "for-the-badge",
-      "logo": "Bluesky",
+      "logo": "bluesky",
       "logoColor": "ffffff"
     },
     {
@@ -27,8 +27,8 @@
       "message": "Buy Me a Coffee",
       "color": "ffdd00",
       "style": "for-the-badge",
-      "logo": "buy-me-a-coffee",
-      "logoColor": "000000"
+      "logo": "buymeacoffee",
+      "logoColor": "ffffff"
     },
     {
       "id": "calendly",
@@ -36,7 +36,7 @@
       "message": "Calendly",
       "color": "006BFF",
       "style": "for-the-badge",
-      "logo": "Calendly",
+      "logo": "calendly",
       "logoColor": "ffffff"
     },
     {
@@ -72,7 +72,7 @@
       "message": "Facebook",
       "color": "1877F2",
       "style": "for-the-badge",
-      "logo": "Facebook",
+      "logo": "facebook",
       "logoColor": "ffffff"
     },
     {
@@ -91,7 +91,7 @@
       "color": "F3F1EA",
       "style": "for-the-badge",
       "logo": "goodreads",
-      "logoColor": "372213"
+      "logoColor": "ffffff"
     },
     {
       "id": "google-meet",
@@ -99,7 +99,7 @@
       "message": "Google Meet",
       "color": "00897B",
       "style": "for-the-badge",
-      "logo": "google-meet",
+      "logo": "googlemeet",
       "logoColor": "ffffff"
     },
     {
@@ -108,7 +108,7 @@
       "message": "Instagram",
       "color": "E4405F",
       "style": "for-the-badge",
-      "logo": "Instagram",
+      "logo": "instagram",
       "logoColor": "ffffff"
     },
     {
@@ -118,7 +118,7 @@
       "color": "ffcd00",
       "style": "for-the-badge",
       "logo": "kakaotalk",
-      "logoColor": "000000"
+      "logoColor": "ffffff"
     },
     {
       "id": "lichess",
@@ -205,7 +205,7 @@
       "message": "odysee",
       "color": "EF1970",
       "style": "for-the-badge",
-      "logo": "Odysee",
+      "logo": "odysee",
       "logoColor": "ffffff"
     },
     {
@@ -221,7 +221,7 @@
       "message": "Pinterest",
       "color": "E60023",
       "style": "for-the-badge",
-      "logo": "Pinterest",
+      "logo": "pinterest",
       "logoColor": "ffffff"
     },
     {
@@ -231,7 +231,7 @@
       "color": "543DE0",
       "style": "for-the-badge",
       "logo": "polywork",
-      "logoColor": "000000"
+      "logoColor": "ffffff"
     },
     {
       "id": "protonmail",
@@ -257,8 +257,8 @@
       "message": "Session",
       "color": "000000",
       "style": "for-the-badge",
-      "logo": "Session",
-      "logoColor": "02f780"
+      "logo": "session",
+      "logoColor": "ffffff"
     },
     {
       "id": "showwcase",
@@ -275,7 +275,7 @@
       "message": "Signal",
       "color": "039BE5",
       "style": "for-the-badge",
-      "logo": "Signal",
+      "logo": "signal",
       "logoColor": "ffffff"
     },
     {
@@ -298,7 +298,7 @@
       "message": "Snapchat",
       "color": "FFFC00",
       "style": "for-the-badge",
-      "logo": "Snapchat",
+      "logo": "snapchat",
       "logoColor": "ffffff"
     },
     {
@@ -334,7 +334,7 @@
       "message": "Threads",
       "color": "000000",
       "style": "for-the-badge",
-      "logo": "Threads",
+      "logo": "threads",
       "logoColor": "ffffff"
     },
     {
@@ -343,7 +343,7 @@
       "message": "Thunderbird",
       "color": "0A84FF",
       "style": "for-the-badge",
-      "logo": "Thunderbird",
+      "logo": "thunderbird",
       "logoColor": "ffffff"
     },
     {
@@ -352,7 +352,7 @@
       "message": "TikTok",
       "color": "000000",
       "style": "for-the-badge",
-      "logo": "TikTok",
+      "logo": "tiktok",
       "logoColor": "ffffff"
     },
     {
@@ -361,7 +361,7 @@
       "message": "Tumblr",
       "color": "36465D",
       "style": "for-the-badge",
-      "logo": "Tumblr",
+      "logo": "tumblr",
       "logoColor": "ffffff"
     },
     {
@@ -377,7 +377,7 @@
       "message": "Twitch",
       "color": "9146FF",
       "style": "for-the-badge",
-      "logo": "Twitch",
+      "logo": "twitch",
       "logoColor": "ffffff"
     },
     {
@@ -422,7 +422,7 @@
       "message": "X",
       "color": "000000",
       "style": "for-the-badge",
-      "logo": "X",
+      "logo": "x",
       "logoColor": "ffffff"
     },
     {
@@ -447,7 +447,7 @@
       "message": "YouTube",
       "color": "FF0000",
       "style": "for-the-badge",
-      "logo": "YouTube",
+      "logo": "youtube",
       "logoColor": "ffffff"
     },
     {

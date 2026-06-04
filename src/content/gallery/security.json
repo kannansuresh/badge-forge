@@ -9,7 +9,8 @@
       "message": "aqua",
       "color": "1904DA",
       "style": "for-the-badge",
-      "logo": "aqua"
+      "logo": "aqua",
+      "logoColor": "ffffff"
     },
     {
       "id": "bitwarden",
@@ -26,7 +27,7 @@
       "message": "tor",
       "color": "7E4798",
       "style": "for-the-badge",
-      "logo": "tor-project",
+      "logo": "torproject",
       "logoColor": "ffffff"
     }
   ]

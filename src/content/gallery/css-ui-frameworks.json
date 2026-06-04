@@ -9,7 +9,7 @@
       "message": "AntDesign",
       "color": "0170FE",
       "style": "for-the-badge",
-      "logo": "ant-design",
+      "logo": "antdesign",
       "logoColor": "ffffff"
     },
     {
@@ -36,8 +36,8 @@
       "message": "Mantine",
       "color": "ffffff",
       "style": "for-the-badge",
-      "logo": "Mantine",
-      "logoColor": "339af0"
+      "logo": "mantine",
+      "logoColor": "ffffff"
     },
     {
       "id": "material-ui",
@@ -45,7 +45,8 @@
       "message": "Material UI",
       "color": "FFFFFF",
       "style": "for-the-badge",
-      "logo": "MUI"
+      "logo": "mui",
+      "logoColor": "ffffff"
     },
     {
       "id": "shadcn-ui",
@@ -62,7 +63,7 @@
       "message": "tailwindcss",
       "color": "38B2AC",
       "style": "for-the-badge",
-      "logo": "tailwind-css",
+      "logo": "tailwindcss",
       "logoColor": "ffffff"
     },
     {
@@ -72,7 +73,7 @@
       "color": "1867C0",
       "style": "for-the-badge",
       "logo": "vuetify",
-      "logoColor": "aeddff"
+      "logoColor": "ffffff"
     }
   ]
 }

@@ -9,7 +9,8 @@
       "message": "expo",
       "color": "1C1E24",
       "style": "for-the-badge",
-      "logo": "expo"
+      "logo": "expo",
+      "logoColor": "ffffff"
     },
     {
       "id": "flutter",
@@ -17,7 +18,7 @@
       "message": "Flutter",
       "color": "02569B",
       "style": "for-the-badge",
-      "logo": "Flutter",
+      "logo": "flutter",
       "logoColor": "ffffff"
     },
     {
@@ -26,7 +27,7 @@
       "message": "Ionic",
       "color": "3880FF",
       "style": "for-the-badge",
-      "logo": "Ionic",
+      "logo": "ionic",
       "logoColor": "ffffff"
     },
     {
@@ -36,7 +37,7 @@
       "color": "20232a",
       "style": "for-the-badge",
       "logo": "react",
-      "logoColor": "61dafb"
+      "logoColor": "ffffff"
     },
     {
       "id": "tauri",

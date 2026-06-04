@@ -25,7 +25,7 @@
       "message": "Freelancer",
       "color": "29B2FE",
       "style": "for-the-badge",
-      "logo": "Freelancer",
+      "logo": "freelancer",
       "logoColor": "ffffff"
     },
     {
@@ -34,7 +34,7 @@
       "message": "Glassdoor",
       "color": "00A162",
       "style": "for-the-badge",
-      "logo": "Glassdoor",
+      "logo": "glassdoor",
       "logoColor": "ffffff"
     },
     {
@@ -43,8 +43,8 @@
       "message": "HackerEarth",
       "color": "2C3454",
       "style": "for-the-badge",
-      "logo": "HackerEarth",
-      "logoColor": "0000ff"
+      "logo": "hackerearth",
+      "logoColor": "ffffff"
     },
     {
       "id": "hackerrank",
@@ -52,7 +52,7 @@
       "message": "Hackerrank",
       "color": "2EC866",
       "style": "for-the-badge",
-      "logo": "HackerRank",
+      "logo": "hackerrank",
       "logoColor": "ffffff"
     },
     {
@@ -70,7 +70,7 @@
       "message": "UpWork",
       "color": "6FDA44",
       "style": "for-the-badge",
-      "logo": "Upwork",
+      "logo": "upwork",
       "logoColor": "ffffff"
     }
   ]

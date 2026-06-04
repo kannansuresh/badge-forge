@@ -25,9 +25,9 @@
       "id": "next-js",
       "label": "",
       "message": "Next",
-      "color": "black",
+      "color": "000000",
       "style": "for-the-badge",
-      "logo": "next.js",
+      "logo": "nextdotjs",
       "logoColor": "ffffff"
     },
     {
@@ -36,7 +36,8 @@
       "message": "Nuxt",
       "color": "002E3B",
       "style": "for-the-badge",
-      "logo": "nuxt"
+      "logo": "nuxt",
+      "logoColor": "ffffff"
     },
     {
       "id": "react",
@@ -45,7 +46,7 @@
       "color": "20232a",
       "style": "for-the-badge",
       "logo": "react",
-      "logoColor": "61dafb"
+      "logoColor": "ffffff"
     },
     {
       "id": "svelte",
@@ -63,7 +64,7 @@
       "color": "35495e",
       "style": "for-the-badge",
       "logo": "vuedotjs",
-      "logoColor": "4fc08d"
+      "logoColor": "ffffff"
     },
     {
       "id": "solidjs",

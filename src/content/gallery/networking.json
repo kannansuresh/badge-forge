@@ -10,7 +10,7 @@
       "color": "049fd9",
       "style": "for-the-badge",
       "logo": "cisco",
-      "logoColor": "000000"
+      "logoColor": "ffffff"
     },
     {
       "id": "pi-hole",
@@ -18,7 +18,7 @@
       "message": "pihole",
       "color": "96060C",
       "style": "for-the-badge",
-      "logo": "pi-hole",
+      "logo": "pihole",
       "logoColor": "ffffff"
     },
     {

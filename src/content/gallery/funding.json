@@ -16,7 +16,7 @@
       "message": "ApplePay",
       "color": "000000",
       "style": "for-the-badge",
-      "logo": "Apple-Pay",
+      "logo": "applepay",
       "logoColor": "ffffff"
     },
     {
@@ -25,8 +25,8 @@
       "message": "Buy Me a Coffee",
       "color": "ffdd00",
       "style": "for-the-badge",
-      "logo": "buy-me-a-coffee",
-      "logoColor": "000000"
+      "logo": "buymeacoffee",
+      "logoColor": "ffffff"
     },
     {
       "id": "github-sponsors",
@@ -34,7 +34,8 @@
       "message": "sponsor",
       "color": "30363D",
       "style": "for-the-badge",
-      "logo": "GitHub-Sponsors"
+      "logo": "githubsponsors",
+      "logoColor": "ffffff"
     },
     {
       "id": "google-pay",
@@ -42,7 +43,7 @@
       "message": "GooglePay",
       "color": "3780F1",
       "style": "for-the-badge",
-      "logo": "Google-Pay",
+      "logo": "googlepay",
       "logoColor": "ffffff"
     },
     {
@@ -51,7 +52,7 @@
       "message": "Ko-fi",
       "color": "F16061",
       "style": "for-the-badge",
-      "logo": "ko-fi",
+      "logo": "kofi",
       "logoColor": "ffffff"
     },
     {
@@ -61,7 +62,7 @@
       "color": "F6C915",
       "style": "for-the-badge",
       "logo": "liberapay",
-      "logoColor": "000000"
+      "logoColor": "ffffff"
     },
     {
       "id": "patreon",
@@ -88,7 +89,7 @@
       "color": "1C2C94",
       "style": "for-the-badge",
       "logo": "paytm",
-      "logoColor": "05baf3"
+      "logoColor": "ffffff"
     },
     {
       "id": "phonepe",
@@ -105,7 +106,7 @@
       "message": "SamsungPay",
       "color": "1428A0",
       "style": "for-the-badge",
-      "logo": "Samsung-Pay",
+      "logo": "samsungpay",
       "logoColor": "ffffff"
     },
     {
@@ -124,7 +125,7 @@
       "color": "394e79",
       "style": "for-the-badge",
       "logo": "wise",
-      "logoColor": "00b9ff"
+      "logoColor": "ffffff"
     }
   ]
 }

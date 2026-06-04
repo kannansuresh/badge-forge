@@ -32,7 +32,7 @@
       "message": "Playstation 2",
       "color": "003791",
       "style": "for-the-badge",
-      "logo": "playstation-2",
+      "logo": "playstation2",
       "logoColor": "ffffff"
     },
     {
@@ -41,7 +41,7 @@
       "message": "Playstation 3",
       "color": "003791",
       "style": "for-the-badge",
-      "logo": "playstation-3",
+      "logo": "playstation3",
       "logoColor": "ffffff"
     },
     {
@@ -50,7 +50,7 @@
       "message": "Playstation 4",
       "color": "003791",
       "style": "for-the-badge",
-      "logo": "playstation-4",
+      "logo": "playstation4",
       "logoColor": "ffffff"
     },
     {
@@ -59,7 +59,7 @@
       "message": "Playstation 5",
       "color": "003791",
       "style": "for-the-badge",
-      "logo": "playstation-5",
+      "logo": "playstation5",
       "logoColor": "ffffff"
     },
     {
@@ -68,7 +68,7 @@
       "message": "Playstation Vita",
       "color": "003791",
       "style": "for-the-badge",
-      "logo": "playstation-vita",
+      "logo": "playstationvita",
       "logoColor": "ffffff"
     },
     {

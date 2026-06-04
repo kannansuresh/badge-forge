@@ -18,7 +18,7 @@
       "message": "daily.dev",
       "color": "CE3DF3",
       "style": "for-the-badge",
-      "logo": "daily.dev",
+      "logo": "dailydotdev",
       "logoColor": "ffffff"
     },
     {
@@ -27,17 +27,17 @@
       "message": "dev.to",
       "color": "0A0A0A",
       "style": "for-the-badge",
-      "logo": "dev.to",
+      "logo": "devdotto",
       "logoColor": "ffffff"
     },
     {
       "id": "ghost",
       "label": "",
       "message": "ghost",
-      "color": "000",
+      "color": "000000",
       "style": "for-the-badge",
       "logo": "ghost",
-      "logoColor": "f7df1e"
+      "logoColor": "ffffff"
     },
     {
       "id": "hashnode",
@@ -63,7 +63,7 @@
       "message": "Micro.blog",
       "color": "FF8800",
       "style": "for-the-badge",
-      "logo": "micro.blog",
+      "logo": "microdotblog",
       "logoColor": "ffffff"
     },
     {
@@ -82,13 +82,13 @@
       "color": "006f5c",
       "style": "for-the-badge",
       "logo": "substack",
-      "logoColor": "ff6719"
+      "logoColor": "ffffff"
     },
     {
       "id": "wix",
       "label": "",
       "message": "wix",
-      "color": "000",
+      "color": "000000",
       "style": "for-the-badge",
       "logo": "wix",
       "logoColor": "ffffff"
@@ -97,7 +97,7 @@
       "id": "zola",
       "label": "",
       "message": "Zola",
-      "color": "black",
+      "color": "000000",
       "style": "for-the-badge",
       "logo": "zola",
       "logoColor": "ffffff"

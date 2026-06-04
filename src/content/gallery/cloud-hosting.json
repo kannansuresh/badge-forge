@@ -50,7 +50,7 @@
       "message": "Cloudflare",
       "color": "F38020",
       "style": "for-the-badge",
-      "logo": "Cloudflare",
+      "logo": "cloudflare",
       "logoColor": "ffffff"
     },
     {
@@ -59,7 +59,7 @@
       "message": "Codeberg",
       "color": "2185D0",
       "style": "for-the-badge",
-      "logo": "Codeberg",
+      "logo": "codeberg",
       "logoColor": "ffffff"
     },
     {
@@ -77,7 +77,7 @@
       "message": "DigitalOcean",
       "color": "0167ff",
       "style": "for-the-badge",
-      "logo": "digitalOcean",
+      "logo": "digitalocean",
       "logoColor": "ffffff"
     },
     {
@@ -86,7 +86,8 @@
       "message": "firebase",
       "color": "039BE5",
       "style": "for-the-badge",
-      "logo": "firebase"
+      "logo": "firebase",
+      "logoColor": "ffffff"
     },
     {
       "id": "github-pages",
@@ -112,7 +113,7 @@
       "message": "GoogleCloud",
       "color": "4285F4",
       "style": "for-the-badge",
-      "logo": "google-cloud",
+      "logo": "googlecloud",
       "logoColor": "ffffff"
     },
     {
@@ -162,7 +163,8 @@
       "message": "netlify",
       "color": "000000",
       "style": "for-the-badge",
-      "logo": "netlify"
+      "logo": "netlify",
+      "logoColor": "ffffff"
     },
     {
       "id": "openstack",
@@ -186,16 +188,17 @@
       "message": "ovh",
       "color": "123F6D",
       "style": "for-the-badge",
-      "logo": "ovh"
+      "logo": "ovh",
+      "logoColor": "ffffff"
     },
     {
       "id": "proxmox",
       "label": "",
       "message": "proxmox",
-      "color": "proxmox",
+      "color": "E57000",
       "style": "for-the-badge",
       "logo": "proxmox",
-      "logoColor": "e57000"
+      "logoColor": "ffffff"
     },
     {
       "id": "pythonanywhere",
@@ -204,13 +207,13 @@
       "color": "2F9FD7",
       "style": "for-the-badge",
       "logo": "pythonanywhere",
-      "logoColor": "151515"
+      "logoColor": "ffffff"
     },
     {
       "id": "render",
       "label": "",
       "message": "Render",
-      "color": "FE3B7",
+      "color": "FE3B77",
       "style": "for-the-badge",
       "logo": "render",
       "logoColor": "ffffff"
@@ -239,7 +242,8 @@
       "message": "Vultr",
       "color": "007BFC",
       "style": "for-the-badge",
-      "logo": "vultr"
+      "logo": "vultr",
+      "logoColor": "ffffff"
     }
   ]
 }

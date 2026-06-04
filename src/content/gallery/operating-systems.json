@@ -9,7 +9,7 @@
       "message": "Alpine Linux",
       "color": "0D597F",
       "style": "for-the-badge",
-      "logo": "alpine-linux",
+      "logo": "alpinelinux",
       "logoColor": "ffffff"
     },
     {
@@ -27,8 +27,8 @@
       "message": "Arch Linux",
       "color": "1793D1",
       "style": "for-the-badge",
-      "logo": "arch-linux",
-      "logoColor": "fff"
+      "logo": "archlinux",
+      "logoColor": "ffffff"
     },
     {
       "id": "cent-os",
@@ -37,7 +37,7 @@
       "color": "002260",
       "style": "for-the-badge",
       "logo": "centos",
-      "logoColor": "f0f0f0"
+      "logoColor": "ffffff"
     },
     {
       "id": "chrome-os",
@@ -45,7 +45,7 @@
       "message": "chrome os",
       "color": "3d89fc",
       "style": "for-the-badge",
-      "logo": "google chrome",
+      "logo": "googlechrome",
       "logoColor": "ffffff"
     },
     {
@@ -70,7 +70,7 @@
       "id": "elementary-os",
       "label": "",
       "message": "elementary OS",
-      "color": "black",
+      "color": "000000",
       "style": "for-the-badge",
       "logo": "elementary",
       "logoColor": "ffffff"
@@ -154,7 +154,7 @@
       "color": "FCC624",
       "style": "for-the-badge",
       "logo": "linux",
-      "logoColor": "000000"
+      "logoColor": "ffffff"
     },
     {
       "id": "linux-mint",
@@ -162,7 +162,7 @@
       "message": "Linux Mint",
       "color": "87CF3E",
       "style": "for-the-badge",
-      "logo": "Linux Mint",
+      "logo": "linuxmint",
       "logoColor": "ffffff"
     },
     {
@@ -181,7 +181,7 @@
       "color": "000000",
       "style": "for-the-badge",
       "logo": "macos",
-      "logoColor": "f0f0f0"
+      "logoColor": "ffffff"
     },
     {
       "id": "manjaro",
@@ -189,7 +189,7 @@
       "message": "Manjaro",
       "color": "35BF5C",
       "style": "for-the-badge",
-      "logo": "Manjaro",
+      "logo": "manjaro",
       "logoColor": "ffffff"
     },
     {
@@ -198,7 +198,7 @@
       "message": "MX Linux",
       "color": "000000",
       "style": "for-the-badge",
-      "logo": "MXlinux",
+      "logo": "mxlinux",
       "logoColor": "ffffff"
     },
     {
@@ -207,7 +207,7 @@
       "message": "NIXOS",
       "color": "5277C3",
       "style": "for-the-badge",
-      "logo": "NixOS",
+      "logo": "nixos",
       "logoColor": "ffffff"
     },
     {
@@ -217,7 +217,7 @@
       "color": "FCC771",
       "style": "for-the-badge",
       "logo": "openbsd",
-      "logoColor": "000000"
+      "logoColor": "ffffff"
     },
     {
       "id": "opensuse",
@@ -225,7 +225,7 @@
       "message": "openSUSE",
       "color": "64B345",
       "style": "for-the-badge",
-      "logo": "openSUSE",
+      "logo": "opensuse",
       "logoColor": "ffffff"
     },
     {
@@ -234,7 +234,7 @@
       "message": "OpenWRT",
       "color": "00B5E2",
       "style": "for-the-badge",
-      "logo": "OpenWrt",
+      "logo": "openwrt",
       "logoColor": "ffffff"
     },
     {
@@ -243,7 +243,8 @@
       "message": "parrot security",
       "color": "000000",
       "style": "for-the-badge",
-      "logo": "parrotsecurity"
+      "logo": "parrotsecurity",
+      "logoColor": "ffffff"
     },
     {
       "id": "pop-os",
@@ -251,7 +252,7 @@
       "message": "Pop! OS",
       "color": "48B9C7",
       "style": "for-the-badge",
-      "logo": "Pop!_OS",
+      "logo": "popos",
       "logoColor": "ffffff"
     },
     {
@@ -288,7 +289,7 @@
       "color": "f2f2f2",
       "style": "for-the-badge",
       "logo": "solus",
-      "logoColor": "5294e2"
+      "logoColor": "ffffff"
     },
     {
       "id": "suse",
@@ -296,7 +297,7 @@
       "message": "SUSE",
       "color": "0C322C",
       "style": "for-the-badge",
-      "logo": "SUSE",
+      "logo": "suse",
       "logoColor": "ffffff"
     },
     {
@@ -323,7 +324,7 @@
       "message": "Ubuntu MATE",
       "color": "84A454",
       "style": "for-the-badge",
-      "logo": "Ubuntu-MATE",
+      "logo": "ubuntumate",
       "logoColor": "ffffff"
     },
     {
@@ -341,7 +342,7 @@
       "message": "Wear OS",
       "color": "4285F4",
       "style": "for-the-badge",
-      "logo": "wear-os",
+      "logo": "wearos",
       "logoColor": "ffffff"
     },
     {

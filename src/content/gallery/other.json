@@ -16,7 +16,7 @@
       "message": "Airbnb",
       "color": "ff5a5f",
       "style": "for-the-badge",
-      "logo": "Airbnb",
+      "logo": "airbnb",
       "logoColor": "ffffff"
     },
     {
@@ -25,13 +25,14 @@
       "message": "alfred",
       "color": "5C1F87",
       "style": "for-the-badge",
-      "logo": "alfred"
+      "logo": "alfred",
+      "logoColor": "ffffff"
     },
     {
       "id": "apex",
       "label": "",
       "message": "Apex",
-      "color": "blue",
+      "color": "0000FF",
       "style": "for-the-badge"
     },
     {
@@ -49,7 +50,7 @@
       "message": "Crowdin",
       "color": "2E3340",
       "style": "for-the-badge",
-      "logo": "Crowdin",
+      "logo": "crowdin",
       "logoColor": "ffffff"
     },
     {
@@ -58,7 +59,8 @@
       "message": "ElasticSearch",
       "color": "005571",
       "style": "for-the-badge",
-      "logo": "elasticsearch"
+      "logo": "elasticsearch",
+      "logoColor": "ffffff"
     },
     {
       "id": "eslint",
@@ -76,7 +78,7 @@
       "color": "171717",
       "style": "for-the-badge",
       "logo": "ffmpeg",
-      "logoColor": "5cb85c"
+      "logoColor": "ffffff"
     },
     {
       "id": "google-talkback",
@@ -98,8 +100,8 @@
       "message": "jellyfin",
       "color": "000B25",
       "style": "for-the-badge",
-      "logo": "Jellyfin",
-      "logoColor": "00a4dc"
+      "logo": "jellyfin",
+      "logoColor": "ffffff"
     },
     {
       "id": "meta",
@@ -107,7 +109,7 @@
       "message": "Meta",
       "color": "0467DF",
       "style": "for-the-badge",
-      "logo": "Meta",
+      "logo": "meta",
       "logoColor": "ffffff"
     },
     {
@@ -117,7 +119,7 @@
       "color": "F2CA02",
       "style": "for-the-badge",
       "logo": "miro",
-      "logoColor": "000000"
+      "logoColor": "ffffff"
     },
     {
       "id": "narrator",
@@ -166,7 +168,8 @@
       "message": "Portfolio",
       "color": "000000",
       "style": "for-the-badge",
-      "logo": "firefox"
+      "logo": "firefox",
+      "logoColor": "ffffff"
     },
     {
       "id": "postman",
@@ -191,7 +194,7 @@
       "color": "F7B93E",
       "style": "for-the-badge",
       "logo": "prettier",
-      "logoColor": "000000"
+      "logoColor": "ffffff"
     },
     {
       "id": "prezi",
@@ -199,7 +202,7 @@
       "message": "Prezi",
       "color": "000000",
       "style": "for-the-badge",
-      "logo": "Prezi",
+      "logo": "prezi",
       "logoColor": "ffffff"
     },
     {
@@ -209,13 +212,13 @@
       "color": "ececec",
       "style": "for-the-badge",
       "logo": "pypi",
-      "logoColor": "1f73b7"
+      "logoColor": "ffffff"
     },
     {
       "id": "salesforce",
       "label": "",
       "message": "Salesforce",
-      "color": "blue",
+      "color": "0000FF",
       "style": "for-the-badge"
     },
     {
@@ -229,7 +232,7 @@
       "id": "sonarqube",
       "label": "",
       "message": "SonarQube",
-      "color": "black",
+      "color": "000000",
       "style": "for-the-badge"
     },
     {
@@ -247,7 +250,7 @@
       "message": "Trello",
       "color": "026AA7",
       "style": "for-the-badge",
-      "logo": "Trello",
+      "logo": "trello",
       "logoColor": "ffffff"
     },
     {
@@ -263,7 +266,7 @@
       "message": "Uber",
       "color": "000000",
       "style": "for-the-badge",
-      "logo": "Uber",
+      "logo": "uber",
       "logoColor": "ffffff"
     },
     {
@@ -305,7 +308,7 @@
       "color": "5ED9C7",
       "style": "for-the-badge",
       "logo": "xo",
-      "logoColor": "000000"
+      "logoColor": "ffffff"
     }
   ]
 }

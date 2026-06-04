@@ -19,7 +19,7 @@
       "color": "000000",
       "style": "for-the-badge",
       "logo": "drizzle",
-      "logoColor": "c5f74f"
+      "logoColor": "ffffff"
     },
     {
       "id": "hibernate",
@@ -27,7 +27,7 @@
       "message": "Hibernate",
       "color": "59666C",
       "style": "for-the-badge",
-      "logo": "Hibernate",
+      "logo": "hibernate",
       "logoColor": "ffffff"
     },
     {
@@ -36,7 +36,7 @@
       "message": "Prisma",
       "color": "3982CE",
       "style": "for-the-badge",
-      "logo": "Prisma",
+      "logo": "prisma",
       "logoColor": "ffffff"
     },
     {
@@ -54,7 +54,7 @@
       "message": "Sequelize",
       "color": "52B0E7",
       "style": "for-the-badge",
-      "logo": "Sequelize",
+      "logo": "sequelize",
       "logoColor": "ffffff"
     },
     {

@@ -34,7 +34,7 @@
       "message": "cassandra",
       "color": "1287B1",
       "style": "for-the-badge",
-      "logo": "apache-cassandra",
+      "logo": "apachecassandra",
       "logoColor": "ffffff"
     },
     {
@@ -52,7 +52,7 @@
       "message": "Cockroach Labs",
       "color": "6933FF",
       "style": "for-the-badge",
-      "logo": "Cockroach Labs",
+      "logo": "cockroachlabs",
       "logoColor": "ffffff"
     },
     {
@@ -70,7 +70,7 @@
       "message": "CrateDB",
       "color": "009DC7",
       "style": "for-the-badge",
-      "logo": "CrateDB",
+      "logo": "cratedb",
       "logoColor": "ffffff"
     },
     {
@@ -89,7 +89,7 @@
       "color": "FFF000",
       "style": "for-the-badge",
       "logo": "duckdb",
-      "logoColor": "000000"
+      "logoColor": "ffffff"
     },
     {
       "id": "firebase",
@@ -98,7 +98,7 @@
       "color": "a08021",
       "style": "for-the-badge",
       "logo": "firebase",
-      "logoColor": "ffcd34"
+      "logoColor": "ffffff"
     },
     {
       "id": "influxdb",
@@ -106,7 +106,7 @@
       "message": "InfluxDB",
       "color": "22ADF6",
       "style": "for-the-badge",
-      "logo": "InfluxDB",
+      "logo": "influxdb",
       "logoColor": "ffffff"
     },
     {
@@ -141,7 +141,7 @@
       "color": "EB743B",
       "style": "for-the-badge",
       "logo": "musicbrainz",
-      "logoColor": "ba478f"
+      "logoColor": "ffffff"
     },
     {
       "id": "mysql",
@@ -176,8 +176,8 @@
       "message": "pocketbase",
       "color": "b8dbe4",
       "style": "for-the-badge",
-      "logo": "Pocketbase",
-      "logoColor": "000000"
+      "logo": "pocketbase",
+      "logoColor": "ffffff"
     },
     {
       "id": "postgres",
@@ -265,7 +265,7 @@
       "color": "00E599",
       "style": "for-the-badge",
       "logo": "neon",
-      "logoColor": "000000"
+      "logoColor": "ffffff"
     },
     {
       "id": "turso",
@@ -274,7 +274,7 @@
       "color": "4FF0C9",
       "style": "for-the-badge",
       "logo": "turso",
-      "logoColor": "000000"
+      "logoColor": "ffffff"
     },
     {
       "id": "meilisearch",
@@ -292,7 +292,7 @@
       "color": "00E9A3",
       "style": "for-the-badge",
       "logo": "upstash",
-      "logoColor": "000000"
+      "logoColor": "ffffff"
     },
     {
       "id": "singlestore",

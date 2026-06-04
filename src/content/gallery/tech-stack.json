@@ -10,7 +10,7 @@
       "color": "61DAFB",
       "style": "for-the-badge",
       "logo": "react",
-      "logoColor": "000000"
+      "logoColor": "ffffff"
     },
     {
       "id": "frontend-vue",
@@ -145,7 +145,7 @@
       "color": "C5F74F",
       "style": "for-the-badge",
       "logo": "drizzle",
-      "logoColor": "000000"
+      "logoColor": "ffffff"
     },
     {
       "id": "css-tailwind",
@@ -190,7 +190,7 @@
       "color": "232F3E",
       "style": "for-the-badge",
       "logo": "amazonwebservices",
-      "logoColor": "FF9900"
+      "logoColor": "ffffff"
     },
     {
       "id": "hosting-cloudflare",
@@ -208,7 +208,7 @@
       "color": "61DAFB",
       "style": "for-the-badge",
       "logo": "react",
-      "logoColor": "000000"
+      "logoColor": "ffffff"
     },
     {
       "id": "mobile-flutter",
@@ -269,7 +269,7 @@
       "color": "FCC624",
       "style": "for-the-badge",
       "logo": "linux",
-      "logoColor": "000000"
+      "logoColor": "ffffff"
     }
   ]
 }

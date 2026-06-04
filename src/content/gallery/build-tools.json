@@ -19,7 +19,7 @@
       "color": "FFCF00",
       "style": "for-the-badge",
       "logo": "esbuild",
-      "logoColor": "000000"
+      "logoColor": "ffffff"
     },
     {
       "id": "gulp",
@@ -45,7 +45,7 @@
       "message": "RollupJS",
       "color": "ef3335",
       "style": "for-the-badge",
-      "logo": "rollup.js",
+      "logo": "rollupdotjs",
       "logoColor": "ffffff"
     },
     {
@@ -64,7 +64,7 @@
       "color": "8DD6F9",
       "style": "for-the-badge",
       "logo": "webpack",
-      "logoColor": "000000"
+      "logoColor": "ffffff"
     },
     {
       "id": "babel",
@@ -73,7 +73,7 @@
       "color": "F9DC3e",
       "style": "for-the-badge",
       "logo": "babel",
-      "logoColor": "000000"
+      "logoColor": "ffffff"
     },
     {
       "id": "cmake",
@@ -90,17 +90,17 @@
       "message": "Gradle",
       "color": "02303A",
       "style": "for-the-badge",
-      "logo": "Gradle",
+      "logo": "gradle",
       "logoColor": "ffffff"
     },
     {
       "id": "platformio",
       "label": "",
       "message": "PlatformIO",
-      "color": "222",
+      "color": "222222",
       "style": "for-the-badge",
       "logo": "platformio",
-      "logoColor": "f5822a"
+      "logoColor": "ffffff"
     }
   ]
 }

@@ -9,7 +9,7 @@
       "message": "Arduino",
       "color": "00979D",
       "style": "for-the-badge",
-      "logo": "Arduino",
+      "logo": "arduino",
       "logoColor": "ffffff"
     },
     {
@@ -27,7 +27,7 @@
       "message": "home assistant",
       "color": "41BDF5",
       "style": "for-the-badge",
-      "logo": "home-assistant",
+      "logo": "homeassistant",
       "logoColor": "ffffff"
     },
     {
@@ -54,7 +54,8 @@
       "message": "Raspberry Pi",
       "color": "C51A4A",
       "style": "for-the-badge",
-      "logo": "Raspberry-Pi"
+      "logo": "raspberrypi",
+      "logoColor": "ffffff"
     },
     {
       "id": "zigbee",

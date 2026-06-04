@@ -16,7 +16,7 @@
       "message": "Backblaze",
       "color": "E21E29",
       "style": "for-the-badge",
-      "logo": "Backblaze",
+      "logo": "backblaze",
       "logoColor": "ffffff"
     },
     {
@@ -34,7 +34,7 @@
       "message": "Dropbox",
       "color": "3B4D98",
       "style": "for-the-badge",
-      "logo": "Dropbox",
+      "logo": "dropbox",
       "logoColor": "ffffff"
     },
     {
@@ -61,14 +61,14 @@
       "message": "Mega",
       "color": "D90007",
       "style": "for-the-badge",
-      "logo": "Mega",
+      "logo": "mega",
       "logoColor": "ffffff"
     },
     {
       "id": "microsoft-onedrive",
       "label": "",
       "message": "OneDrive",
-      "color": "white",
+      "color": "ffffff",
       "style": "for-the-badge"
     },
     {
@@ -93,7 +93,7 @@
       "message": "Proton Drive",
       "color": "6d4aff",
       "style": "for-the-badge",
-      "logo": "proton drive",
+      "logo": "protondrive",
       "logoColor": "ffffff"
     }
   ]

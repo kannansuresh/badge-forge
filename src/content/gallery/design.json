@@ -121,7 +121,8 @@
       "message": "Aseprite",
       "color": "FFFFFF",
       "style": "for-the-badge",
-      "logo": "Aseprite"
+      "logo": "aseprite",
+      "logoColor": "ffffff"
     },
     {
       "id": "blender",
@@ -161,7 +162,7 @@
       "message": "drawio",
       "color": "F08705",
       "style": "for-the-badge",
-      "logo": "diagrams.net",
+      "logo": "diagramsdotnet",
       "logoColor": "ffffff"
     },
     {
@@ -186,10 +187,10 @@
       "id": "framer",
       "label": "",
       "message": "Framer",
-      "color": "black",
+      "color": "000000",
       "style": "for-the-badge",
       "logo": "framer",
-      "logoColor": "0000ff"
+      "logoColor": "ffffff"
     },
     {
       "id": "gimp",
@@ -207,7 +208,7 @@
       "color": "e0e0e0",
       "style": "for-the-badge",
       "logo": "inkscape",
-      "logoColor": "080a13"
+      "logoColor": "ffffff"
     },
     {
       "id": "invision",
@@ -223,7 +224,7 @@
       "color": "203759",
       "style": "for-the-badge",
       "logo": "krita",
-      "logoColor": "eef37b"
+      "logoColor": "ffffff"
     },
     {
       "id": "penpot",
@@ -232,7 +233,7 @@
       "color": "FFFFFF",
       "style": "for-the-badge",
       "logo": "penpot",
-      "logoColor": "000000"
+      "logoColor": "ffffff"
     },
     {
       "id": "proto-io",
@@ -240,8 +241,8 @@
       "message": "Proto.io",
       "color": "161637",
       "style": "for-the-badge",
-      "logo": "proto.io",
-      "logoColor": "00e5ff"
+      "logo": "protodotio",
+      "logoColor": "ffffff"
     },
     {
       "id": "rhinoceros",
@@ -259,7 +260,7 @@
       "color": "FFB387",
       "style": "for-the-badge",
       "logo": "sketch",
-      "logoColor": "000000"
+      "logoColor": "ffffff"
     },
     {
       "id": "sketch-up",

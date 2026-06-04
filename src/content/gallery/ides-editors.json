@@ -9,7 +9,7 @@
       "message": "Android Studio",
       "color": "3DDC84",
       "style": "for-the-badge",
-      "logo": "android-studio",
+      "logo": "androidstudio",
       "logoColor": "ffffff"
     },
     {
@@ -18,7 +18,7 @@
       "message": "Arduino IDE",
       "color": "00979D",
       "style": "for-the-badge",
-      "logo": "Arduino",
+      "logo": "arduino",
       "logoColor": "ffffff"
     },
     {
@@ -32,7 +32,7 @@
       "id": "clion",
       "label": "",
       "message": "CLion",
-      "color": "black",
+      "color": "000000",
       "style": "for-the-badge",
       "logo": "clion",
       "logoColor": "ffffff"
@@ -41,7 +41,7 @@
       "id": "codepen",
       "label": "",
       "message": "CodePen",
-      "color": "white",
+      "color": "ffffff",
       "style": "for-the-badge"
     },
     {
@@ -51,7 +51,7 @@
       "color": "040404",
       "style": "for-the-badge",
       "logo": "codesandbox",
-      "logoColor": "dbdbdb"
+      "logoColor": "ffffff"
     },
     {
       "id": "cursor",
@@ -59,7 +59,7 @@
       "message": "Cursor",
       "color": "000000",
       "style": "for-the-badge",
-      "logo": "Cursor",
+      "logo": "cursor",
       "logoColor": "ffffff"
     },
     {
@@ -68,7 +68,7 @@
       "message": "DataGrip",
       "color": "000000",
       "style": "for-the-badge",
-      "logo": "DataGrip",
+      "logo": "datagrip",
       "logoColor": "ffffff"
     },
     {
@@ -93,7 +93,7 @@
       "message": "Emacs",
       "color": "7F5AB6",
       "style": "for-the-badge",
-      "logo": "gnu-emacs",
+      "logo": "gnuemacs",
       "logoColor": "ffffff"
     },
     {
@@ -129,7 +129,7 @@
       "message": "IntelliJIDEA",
       "color": "000000",
       "style": "for-the-badge",
-      "logo": "intellij-idea",
+      "logo": "intellijidea",
       "logoColor": "ffffff"
     },
     {
@@ -165,7 +165,7 @@
       "message": "NetBeansIDE",
       "color": "1B6AC6",
       "style": "for-the-badge",
-      "logo": "apache-netbeans-ide",
+      "logo": "apachenetbeanside",
       "logoColor": "ffffff"
     },
     {
@@ -175,7 +175,7 @@
       "color": "90E59A",
       "style": "for-the-badge",
       "logo": "notepad++",
-      "logoColor": "000000"
+      "logoColor": "ffffff"
     },
     {
       "id": "obsidian",
@@ -192,26 +192,26 @@
       "message": "p5.js",
       "color": "ED225D",
       "style": "for-the-badge",
-      "logo": "p5.js",
+      "logo": "p5dotjs",
       "logoColor": "ffffff"
     },
     {
       "id": "phpstorm",
       "label": "",
       "message": "phpstorm",
-      "color": "143",
+      "color": "143333",
       "style": "for-the-badge",
       "logo": "phpstorm",
-      "logoColor": "000000"
+      "logoColor": "ffffff"
     },
     {
       "id": "pycharm",
       "label": "",
       "message": "pycharm",
-      "color": "143",
+      "color": "143333",
       "style": "for-the-badge",
       "logo": "pycharm",
-      "logoColor": "000000"
+      "logoColor": "ffffff"
     },
     {
       "id": "replit",
@@ -219,7 +219,7 @@
       "message": "Replit",
       "color": "DD1200",
       "style": "for-the-badge",
-      "logo": "Replit",
+      "logo": "replit",
       "logoColor": "ffffff"
     },
     {
@@ -228,7 +228,7 @@
       "message": "ReSharper",
       "color": "000000",
       "style": "for-the-badge",
-      "logo": "ReSharper",
+      "logo": "resharper",
       "logoColor": "ffffff"
     },
     {
@@ -237,7 +237,7 @@
       "message": "Rider",
       "color": "000000",
       "style": "for-the-badge",
-      "logo": "Rider",
+      "logo": "rider",
       "logoColor": "ffffff"
     },
     {
@@ -253,7 +253,7 @@
       "message": "RubyMine",
       "color": "000000",
       "style": "for-the-badge",
-      "logo": "RubyMine",
+      "logo": "rubymine",
       "logoColor": "ffffff"
     },
     {
@@ -262,8 +262,8 @@
       "message": "Spyder",
       "color": "838485",
       "style": "for-the-badge",
-      "logo": "spyder ide",
-      "logoColor": "maroon"
+      "logo": "spyderide",
+      "logoColor": "ffffff"
     },
     {
       "id": "sublime-text",
@@ -271,8 +271,8 @@
       "message": "sublime text",
       "color": "575757",
       "style": "for-the-badge",
-      "logo": "sublime-text",
-      "logoColor": "important"
+      "logo": "sublimetext",
+      "logoColor": "ffffff"
     },
     {
       "id": "vim",
@@ -308,7 +308,7 @@
       "id": "webstorm",
       "label": "",
       "message": "webstorm",
-      "color": "143",
+      "color": "143333",
       "style": "for-the-badge",
       "logo": "webstorm",
       "logoColor": "ffffff"
@@ -319,7 +319,7 @@
       "message": "Xcode",
       "color": "007ACC",
       "style": "for-the-badge",
-      "logo": "Xcode",
+      "logo": "xcode",
       "logoColor": "ffffff"
     },
     {
@@ -335,10 +335,10 @@
       "id": "zend",
       "label": "",
       "message": "Zend",
-      "color": "fff",
+      "color": "ffffff",
       "style": "for-the-badge",
       "logo": "zend",
-      "logoColor": "0679ea"
+      "logoColor": "ffffff"
     }
   ]
 }

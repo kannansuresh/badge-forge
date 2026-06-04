@@ -19,7 +19,7 @@
       "color": "E5E5E5",
       "style": "for-the-badge",
       "logo": "cypress",
-      "logoColor": "058a5e"
+      "logoColor": "ffffff"
     },
     {
       "id": "jasmine",
@@ -27,7 +27,7 @@
       "message": "Jasmine",
       "color": "8A4182",
       "style": "for-the-badge",
-      "logo": "Jasmine",
+      "logo": "jasmine",
       "logoColor": "ffffff"
     },
     {
@@ -61,8 +61,8 @@
       "message": "Puppeteer",
       "color": "40B5A4",
       "style": "for-the-badge",
-      "logo": "Puppeteer",
-      "logoColor": "000000"
+      "logo": "puppeteer",
+      "logoColor": "ffffff"
     },
     {
       "id": "pytest",
@@ -71,13 +71,13 @@
       "color": "ffffff",
       "style": "for-the-badge",
       "logo": "pytest",
-      "logoColor": "2f9fe3"
+      "logoColor": "ffffff"
     },
     {
       "id": "selenium",
       "label": "",
       "message": "selenium",
-      "color": "CB02A",
+      "color": "CB02AA",
       "style": "for-the-badge",
       "logo": "selenium",
       "logoColor": "ffffff"
@@ -97,7 +97,7 @@
       "message": "TestingLibrary",
       "color": "E33332",
       "style": "for-the-badge",
-      "logo": "testing-library",
+      "logo": "testinglibrary",
       "logoColor": "ffffff"
     },
     {
@@ -107,7 +107,7 @@
       "color": "252529",
       "style": "for-the-badge",
       "logo": "vitest",
-      "logoColor": "fcc72b"
+      "logoColor": "ffffff"
     },
     {
       "id": "vitest-test",

@@ -9,7 +9,7 @@
       "message": "Baidu",
       "color": "2932E1",
       "style": "for-the-badge",
-      "logo": "Baidu",
+      "logo": "baidu",
       "logoColor": "ffffff"
     },
     {
@@ -25,7 +25,7 @@
       "message": "Brave",
       "color": "FB542B",
       "style": "for-the-badge",
-      "logo": "Brave",
+      "logo": "brave",
       "logoColor": "ffffff"
     },
     {
@@ -34,7 +34,7 @@
       "message": "DuckDuckGo",
       "color": "DE5833",
       "style": "for-the-badge",
-      "logo": "DuckDuckGo",
+      "logo": "duckduckgo",
       "logoColor": "ffffff"
     },
     {
@@ -62,7 +62,7 @@
       "color": "FFB319",
       "style": "for-the-badge",
       "logo": "kagi",
-      "logoColor": "000000"
+      "logoColor": "ffffff"
     },
     {
       "id": "mojeek",

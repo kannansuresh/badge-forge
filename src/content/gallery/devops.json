@@ -55,7 +55,7 @@
       "color": "FFFFFF",
       "style": "for-the-badge",
       "logo": "opentelemetry",
-      "logoColor": "000000"
+      "logoColor": "ffffff"
     },
     {
       "id": "packer",
@@ -64,7 +64,7 @@
       "color": "E7EEF0",
       "style": "for-the-badge",
       "logo": "packer",
-      "logoColor": "02a8ef"
+      "logoColor": "ffffff"
     },
     {
       "id": "prometheus",
@@ -72,7 +72,7 @@
       "message": "Prometheus",
       "color": "E6522C",
       "style": "for-the-badge",
-      "logo": "Prometheus",
+      "logo": "prometheus",
       "logoColor": "ffffff"
     },
     {
@@ -81,8 +81,8 @@
       "message": "Pulumi",
       "color": "8A3391",
       "style": "for-the-badge",
-      "logo": "Pulumi",
-      "logoColor": "f7bf2a"
+      "logo": "pulumi",
+      "logoColor": "ffffff"
     },
     {
       "id": "rancher",

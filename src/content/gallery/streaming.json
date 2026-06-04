@@ -16,7 +16,7 @@
       "message": "Apple TV",
       "color": "000000",
       "style": "for-the-badge",
-      "logo": "Apple TV",
+      "logo": "appletv",
       "logoColor": "ffffff"
     },
     {
@@ -59,7 +59,7 @@
       "message": "Facebook Live",
       "color": "ED4242",
       "style": "for-the-badge",
-      "logo": "Facebook Live",
+      "logo": "facebooklive",
       "logoColor": "ffffff"
     },
     {
@@ -145,7 +145,7 @@
       "message": "Youtube Gaming",
       "color": "FF0000",
       "style": "for-the-badge",
-      "logo": "Youtubegaming",
+      "logo": "youtubegaming",
       "logoColor": "ffffff"
     }
   ]

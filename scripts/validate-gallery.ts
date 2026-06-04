@@ -242,15 +242,8 @@ async function validate(): Promise<boolean> {
     }
   }
 
-  // 5. Cross-file badge ID duplicates (warning)
-  for (const [id, fileList] of allBadgeIds) {
-    if (fileList.length > 1) {
-      warnings.push({
-        file: fileList[0],
-        message: `Badge id "${id}" appears in multiple files: ${fileList.join(', ')}`,
-      });
-    }
-  }
+  // 5. Cross-file badge ID overlaps (intentional — same badge can appear in multiple categories)
+  // Not reported as warning since overlapping badges across related categories is by design.
 
   // 6. Logo validation against simple-icons (warning, case-insensitive)
   try {

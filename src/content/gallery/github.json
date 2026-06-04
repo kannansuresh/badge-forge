@@ -28,7 +28,7 @@
       "color": "181717",
       "style": "for-the-badge",
       "logo": "github",
-      "logoColor": "FFD700"
+      "logoColor": "ffffff"
     },
     {
       "id": "github-forks",
@@ -46,7 +46,7 @@
       "color": "181717",
       "style": "for-the-badge",
       "logo": "github",
-      "logoColor": "red"
+      "logoColor": "ffffff"
     },
     {
       "id": "github-prs",
@@ -55,7 +55,7 @@
       "color": "181717",
       "style": "for-the-badge",
       "logo": "github",
-      "logoColor": "2ea44f"
+      "logoColor": "ffffff"
     },
     {
       "id": "github-actions-status",
@@ -82,7 +82,7 @@
       "color": "181717",
       "style": "for-the-badge",
       "logo": "github",
-      "logoColor": "2ea44f"
+      "logoColor": "ffffff"
     },
     {
       "id": "github-last-commit",

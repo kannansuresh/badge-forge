@@ -19,7 +19,7 @@
       "color": "404d59",
       "style": "for-the-badge",
       "logo": "express",
-      "logoColor": "61dafb"
+      "logoColor": "ffffff"
     },
     {
       "id": "fastapi",
@@ -27,13 +27,14 @@
       "message": "FastAPI",
       "color": "005571",
       "style": "for-the-badge",
-      "logo": "fastapi"
+      "logo": "fastapi",
+      "logoColor": "ffffff"
     },
     {
       "id": "flask",
       "label": "",
       "message": "flask",
-      "color": "000",
+      "color": "000000",
       "style": "for-the-badge",
       "logo": "flask",
       "logoColor": "ffffff"
@@ -62,7 +63,7 @@
       "message": "node.js",
       "color": "6DA55F",
       "style": "for-the-badge",
-      "logo": "node.js",
+      "logo": "nodedotjs",
       "logoColor": "ffffff"
     },
     {
@@ -71,7 +72,7 @@
       "message": "rails",
       "color": "CC0000",
       "style": "for-the-badge",
-      "logo": "ruby-on-rails",
+      "logo": "rubyonrails",
       "logoColor": "ffffff"
     },
     {

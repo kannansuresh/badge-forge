@@ -7,7 +7,7 @@
       "id": "42",
       "label": "",
       "message": "42",
-      "color": "black",
+      "color": "000000",
       "style": "for-the-badge",
       "logo": "42",
       "logoColor": "ffffff"
@@ -19,7 +19,7 @@
       "color": "FFF0E5",
       "style": "for-the-badge",
       "logo": "codecademy",
-      "logoColor": "1f243a"
+      "logoColor": "ffffff"
     },
     {
       "id": "codewars",
@@ -28,7 +28,7 @@
       "color": "B1361E",
       "style": "for-the-badge",
       "logo": "codewars",
-      "logoColor": "grey"
+      "logoColor": "ffffff"
     },
     {
       "id": "codingninjas",
@@ -45,7 +45,7 @@
       "message": "Coursera",
       "color": "0056D2",
       "style": "for-the-badge",
-      "logo": "Coursera",
+      "logo": "coursera",
       "logoColor": "ffffff"
     },
     {
@@ -55,7 +55,7 @@
       "color": "05192D",
       "style": "for-the-badge",
       "logo": "datacamp",
-      "logoColor": "03e860"
+      "logoColor": "ffffff"
     },
     {
       "id": "duolingo",
@@ -63,7 +63,7 @@
       "message": "Duolingo",
       "color": "4DC730",
       "style": "for-the-badge",
-      "logo": "Duolingo",
+      "logo": "duolingo",
       "logoColor": "ffffff"
     },
     {
@@ -72,7 +72,7 @@
       "message": "edX",
       "color": "02262B",
       "style": "for-the-badge",
-      "logo": "edX",
+      "logo": "edx",
       "logoColor": "ffffff"
     },
     {
@@ -88,10 +88,10 @@
       "id": "freecodecamp",
       "label": "",
       "message": "Freecodecamp",
-      "color": "123",
+      "color": "123333",
       "style": "for-the-badge",
       "logo": "freecodecamp",
-      "logoColor": "00ff00"
+      "logoColor": "ffffff"
     },
     {
       "id": "future-learn",
@@ -106,10 +106,10 @@
       "id": "geeksforgeeks",
       "label": "",
       "message": "GeeksforGeeks",
-      "color": "gray",
+      "color": "808080",
       "style": "for-the-badge",
       "logo": "geeksforgeeks",
-      "logoColor": "35914c"
+      "logoColor": "ffffff"
     },
     {
       "id": "google-scholar",
@@ -117,7 +117,7 @@
       "message": "Google Scholar",
       "color": "4285F4",
       "style": "for-the-badge",
-      "logo": "google-scholar",
+      "logo": "googlescholar",
       "logoColor": "ffffff"
     },
     {
@@ -126,14 +126,14 @@
       "message": "KhanAcademy",
       "color": "14BF96",
       "style": "for-the-badge",
-      "logo": "KhanAcademy",
+      "logo": "khanacademy",
       "logoColor": "ffffff"
     },
     {
       "id": "mdn-web-docs",
       "label": "",
       "message": "MDN Web Docs",
-      "color": "black",
+      "color": "000000",
       "style": "for-the-badge",
       "logo": "mdnwebdocs",
       "logoColor": "ffffff"
@@ -151,8 +151,8 @@
       "message": "O'Reilly",
       "color": "D30000",
       "style": "for-the-badge",
-      "logo": "o'reilly",
-      "logoColor": "f1f1f1"
+      "logo": "oreilly",
+      "logoColor": "ffffff"
     },
     {
       "id": "pluralsight",
@@ -179,7 +179,7 @@
       "color": "002333",
       "style": "for-the-badge",
       "logo": "skillshare",
-      "logoColor": "00ff84"
+      "logoColor": "ffffff"
     },
     {
       "id": "sololearn",
@@ -203,10 +203,10 @@
       "id": "udacity",
       "label": "",
       "message": "Udacity",
-      "color": "grey",
+      "color": "808080",
       "style": "for-the-badge",
       "logo": "udacity",
-      "logoColor": "15b8e6"
+      "logoColor": "ffffff"
     },
     {
       "id": "udemy",
@@ -214,7 +214,7 @@
       "message": "Udemy",
       "color": "A435F0",
       "style": "for-the-badge",
-      "logo": "Udemy",
+      "logo": "udemy",
       "logoColor": "ffffff"
     },
     {

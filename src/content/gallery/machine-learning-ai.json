@@ -25,7 +25,7 @@
       "id": "opencv",
       "label": "",
       "message": "opencv",
-      "color": "white",
+      "color": "ffffff",
       "style": "for-the-badge",
       "logo": "opencv",
       "logoColor": "ffffff"
@@ -71,7 +71,7 @@
       "color": "d9ead3",
       "style": "for-the-badge",
       "logo": "numpy",
-      "logoColor": "0000ff"
+      "logoColor": "ffffff"
     },
     {
       "id": "onnx",
@@ -80,7 +80,7 @@
       "color": "ffffff",
       "style": "for-the-badge",
       "logo": "onnx",
-      "logoColor": "000000"
+      "logoColor": "ffffff"
     },
     {
       "id": "plotly",
@@ -124,7 +124,7 @@
       "message": "scikit-learn",
       "color": "F7931E",
       "style": "for-the-badge",
-      "logo": "scikit-learn",
+      "logo": "scikitlearn",
       "logoColor": "ffffff"
     },
     {
@@ -134,7 +134,7 @@
       "color": "0C55A5",
       "style": "for-the-badge",
       "logo": "scipy",
-      "logoColor": "%white"
+      "logoColor": "ffffff"
     },
     {
       "id": "ultralytics",

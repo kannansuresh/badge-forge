@@ -18,7 +18,7 @@
       "message": "Apache Airflow",
       "color": "017CEE",
       "style": "for-the-badge",
-      "logo": "Apache Airflow",
+      "logo": "apacheairflow",
       "logoColor": "ffffff"
     },
     {
@@ -27,7 +27,7 @@
       "message": "Apache Ant",
       "color": "A81C7D",
       "style": "for-the-badge",
-      "logo": "Apache Ant",
+      "logo": "apacheant",
       "logoColor": "ffffff"
     },
     {
@@ -36,7 +36,7 @@
       "message": "Apache Flink",
       "color": "E6526F",
       "style": "for-the-badge",
-      "logo": "Apache Flink",
+      "logo": "apacheflink",
       "logoColor": "ffffff"
     },
     {
@@ -45,7 +45,7 @@
       "message": "Apache Maven",
       "color": "C71A36",
       "style": "for-the-badge",
-      "logo": "Apache Maven",
+      "logo": "apachemaven",
       "logoColor": "ffffff"
     },
     {
@@ -54,14 +54,14 @@
       "message": "apache tomcat",
       "color": "F8DC75",
       "style": "for-the-badge",
-      "logo": "apache-tomcat",
-      "logoColor": "000000"
+      "logo": "apachetomcat",
+      "logoColor": "ffffff"
     },
     {
       "id": "gunicorn",
       "label": "",
       "message": "gunicorn",
-      "color": ")8729",
+      "color": "872999",
       "style": "for-the-badge",
       "logo": "gunicorn",
       "logoColor": "ffffff"
@@ -109,13 +109,13 @@
       "color": "fedd00",
       "style": "for-the-badge",
       "logo": "progress",
-      "logoColor": "5ce500"
+      "logoColor": "ffffff"
     },
     {
       "id": "traefikproxy",
       "label": "",
       "message": "Traefik",
-      "color": "%2300314b",
+      "color": "2300314b",
       "style": "for-the-badge",
       "logo": "traefikproxy",
       "logoColor": "ffffff"

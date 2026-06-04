@@ -9,7 +9,7 @@
       "message": ".NET",
       "color": "5C2D91",
       "style": "for-the-badge",
-      "logo": ".net",
+      "logo": "dotnet",
       "logoColor": "ffffff"
     },
     {
@@ -34,10 +34,10 @@
       "id": "alpine-js",
       "label": "",
       "message": "alpinejs",
-      "color": "white",
+      "color": "ffffff",
       "style": "for-the-badge",
       "logo": "alpinedotjs",
-      "logoColor": "8bc0d0"
+      "logoColor": "ffffff"
     },
     {
       "id": "amd",
@@ -71,7 +71,7 @@
       "color": "66CCFF",
       "style": "for-the-badge",
       "logo": "apachehadoop",
-      "logoColor": "000000"
+      "logoColor": "ffffff"
     },
     {
       "id": "apache-hive",
@@ -80,15 +80,16 @@
       "color": "FDEE21",
       "style": "for-the-badge",
       "logo": "apachehive",
-      "logoColor": "000000"
+      "logoColor": "ffffff"
     },
     {
       "id": "apache-kafka",
       "label": "",
       "message": "Apache Kafka",
-      "color": "000",
+      "color": "000000",
       "style": "for-the-badge",
-      "logo": "apachekafka"
+      "logo": "apachekafka",
+      "logoColor": "ffffff"
     },
     {
       "id": "apache-spark",
@@ -105,7 +106,8 @@
       "message": "ApolloGraphQL",
       "color": "311C87",
       "style": "for-the-badge",
-      "logo": "apollo-graphql"
+      "logo": "apollographql",
+      "logoColor": "ffffff"
     },
     {
       "id": "arm",
@@ -123,7 +125,7 @@
       "color": "ED2B88",
       "style": "for-the-badge",
       "logo": "aurelia",
-      "logoColor": "fff"
+      "logoColor": "ffffff"
     },
     {
       "id": "biome",
@@ -159,7 +161,7 @@
       "color": "7957D5",
       "style": "for-the-badge",
       "logo": "buefy",
-      "logoColor": "48289e"
+      "logoColor": "ffffff"
     },
     {
       "id": "celery",
@@ -168,7 +170,7 @@
       "color": "a9cc54",
       "style": "for-the-badge",
       "logo": "celery",
-      "logoColor": "ddf4a4"
+      "logoColor": "ffffff"
     },
     {
       "id": "chakra-ui",
@@ -185,7 +187,7 @@
       "message": "chart.js",
       "color": "F5788D",
       "style": "for-the-badge",
-      "logo": "chart.js",
+      "logo": "chartdotjs",
       "logoColor": "ffffff"
     },
     {
@@ -194,7 +196,7 @@
       "message": "CodeIgniter",
       "color": "EF4223",
       "style": "for-the-badge",
-      "logo": "codeIgniter",
+      "logo": "codeigniter",
       "logoColor": "ffffff"
     },
     {
@@ -221,7 +223,8 @@
       "message": "Context-Api",
       "color": "000000",
       "style": "for-the-badge",
-      "logo": "react"
+      "logo": "react",
+      "logoColor": "ffffff"
     },
     {
       "id": "cuda",
@@ -229,8 +232,8 @@
       "message": "cuda",
       "color": "000000",
       "style": "for-the-badge",
-      "logo": "nVIDIA",
-      "logoColor": "00ff00"
+      "logo": "nvidia",
+      "logoColor": "ffffff"
     },
     {
       "id": "d3-js",
@@ -238,7 +241,8 @@
       "message": "D3.JS",
       "color": "000000",
       "style": "for-the-badge",
-      "logo": "D3"
+      "logo": "d3",
+      "logoColor": "ffffff"
     },
     {
       "id": "daisyui",
@@ -262,7 +266,7 @@
       "id": "directus",
       "label": "",
       "message": "directus",
-      "color": "64f",
+      "color": "64ffff",
       "style": "for-the-badge",
       "logo": "directus",
       "logoColor": "ffffff"
@@ -292,7 +296,7 @@
       "color": "B4CA65",
       "style": "for-the-badge",
       "logo": "ejs",
-      "logoColor": "000000"
+      "logoColor": "ffffff"
     },
     {
       "id": "elasticsearch",
@@ -309,7 +313,7 @@
       "message": "Electron",
       "color": "191970",
       "style": "for-the-badge",
-      "logo": "Electron",
+      "logo": "electron",
       "logoColor": "ffffff"
     },
     {
@@ -318,7 +322,8 @@
       "message": "ember",
       "color": "1C1E24",
       "style": "for-the-badge",
-      "logo": "ember.js"
+      "logo": "emberdotjs",
+      "logoColor": "ffffff"
     },
     {
       "id": "fastify",
@@ -336,7 +341,7 @@
       "color": "FDAE4B",
       "style": "for-the-badge",
       "logo": "filament",
-      "logoColor": "000000"
+      "logoColor": "ffffff"
     },
     {
       "id": "flatpak",
@@ -381,7 +386,7 @@
       "color": "FFFFFF",
       "style": "for-the-badge",
       "logo": "grav",
-      "logoColor": "221e1f"
+      "logoColor": "ffffff"
     },
     {
       "id": "green-sock",
@@ -390,7 +395,7 @@
       "color": "88CE02",
       "style": "for-the-badge",
       "logo": "greensock",
-      "logoColor": "000000"
+      "logoColor": "ffffff"
     },
     {
       "id": "gsap",
@@ -399,7 +404,7 @@
       "color": "88CE02",
       "style": "for-the-badge",
       "logo": "greensock",
-      "logoColor": "000000"
+      "logoColor": "ffffff"
     },
     {
       "id": "gutenberg",
@@ -435,7 +440,7 @@
       "color": "FBB040",
       "style": "for-the-badge",
       "logo": "homebrew",
-      "logoColor": "000000"
+      "logoColor": "ffffff"
     },
     {
       "id": "hono",
@@ -459,18 +464,19 @@
       "id": "hugo",
       "label": "",
       "message": "Hugo",
-      "color": "black",
+      "color": "000000",
       "style": "for-the-badge",
-      "logo": "Hugo"
+      "logo": "hugo",
+      "logoColor": "ffffff"
     },
     {
       "id": "insomnia",
       "label": "",
       "message": "Insomnia",
-      "color": "black",
+      "color": "000000",
       "style": "for-the-badge",
       "logo": "insomnia",
-      "logoColor": "5849be"
+      "logoColor": "ffffff"
     },
     {
       "id": "jamstack",
@@ -501,10 +507,10 @@
       "id": "jinja",
       "label": "",
       "message": "jinja",
-      "color": "white",
+      "color": "ffffff",
       "style": "for-the-badge",
       "logo": "jinja",
-      "logoColor": "000000"
+      "logoColor": "ffffff"
     },
     {
       "id": "joomla",
@@ -531,15 +537,16 @@
       "color": "f5f5f5",
       "style": "for-the-badge",
       "logo": "junit5",
-      "logoColor": "dc524a"
+      "logoColor": "ffffff"
     },
     {
       "id": "jwt-json-web-token",
       "label": "",
       "message": "JWT",
-      "color": "black",
+      "color": "000000",
       "style": "for-the-badge",
-      "logo": "JSON web tokens"
+      "logo": "jsonwebtokens",
+      "logoColor": "ffffff"
     },
     {
       "id": "ktor",
@@ -547,7 +554,7 @@
       "message": "Ktor",
       "color": "087CFA",
       "style": "for-the-badge",
-      "logo": "Ktor",
+      "logo": "ktor",
       "logoColor": "ffffff"
     },
     {
@@ -610,7 +617,7 @@
       "message": "Node-RED",
       "color": "8F0000",
       "style": "for-the-badge",
-      "logo": "node-red",
+      "logo": "nodered",
       "logoColor": "ffffff"
     },
     {
@@ -620,7 +627,7 @@
       "color": "323330",
       "style": "for-the-badge",
       "logo": "nodemon",
-      "logoColor": "�dead"
+      "logoColor": "ffffff"
     },
     {
       "id": "npm",
@@ -646,7 +653,8 @@
       "message": "OpenGL",
       "color": "FFFFFF",
       "style": "for-the-badge",
-      "logo": "opengl"
+      "logo": "opengl",
+      "logoColor": "ffffff"
     },
     {
       "id": "oxc",
@@ -663,7 +671,7 @@
       "message": "p5.js",
       "color": "ED225D",
       "style": "for-the-badge",
-      "logo": "p5.js",
+      "logo": "p5dotjs",
       "logoColor": "ffffff"
     },
     {
@@ -673,7 +681,7 @@
       "color": "FFDC28",
       "style": "for-the-badge",
       "logo": "pantheon",
-      "logoColor": "000000"
+      "logoColor": "ffffff"
     },
     {
       "id": "phoenix-framework",
@@ -682,7 +690,7 @@
       "color": "FD4F00",
       "style": "for-the-badge",
       "logo": "phoenixframework",
-      "logoColor": "000000"
+      "logoColor": "ffffff"
     },
     {
       "id": "photon",
@@ -700,7 +708,7 @@
       "color": "2CFFAA",
       "style": "for-the-badge",
       "logo": "pipx",
-      "logoColor": "000000"
+      "logoColor": "ffffff"
     },
     {
       "id": "pkgsrc",
@@ -715,10 +723,10 @@
       "id": "platformio",
       "label": "",
       "message": "platformio",
-      "color": "000",
+      "color": "000000",
       "style": "for-the-badge",
       "logo": "platformio",
-      "logoColor": "f5822a"
+      "logoColor": "ffffff"
     },
     {
       "id": "plotly-dash",
@@ -736,7 +744,7 @@
       "color": "4a4a4a",
       "style": "for-the-badge",
       "logo": "pnpm",
-      "logoColor": "f69220"
+      "logoColor": "ffffff"
     },
     {
       "id": "poetry",
@@ -745,7 +753,7 @@
       "color": "3B82F6",
       "style": "for-the-badge",
       "logo": "poetry",
-      "logoColor": "0b3d8d"
+      "logoColor": "ffffff"
     },
     {
       "id": "postcss",
@@ -772,7 +780,7 @@
       "color": "192a32",
       "style": "for-the-badge",
       "logo": "prettier",
-      "logoColor": "dc524a"
+      "logoColor": "ffffff"
     },
     {
       "id": "primefaces",
@@ -785,10 +793,10 @@
       "id": "pug",
       "label": "",
       "message": "Pug",
-      "color": "FFF",
+      "color": "FFFFFF",
       "style": "for-the-badge",
       "logo": "pug",
-      "logoColor": "a86454"
+      "logoColor": "ffffff"
     },
     {
       "id": "pydantic",
@@ -805,7 +813,7 @@
       "message": "Qt",
       "color": "217346",
       "style": "for-the-badge",
-      "logo": "Qt",
+      "logo": "qt",
       "logoColor": "ffffff"
     },
     {
@@ -824,7 +832,7 @@
       "color": "16B7FB",
       "style": "for-the-badge",
       "logo": "quasar",
-      "logoColor": "000000"
+      "logoColor": "ffffff"
     },
     {
       "id": "qwik",
@@ -850,7 +858,7 @@
       "message": "radix ui",
       "color": "161618",
       "style": "for-the-badge",
-      "logo": "radix-ui",
+      "logo": "radixui",
       "logoColor": "ffffff"
     },
     {
@@ -860,7 +868,7 @@
       "color": "FFFFFF",
       "style": "for-the-badge",
       "logo": "raylib",
-      "logoColor": "000000"
+      "logoColor": "ffffff"
     },
     {
       "id": "react-hook-form",
@@ -877,7 +885,7 @@
       "message": "React Query",
       "color": "FF4154",
       "style": "for-the-badge",
-      "logo": "react query",
+      "logo": "reactquery",
       "logoColor": "ffffff"
     },
     {
@@ -886,7 +894,7 @@
       "message": "React Router",
       "color": "CA4245",
       "style": "for-the-badge",
-      "logo": "react-router",
+      "logo": "reactrouter",
       "logoColor": "ffffff"
     },
     {
@@ -902,7 +910,7 @@
       "id": "remix",
       "label": "",
       "message": "remix",
-      "color": "000",
+      "color": "000000",
       "style": "for-the-badge",
       "logo": "remix",
       "logoColor": "ffffff"
@@ -956,9 +964,9 @@
       "id": "sass",
       "label": "",
       "message": "SASS",
-      "color": "hotpink",
+      "color": "CC6699",
       "style": "for-the-badge",
-      "logo": "SASS",
+      "logo": "sass",
       "logoColor": "ffffff"
     },
     {
@@ -968,7 +976,7 @@
       "color": "60a839",
       "style": "for-the-badge",
       "logo": "scrapy",
-      "logoColor": "d1d2d3"
+      "logoColor": "ffffff"
     },
     {
       "id": "semantic-ui-react",
@@ -976,7 +984,7 @@
       "message": "Semantic UI React",
       "color": "35BDB2",
       "style": "for-the-badge",
-      "logo": "SemanticUIReact",
+      "logo": "semanticuireact",
       "logoColor": "ffffff"
     },
     {
@@ -992,9 +1000,10 @@
       "id": "socket-io",
       "label": "",
       "message": "Socket.io",
-      "color": "black",
+      "color": "000000",
       "style": "for-the-badge",
-      "logo": "socket.io"
+      "logo": "socketdotio",
+      "logoColor": "ffffff"
     },
     {
       "id": "solidjs",
@@ -1003,7 +1012,7 @@
       "color": "2c4f7c",
       "style": "for-the-badge",
       "logo": "solid",
-      "logoColor": "c8c9cb"
+      "logoColor": "ffffff"
     },
     {
       "id": "strapi",
@@ -1029,7 +1038,7 @@
       "message": "styled-components",
       "color": "DB7093",
       "style": "for-the-badge",
-      "logo": "styled-components",
+      "logo": "styledcomponents",
       "logoColor": "ffffff"
     },
     {
@@ -1063,9 +1072,9 @@
       "id": "three-js",
       "label": "",
       "message": "threejs",
-      "color": "black",
+      "color": "000000",
       "style": "for-the-badge",
-      "logo": "three.js",
+      "logo": "threedotjs",
       "logoColor": "ffffff"
     },
     {
@@ -1074,7 +1083,7 @@
       "message": "Thymeleaf",
       "color": "005C0F",
       "style": "for-the-badge",
-      "logo": "Thymeleaf",
+      "logo": "thymeleaf",
       "logoColor": "ffffff"
     },
     {
@@ -1108,8 +1117,8 @@
       "message": "UnJs",
       "color": "ECDC5A",
       "style": "for-the-badge",
-      "logo": "UnJs",
-      "logoColor": "000000"
+      "logo": "unjs",
+      "logoColor": "ffffff"
     },
     {
       "id": "unocss",
@@ -1153,7 +1162,7 @@
       "message": "web3.js",
       "color": "F16822",
       "style": "for-the-badge",
-      "logo": "web3.js",
+      "logo": "web3dotjs",
       "logoColor": "ffffff"
     },
     {
@@ -1187,7 +1196,7 @@
       "message": "WordPress",
       "color": "117AC9",
       "style": "for-the-badge",
-      "logo": "WordPress",
+      "logo": "wordpress",
       "logoColor": "ffffff"
     },
     {
