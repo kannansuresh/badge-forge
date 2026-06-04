@@ -32,8 +32,8 @@ const navItems: NavItem[] = [
   { label: 'Gallery', href: `${base}gallery`, match: (p) => p.startsWith('/gallery') },
   {
     label: 'My Badges',
-    href: `${base}dashboard`,
-    match: (p) => p === '/dashboard' || p === '/badge',
+    href: `${base}my-badges`,
+    match: (p) => p === '/my-badges' || p === '/badge',
   },
 ];
 ---
@@ -262,7 +262,7 @@ const navItems: NavItem[] = [
             <ul class="space-y-2 text-sm text-base-content/70">
               <li><a href={`${base}forge`} class="link link-hover">Forge</a></li>
               <li><a href={`${base}gallery`} class="link link-hover">Gallery</a></li>
-              <li><a href={`${base}dashboard`} class="link link-hover">My Badges</a></li>
+              <li><a href={`${base}my-badges`} class="link link-hover">My Badges</a></li>
               <li><a href={`${base}categories`} class="link link-hover">Categories</a></li>
             </ul>
           </div>
@@ -318,7 +318,7 @@ const navItems: NavItem[] = [
           : match === 'gallery'
             ? path.startsWith('/gallery')
             : match === 'mybadges'
-              ? path === '/dashboard' || path === '/badge'
+              ? path === '/my-badges' || path === '/badge'
               : path === '/' + match;
       link.classList.toggle('bg-primary/10', isActive);
       link.classList.toggle('text-primary', isActive);

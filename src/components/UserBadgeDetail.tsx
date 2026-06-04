@@ -158,7 +158,7 @@ export default function UserBadgeDetail() {
         <p className="text-base-content/60 mb-6">
           This badge may have been deleted or the ID is invalid.
         </p>
-        <a href={`${base}dashboard`} className="btn btn-primary">
+        <a href={`${base}my-badges`} className="btn btn-primary">
           Go to My Badges
         </a>
       </div>
@@ -171,7 +171,7 @@ export default function UserBadgeDetail() {
       <div className="text-center py-20">
         <h1 className="text-2xl font-bold mb-2">Badge Deleted</h1>
         <p className="text-base-content/60 mb-6">This badge has been permanently removed.</p>
-        <a href={`${base}dashboard`} className="btn btn-primary">
+        <a href={`${base}my-badges`} className="btn btn-primary">
           Go to My Badges
         </a>
       </div>
@@ -184,7 +184,7 @@ export default function UserBadgeDetail() {
     <>
       {/* Back link */}
       <a
-        href={`${base}dashboard`}
+        href={`${base}my-badges`}
         className="inline-flex items-center gap-2 text-sm text-base-content/60 hover:text-base-content transition-colors mb-6"
       >
         <ArrowLeft className="w-4 h-4" />
