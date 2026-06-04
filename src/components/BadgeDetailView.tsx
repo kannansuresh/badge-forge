@@ -102,7 +102,7 @@ export default function BadgeDetailView({
       {header}
 
       {/* Unified detail card */}
-      <div className="card bg-base-100 border border-base-300/50 card-lift overflow-hidden">
+      <div className="card bg-base-100 border border-base-300/50 overflow-hidden">
         {/* Badge preview hero — badge centered, zoom floating */}
         <div className="bg-base-200/50 px-6 py-14 flex items-center justify-center relative">
           {imgError ? (
