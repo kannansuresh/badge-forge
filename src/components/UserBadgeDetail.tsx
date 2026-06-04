@@ -11,7 +11,7 @@ import {
 } from 'lucide-react';
 import { useCallback, useEffect, useState } from 'react';
 import { copyToClipboard } from '../lib/dom';
-import { COPY_FORMATS, downloadSvg, getSnippet, type CopyFormatKey } from '../lib/formats';
+import { COPY_FORMATS, getSnippet, type CopyFormatKey } from '../lib/formats';
 import {
   buildShieldsUrl,
   deleteBadge,
@@ -80,10 +80,6 @@ export default function UserBadgeDetail() {
     },
     [shieldsUrl],
   );
-  const handleDownloadSvg = useCallback(() => {
-    if (!badge) return;
-    downloadSvg(shieldsUrl, badge.name || badge.message);
-  }, [badge, shieldsUrl]);
   const handleEdit = useCallback(() => {
     if (!badge) return;
     writeClipboard({
@@ -234,16 +230,21 @@ export default function UserBadgeDetail() {
                 <button className="btn btn-xs btn-ghost" onClick={() => setExpandCode(!expandCode)}>
                   {expandCode ? 'Show less' : 'All formats'}
                 </button>
-                <button className="btn btn-xs btn-ghost gap-1" onClick={handleDownloadSvg}>
+                <a
+                  className="btn btn-xs btn-ghost gap-1"
+                  href={`${shieldsUrl.replace('?', '?format=svg&')}`}
+                  download={`${badge.message}.svg`}
+                >
                   <Download className="w-3 h-3" /> SVG
-                </button>
+                </a>
               </div>
             </div>
+            {/* Always 3 quick-copy buttons (matches Gallery) */}
             <div className="flex flex-wrap gap-2">
-              {(expandCode ? COPY_FORMATS : COPY_FORMATS.slice(0, 3)).map(({ key, label }) => (
+              {COPY_FORMATS.slice(0, 3).map(({ key, label }) => (
                 <button
                   key={key}
-                  className={`btn btn-xs gap-1 ${copiedKey === key ? 'btn-success' : 'btn-outline'}`}
+                  className={`btn btn-xs btn-outline gap-1 ${copiedKey === key ? 'btn-success' : ''}`}
                   onClick={() => copy(key)}
                 >
                   {copiedKey === key ? (
@@ -258,33 +259,32 @@ export default function UserBadgeDetail() {
                 </button>
               ))}
             </div>
-            {expandCode && (
-              <div className="space-y-2 mt-3">
-                {COPY_FORMATS.map(({ key, label }) => (
-                  <div key={key} className="bg-base-200 rounded-btn p-3">
-                    <div className="flex items-center justify-between mb-1">
-                      <span className="text-xs font-semibold text-base-content/50">{label}</span>
-                      <button
-                        className={`btn btn-xs ${copiedKey === key ? 'btn-success' : 'btn-ghost'}`}
-                        onClick={() => copy(key)}
-                      >
-                        {copiedKey === key ? (
-                          <>
-                            <Check className="w-3 h-3" /> Copied
-                          </>
-                        ) : (
-                          <>
-                            <Copy className="w-3 h-3" /> Copy
-                          </>
-                        )}
-                      </button>
-                    </div>
-                    {/* prettier-ignore */}
-                    <pre className="text-xs font-mono text-base-content/80 overflow-x-auto whitespace-pre-wrap break-all">{getSnippet(key, shieldsUrl)}</pre>
+            {/* Expandable all-formats section (matches Gallery data-expanded-code) */}
+            <div className={`space-y-2 mt-3 ${expandCode ? '' : 'hidden'}`}>
+              {COPY_FORMATS.map(({ key, label }) => (
+                <div key={key} className="bg-base-200 rounded-btn p-3">
+                  <div className="flex items-center justify-between mb-1">
+                    <span className="text-xs font-semibold text-base-content/50">{label}</span>
+                    <button
+                      className={`btn btn-xs btn-ghost ${copiedKey === key ? 'btn-success' : ''}`}
+                      onClick={() => copy(key)}
+                    >
+                      {copiedKey === key ? (
+                        <>
+                          <Check className="w-3 h-3" /> Copied
+                        </>
+                      ) : (
+                        <>
+                          <Copy className="w-3 h-3" /> Copy
+                        </>
+                      )}
+                    </button>
                   </div>
-                ))}
-              </div>
-            )}
+                  {/* prettier-ignore */}
+                  <pre className="text-xs font-mono text-base-content/80 overflow-x-auto whitespace-pre-wrap break-all">{getSnippet(key, shieldsUrl)}</pre>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
       </div>

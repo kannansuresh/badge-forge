@@ -928,7 +928,7 @@ function CopyTabs({ shieldsUrl, alt }: { shieldsUrl: string; alt?: string | unde
             {copied ? '✓ Copied!' : 'Copy'}
           </button>
         </div>
-        <div className="bg-neutral text-neutral-content rounded-box p-3 text-xs font-mono max-w-full overflow-hidden -mt-px">
+        <div className="bg-base-200 rounded-box p-3 text-xs font-mono max-w-full overflow-hidden -mt-px">
           <code className="break-all whitespace-pre-wrap">{snippets[tab]}</code>
         </div>
       </div>
