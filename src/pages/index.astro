@@ -1,8 +1,24 @@
 ---
 import { Icon } from 'astro-icon/components';
 import Layout from '../layouts/Layout.astro';
+import { getCollection } from 'astro:content';
 
 const base = import.meta.env.BASE_URL.replace(/\/?$/, '/');
+
+// Compute real stats from gallery content
+const gallery = await getCollection('gallery');
+const categoryCount = gallery.length;
+const totalBadges = gallery.reduce((sum, entry) => sum + entry.data.badges.length, 0);
+
+// Simple icons v16+ ships ~3,500 icons — get actual count from package
+let iconCount = 3400; // fallback
+try {
+  const iconsMod = await import('simple-icons/icons.json');
+  const icons = Array.isArray(iconsMod.default) ? iconsMod.default : iconsMod;
+  if (Array.isArray(icons)) iconCount = icons.length;
+} catch {
+  /* keep fallback */
+}
 ---
 
 <Layout
@@ -21,7 +37,7 @@ const base = import.meta.env.BASE_URL.replace(/\/?$/, '/');
           ></span>
           <span class="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
         </span>
-        v1.0 • 3,400+ Brand Icons
+        v1.0 • {iconCount.toLocaleString()}+ Brand Icons
       </div>
 
       <h1
@@ -90,15 +106,17 @@ const base = import.meta.env.BASE_URL.replace(/\/?$/, '/');
     <div class="max-w-5xl mx-auto px-4 py-10">
       <div class="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
         <div>
-          <div class="text-3xl font-bold text-primary">3,400+</div>
+          <div class="text-3xl font-bold text-primary">{iconCount.toLocaleString()}+</div>
           <div class="text-sm text-base-content/60 mt-1">Brand Icons</div>
         </div>
         <div>
-          <div class="text-3xl font-bold text-secondary">52</div>
-          <div class="text-sm text-base-content/60 mt-1">Categories</div>
+          <div class="text-3xl font-bold text-secondary">{categoryCount}</div>
+          <div class="text-sm text-base-content/60 mt-1">
+            Categor{categoryCount === 1 ? 'y' : 'ies'}
+          </div>
         </div>
         <div>
-          <div class="text-3xl font-bold text-accent">940+</div>
+          <div class="text-3xl font-bold text-accent">{totalBadges.toLocaleString()}</div>
           <div class="text-sm text-base-content/60 mt-1">Curated Badges</div>
         </div>
         <div>
