@@ -357,7 +357,9 @@ export default function LiveStudio({ initialParams }: LiveStudioProps) {
             <p className="fieldset-label">Left side text — leave blank for message-only</p>
           </fieldset>
           <fieldset className="fieldset">
-            <legend className="fieldset-legend">Message</legend>
+            <legend className="fieldset-legend">
+              Message <span className="text-error text-xs">*</span>
+            </legend>
             <input
               id="badge-message"
               name="message"
@@ -366,6 +368,7 @@ export default function LiveStudio({ initialParams }: LiveStudioProps) {
               value={params.message}
               onChange={(e) => updateParam('message', e.target.value)}
               placeholder="passing"
+              required
             />
             <p className="fieldset-label">Right side text — the main badge content</p>
           </fieldset>
@@ -387,6 +390,7 @@ export default function LiveStudio({ initialParams }: LiveStudioProps) {
             value={params.color}
             onChange={(v) => updateParam('color', v)}
             placeholder="6366f1"
+            required
             hint="Background color for the message (right) side"
           />
         </div>
@@ -431,7 +435,7 @@ export default function LiveStudio({ initialParams }: LiveStudioProps) {
                 if (localStorage.getItem('badgeforge-icon-previews') === null)
                   setShowIconOptIn(true);
               }}
-              placeholder="react"
+              placeholder="Type to search icons…"
               autoComplete="off"
             />
             {params.logo && !showLogoDropdown && (
@@ -771,6 +775,7 @@ function ColorInput({
   onChange,
   placeholder,
   hint,
+  required,
 }: {
   id: string;
   label: string;
@@ -778,10 +783,14 @@ function ColorInput({
   onChange: (v: string) => void;
   placeholder: string;
   hint?: string;
+  required?: boolean;
 }) {
   return (
     <fieldset className="fieldset">
-      <legend className="fieldset-legend">{label}</legend>
+      <legend className="fieldset-legend">
+        {label}
+        {required && <span className="text-error text-xs"> *</span>}
+      </legend>
       <div className="join w-full">
         <span className="join-item bg-base-200 px-3 flex items-center text-sm font-mono ring-1 ring-inset ring-base-300">
           #
