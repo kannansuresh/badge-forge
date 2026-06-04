@@ -1,6 +1,7 @@
 import {
   BookOpen,
   Check,
+  ChevronDown,
   Code2,
   Copy,
   FileCode,
@@ -799,9 +800,12 @@ function ColorInput({
           <div
             tabIndex={0}
             role="button"
-            className="w-10 h-full cursor-pointer rounded-r-box ring-1 ring-inset ring-base-300"
+            className="tooltip w-10 h-full cursor-pointer rounded-r-box ring-1 ring-inset ring-base-300 flex items-center justify-center hover:ring-2 hover:ring-base-content/30 transition-all"
             style={{ backgroundColor: value ? `#${value}` : '#ccc' }}
-          />
+            data-tip="Pick a color"
+          >
+            <ChevronDown className="w-3.5 h-3.5 text-white drop-shadow-[0_1px_2px_rgba(0,0,0,0.6)] pointer-events-none" />
+          </div>
           <div
             tabIndex={0}
             className="dropdown-content z-30 mt-1 p-2 shadow bg-base-100 rounded-box border border-base-300 w-48"
