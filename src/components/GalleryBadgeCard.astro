@@ -1,4 +1,6 @@
 ---
+import { Icon } from 'astro-icon/components';
+
 export interface Props {
   id: string;
   label: string;
@@ -8,7 +10,7 @@ export interface Props {
   logoColor?: string;
   style?: 'flat' | 'flat-square' | 'plastic' | 'for-the-badge' | 'social';
   labelColor?: string;
-  /** File-path-based category identifier for URL routing (e.g., "backup/ai-bots"). */
+  /** File-path-based category identifier for URL routing (e.g., "ai-bots"). */
   categoryPath?: string;
   /** JSON categorySlug for Dexie category seeding reference. */
   categorySlug?: string;
@@ -108,7 +110,9 @@ const detailUrl = `${base}gallery/${categoryPath || categorySlug}/${Astro.props.
           title="Copy URL">URL</button
         >
       </div>
-      <button class="btn btn-xs btn-primary" data-edit data-clipboard={clipboardData}>Edit</button>
+      <button class="btn btn-xs btn-primary gap-1" data-edit data-clipboard={clipboardData}>
+        <Icon name="lucide:pencil" class="w-3 h-3" /> Edit
+      </button>
     </div>
   </div>
 </div>

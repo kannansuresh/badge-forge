@@ -168,63 +168,6 @@ const snippets: Record<string, string> = {
 </span>
 
 <script>
-  // ── Event delegation for all detail view interactions ──
-  // Works regardless of ClientRouter navigation since listeners are on document
-  document.addEventListener('click', (e) => {
-    const target = e.target as HTMLElement;
-
-    // Zoom toggle
-    const zoomBtn = target.closest('[data-zoom]') as HTMLElement | null;
-    if (zoomBtn) {
-      const zoom = parseInt(zoomBtn.getAttribute('data-zoom') || '1');
-      const img = document.querySelector('[data-zoom-img]') as HTMLElement | null;
-      if (img) img.style.transform = `scale(${zoom})`;
-      zoomBtn.parentElement?.querySelectorAll('[data-zoom]').forEach((b) => {
-        b.classList.toggle('btn-active', b === zoomBtn);
-        b.classList.toggle('btn-ghost', b !== zoomBtn);
-      });
-      return;
-    }
-
-    // Copy to clipboard
-    const copyBtn = target.closest('[data-copy]') as HTMLElement | null;
-    if (copyBtn) {
-      const key = copyBtn.getAttribute('data-copy');
-      const pre = document
-        .querySelector(`[data-expanded-code] [data-copy="${key}"]`)
-        ?.closest('.bg-base-200')
-        ?.querySelector('code');
-      const text = pre?.textContent || '';
-      if (!text) return;
-      navigator.clipboard.writeText(text).catch(() => {
-        const ta = document.createElement('textarea');
-        ta.value = text;
-        ta.style.cssText = 'position:fixed;opacity:0;';
-        document.body.appendChild(ta);
-        ta.select();
-        document.execCommand('copy');
-        document.body.removeChild(ta);
-      });
-      const origHTML = copyBtn.innerHTML;
-      copyBtn.innerHTML = '<svg class="w-3 h-3"><use href="#ai:lucide:check"/></svg> Copied';
-      copyBtn.classList.add('btn-success');
-      copyBtn.classList.remove('btn-outline', 'btn-ghost');
-      setTimeout(() => {
-        copyBtn.innerHTML = origHTML;
-        copyBtn.classList.remove('btn-success');
-        copyBtn.classList.add('btn-outline');
-      }, 2000);
-      return;
-    }
-
-    // Expand/collapse embed formats
-    const expandToggle = target.closest('[data-expand-toggle]') as HTMLElement | null;
-    if (expandToggle) {
-      const expanded = document.querySelector('[data-expanded-code]');
-      if (expanded) {
-        const isHidden = expanded.classList.toggle('hidden');
-        expandToggle.textContent = isHidden ? 'All formats' : 'Show less';
-      }
-    }
-  });
+  import { initDetailView } from '../lib/detail-view';
+  initDetailView();
 </script>

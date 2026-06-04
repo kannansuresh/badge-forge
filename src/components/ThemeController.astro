@@ -29,21 +29,14 @@
 </label>
 
 <script>
-  function readTheme(): 'dark' | 'light' {
-    const s = localStorage.getItem('theme');
-    if (s === 'dark' || s === 'light') return s;
-    return matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
-  }
+  import { initThemeListeners, syncCheckbox } from '../lib/theme';
 
-  function syncCheckbox(): void {
-    const cb = document.getElementById('theme-toggle') as HTMLInputElement | null;
-    if (cb) cb.checked = readTheme() === 'dark';
-  }
+  // Sync checkbox on initial load
+  syncCheckbox('theme-toggle');
 
-  // Attach toggle handler ONCE at init
+  // Handle toggle changes
   const checkbox = document.getElementById('theme-toggle') as HTMLInputElement | null;
   if (checkbox) {
-    syncCheckbox();
     checkbox.addEventListener('change', () => {
       const dark = checkbox.checked;
       document.documentElement.setAttribute('data-theme', dark ? 'dark' : 'light');
@@ -51,6 +44,6 @@
     });
   }
 
-  // Only re-sync checkbox state after client-side navigations
-  document.addEventListener('astro:page-load', syncCheckbox);
+  // Handle SPA navigation
+  initThemeListeners();
 </script>

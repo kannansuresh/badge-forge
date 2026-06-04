@@ -1,4 +1,4 @@
-import { ExternalLink, Pencil } from 'lucide-react';
+import { Pencil } from 'lucide-react';
 import { useCallback, useState } from 'react';
 import { buildShieldsUrl, toHtml, toMarkdown } from '../lib/storage';
 
@@ -143,11 +143,6 @@ export default function BadgeCard({
         {/* Actions — matching GalleryBadgeCard */}
         {showActions && (
           <div className="flex items-center justify-end gap-1 mt-2 pt-2 border-t border-base-300/30 flex-wrap">
-            {detailUrl && (
-              <a href={detailUrl} className="btn btn-xs btn-ghost gap-1" title="View details">
-                <ExternalLink className="w-3 h-3" /> Details
-              </a>
-            )}
             <div className="join join-horizontal">
               <button
                 className={`join-item btn btn-xs px-2 ${copied === 'md' ? 'btn-success' : 'btn-ghost'}`}

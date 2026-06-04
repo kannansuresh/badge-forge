@@ -64,7 +64,7 @@ const clipboardData = JSON.stringify({
     data-clipboard={clipboardData}
     data-dexie-slug={dexieSlug || categorySlug}
   >
-    <Icon name="lucide:bookmark" class="w-3.5 h-3.5" /> Save
+    <Icon name="lucide:bookmark" class="w-3.5 h-3.5" /> Add to My Badges
   </button>
   <button
     slot="actions"
@@ -81,74 +81,25 @@ const clipboardData = JSON.stringify({
 </BadgeDetailView>
 
 <script>
-  import { saveBadge, isDuplicate, seedDefaultCategories, getAllCategories } from '../lib/storage';
-  const base = import.meta.env.BASE_URL.replace(/\/?$/, '/');
+  import { initGalleryDetailActions, initSaveButtonState } from '../lib/gallery-detail';
 
-  function getData(el: Element) {
-    const raw = (el.getAttribute('data-clipboard') || '{}').replace(/&quot;/g, '"');
-    return JSON.parse(raw);
+  // Initialize save button (check if already saved, attach click handler)
+  initGalleryDetailActions();
+  initSaveButtonState();
+
+  // Edit button: set sessionStorage before navigating to Forge
+  function setupEditButton(): void {
+    const btn = document.querySelector<HTMLElement>('[data-edit-badge]');
+    if (!btn) return;
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      const raw = btn.getAttribute('data-clipboard') || '{}';
+      // Browser auto-decodes &quot; entities in attributes, but we handle both cases
+      const decoded = raw.includes('&quot;') ? raw.replace(/&quot;/g, '"') : raw;
+      sessionStorage.setItem('badgeforge-clipboard', decoded);
+      window.location.href = '/forge';
+    });
   }
-
-  // Attach via event delegation — works regardless of ClientRouter navigation
-  document.addEventListener('click', async (e) => {
-    const target = e.target as HTMLElement;
-    const saveBtn = target.closest('[data-save-badge]') as HTMLElement | null;
-    const editBtn = target.closest('[data-edit-badge]') as HTMLElement | null;
-
-    if (saveBtn) {
-      e.preventDefault();
-      const slug = saveBtn.getAttribute('data-dexie-slug') || '';
-      try {
-        await seedDefaultCategories();
-        const cats = await getAllCategories();
-        const match = cats.find((c: any) => c.slug === slug);
-        const categoryId = match?.id;
-        const data = getData(saveBtn);
-        const dup = await isDuplicate({
-          ...data,
-          logo: data.logo || '',
-          logoColor: data.logoColor || '',
-          logoSize: '',
-          style: data.style || 'flat',
-          labelColor: data.labelColor || '',
-          categoryId,
-        });
-        if (dup) {
-          saveBtn.classList.add('btn-disabled');
-          saveBtn.innerHTML =
-            '<svg class="w-3.5 h-3.5"><use href="#ai:lucide:bookmark"/></svg> Already saved';
-          return;
-        }
-        await saveBadge({
-          ...data,
-          logo: data.logo || '',
-          logoColor: data.logoColor || '',
-          logoSize: '',
-          style: data.style || 'flat',
-          labelColor: data.labelColor || '',
-          categoryId,
-        });
-        saveBtn.classList.add('btn-success');
-        saveBtn.innerHTML = '<svg class="w-3.5 h-3.5"><use href="#ai:lucide:check"/></svg> Saved';
-        setTimeout(() => {
-          saveBtn.classList.remove('btn-success');
-          saveBtn.classList.add('btn-primary');
-          saveBtn.innerHTML =
-            '<svg class="w-3.5 h-3.5"><use href="#ai:lucide:bookmark"/></svg> Save';
-        }, 2000);
-      } catch {
-        /* already saved */
-      }
-      return;
-    }
-
-    if (editBtn) {
-      e.preventDefault();
-      sessionStorage.setItem(
-        'badgeforge-clipboard',
-        editBtn.getAttribute('data-clipboard')?.replace(/&quot;/g, '"') || '{}',
-      );
-      window.location.href = `${base}forge`;
-    }
-  });
+  setupEditButton();
+  document.addEventListener('astro:page-load', setupEditButton);
 </script>
