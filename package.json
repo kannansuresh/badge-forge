@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
-    "build": "bun run validate && astro build",
+    "build": "bun run validate && astro build && bun run index",
+    "index": "pagefind --site dist",
     "preview": "astro preview",
     "astro": "astro",
     "validate": "bun run scripts/validate-gallery.ts",
@@ -18,11 +19,12 @@
   "dependencies": {
     "@astrojs/react": "^5.0.7",
     "@iconify-json/lucide": "^1.2.111",
-    "astro": "^6.4.3",
+    "astro": "^6.4.4",
     "astro-icon": "^1.1.5",
     "dexie": "^4.4.3",
     "dexie-export-import": "^4.4.0",
     "lucide-react": "^1.17.0",
+    "pagefind": "^1.5.2",
     "react": "^19.2.7",
     "react-dom": "^19.2.7",
     "simple-icons": "^16.22.0"

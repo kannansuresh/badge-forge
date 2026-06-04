@@ -1,0 +1,181 @@
+{
+  "categoryName": "GitHub",
+  "categorySlug": "github",
+  "categoryDescription": "GitHub profile, repository, and contribution badges.",
+  "badges": [
+    {
+      "id": "github-profile-views",
+      "label": "Profile",
+      "message": "views",
+      "color": "0E76A8",
+      "style": "for-the-badge",
+      "logo": "github",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "github-followers",
+      "label": "GitHub",
+      "message": "followers",
+      "color": "181717",
+      "style": "for-the-badge",
+      "logo": "github",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "github-stars",
+      "label": "GitHub",
+      "message": "stars",
+      "color": "181717",
+      "style": "for-the-badge",
+      "logo": "github",
+      "logoColor": "FFD700"
+    },
+    {
+      "id": "github-forks",
+      "label": "GitHub",
+      "message": "forks",
+      "color": "181717",
+      "style": "for-the-badge",
+      "logo": "github",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "github-issues",
+      "label": "GitHub",
+      "message": "issues",
+      "color": "181717",
+      "style": "for-the-badge",
+      "logo": "github",
+      "logoColor": "red"
+    },
+    {
+      "id": "github-prs",
+      "label": "GitHub",
+      "message": "pull requests",
+      "color": "181717",
+      "style": "for-the-badge",
+      "logo": "github",
+      "logoColor": "2ea44f"
+    },
+    {
+      "id": "github-actions-status",
+      "label": "CI",
+      "message": "GitHub Actions",
+      "color": "2088FF",
+      "style": "for-the-badge",
+      "logo": "githubactions",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "github-contributors",
+      "label": "GitHub",
+      "message": "contributors",
+      "color": "181717",
+      "style": "for-the-badge",
+      "logo": "github",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "github-commit-activity",
+      "label": "GitHub",
+      "message": "commit activity",
+      "color": "181717",
+      "style": "for-the-badge",
+      "logo": "github",
+      "logoColor": "2ea44f"
+    },
+    {
+      "id": "github-last-commit",
+      "label": "GitHub",
+      "message": "last commit",
+      "color": "181717",
+      "style": "for-the-badge",
+      "logo": "github",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "github-top-language",
+      "label": "GitHub",
+      "message": "top language",
+      "color": "181717",
+      "style": "for-the-badge",
+      "logo": "github",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "github-license",
+      "label": "License",
+      "message": "MIT",
+      "color": "22C55E",
+      "style": "for-the-badge"
+    },
+    {
+      "id": "github-license-apache",
+      "label": "License",
+      "message": "Apache 2.0",
+      "color": "D22128",
+      "style": "for-the-badge"
+    },
+    {
+      "id": "github-license-gpl",
+      "label": "License",
+      "message": "GPL v3",
+      "color": "BD0000",
+      "style": "for-the-badge"
+    },
+    {
+      "id": "github-sponsors-badge",
+      "label": "Sponsor",
+      "message": "GitHub Sponsors",
+      "color": "EA4AAA",
+      "style": "for-the-badge",
+      "logo": "githubsponsors",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "github-release",
+      "label": "Release",
+      "message": "v1.0.0",
+      "color": "2ea44f",
+      "style": "for-the-badge",
+      "logo": "github",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "github-repo-size",
+      "label": "Repo",
+      "message": "size",
+      "color": "181717",
+      "style": "for-the-badge",
+      "logo": "github",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "github-created",
+      "label": "Created",
+      "message": "2024",
+      "color": "2ea44f",
+      "style": "for-the-badge",
+      "logo": "github",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "github-open-source",
+      "label": "Open",
+      "message": "Source",
+      "color": "2ea44f",
+      "style": "for-the-badge",
+      "logo": "github",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "made-with-markdown",
+      "label": "Made with",
+      "message": "Markdown",
+      "color": "000000",
+      "style": "for-the-badge",
+      "logo": "markdown",
+      "logoColor": "ffffff"
+    }
+  ]
+}

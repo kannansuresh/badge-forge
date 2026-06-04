@@ -1,0 +1,151 @@
+{
+  "categoryName": "Social & Community",
+  "categorySlug": "social-community",
+  "categoryDescription": "Social media, community links, and contact badges with labels.",
+  "badges": [
+    {
+      "id": "follow-twitter",
+      "label": "Follow",
+      "message": "@username",
+      "color": "1DA1F2",
+      "style": "for-the-badge",
+      "logo": "x",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "follow-bluesky",
+      "label": "Follow",
+      "message": "@handle",
+      "color": "1185FE",
+      "style": "for-the-badge",
+      "logo": "bluesky",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "follow-mastodon",
+      "label": "Follow",
+      "message": "@user@instance",
+      "color": "6364FF",
+      "style": "for-the-badge",
+      "logo": "mastodon",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "join-discord",
+      "label": "Join",
+      "message": "Discord",
+      "color": "5865F2",
+      "style": "for-the-badge",
+      "logo": "discord",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "chat-slack",
+      "label": "Chat",
+      "message": "Slack",
+      "color": "4A154B",
+      "style": "for-the-badge",
+      "logo": "slack",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "chat-telegram",
+      "label": "Chat",
+      "message": "Telegram",
+      "color": "26A5E4",
+      "style": "for-the-badge",
+      "logo": "telegram",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "newsletter-substack",
+      "label": "Newsletter",
+      "message": "Substack",
+      "color": "FF6719",
+      "style": "for-the-badge",
+      "logo": "substack",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "youtube-subscribe",
+      "label": "YouTube",
+      "message": "Subscribe",
+      "color": "FF0000",
+      "style": "for-the-badge",
+      "logo": "youtube",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "twitch-status",
+      "label": "Twitch",
+      "message": "Live",
+      "color": "9146FF",
+      "style": "for-the-badge",
+      "logo": "twitch",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "support-ko-fi",
+      "label": "Support",
+      "message": "Ko-fi",
+      "color": "FF5E5B",
+      "style": "for-the-badge",
+      "logo": "kofi",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "support-buymeacoffee",
+      "label": "Buy Me",
+      "message": "A Coffee",
+      "color": "FFDD00",
+      "style": "for-the-badge",
+      "logo": "buymeacoffee",
+      "logoColor": "000000"
+    },
+    {
+      "id": "contact-email",
+      "label": "Contact",
+      "message": "Email",
+      "color": "EA4335",
+      "style": "for-the-badge",
+      "logo": "gmail",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "portfolio-website",
+      "label": "Portfolio",
+      "message": "Website",
+      "color": "6366F1",
+      "style": "for-the-badge",
+      "logo": "safari",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "devto-article",
+      "label": "Read on",
+      "message": "Dev.to",
+      "color": "0A0A0A",
+      "style": "for-the-badge",
+      "logo": "devdotto",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "medium-blog",
+      "label": "Read on",
+      "message": "Medium",
+      "color": "000000",
+      "style": "for-the-badge",
+      "logo": "medium",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "hashnode-blog",
+      "label": "Read on",
+      "message": "Hashnode",
+      "color": "2962FF",
+      "style": "for-the-badge",
+      "logo": "hashnode",
+      "logoColor": "ffffff"
+    }
+  ]
+}

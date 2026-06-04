@@ -3,6 +3,7 @@ import { Icon } from 'astro-icon/components';
 import { Font } from 'astro:assets';
 import { ClientRouter } from 'astro:transitions';
 import ThemeController from '../components/ThemeController.astro';
+import Search from '../components/Search.astro';
 import '../styles/global.css';
 
 export interface Props {
@@ -110,7 +111,10 @@ const navItems: NavItem[] = [
 
   <body class="min-h-screen bg-base-100 text-base-content flex flex-col font-sans">
     <!-- Navbar — glass morphism -->
-    <header class="sticky top-0 z-50 border-b border-base-300/50 bg-base-100/80 backdrop-blur-xl">
+    <header
+      class="sticky top-0 z-50 border-b border-base-300/50 bg-base-100/80 backdrop-blur-xl"
+      data-pagefind-ignore
+    >
       <div class="navbar max-w-7xl mx-auto px-4">
         <div class="navbar-start">
           <!-- Mobile menu -->
@@ -185,6 +189,7 @@ const navItems: NavItem[] = [
 
         <!-- Right actions -->
         <div class="navbar-end gap-1">
+          <Search />
           <div class="tooltip tooltip-bottom hidden sm:inline-flex" data-tip="Sponsor 💖">
             <a
               href="https://github.com/sponsors/kannansuresh"
@@ -211,12 +216,12 @@ const navItems: NavItem[] = [
     </header>
 
     <!-- Main -->
-    <main class="flex-1">
+    <main class="flex-1" data-pagefind-body>
       <slot />
     </main>
 
     <!-- Footer -->
-    <footer class="border-t border-base-300/50 bg-base-200/50">
+    <footer class="border-t border-base-300/50 bg-base-200/50" data-pagefind-ignore>
       <div class="max-w-7xl mx-auto px-4 py-12">
         <div class="grid grid-cols-1 sm:grid-cols-3 gap-8">
           <!-- Brand -->

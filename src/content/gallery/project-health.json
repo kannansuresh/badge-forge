@@ -1,0 +1,175 @@
+{
+  "categoryName": "Project Health",
+  "categorySlug": "project-health",
+  "categoryDescription": "Repository status, quality metrics, and project health badges.",
+  "badges": [
+    {
+      "id": "build-passing",
+      "label": "Build",
+      "message": "Passing",
+      "color": "22C55E",
+      "style": "for-the-badge",
+      "logo": "githubactions",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "build-failing",
+      "label": "Build",
+      "message": "Failing",
+      "color": "EF4444",
+      "style": "for-the-badge",
+      "logo": "githubactions",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "coverage-90",
+      "label": "Coverage",
+      "message": "90%",
+      "color": "22C55E",
+      "style": "for-the-badge",
+      "logo": "codecov",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "coverage-70",
+      "label": "Coverage",
+      "message": "70%",
+      "color": "F59E0B",
+      "style": "for-the-badge",
+      "logo": "codecov",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "status-active",
+      "label": "Status",
+      "message": "Active",
+      "color": "22C55E",
+      "style": "for-the-badge"
+    },
+    {
+      "id": "status-maintained",
+      "label": "Status",
+      "message": "Maintained",
+      "color": "3B82F6",
+      "style": "for-the-badge"
+    },
+    {
+      "id": "status-archived",
+      "label": "Status",
+      "message": "Archived",
+      "color": "6B7280",
+      "style": "for-the-badge"
+    },
+    {
+      "id": "version-1.0",
+      "label": "Version",
+      "message": "1.0.0",
+      "color": "6366F1",
+      "style": "for-the-badge"
+    },
+    {
+      "id": "version-beta",
+      "label": "Version",
+      "message": "beta",
+      "color": "F59E0B",
+      "style": "for-the-badge"
+    },
+    {
+      "id": "npm-version",
+      "label": "npm",
+      "message": "v2.0.0",
+      "color": "CB3837",
+      "style": "for-the-badge",
+      "logo": "npm",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "npm-downloads",
+      "label": "Downloads",
+      "message": "1M+/month",
+      "color": "CB3837",
+      "style": "for-the-badge",
+      "logo": "npm",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "docker-pulls",
+      "label": "Docker",
+      "message": "Pulls",
+      "color": "2496ED",
+      "style": "for-the-badge",
+      "logo": "docker",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "code-quality-a",
+      "label": "Code Quality",
+      "message": "A",
+      "color": "22C55E",
+      "style": "for-the-badge",
+      "logo": "sonarqube",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "security-audit",
+      "label": "Security",
+      "message": "Audited",
+      "color": "22C55E",
+      "style": "for-the-badge",
+      "logo": "snyk",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "dependencies-updated",
+      "label": "Dependencies",
+      "message": "Up to Date",
+      "color": "22C55E",
+      "style": "for-the-badge",
+      "logo": "dependabot",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "contributions-welcome",
+      "label": "PRs",
+      "message": "Welcome",
+      "color": "22C55E",
+      "style": "for-the-badge",
+      "logo": "github",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "documentation-complete",
+      "label": "Docs",
+      "message": "Complete",
+      "color": "3B82F6",
+      "style": "for-the-badge",
+      "logo": "readthedocs",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "bundle-size",
+      "label": "Size",
+      "message": "15.2 kB",
+      "color": "6366F1",
+      "style": "for-the-badge",
+      "logo": "esbuild",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "types-included",
+      "label": "Types",
+      "message": "Included",
+      "color": "3178C6",
+      "style": "for-the-badge",
+      "logo": "typescript",
+      "logoColor": "ffffff"
+    },
+    {
+      "id": "platform-cross",
+      "label": "Platform",
+      "message": "Cross-Platform",
+      "color": "6366F1",
+      "style": "for-the-badge"
+    }
+  ]
+}

@@ -1,0 +1,130 @@
+---
+// Search component using Pagefind — lazy-loaded, keyboard accessible
+---
+
+<div id="badgeforge-search" class="relative">
+  <label
+    class="input input-bordered flex items-center gap-2 w-48 sm:w-56 md:w-64"
+    for="search-input"
+  >
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      stroke-width="2"
+      class="w-4 h-4 opacity-50 shrink-0"
+    >
+      <circle cx="11" cy="11" r="8"></circle>
+      <path d="m21 21-4.35-4.35"></path>
+    </svg>
+    <input
+      id="search-input"
+      type="text"
+      class="grow bg-transparent outline-none text-sm"
+      placeholder="Search badges…"
+      autocomplete="off"
+    />
+    <kbd class="kbd kbd-xs hidden sm:inline-flex opacity-50">⌘K</kbd>
+  </label>
+
+  <!-- Pagefind results drawer -->
+  <div
+    id="search-results"
+    class="absolute top-full mt-2 right-0 w-80 sm:w-96 bg-base-100 border border-base-300 rounded-box shadow-xl hidden z-50 max-h-[70vh] overflow-y-auto"
+  >
+  </div>
+</div>
+
+<script>
+  let pagefindInstance: unknown = null;
+  let loading = false;
+  let loaded = false;
+
+  const input = document.getElementById('search-input') as HTMLInputElement | null;
+  const results = document.getElementById('search-results') as HTMLDivElement | null;
+  if (!input || !results) throw new Error('Search elements not found');
+
+  async function loadPagefind() {
+    if (loaded) return true;
+    if (loading) return false;
+    loading = true;
+    try {
+      // pagefind.js is an ES module only available after build.
+      // Use indirect eval to bypass Vite's static import analysis.
+      const dynamicImport = new Function('specifier', 'return import(specifier)');
+      pagefindInstance = await dynamicImport('/pagefind/pagefind.js');
+      loaded = true;
+      return true;
+    } catch (e) {
+      console.warn('Pagefind not available — run bun run build && bun preview', e);
+      loading = false;
+      return false;
+    }
+  }
+
+  async function search(query: string) {
+    if (!query.trim()) {
+      results!.innerHTML = '';
+      results!.classList.add('hidden');
+      return;
+    }
+    if (!loaded) {
+      const ok = await loadPagefind();
+      if (!ok) {
+        results!.innerHTML =
+          '<div class="p-4 text-sm text-error">Search unavailable — run a production build first.</div>';
+        results!.classList.remove('hidden');
+        return;
+      }
+    }
+    // @ts-expect-error — pagefind API
+    const pfResult = await pagefindInstance.search(query, { sort: { relevance: 'desc' } });
+    if (!pfResult?.results?.length) {
+      results!.innerHTML = '<div class="p-4 text-sm text-base-content/50">No results found.</div>';
+      results!.classList.remove('hidden');
+      return;
+    }
+    const items = await Promise.all(
+      pfResult.results.slice(0, 8).map(async (r: any) => {
+        const data = await r.data();
+        return `
+        <a href="${data.url}" class="flex items-start gap-3 p-3 hover:bg-base-200 transition-colors no-underline">
+          <div class="text-sm font-medium truncate">${data.meta?.title || 'Untitled'}</div>
+        </a>`;
+      }),
+    );
+    results!.innerHTML = items.join('');
+    results!.classList.remove('hidden');
+  }
+
+  let debounceTimer: ReturnType<typeof setTimeout>;
+  input.addEventListener('input', () => {
+    clearTimeout(debounceTimer);
+    debounceTimer = setTimeout(() => search(input.value), 200);
+  });
+
+  input.addEventListener('focus', () => {
+    loadPagefind();
+    if (input.value) search(input.value);
+  });
+
+  // ⌘K / Ctrl+K shortcut
+  document.addEventListener('keydown', (e) => {
+    if ((e.metaKey || e.ctrlKey) && e.key === 'k') {
+      e.preventDefault();
+      input.focus();
+      input.select();
+    }
+    if (e.key === 'Escape' && !results.classList.contains('hidden')) {
+      results.classList.add('hidden');
+      input.blur();
+    }
+  });
+
+  // Click outside to close
+  document.addEventListener('click', (e) => {
+    const container = document.getElementById('badgeforge-search');
+    if (container && !container.contains(e.target as Node)) results.classList.add('hidden');
+  });
+</script>
