@@ -132,7 +132,7 @@ export default function UserBadgeDetail() {
       labelColor: badge.labelColor || undefined,
       categoryId: badge.categoryId,
     });
-    window.location.href = `${base}builder`;
+    window.location.href = `${base}forge`;
   }, [badge, base]);
 
   const handleDelete = useCallback(async () => {

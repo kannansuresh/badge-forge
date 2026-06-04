@@ -54,7 +54,7 @@ export function initGalleryBadgeCards(): void {
           'badgeforge-clipboard',
           editBtn.getAttribute('data-clipboard') ?? '{}',
         );
-        window.location.href = `${import.meta.env.BASE_URL.replace(/\/?$/, '/')}builder`;
+        window.location.href = `${import.meta.env.BASE_URL.replace(/\/?$/, '/')}forge`;
       });
     }
   });

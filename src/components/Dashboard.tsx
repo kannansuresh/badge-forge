@@ -1,19 +1,19 @@
-import { useState, useEffect, useCallback, useMemo, useRef } from 'react';
 import { Download, Upload } from 'lucide-react';
-import BadgeCard from './BadgeCard';
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import {
-  getAllBadges,
-  getAllCategories,
-  deleteBadge,
   clearAllBadges,
   clearUserCategories,
+  deleteBadge,
   exportBadgesJson,
+  getAllBadges,
+  getAllCategories,
   importBadgesJson,
   writeClipboard,
   type SavedBadge,
   type UserCategory,
 } from '../lib/storage';
 import type { BadgeConfig } from './BadgeCard';
+import BadgeCard from './BadgeCard';
 
 export default function Dashboard({ onEditBadge }: { onEditBadge?: (badge: BadgeConfig) => void }) {
   const base = import.meta.env.BASE_URL.replace(/\/?$/, '/');
@@ -47,7 +47,7 @@ export default function Dashboard({ onEditBadge }: { onEditBadge?: (badge: Badge
           labelColor: badge.labelColor,
           categoryId: badge.categoryId,
         });
-        window.location.href = `${base}builder`;
+        window.location.href = `${base}forge`;
       }
     },
     [onEditBadge],
@@ -266,7 +266,7 @@ export default function Dashboard({ onEditBadge }: { onEditBadge?: (badge: Badge
           <p className="text-base-content/60 mb-6">
             Create badges in the Forge or import a snapshot.
           </p>
-          <a href={`${base}builder`} className="btn btn-primary">
+          <a href={`${base}forge`} className="btn btn-primary">
             Go to Forge
           </a>
         </div>

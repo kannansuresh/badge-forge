@@ -28,7 +28,7 @@ interface NavItem {
 }
 const navItems: NavItem[] = [
   { label: 'Home', href: base, match: (p) => p === '/' },
-  { label: 'Forge', href: `${base}builder`, match: (p) => p === '/builder' },
+  { label: 'Forge', href: `${base}forge`, match: (p) => p === '/forge' },
   { label: 'Gallery', href: `${base}gallery`, match: (p) => p.startsWith('/gallery') },
   {
     label: 'My Badges',
@@ -132,9 +132,18 @@ const navItems: NavItem[] = [
                     <a
                       href={item.href}
                       class:list={[
-                        '',
+                        'nav-link',
                         item.match(currentPath) && 'bg-primary/10 text-primary font-medium',
                       ]}
+                      data-match={
+                        item.label === 'Home'
+                          ? 'home'
+                          : item.label === 'Gallery'
+                            ? 'gallery'
+                            : item.label === 'My Badges'
+                              ? 'mybadges'
+                              : item.label.toLowerCase()
+                      }
                     >
                       {item.label}
                     </a>
@@ -173,11 +182,20 @@ const navItems: NavItem[] = [
                   <a
                     href={item.href}
                     class:list={[
-                      'rounded-lg transition-colors',
+                      'nav-link rounded-lg transition-colors',
                       item.match(currentPath)
                         ? 'bg-primary/10 text-primary font-semibold'
                         : 'hover:bg-base-200',
                     ]}
+                    data-match={
+                      item.label === 'Home'
+                        ? 'home'
+                        : item.label === 'Gallery'
+                          ? 'gallery'
+                          : item.label === 'My Badges'
+                            ? 'mybadges'
+                            : item.label.toLowerCase()
+                    }
                   >
                     {item.label}
                   </a>
@@ -242,7 +260,7 @@ const navItems: NavItem[] = [
           <div>
             <h4 class="font-semibold mb-3">Links</h4>
             <ul class="space-y-2 text-sm text-base-content/70">
-              <li><a href={`${base}builder`} class="link link-hover">Forge</a></li>
+              <li><a href={`${base}forge`} class="link link-hover">Forge</a></li>
               <li><a href={`${base}gallery`} class="link link-hover">Gallery</a></li>
               <li><a href={`${base}dashboard`} class="link link-hover">My Badges</a></li>
               <li><a href={`${base}categories`} class="link link-hover">Categories</a></li>
@@ -287,7 +305,25 @@ const navItems: NavItem[] = [
 
 <script>
   import { applyTheme } from '../lib/theme';
-  // Safety net: ensure theme is applied after hydration
-  // (inline script already handles initial load + astro:after-swap)
   applyTheme();
+
+  // Update active nav state after ClientRouter SPA navigation
+  function updateActiveNav() {
+    const path = window.location.pathname;
+    document.querySelectorAll('.nav-link').forEach((link) => {
+      const match = link.getAttribute('data-match');
+      const isActive =
+        match === 'home'
+          ? path === '/'
+          : match === 'gallery'
+            ? path.startsWith('/gallery')
+            : match === 'mybadges'
+              ? path === '/dashboard' || path === '/badge'
+              : path === '/' + match;
+      link.classList.toggle('bg-primary/10', isActive);
+      link.classList.toggle('text-primary', isActive);
+      link.classList.toggle('font-semibold', isActive);
+    });
+  }
+  document.addEventListener('astro:page-load', updateActiveNav);
 </script>

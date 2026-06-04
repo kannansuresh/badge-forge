@@ -173,7 +173,7 @@ export default function GalleryBadgeDetail({ badge, category }: GalleryBadgeDeta
       categorySlug: category.slug,
       categoryId,
     });
-    window.location.href = `${base}builder`;
+    window.location.href = `${base}forge`;
   }, [badge, style, category, categoryId]);
 
   return (
