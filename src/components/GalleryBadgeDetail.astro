@@ -1,6 +1,7 @@
 ---
 // GalleryBadgeDetail — Astro component for SSG gallery badge detail pages
 
+import { Icon } from 'astro-icon/components';
 import BadgeDetailView from './BadgeDetailView.astro';
 
 const {
@@ -47,7 +48,7 @@ const clipboardData = JSON.stringify({
     href={`${base}gallery/${categorySlug}`}
     class="inline-flex items-center gap-2 text-sm text-base-content/60 hover:text-base-content transition-colors mb-6"
   >
-    <svg class="w-4 h-4"><use href="#ai:lucide:arrow-left"></use></svg> Back to {categoryName}
+    <Icon name="lucide:arrow-left" class="w-4 h-4" /> Back to {categoryName}
   </a>
 
   <!-- Subtitle slot -->
@@ -63,7 +64,7 @@ const clipboardData = JSON.stringify({
     data-clipboard={clipboardData}
     data-dexie-slug={dexieSlug || categorySlug}
   >
-    <svg class="w-3.5 h-3.5"><use href="#ai:lucide:bookmark"></use></svg> Save
+    <Icon name="lucide:bookmark" class="w-3.5 h-3.5" /> Save
   </button>
   <button
     slot="actions"
@@ -71,8 +72,12 @@ const clipboardData = JSON.stringify({
     data-edit-badge
     data-clipboard={clipboardData}
   >
-    <svg class="w-3.5 h-3.5"><use href="#ai:lucide:pencil"></use></svg> Edit
+    <Icon name="lucide:pencil" class="w-3.5 h-3.5" /> Edit
   </button>
+  <!-- Hidden icon registry for JS innerHTML swaps (symbols referenced via <use href="#ai:lucide:...">) -->
+  <span style="display:none" aria-hidden="true">
+    <Icon name="lucide:check" />
+  </span>
 </BadgeDetailView>
 
 <script>
@@ -84,16 +89,21 @@ const clipboardData = JSON.stringify({
     return JSON.parse(raw);
   }
 
-  // ── Save button ──────────────────────────────────────
-  document.querySelectorAll('[data-save-badge]').forEach((btn) => {
-    btn.addEventListener('click', async () => {
-      const slug = btn.getAttribute('data-dexie-slug') || '';
+  // Attach via event delegation — works regardless of ClientRouter navigation
+  document.addEventListener('click', async (e) => {
+    const target = e.target as HTMLElement;
+    const saveBtn = target.closest('[data-save-badge]') as HTMLElement | null;
+    const editBtn = target.closest('[data-edit-badge]') as HTMLElement | null;
+
+    if (saveBtn) {
+      e.preventDefault();
+      const slug = saveBtn.getAttribute('data-dexie-slug') || '';
       try {
         await seedDefaultCategories();
         const cats = await getAllCategories();
         const match = cats.find((c: any) => c.slug === slug);
         const categoryId = match?.id;
-        const data = getData(btn);
+        const data = getData(saveBtn);
         const dup = await isDuplicate({
           ...data,
           logo: data.logo || '',
@@ -104,8 +114,8 @@ const clipboardData = JSON.stringify({
           categoryId,
         });
         if (dup) {
-          btn.classList.add('btn-disabled');
-          btn.innerHTML =
+          saveBtn.classList.add('btn-disabled');
+          saveBtn.innerHTML =
             '<svg class="w-3.5 h-3.5"><use href="#ai:lucide:bookmark"/></svg> Already saved';
           return;
         }
@@ -118,27 +128,27 @@ const clipboardData = JSON.stringify({
           labelColor: data.labelColor || '',
           categoryId,
         });
-        btn.classList.add('btn-success');
-        btn.innerHTML = '<svg class="w-3.5 h-3.5"><use href="#ai:lucide:check"/></svg> Saved';
+        saveBtn.classList.add('btn-success');
+        saveBtn.innerHTML = '<svg class="w-3.5 h-3.5"><use href="#ai:lucide:check"/></svg> Saved';
         setTimeout(() => {
-          btn.classList.remove('btn-success');
-          btn.classList.add('btn-primary');
-          btn.innerHTML = '<svg class="w-3.5 h-3.5"><use href="#ai:lucide:bookmark"/></svg> Save';
+          saveBtn.classList.remove('btn-success');
+          saveBtn.classList.add('btn-primary');
+          saveBtn.innerHTML =
+            '<svg class="w-3.5 h-3.5"><use href="#ai:lucide:bookmark"/></svg> Save';
         }, 2000);
       } catch {
         /* already saved */
       }
-    });
-  });
+      return;
+    }
 
-  // ── Edit button ──────────────────────────────────────
-  document.querySelectorAll('[data-edit-badge]').forEach((btn) => {
-    btn.addEventListener('click', () => {
+    if (editBtn) {
+      e.preventDefault();
       sessionStorage.setItem(
         'badgeforge-clipboard',
-        btn.getAttribute('data-clipboard')?.replace(/&quot;/g, '"') || '{}',
+        editBtn.getAttribute('data-clipboard')?.replace(/&quot;/g, '"') || '{}',
       );
       window.location.href = `${base}forge`;
-    });
+    }
   });
 </script>
