@@ -1,4 +1,14 @@
-import { BookOpen, Code2, FileCode, FileText, Link, RefreshCw, Save } from 'lucide-react';
+import {
+  BookOpen,
+  Check,
+  Code2,
+  Copy,
+  FileCode,
+  FileText,
+  Link,
+  RefreshCw,
+  Save,
+} from 'lucide-react';
 import { useCallback, useEffect, useLayoutEffect, useMemo, useRef, useState } from 'react';
 import { copyToClipboard } from '../lib/dom';
 import { COPY_FORMATS, getSnippet, type CopyFormatKey } from '../lib/formats';
@@ -492,15 +502,15 @@ export default function LiveStudio({ initialParams }: LiveStudioProps) {
 
         {/* Logo size toggle (for wider logos) */}
         {params.logo && (
-          <label class="flex items-center gap-2 cursor-pointer text-sm">
+          <label className="flex items-center gap-2 cursor-pointer text-sm">
             <input
               type="checkbox"
-              class="toggle toggle-sm"
+              className="toggle toggle-sm"
               checked={params.logoSize === 'auto'}
               onChange={(e) => updateParam('logoSize', e.target.checked ? 'auto' : '')}
             />
             <span>Auto-size logo</span>
-            <span class="text-base-content/40 text-xs">
+            <span className="text-base-content/40 text-xs">
               — enables adaptive resizing for wider brand icons
             </span>
           </label>
@@ -894,42 +904,59 @@ function CopyTabs({ shieldsUrl, alt }: { shieldsUrl: string; alt?: string | unde
     }
     return result;
   }, [shieldsUrl, alt]);
+  const snippet = snippets[tab] ?? '';
+
   const copy = useCallback(async () => {
-    await copyToClipboard(snippets[tab]);
+    await copyToClipboard(snippet);
     setCopied(true);
     setTimeout(() => setCopied(false), 2000);
-  }, [snippets, tab]);
+  }, [snippet]);
+
   return (
-    <div className="card bg-base-200 border border-base-300 max-w-full overflow-hidden">
-      <div className="card-body p-3 sm:p-4 gap-0">
-        <div className="flex items-start justify-between">
-          <div role="tablist" className="tabs tabs-lift">
-            {COPY_FORMATS.map(({ key, label }) => {
-              const Icon = TAB_ICONS[key];
-              return (
-                <label key={key} className={`tab gap-1 ${tab === key ? 'tab-active' : ''}`}>
-                  <input
-                    type="radio"
-                    name="copy_tabs"
-                    className="tab hidden"
-                    checked={tab === key}
-                    onChange={() => setTab(key)}
-                  />
-                  <Icon className="w-3 h-3" />
-                  <span className="text-[11px]">{label}</span>
-                </label>
-              );
-            })}
-          </div>
+    <div className="card bg-base-200 border border-base-300">
+      <div className="card-body p-3 sm:p-4 gap-3">
+        {/* Title — matches other right-side cards */}
+        <h3 className="card-title text-xs sm:text-sm opacity-70 font-medium uppercase tracking-wider">
+          <Code2 className="w-4 h-4" /> Embed code
+        </h3>
+
+        {/* Format selector */}
+        <div className="join">
+          {COPY_FORMATS.map(({ key, label }) => {
+            const Icon = TAB_ICONS[key];
+            return (
+              <button
+                key={key}
+                className={`join-item btn btn-xs gap-1 ${tab === key ? 'btn-active' : 'btn-ghost'}`}
+                onClick={() => setTab(key)}
+                title={label}
+              >
+                <Icon className="w-3 h-3" />
+                <span className="hidden sm:inline">{label}</span>
+              </button>
+            );
+          })}
+        </div>
+
+        {/* Code block with floating copy button */}
+        <div className="bg-base-100 border border-base-300/50 rounded-box overflow-hidden relative group/code">
+          <pre className="text-xs font-mono text-base-content/80 whitespace-pre-wrap break-all min-h-18 m-0 p-4 pr-20">
+            <code>{snippet}</code>
+          </pre>
           <button
-            className={`btn btn-xs shrink-0 mt-1 ${copied ? 'btn-success' : 'btn-outline'}`}
+            className={`btn btn-xs gap-1 absolute top-2 right-2 shadow-sm transition-all ${copied ? 'btn-success' : 'btn-ghost opacity-60 group-hover/code:opacity-100'}`}
             onClick={copy}
           >
-            {copied ? '✓ Copied!' : 'Copy'}
+            {copied ? (
+              <>
+                <Check className="w-3 h-3" /> Copied
+              </>
+            ) : (
+              <>
+                <Copy className="w-3 h-3" /> Copy
+              </>
+            )}
           </button>
-        </div>
-        <div className="bg-base-200 rounded-box p-3 text-xs font-mono max-w-full overflow-hidden -mt-px">
-          <code className="break-all whitespace-pre-wrap">{snippets[tab]}</code>
         </div>
       </div>
     </div>
