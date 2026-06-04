@@ -381,7 +381,7 @@ export default function LiveStudio({ initialParams }: LiveStudioProps) {
             label="Label Color"
             value={params.labelColor}
             onChange={(v) => updateParam('labelColor', v)}
-            placeholder="Optional"
+            placeholder="Hex color"
             hint="Background color for the label (left) side — leave blank for default"
           />
           <ColorInput
@@ -389,9 +389,9 @@ export default function LiveStudio({ initialParams }: LiveStudioProps) {
             label="Message Color"
             value={params.color}
             onChange={(v) => updateParam('color', v)}
-            placeholder="6366f1"
+            placeholder="Hex color"
             required
-            hint="Background color for the message (right) side"
+            hint="Required — background color for the message (right) side"
           />
         </div>
 
@@ -500,8 +500,8 @@ export default function LiveStudio({ initialParams }: LiveStudioProps) {
             label="Logo Color"
             value={params.logoColor}
             onChange={(v) => updateParam('logoColor', v)}
-            placeholder="ffffff"
-            hint="Fill color for the selected icon"
+            placeholder="Hex color"
+            hint="Color of the icon — defaults to white if blank"
           />
         </div>
 
