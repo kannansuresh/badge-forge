@@ -188,12 +188,29 @@ export default function BadgeCard({
         {showActions && (
           <div className="card-actions justify-center mt-2 pt-2 border-t border-base-300/30">
             <div className="join join-horizontal">
+              <span
+                className="join-item btn btn-xs btn-ghost px-1 pointer-events-none opacity-50"
+                title="Copy format"
+              >
+                <svg
+                  className="w-3 h-3"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                >
+                  <rect x="9" y="9" width="13" height="13" rx="2" ry="2" />
+                  <path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1" />
+                </svg>
+              </span>
               {COPY_FORMATS.map(({ key, label }) => (
                 <button
                   key={key}
                   className={`join-item btn btn-xs px-2 ${copied === key ? 'btn-success' : 'btn-ghost'}`}
                   onClick={() => copy(key)}
-                  title={`Copy ${label}`}
+                  title={`Copy as ${label}`}
                 >
                   {label}
                 </button>

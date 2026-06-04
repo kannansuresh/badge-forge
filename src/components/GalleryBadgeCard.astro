@@ -113,13 +113,19 @@ const detailUrl = `${base}gallery/${categoryPath || categorySlug}/${Astro.props.
     <!-- Actions -->
     <div class="card-actions justify-center mt-2 pt-2 border-t border-base-300/30">
       <div class="join join-horizontal">
+        <span
+          class="join-item btn btn-xs btn-ghost px-1 pointer-events-none opacity-50"
+          title="Copy format"
+        >
+          <Icon name="lucide:copy" class="w-3 h-3" />
+        </span>
         {
           COPY_FORMATS.map(({ key, label: lbl }) => (
             <button
               class="join-item btn btn-xs btn-ghost px-2"
               data-copy={key}
               data-content={quickSnippets[key]}
-              title={`Copy ${lbl}`}
+              title={`Copy as ${lbl}`}
             >
               {lbl}
             </button>
