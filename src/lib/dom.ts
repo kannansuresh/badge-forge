@@ -27,22 +27,19 @@ export function initGalleryBadgeCards(): void {
   if (typeof window === 'undefined') return;
 
   document.querySelectorAll('[data-badgecard]').forEach((card) => {
-    // Copy buttons
+    // Copy buttons — green flash, no text change (no layout shift)
     card.querySelectorAll('[data-copy]').forEach((btn) => {
       btn.addEventListener('click', async (e) => {
         e.preventDefault();
         const text = btn.getAttribute('data-content');
         if (!text) return;
         await copyToClipboard(text);
-        const orig = btn.textContent;
-        btn.textContent = '✓';
         btn.classList.add('btn-success');
         btn.classList.remove('btn-ghost');
         setTimeout(() => {
-          btn.textContent = orig;
           btn.classList.remove('btn-success');
           btn.classList.add('btn-ghost');
-        }, 1500);
+        }, 1200);
       });
     });
 

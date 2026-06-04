@@ -295,12 +295,6 @@ export function toAsciiDoc(shieldsUrl: string, alt?: string | undefined): string
   return `image:${shieldsUrl}[${label}]`;
 }
 
-/** Construct Textile badge string */
-export function toTextile(shieldsUrl: string, alt?: string | undefined): string {
-  const label = alt || 'badge';
-  return `!${shieldsUrl}(${label})!`;
-}
-
 /** Check if an identical badge (same visuals AND category) already exists */
 export async function isDuplicate(params: {
   label: string;

@@ -1,5 +1,7 @@
 ---
 import { Icon } from 'astro-icon/components';
+import { getSnippet, COPY_FORMATS } from '../lib/formats';
+import type { CopyFormatKey } from '../lib/formats';
 
 export interface Props {
   id: string;
@@ -39,8 +41,13 @@ if (labelColor) params.set('labelColor', labelColor);
 
 const esc = (s: string) => encodeURIComponent(s.replace(/-/g, '--').replace(/_/g, '__'));
 const shieldsUrl = `https://img.shields.io/badge/${esc(label)}-${esc(message)}-${color}?style=${style}${logo ? `&logo=${logo}` : ''}${logoColor ? `&logoColor=${logoColor}` : ''}${labelColor ? `&labelColor=${labelColor}` : ''}`;
-const mdSnippet = `![badge](${shieldsUrl})`;
-const htmlSnippet = `<img src="${shieldsUrl}" alt="badge" />`;
+
+// Pre-compute snippets for quick-copy buttons
+const quickSnippets: Record<CopyFormatKey, string> = {} as Record<CopyFormatKey, string>;
+for (const { key } of COPY_FORMATS) {
+  quickSnippets[key] = getSnippet(key, shieldsUrl);
+}
+
 const clipboardData = JSON.stringify({
   label,
   message,
@@ -91,28 +98,24 @@ const detailUrl = `${base}gallery/${categoryPath || categorySlug}/${Astro.props.
     <!-- Actions -->
     <div class="card-actions justify-end mt-2 pt-2 border-t border-base-300/30">
       <div class="join join-horizontal">
-        <button
-          class="join-item btn btn-xs btn-ghost px-2"
-          data-copy="md"
-          data-content={mdSnippet}
-          title="Copy Markdown">MD</button
-        >
-        <button
-          class="join-item btn btn-xs btn-ghost px-2"
-          data-copy="html"
-          data-content={htmlSnippet}
-          title="Copy HTML">HTML</button
-        >
-        <button
-          class="join-item btn btn-xs btn-ghost px-2"
-          data-copy="url"
-          data-content={shieldsUrl}
-          title="Copy URL">URL</button
-        >
+        {
+          COPY_FORMATS.map(({ key, label: lbl }) => (
+            <button
+              class="join-item btn btn-xs btn-ghost px-2"
+              data-copy={key}
+              data-content={quickSnippets[key]}
+              title={`Copy ${lbl}`}
+            >
+              {lbl}
+            </button>
+          ))
+        }
       </div>
-      <button class="btn btn-xs btn-primary gap-1" data-edit data-clipboard={clipboardData}>
-        <Icon name="lucide:pencil" class="w-3 h-3" /> Edit
-      </button>
+      <div class="tooltip tooltip-top" data-tip="Edit in Forge">
+        <button class="btn btn-xs btn-ghost" data-edit data-clipboard={clipboardData}>
+          <Icon name="lucide:pencil" class="w-3 h-3" />
+        </button>
+      </div>
     </div>
   </div>
 </div>

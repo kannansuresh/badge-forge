@@ -1,5 +1,6 @@
 import { BookOpen, Code2, FileCode, FileText, Link, RefreshCw, Save } from 'lucide-react';
 import { useCallback, useEffect, useLayoutEffect, useMemo, useRef, useState } from 'react';
+import { COPY_FORMATS, getSnippet, type CopyFormatKey } from '../lib/formats';
 import { loadIcons, searchIcons, type SimpleIconData } from '../lib/icons';
 import type { UserCategory } from '../lib/storage';
 import {
@@ -15,10 +16,6 @@ import {
   saveBadge,
   seedDefaultCategories,
   setIconPreviewPref,
-  toAsciiDoc,
-  toHtml,
-  toMarkdown,
-  toRst,
 } from '../lib/storage';
 
 interface BadgeParams {
@@ -880,28 +877,24 @@ function IconPreview({ slug, hex }: { slug: string; hex: string }) {
 }
 
 /* ── CopyTabs (inline) ───────────────────────────── */
-type TabId = 'md' | 'rst' | 'adoc' | 'html' | 'url';
-const TABS: { id: TabId; label: string; Icon: typeof FileCode }[] = [
-  { id: 'md', label: 'Markdown', Icon: FileCode },
-  { id: 'rst', label: 'RST', Icon: FileText },
-  { id: 'adoc', label: 'AsciiDoc', Icon: BookOpen },
-  { id: 'html', label: 'HTML', Icon: Code2 },
-  { id: 'url', label: 'URL', Icon: Link },
-];
+const TAB_ICONS: Record<CopyFormatKey, typeof FileCode> = {
+  url: Link,
+  md: FileCode,
+  rst: FileText,
+  asciidoc: BookOpen,
+  html: Code2,
+};
 
 function CopyTabs({ shieldsUrl, alt }: { shieldsUrl: string; alt?: string | undefined }) {
-  const [tab, setTab] = useState<TabId>('md');
+  const [tab, setTab] = useState<CopyFormatKey>('md');
   const [copied, setCopied] = useState(false);
-  const snippets = useMemo(
-    () => ({
-      md: toMarkdown(shieldsUrl, alt),
-      rst: toRst(shieldsUrl, alt),
-      adoc: toAsciiDoc(shieldsUrl, alt),
-      html: toHtml(shieldsUrl, alt),
-      url: shieldsUrl,
-    }),
-    [shieldsUrl, alt],
-  );
+  const snippets = useMemo(() => {
+    const result: Record<string, string> = {};
+    for (const { key } of COPY_FORMATS) {
+      result[key] = getSnippet(key, shieldsUrl, alt);
+    }
+    return result;
+  }, [shieldsUrl, alt]);
   const copy = useCallback(async () => {
     try {
       await navigator.clipboard.writeText(snippets[tab]);
@@ -922,19 +915,22 @@ function CopyTabs({ shieldsUrl, alt }: { shieldsUrl: string; alt?: string | unde
       <div className="card-body p-3 sm:p-4 gap-0">
         <div className="flex items-start justify-between">
           <div role="tablist" className="tabs tabs-lift">
-            {TABS.map(({ id, label, Icon }) => (
-              <label key={id} className={`tab gap-1 ${tab === id ? 'tab-active' : ''}`}>
-                <input
-                  type="radio"
-                  name="copy_tabs"
-                  className="tab hidden"
-                  checked={tab === id}
-                  onChange={() => setTab(id)}
-                />
-                <Icon className="w-3 h-3" />
-                <span className="text-[11px]">{label}</span>
-              </label>
-            ))}
+            {COPY_FORMATS.map(({ key, label }) => {
+              const Icon = TAB_ICONS[key];
+              return (
+                <label key={key} className={`tab gap-1 ${tab === key ? 'tab-active' : ''}`}>
+                  <input
+                    type="radio"
+                    name="copy_tabs"
+                    className="tab hidden"
+                    checked={tab === key}
+                    onChange={() => setTab(key)}
+                  />
+                  <Icon className="w-3 h-3" />
+                  <span className="text-[11px]">{label}</span>
+                </label>
+              );
+            })}
           </div>
           <button
             className={`btn btn-xs shrink-0 mt-1 ${copied ? 'btn-success' : 'btn-outline'}`}
