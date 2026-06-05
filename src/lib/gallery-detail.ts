@@ -124,7 +124,7 @@ function handleEdit(editBtn: HTMLElement): void {
     'badgeforge-clipboard',
     editBtn.getAttribute('data-clipboard')?.replace(/&quot;/g, '"') || '{}',
   );
-  window.location.href = '/forge';
+  window.location.href = import.meta.env.BASE_URL.replace(/\/?$/, '/') + 'forge';
 }
 
 /**

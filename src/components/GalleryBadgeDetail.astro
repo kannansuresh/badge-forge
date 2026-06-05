@@ -97,7 +97,7 @@ const clipboardData = JSON.stringify({
       // Browser auto-decodes &quot; entities in attributes, but we handle both cases
       const decoded = raw.includes('&quot;') ? raw.replace(/&quot;/g, '"') : raw;
       sessionStorage.setItem('badgeforge-clipboard', decoded);
-      window.location.href = '/forge';
+      window.location.href = import.meta.env.BASE_URL.replace(/\/?$/, '/') + 'forge';
     });
   }
   setupEditButton();
