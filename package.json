@@ -14,7 +14,9 @@
     "lint": "eslint src --ext .ts,.tsx,.astro",
     "lint:fix": "eslint src --ext .ts,.tsx,.astro --fix",
     "format": "prettier --write 'src/**/*.{ts,tsx,astro,css,json,md}'",
-    "format:check": "prettier --check 'src/**/*.{ts,tsx,astro,css,json,md}'"
+    "format:check": "prettier --check 'src/**/*.{ts,tsx,astro,css,json,md}'",
+    "fallow:check": "bunx fallow",
+    "fallow:audit": "bunx fallow audit"
   },
   "dependencies": {
     "@astrojs/react": "^5.0.7",

@@ -260,14 +260,16 @@ export function buildShieldsUrl(params: {
   const escLabel = encodeURIComponent(escapeShieldsText(label));
   const escMessage = encodeURIComponent(escapeShieldsText(message));
   const base = `https://img.shields.io/badge/${escLabel}-${escMessage}-${color}`;
-  const qs = new URLSearchParams();
-  if (logo) qs.set('logo', logo);
-  if (logoColor) qs.set('logoColor', logoColor);
-  if (logoSize) qs.set('logoSize', logoSize);
-  if (style && style !== 'flat') qs.set('style', style);
-  if (labelColor) qs.set('labelColor', labelColor);
-  const qsStr = qs.toString();
-  return qsStr ? `${base}?${qsStr}` : base;
+
+  const qsParams: Record<string, string> = {};
+  if (logo) qsParams.logo = logo;
+  if (logoColor) qsParams.logoColor = logoColor;
+  if (logoSize) qsParams.logoSize = logoSize;
+  if (style && style !== 'flat') qsParams.style = style;
+  if (labelColor) qsParams.labelColor = labelColor;
+
+  const qs = new URLSearchParams(qsParams).toString();
+  return qs ? `${base}?${qs}` : base;
 }
 
 /** Construct Markdown badge string */
@@ -306,18 +308,21 @@ export async function isDuplicate(params: {
   labelColor: string;
   categoryId?: number | undefined;
 }): Promise<boolean> {
+  const fields = [
+    'message',
+    'color',
+    'logo',
+    'logoColor',
+    'logoSize',
+    'style',
+    'labelColor',
+  ] as const;
   const match = await db.badges
     .where('label')
     .equals(params.label)
     .and(
       (b) =>
-        b.message === params.message &&
-        b.color === params.color &&
-        b.logo === params.logo &&
-        b.logoColor === params.logoColor &&
-        b.logoSize === params.logoSize &&
-        b.style === params.style &&
-        b.labelColor === params.labelColor &&
+        fields.every((f) => b[f] === params[f]) &&
         (b.categoryId ?? undefined) === (params.categoryId ?? undefined),
     )
     .first();
@@ -421,41 +426,53 @@ export async function importBadgesJson(jsonString: string): Promise<number> {
   }
 
   await db.transaction('rw', db.badges, db.categories, async () => {
-    // Build oldId → newId map for v2 imports with categories
-    const idMap = new Map<number, number>();
-    if (data.version === 2 && Array.isArray(data.categories) && data.categories.length > 0) {
-      await db.categories.clear();
-      for (const cat of data.categories as Array<Record<string, unknown>>) {
-        const oldId = typeof cat.id === 'number' ? cat.id : undefined;
-        const newId = (await db.categories.add({
-          name: String(cat.name || ''),
-          slug: String(cat.slug || ''),
-          description: String(cat.description || ''),
-          createdAt: String(cat.createdAt || new Date().toISOString()),
-          readonly: Boolean(cat.readonly),
-        })) as number;
-        if (oldId !== undefined) idMap.set(oldId, newId);
-      }
-    }
-
-    // Import badges with remapped category IDs
+    const idMap = await importCategoriesFromJson(data);
     await db.badges.clear();
-    const toInsert = data.badges.map((b: Record<string, unknown>) => ({
-      label: String(b.label || ''),
-      message: String(b.message || ''),
-      color: String(b.color || ''),
-      logo: String(b.logo || ''),
-      logoColor: String(b.logoColor || ''),
-      style: (b.style as SavedBadge['style']) || 'flat',
-      labelColor: String(b.labelColor || ''),
-      shieldsUrl: String(b.shieldsUrl || ''),
-      savedAt: String(b.savedAt || new Date().toISOString()),
-      name: String(b.name || ''),
-      categoryId:
-        typeof b.categoryId === 'number' ? (idMap.get(b.categoryId) ?? b.categoryId) : undefined,
-    }));
+    const toInsert = data.badges.map((b: Record<string, unknown>) => badgeFromJson(b, idMap));
     await db.badges.bulkAdd(toInsert);
   });
 
   return data.badges.length;
+}
+
+/** Import categories from a v2 JSON snapshot, returning an oldId → newId map. */
+async function importCategoriesFromJson(
+  data: Record<string, unknown>,
+): Promise<Map<number, number>> {
+  const idMap = new Map<number, number>();
+  if (data.version === 2 && Array.isArray(data.categories) && data.categories.length > 0) {
+    await db.categories.clear();
+    for (const cat of data.categories as Array<Record<string, unknown>>) {
+      const oldId = typeof cat.id === 'number' ? cat.id : undefined;
+      const newId = (await db.categories.add({
+        name: String(cat.name || ''),
+        slug: String(cat.slug || ''),
+        description: String(cat.description || ''),
+        createdAt: String(cat.createdAt || new Date().toISOString()),
+        readonly: Boolean(cat.readonly),
+      })) as number;
+      if (oldId !== undefined) idMap.set(oldId, newId);
+    }
+  }
+  return idMap;
+}
+
+/** Map a raw JSON badge record to the SavedBadge shape, remapping category IDs. */
+function badgeFromJson(b: Record<string, unknown>, idMap: Map<number, number>): SavedBadge {
+  const str = (key: string, fallback = '') => String(b[key] || fallback);
+  return {
+    label: str('label'),
+    message: str('message'),
+    color: str('color'),
+    logo: str('logo'),
+    logoColor: str('logoColor'),
+    logoSize: str('logoSize'),
+    style: (b.style as SavedBadge['style']) || 'flat',
+    labelColor: str('labelColor'),
+    shieldsUrl: str('shieldsUrl'),
+    savedAt: str('savedAt', new Date().toISOString()),
+    name: str('name'),
+    categoryId:
+      typeof b.categoryId === 'number' ? (idMap.get(b.categoryId) ?? b.categoryId) : undefined,
+  };
 }

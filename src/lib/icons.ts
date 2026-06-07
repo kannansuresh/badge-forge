@@ -70,6 +70,30 @@ export async function loadIcons(): Promise<SimpleIconData[]> {
   return iconsCache;
 }
 
+/** Score an icon against a search query. Higher = better match. */
+function scoreIcon(icon: SimpleIconData, q: string): number {
+  let score = 0;
+  const title = icon.title.toLowerCase();
+  const slug = icon.slug.toLowerCase();
+
+  // Exact matches
+  if (title === q || slug === q) score += 100;
+  // Starts with
+  if (title.startsWith(q) || slug.startsWith(q)) score += 50;
+  // Contains
+  if (title.includes(q)) score += 30;
+  if (slug.includes(q)) score += 25;
+
+  // Alias matches
+  const aka = (icon.aliases?.aka || []).map((a) => a.toLowerCase());
+  const old = (icon.aliases?.old || []).map((a) => a.toLowerCase());
+  if (aka.some((a) => a === q)) score += 80;
+  if (aka.some((a) => a.includes(q))) score += 20;
+  if (old.some((a) => a.includes(q))) score += 15;
+
+  return score;
+}
+
 /**
  * Search icons by title, slug, or aliases.
  * Returns the best matches sorted by relevance.
@@ -79,28 +103,7 @@ export function searchIcons(query: string, icons: SimpleIconData[], limit = 20):
   if (!q) return icons.slice(0, limit);
 
   const scored = icons
-    .map((icon) => {
-      let score = 0;
-      const title = icon.title.toLowerCase();
-      const slug = icon.slug.toLowerCase();
-
-      // Exact matches
-      if (title === q || slug === q) score += 100;
-      // Starts with
-      if (title.startsWith(q) || slug.startsWith(q)) score += 50;
-      // Contains
-      if (title.includes(q)) score += 30;
-      if (slug.includes(q)) score += 25;
-
-      // Alias matches
-      const aka = (icon.aliases?.aka || []).map((a) => a.toLowerCase());
-      const old = (icon.aliases?.old || []).map((a) => a.toLowerCase());
-      if (aka.some((a) => a === q)) score += 80;
-      if (aka.some((a) => a.includes(q))) score += 20;
-      if (old.some((a) => a.includes(q))) score += 15;
-
-      return { icon, score };
-    })
+    .map((icon) => ({ icon, score: scoreIcon(icon, q) }))
     .filter((s) => s.score > 0)
     .sort((a, b) => b.score - a.score)
     .slice(0, limit)

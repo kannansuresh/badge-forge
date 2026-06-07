@@ -61,6 +61,8 @@ function collectJsonFiles(dir: string): string[] {
 }
 
 // ── Manual schema validation ───────────────────────────────────
+// Manual JSON schema validation; each field check is a separate guard clause for precise error reporting.
+// fallow-ignore-next-line complexity
 function validateCategory(data: unknown, file: string, errors: Issue[]): data is GalleryCategory {
   if (!data || typeof data !== 'object') {
     errors.push({ file, message: 'Not a JSON object' });
@@ -131,6 +133,8 @@ function validateCategory(data: unknown, file: string, errors: Issue[]): data is
 }
 
 // ── Main validation ─────────────────────────────────────────────
+// Validation script orchestrating file collection, schema checks, uniqueness, and cross-reference validation.
+// fallow-ignore-next-line complexity
 async function validate(): Promise<boolean> {
   const errors: Issue[] = [];
   const warnings: Issue[] = [];
@@ -182,7 +186,7 @@ async function validate(): Promise<boolean> {
   for (const [slug, fileList] of slugMap) {
     if (fileList.length > 1) {
       errors.push({
-        file: fileList[0],
+        file: fileList[0]!,
         message: `Duplicate categorySlug "${slug}" in: ${fileList.join(', ')}`,
       });
     }

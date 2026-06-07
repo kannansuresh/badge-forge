@@ -15,6 +15,8 @@ import {
 import type { BadgeConfig } from './BadgeCard';
 import BadgeCard from './BadgeCard';
 
+// Large React component (358 loc) orchestrating badge list, import/export, filtering; decomposition tracked in backlog.
+// fallow-ignore-next-line complexity
 export default function Dashboard({ onEditBadge }: { onEditBadge?: (badge: BadgeConfig) => void }) {
   const base = import.meta.env.BASE_URL.replace(/\/?$/, '/');
   const [badges, setBadges] = useState<SavedBadge[]>([]);

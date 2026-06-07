@@ -54,6 +54,8 @@ interface LiveStudioProps {
 }
 
 /** Parses runtime badge params from clipboard or URL query. Returns params and optional category info. */
+// Complex param extraction from clipboard + URL, inherently branches on many fields.
+// fallow-ignore-next-line complexity
 function resolveRuntimeParams(): {
   params: Partial<BadgeParams>;
   categorySlug?: string;
@@ -105,6 +107,8 @@ function resolveRuntimeParams(): {
   return { params: {} };
 }
 
+// Large React component (650 loc) with extensive live-preview state; decomposition tracked in backlog.
+// fallow-ignore-next-line complexity
 export default function LiveStudio({ initialParams }: LiveStudioProps) {
   const [params, setParams] = useState<BadgeParams>({
     label: initialParams?.label ?? 'Label',

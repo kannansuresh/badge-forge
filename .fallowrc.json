@@ -1,0 +1,18 @@
+{
+  "$schema": "https://raw.githubusercontent.com/fallow-rs/fallow/main/schema.json",
+  "entry": ["src/index.{ts,tsx,js,jsx}", "src/main.{ts,tsx,js,jsx}"],
+  "ignoreDependencies": ["@astrojs/react"],
+  "duplicates": {
+    "minOccurrences": 2
+  },
+  "health": {
+    "maxCyclomatic": 20,
+    "maxCognitive": 25,
+    "maxFunctionSize": 200,
+    "maxCrap": 250
+  },
+  "audit": {
+    "gate": "new-only"
+  },
+  "rules": {}
+}

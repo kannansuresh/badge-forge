@@ -64,6 +64,34 @@ function setButtonAlreadySaved(btn: HTMLElement): void {
   btn.innerHTML = 'Added to My Badges';
 }
 
+/** Resolve category ID from a button's data-dexie-slug attribute. */
+async function resolveCategoryId(btn: HTMLElement): Promise<number | undefined> {
+  const slug = btn.getAttribute('data-dexie-slug') || '';
+  await seedDefaultCategories();
+  const cats = await getAllCategories();
+  return cats.find((c) => c.slug === slug)?.id;
+}
+
+/** Build a duplicate-check payload from clipboard data on an element. */
+async function checkDuplicate(
+  btn: HTMLElement,
+  categoryId: number | undefined,
+): Promise<{ data: BadgeClipboard; dup: boolean }> {
+  const data = parseClipboard(btn);
+  const dup = await isDuplicate({
+    label: data.label,
+    message: data.message,
+    color: data.color,
+    logo: data.logo || '',
+    logoColor: data.logoColor || '',
+    logoSize: data.logoSize || '',
+    style: data.style || 'flat',
+    labelColor: data.labelColor || '',
+    categoryId,
+  });
+  return { data, dup };
+}
+
 async function handleSave(saveBtn: HTMLElement): Promise<void> {
   // If already in saved state, do nothing
   const state = saveStates.get(saveBtn);
@@ -72,25 +100,9 @@ async function handleSave(saveBtn: HTMLElement): Promise<void> {
   // Prevent double-clicks
   setButtonSaving(saveBtn);
 
-  const slug = saveBtn.getAttribute('data-dexie-slug') || '';
   try {
-    await seedDefaultCategories();
-    const cats = await getAllCategories();
-    const match = cats.find((c) => c.slug === slug);
-    const categoryId = match?.id;
-    const data = parseClipboard(saveBtn);
-
-    const dup = await isDuplicate({
-      label: data.label,
-      message: data.message,
-      color: data.color,
-      logo: data.logo || '',
-      logoColor: data.logoColor || '',
-      logoSize: data.logoSize || '',
-      style: data.style || 'flat',
-      labelColor: data.labelColor || '',
-      categoryId,
-    });
+    const categoryId = await resolveCategoryId(saveBtn);
+    const { data, dup } = await checkDuplicate(saveBtn, categoryId);
 
     if (dup) {
       setButtonAlreadySaved(saveBtn);
@@ -119,14 +131,6 @@ async function handleSave(saveBtn: HTMLElement): Promise<void> {
   }
 }
 
-function handleEdit(editBtn: HTMLElement): void {
-  sessionStorage.setItem(
-    'badgeforge-clipboard',
-    editBtn.getAttribute('data-clipboard')?.replace(/&quot;/g, '"') || '{}',
-  );
-  window.location.href = import.meta.env.BASE_URL.replace(/\/?$/, '/') + 'forge';
-}
-
 /**
  * Check if a badge is already saved and update the button accordingly.
  * Called on page load to set initial button state.
@@ -141,25 +145,9 @@ export async function initSaveButtonState(): Promise<void> {
       saveStates.set(btn, { saved: false, revertTimer: null });
     }
 
-    const slug = btn.getAttribute('data-dexie-slug') || '';
     try {
-      await seedDefaultCategories();
-      const cats = await getAllCategories();
-      const match = cats.find((c) => c.slug === slug);
-      const categoryId = match?.id;
-      const data = parseClipboard(btn);
-
-      const dup = await isDuplicate({
-        label: data.label,
-        message: data.message,
-        color: data.color,
-        logo: data.logo || '',
-        logoColor: data.logoColor || '',
-        logoSize: data.logoSize || '',
-        style: data.style || 'flat',
-        labelColor: data.labelColor || '',
-        categoryId,
-      });
+      const categoryId = await resolveCategoryId(btn);
+      const { dup } = await checkDuplicate(btn, categoryId);
 
       if (dup) {
         setButtonAlreadySaved(btn);

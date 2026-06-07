@@ -27,6 +27,36 @@ interface BadgeCardProps {
   showActions?: boolean;
 }
 
+/** Shared badge preview image with error fallback. */
+function BadgePreviewImage({
+  imgError,
+  badge,
+  shieldsUrl,
+  onError,
+}: {
+  imgError: boolean;
+  badge: BadgeConfig;
+  shieldsUrl: string;
+  onError: () => void;
+}) {
+  if (imgError) {
+    return (
+      <span className="font-mono text-xs text-base-content/50">
+        {badge.label}-{badge.message}-{badge.color}
+      </span>
+    );
+  }
+  return (
+    <img
+      src={shieldsUrl}
+      alt={`${badge.label}: ${badge.message}`}
+      className="h-7 group-hover:scale-105 transition-transform"
+      loading="lazy"
+      onError={onError}
+    />
+  );
+}
+
 export default function BadgeCard({
   badge,
   onEdit,
@@ -107,35 +137,21 @@ export default function BadgeCard({
       {/* Badge preview — matching GalleryBadgeCard */}
       {detailUrl ? (
         <a href={detailUrl} className="bg-base-200/50 px-5 py-6 flex items-center justify-center">
-          {imgError ? (
-            <span className="font-mono text-xs text-base-content/50">
-              {badge.label}-{badge.message}-{badge.color}
-            </span>
-          ) : (
-            <img
-              src={shieldsUrl}
-              alt={`${badge.label}: ${badge.message}`}
-              className="h-7 group-hover:scale-105 transition-transform"
-              loading="lazy"
-              onError={() => setImgError(true)}
-            />
-          )}
+          <BadgePreviewImage
+            imgError={imgError}
+            badge={badge}
+            shieldsUrl={shieldsUrl}
+            onError={() => setImgError(true)}
+          />
         </a>
       ) : (
         <div className="bg-base-200/50 px-5 py-6 flex items-center justify-center">
-          {imgError ? (
-            <span className="font-mono text-xs text-base-content/50">
-              {badge.label}-{badge.message}-{badge.color}
-            </span>
-          ) : (
-            <img
-              src={shieldsUrl}
-              alt={`${badge.label}: ${badge.message}`}
-              className="h-7 group-hover:scale-105 transition-transform"
-              loading="lazy"
-              onError={() => setImgError(true)}
-            />
-          )}
+          <BadgePreviewImage
+            imgError={imgError}
+            badge={badge}
+            shieldsUrl={shieldsUrl}
+            onError={() => setImgError(true)}
+          />
         </div>
       )}
 

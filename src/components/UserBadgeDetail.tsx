@@ -22,6 +22,8 @@ import {
   type UserCategory,
 } from '../lib/storage';
 
+// Large React component (287 loc) with edit, delete, share flows; decomposition tracked in backlog.
+// fallow-ignore-next-line complexity
 export default function UserBadgeDetail() {
   const base = import.meta.env.BASE_URL.replace(/\/?$/, '/');
   const [badge, setBadge] = useState<SavedBadge | null>(null);
