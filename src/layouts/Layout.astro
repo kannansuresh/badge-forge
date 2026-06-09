@@ -30,7 +30,12 @@ interface NavItem {
 const navItems: NavItem[] = [
   { label: 'Home', href: base, icon: 'lucide:home', match: (p) => p === '/' },
   { label: 'Forge', href: `${base}forge`, icon: 'lucide:hammer', match: (p) => p === '/forge' },
-  { label: 'Gallery', href: `${base}gallery`, icon: 'lucide:layout-grid', match: (p) => p.startsWith('/gallery') },
+  {
+    label: 'Gallery',
+    href: `${base}gallery`,
+    icon: 'lucide:layout-grid',
+    match: (p) => p.startsWith('/gallery'),
+  },
   {
     label: 'My Badges',
     href: `${base}my-badges`,

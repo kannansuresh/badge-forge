@@ -1,6 +1,12 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import { ArrowLeft, Pencil, Trash2 } from 'lucide-react';
-import { getBadgeById, deleteBadge, getAllCategories, writeClipboard, type SavedBadge } from '../lib/storage';
+import {
+  getBadgeById,
+  deleteBadge,
+  getAllCategories,
+  writeClipboard,
+  type SavedBadge,
+} from '../lib/storage';
 import BadgeDetailView from './BadgeDetailView';
 
 export default function UserBadgeDetail() {
@@ -135,12 +141,13 @@ export default function UserBadgeDetail() {
         }
         subtitle={
           <p className="text-sm text-base-content/50 mt-1">
-            {badge.savedAt ? `Saved ${new Date(badge.savedAt).toLocaleDateString()}` : 'Saved badge'}
+            {badge.savedAt
+              ? `Saved ${new Date(badge.savedAt).toLocaleDateString()}`
+              : 'Saved badge'}
             {categoryName && (
               <>
                 {' '}
-                ·{' '}
-                <span className="badge badge-xs badge-primary badge-outline">{categoryName}</span>
+                · <span className="badge badge-xs badge-primary badge-outline">{categoryName}</span>
               </>
             )}
           </p>

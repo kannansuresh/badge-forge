@@ -115,7 +115,7 @@ badgeforge/
 
 - Astro 6 self-hosts fonts via `fontProviders.google()` in `astro.config.mjs`
 - `<Font cssVariable="--font-sans" />` and `<Font cssVariable="--font-mono" />` in Layout.astro
-- Body: Inter (400–800), Code: JetBrains Mono (400–600)
+- Body: Outfit (400–800), Code: Geist Mono (400–600)
 - Font files output to `dist/_astro/fonts/`
 
 ### Icon Preview Cache

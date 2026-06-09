@@ -50,7 +50,7 @@ A high-performance, local-first web application for creating, customizing, and b
 - **Smooth transitions** — swap-rotate animation on toggle
 - **Persistent** — saves to localStorage, survives page refreshes and client-side navigation
 - **Flash prevention** — inline head script sets theme before first paint
-- **Self-hosted fonts** — Inter (body, 400–800) and JetBrains Mono (code, 400–600) via Astro Fonts
+- **Self-hosted fonts** — Outfit (body, 400–800) and Geist Mono (code, 400–600) via Astro Fonts
 
 ### Performance & Architecture
 
@@ -69,7 +69,7 @@ A high-performance, local-first web application for creating, customizing, and b
 | React | [React](https://react.dev) 19 (4 .tsx components) |
 | Styling | [Tailwind CSS](https://tailwindcss.com) 4 + [DaisyUI](https://daisyui.com) 5 |
 | Icons | [astro-icon](https://github.com/natemoo-re/astro-icon) + [Lucide](https://lucide.dev) |
-| Fonts | Inter & JetBrains Mono (Astro Fonts, self-hosted) |
+| Fonts | Outfit & Geist Mono (Astro Fonts, self-hosted) |
 | Database | [Dexie.js](https://dexie.org) 4 (IndexedDB v3 schema) |
 | Icons Data | [Simple Icons](https://simpleicons.org) v16 (3,400+ brand logos) |
 | Linting | ESLint v10 (flat config) + Prettier v3 |

@@ -23,7 +23,7 @@ export default defineConfig({
   },
   fonts: [
     {
-      name: 'Inter',
+      name: 'Outfit',
       cssVariable: '--font-sans',
       provider: fontProviders.google(),
       weights: [400, 500, 600, 700, 800],
@@ -32,7 +32,7 @@ export default defineConfig({
       fallbacks: ['system-ui', '-apple-system', 'sans-serif'],
     },
     {
-      name: 'JetBrains Mono',
+      name: 'Geist Mono',
       cssVariable: '--font-mono',
       provider: fontProviders.google(),
       weights: [400, 500, 600],
