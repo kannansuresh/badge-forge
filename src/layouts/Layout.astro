@@ -24,15 +24,17 @@ const currentPath = Astro.url.pathname;
 interface NavItem {
   label: string;
   href: string;
+  icon: string;
   match: (p: string) => boolean;
 }
 const navItems: NavItem[] = [
-  { label: 'Home', href: base, match: (p) => p === '/' },
-  { label: 'Forge', href: `${base}forge`, match: (p) => p === '/forge' },
-  { label: 'Gallery', href: `${base}gallery`, match: (p) => p.startsWith('/gallery') },
+  { label: 'Home', href: base, icon: 'lucide:home', match: (p) => p === '/' },
+  { label: 'Forge', href: `${base}forge`, icon: 'lucide:hammer', match: (p) => p === '/forge' },
+  { label: 'Gallery', href: `${base}gallery`, icon: 'lucide:layout-grid', match: (p) => p.startsWith('/gallery') },
   {
     label: 'My Badges',
     href: `${base}my-badges`,
+    icon: 'lucide:bookmark',
     match: (p) => p === '/my-badges' || p === '/badge',
   },
 ];
@@ -145,6 +147,7 @@ const navItems: NavItem[] = [
                               : item.label.toLowerCase()
                       }
                     >
+                      <Icon name={item.icon} class="w-4 h-4" />
                       {item.label}
                     </a>
                   </li>
@@ -197,6 +200,7 @@ const navItems: NavItem[] = [
                             : item.label.toLowerCase()
                     }
                   >
+                    <Icon name={item.icon} class="w-4 h-4" />
                     {item.label}
                   </a>
                 </li>
