@@ -102,6 +102,12 @@ bun run lint
 
 # Format
 bun run format
+
+# Run Fallow complexity/dead code check
+bun run fallow:check
+
+# Run Fallow PR audit
+bun run fallow:audit
 ```
 
 ### Project Structure
@@ -136,13 +142,10 @@ src/
 └── styles/global.css               # Tailwind v4 + DaisyUI v5 themes
 ```
 
-## Deployment
+## Deployment & Quality Gates
 
-The app deploys to GitHub Pages via GitHub Actions (`.github/workflows/deploy.yml`). Push to `main` to trigger:
-
-1. Checkout → Setup Bun → Install → Build → Upload to Pages
-
-Set `SITE_URL` in the workflow to match your GitHub Pages URL.
+- **Production Deployments**: The app deploys to GitHub Pages via GitHub Actions (`.github/workflows/deploy.yml`) on pushes to `main`.
+- **Pull Request Quality Gates**: Every pull request is audited via GitHub Actions (`.github/workflows/pr.yml`), which executes `fallow audit` to ensure no dead code, complexity, or duplication issues are introduced.
 
 ## License
 

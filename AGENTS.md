@@ -24,6 +24,7 @@ Instructions for AI coding agents (Claude Code, etc.) working on this codebase.
 ```text
 badgeforge/
 ├── .github/workflows/deploy.yml         # GitHub Actions → Pages
+├── .github/workflows/pr.yml             # GitHub Actions → PR Audit (Fallow)
 ├── astro.config.mjs                     # Astro 6 + React + Tailwind + astro-icon + fonts
 ├── tsconfig.json                        # TypeScript strict config (extends astro/tsconfigs/strictest)
 ├── eslint.config.mjs                    # ESLint v10 flat config (js + typescript-eslint + astro)
@@ -198,7 +199,10 @@ badgeforge/
 - `bun run build` → static output in `dist/`
 - `bun run lint` → ESLint check (`eslint src --ext .ts,.tsx,.astro`)
 - `bun run format` → Prettier write (`src/**/*.{ts,tsx,astro,css,json,md}`)
-- GitHub Actions: `oven-sh/setup-bun@v2` → `bun install` → `bun run build` → deploy to Pages
+- `bun run fallow:check` → Fallow static analysis check for complexity, duplication, and dead code
+- `bun run fallow:audit` → Fallow pull request audit (runs on changes relative to base branch)
+- GitHub Actions (Deploy): `oven-sh/setup-bun@v2` → `bun install` → `bun run build` → deploy to Pages
+- GitHub Actions (PR Gate): `.github/workflows/pr.yml` executes `bun run fallow:audit` on every PR targeting main/master
 - `SITE_URL` env var controls the Astro `site` config
 
 ### Badge Detail Pages
