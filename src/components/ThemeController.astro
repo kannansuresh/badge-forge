@@ -1,31 +1,13 @@
+---
+import { Icon } from 'astro-icon/components';
+---
+
 <label class="btn btn-ghost btn-circle swap swap-rotate" aria-label="Toggle theme">
   <input id="theme-toggle" type="checkbox" class="theme-controller" value="dark" />
   <!-- Sun -->
-  <svg
-    class="swap-off h-5 w-5"
-    xmlns="http://www.w3.org/2000/svg"
-    viewBox="0 0 24 24"
-    fill="none"
-    stroke="currentColor"
-    stroke-width="2"
-  >
-    <circle cx="12" cy="12" r="4"></circle>
-    <path
-      d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"
-    ></path>
-  </svg>
+  <Icon name="lucide:sun" class="swap-off h-5 w-5" />
   <!-- Moon -->
-  <svg
-    class="swap-on h-5 w-5"
-    xmlns="http://www.w3.org/2000/svg"
-    viewBox="0 0 24 24"
-    fill="none"
-    stroke="currentColor"
-    stroke-width="2"
-  >
-    <path d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"
-    ></path>
-  </svg>
+  <Icon name="lucide:moon" class="swap-on h-5 w-5" />
 </label>
 
 <script>

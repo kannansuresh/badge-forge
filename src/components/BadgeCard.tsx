@@ -1,4 +1,4 @@
-import { Pencil } from 'lucide-react';
+import { Pencil, Trash2, Copy } from 'lucide-react';
 import { useCallback, useMemo, useState } from 'react';
 import { copyToClipboard } from '../lib/dom';
 import { COPY_FORMATS, getSnippet, type CopyFormatKey } from '../lib/formats';
@@ -126,14 +126,7 @@ export default function BadgeCard({
                 className="btn btn-xs btn-ghost hover:bg-base-100/80 text-error"
                 onClick={() => onDelete(badge)}
               >
-                <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth={2}
-                    d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16"
-                  />
-                </svg>
+                <Trash2 className="w-3 h-3" />
               </button>
             </div>
           )}
@@ -204,18 +197,7 @@ export default function BadgeCard({
                 className="join-item btn btn-xs btn-ghost px-1 pointer-events-none opacity-50"
                 title="Copy format"
               >
-                <svg
-                  className="w-3 h-3"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                >
-                  <rect x="9" y="9" width="13" height="13" rx="2" ry="2" />
-                  <path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1" />
-                </svg>
+                <Copy className="w-3 h-3" />
               </span>
               {COPY_FORMATS.map(({ key, label }) => (
                 <button
