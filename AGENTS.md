@@ -43,27 +43,26 @@ badgeforge/
 │   │   ├── Dashboard.tsx                # [React] Saved badges grid + import/export + filter
 │   │   ├── BadgeCard.tsx                # [React] Reusable badge card (copy/edit/delete/details)
 │   │   ├── CategoryManager.tsx          # [React] Full category CRUD with modal confirmations
-│   │   ├── GalleryBadgeCard.astro       # [Astro] Static card + TS script for copy/edit
-│   │   ├── GalleryBadgeDetail.astro     # [Astro] Read-only badge detail (gallery, static SSG)
-│   │   ├── UserBadgeDetail.astro        # [Astro] Read-only badge detail (user-saved, client-side)
+│   │   ├── BadgeDetailView.tsx          # [React] Reusable badge detail presentation view
+│   │   ├── GalleryBadgeDetail.tsx       # [React] Read-only badge detail (gallery, static SSG)
+│   │   ├── UserBadgeDetail.tsx          # [React] Read-only badge detail (user-saved, client-side)
 │   │   └── ThemeController.astro        # [Astro] DaisyUI swap toggle + astro:page-load sync
 │   ├── layouts/Layout.astro             # Global shell: navbar, ClientRouter, theme, footer
 │   ├── lib/
 │   │   ├── storage.ts                   # Dexie DB v3, clipboard, URL builder, formatters, CRUD
 │   │   ├── icons.ts                     # Simple Icons loader, titleToSlug, fuzzy search
 │   │   ├── gallery-categories.ts        # 19 gallery category definitions for seeding
-│   │   ├── dom.ts                       # Browser DOM utils (clipboard, gallery cards)
-│   │   └── user-badge-detail.ts         # User badge detail progressive script
+│   │   └── dom.ts                       # Browser DOM utils (clipboard, copyToClipboard)
 │   ├── pages/
 │   │   ├── index.astro                  # Landing: hero + feature cards + CTA
-│   │   ├── builder.astro                # Forge page (LiveStudio React island)
-│   │   ├── dashboard.astro              # My Badges page (Dashboard React island)
-│   │   ├── badge.astro                  # User badge detail (UserBadgeDetail Astro component, ?id= query)
+│   │   ├── forge.astro                  # Forge page (LiveStudio React island)
+│   │   ├── my-badges.astro              # My Badges page (Dashboard React island)
+│   │   ├── badge.astro                  # User badge detail (UserBadgeDetail React island, ?id= query)
 │   │   ├── categories.astro             # Category management (CategoryManager React island)
 │   │   └── gallery/
 │   │       ├── index.astro              # Category list with preview strips
-│   │       ├── [category].astro         # Dynamic category — GalleryBadgeCard grid
-│   │       └── [category]/[badge].astro # Static badge detail — GalleryBadgeDetail island
+│   │       ├── [category].astro         # Dynamic category — BadgeCard React islands grid
+│   │       └── [category]/[badge].astro # Static badge detail — GalleryBadgeDetail React island
 │   └── styles/global.css                # Tailwind v4 + DaisyUI v5 themes (light/dark)
 ```
 
@@ -72,10 +71,10 @@ badgeforge/
 | Layer           | Package                                              | Version     | Notes                       |
 | --------------- | ---------------------------------------------------- | ----------- | --------------------------- |
 | Framework       | `astro`                                              | ^6.4        | SSG + React islands         |
-| React           | `@astrojs/react`, `react`, `react-dom`               | ^5, ^19     | Islands only — 4 .tsx files |
+| React           | `@astrojs/react`, `react`, `react-dom`               | ^5, ^19     | Islands only — 7 .tsx files |
 | CSS             | `tailwindcss`, `daisyui`, `@tailwindcss/vite`        | ^4, ^5      | DaisyUI v5 themes           |
 | Icons (Astro)   | `astro-icon`, `@iconify-json/lucide`                 | ^1          | Lucide icon set             |
-| Icons (React)   | `lucide-react`                                       | ^1          | For React components only   |
+| Icons (React)   | `lucide-react`                                       | ^1          | For React components        |
 | Database        | `dexie`, `dexie-export-import`                       | ^4          | IndexedDB wrapper           |
 | Brand Icons     | `simple-icons`                                       | ^16         | 3,400+ brand logos          |
 | Linting         | `eslint`, `typescript-eslint`, `eslint-plugin-astro` | ^10, ^8, ^1 | Flat config                 |
@@ -84,12 +83,12 @@ badgeforge/
 
 ## Architecture Rules
 
-### React is for interactivity only
+### React Islands for Interactivity (No traditional DOM manipulation)
 
-- React components (`*.tsx`) should ONLY be used when state, effects, or complex event handling is needed
-- Static content with simple click handlers should use Astro components (`*.astro`) with imported TypeScript modules
-- All vanilla JS has been converted to TypeScript — use `src/lib/dom.ts` for shared DOM utilities
-- Never use `client:load` on a component that could be static HTML + a small script
+- React components (`*.tsx`) should be used for dynamic interactivity (forms, search autocompletes, dynamic grids, dialog modal overlays, database syncing).
+- This avoids traditional manual DOM selectors, cloning, and element mutations in plain TypeScript scripts.
+- Render React islands in Astro pages with hydration triggers (e.g. `<Component client:load />` or `<Component client:visible />`).
+- Reuse the same components (e.g. `BadgeCard.tsx`, `BadgeDetailView.tsx`) across both server-rendered loops and client-rendered grids to maintain DRY integrity.
 
 ### Content Collections
 

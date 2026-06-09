@@ -1,5 +1,5 @@
 /**
- * Browser-only DOM utilities for progressive enhancement.
+ * Browser-only DOM utilities for React islands.
  * All functions guard against SSR (typeof window === 'undefined').
  */
 
@@ -17,42 +17,4 @@ export async function copyToClipboard(text: string): Promise<void> {
     document.execCommand('copy');
     document.body.removeChild(ta);
   }
-}
-
-/**
- * Initialize gallery badge card interactions (copy + edit).
- * Bind to `astro:page-load` so it works with client-side navigation (ClientRouter).
- */
-export function initGalleryBadgeCards(): void {
-  if (typeof window === 'undefined') return;
-
-  document.querySelectorAll('[data-badgecard]').forEach((card) => {
-    // Copy buttons — green flash, no text change (no layout shift)
-    card.querySelectorAll('[data-copy]').forEach((btn) => {
-      btn.addEventListener('click', async (e) => {
-        e.preventDefault();
-        const text = btn.getAttribute('data-content');
-        if (!text) return;
-        await copyToClipboard(text);
-        btn.classList.add('btn-success');
-        btn.classList.remove('btn-ghost');
-        setTimeout(() => {
-          btn.classList.remove('btn-success');
-          btn.classList.add('btn-ghost');
-        }, 1200);
-      });
-    });
-
-    // Edit button
-    const editBtn = card.querySelector<HTMLElement>('[data-edit]');
-    if (editBtn) {
-      editBtn.addEventListener('click', () => {
-        sessionStorage.setItem(
-          'badgeforge-clipboard',
-          editBtn.getAttribute('data-clipboard') ?? '{}',
-        );
-        window.location.href = `${import.meta.env.BASE_URL.replace(/\/?$/, '/')}forge`;
-      });
-    }
-  });
 }

@@ -15,8 +15,9 @@ export interface BadgeConfig {
   labelColor?: string;
   name?: string;
   savedAt?: string;
-  categoryId?: number | undefined;
+  categoryId?: number | string | undefined;
   categoryName?: string | undefined;
+  categorySlug?: string | undefined;
 }
 
 interface BadgeCardProps {
@@ -68,7 +69,12 @@ export default function BadgeCard({
   const [copied, setCopied] = useState<CopyFormatKey | null>(null);
   const [imgError, setImgError] = useState(false);
 
-  const detailUrl = typeof badge.id === 'number' ? `${base}badge?id=${badge.id}` : null;
+  const detailUrl =
+    typeof badge.id === 'number'
+      ? `${base}badge?id=${badge.id}`
+      : typeof badge.id === 'string'
+        ? `${base}gallery/${badge.categorySlug || badge.categoryId}/${badge.id}`
+        : null;
   const shieldsUrl = buildShieldsUrl({
     label: badge.label,
     message: badge.message,

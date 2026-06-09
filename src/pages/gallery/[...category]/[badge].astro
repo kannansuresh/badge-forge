@@ -1,7 +1,7 @@
 ---
 import Layout from '../../../layouts/Layout.astro';
 import { getCollection } from 'astro:content';
-import GalleryBadgeDetail from '../../../components/GalleryBadgeDetail.astro';
+import GalleryBadgeDetail from '../../../components/GalleryBadgeDetail';
 
 export async function getStaticPaths() {
   const gallery = await getCollection('gallery');
@@ -38,6 +38,6 @@ const props = Astro.props;
 
 <Layout title={`${props.label}: ${props.message} — BadgeForge`}>
   <div class="max-w-4xl mx-auto px-4 py-12">
-    <GalleryBadgeDetail {...props} />
+    <GalleryBadgeDetail client:load {...props} />
   </div>
 </Layout>
