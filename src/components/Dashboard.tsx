@@ -252,7 +252,7 @@ export default function Dashboard({ onEditBadge }: { onEditBadge?: (badge: Badge
       {loading ? (
         <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4">
           {[1, 2, 3].map((i) => (
-            <div key={i} className="card bg-base-100 shadow-sm border border-base-300">
+            <div key={i} className="card glass-card">
               <div className="card-body p-4 gap-3">
                 <div className="skeleton h-6 w-32" />
                 <div className="skeleton h-14 w-full" />

@@ -653,7 +653,7 @@ export default function LiveStudio({ initialParams }: LiveStudioProps) {
 
         <div className={mobilePreviewOpen ? 'block space-y-5' : 'hidden lg:block lg:space-y-5'}>
           {/* Magnified */}
-          <div className="card bg-base-200 border border-base-300 relative">
+          <div className="card glass-card relative">
             <div className="card-body p-3 sm:p-4 flex items-center justify-center min-h-24">
               <span className="absolute top-2 left-3 text-[10px] opacity-40 uppercase tracking-wider font-medium select-none pointer-events-none">
                 Magnified View
@@ -668,7 +668,7 @@ export default function LiveStudio({ initialParams }: LiveStudioProps) {
           </div>
 
           {/* Actual size */}
-          <div className="card bg-base-200 border border-base-300 relative">
+          <div className="card glass-card relative">
             <div className="card-body p-3 sm:p-4 flex items-center justify-center min-h-16">
               <span className="absolute top-2 left-3 text-[10px] opacity-40 uppercase tracking-wider font-medium select-none pointer-events-none">
                 Actual Size
@@ -678,7 +678,7 @@ export default function LiveStudio({ initialParams }: LiveStudioProps) {
           </div>
 
           {/* Alt Text */}
-          <div className="card bg-base-200 border border-base-300">
+          <div className="card glass-card">
             <div className="card-body p-3 sm:p-4 gap-2">
               <div className="flex items-center justify-between">
                 <h3 className="card-title text-xs sm:text-sm opacity-70 font-medium uppercase tracking-wider">
@@ -932,7 +932,7 @@ function CopyTabs({ shieldsUrl, alt }: { shieldsUrl: string; alt?: string | unde
   }, [snippet]);
 
   return (
-    <div className="card bg-base-200 border border-base-300">
+    <div className="card glass-card">
       <div className="card-body p-3 sm:p-4 gap-3">
         {/* Title — matches other right-side cards */}
         <h3 className="card-title text-xs sm:text-sm opacity-70 font-medium uppercase tracking-wider">

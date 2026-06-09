@@ -103,7 +103,7 @@ export default function BadgeCard({
   );
 
   return (
-    <div className="card bg-base-100 border border-base-300/50 card-lift group overflow-hidden">
+    <div className="card glass-card card-lift group overflow-hidden">
       {/* Floating action buttons — appear on hover */}
       {showActions && (
         <div className="absolute top-2 right-2 z-10 opacity-40 hover:opacity-100 transition-opacity flex gap-1">

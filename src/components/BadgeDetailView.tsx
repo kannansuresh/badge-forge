@@ -70,7 +70,7 @@ export default function BadgeDetailView({
     <div className="space-y-4">
       {header}
 
-      <div className="card bg-base-100 border border-base-300/50 overflow-hidden">
+      <div className="card glass-card overflow-hidden">
         {/* Preview image hero */}
         <div className="bg-base-200/50 px-6 py-14 flex items-center justify-center relative">
           {imgError ? (

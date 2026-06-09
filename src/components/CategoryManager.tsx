@@ -118,7 +118,7 @@ export default function CategoryManager() {
   return (
     <div className="space-y-8">
       {/* ── Create new ───────────────────────────────── */}
-      <div className="card bg-base-200 border border-base-300">
+      <div className="card glass-card">
         <div className="card-body p-4">
           <h3 className="card-title text-base">Create Category</h3>
           <div className="flex flex-col sm:flex-row gap-2">
@@ -165,7 +165,7 @@ export default function CategoryManager() {
         ) : (
           <div className="space-y-2">
             {userCategories.map((cat) => (
-              <div key={cat.id} className="card bg-base-100 border border-base-300">
+              <div key={cat.id} className="card glass-card">
                 <div className="card-body p-3">
                   {editingId === cat.id ? (
                     <div className="flex flex-col sm:flex-row gap-2">
