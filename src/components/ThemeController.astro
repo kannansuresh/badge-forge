@@ -34,16 +34,6 @@
   // Sync checkbox on initial load
   syncCheckbox('theme-toggle');
 
-  // Handle toggle changes
-  const checkbox = document.getElementById('theme-toggle') as HTMLInputElement | null;
-  if (checkbox) {
-    checkbox.addEventListener('change', () => {
-      const dark = checkbox.checked;
-      document.documentElement.setAttribute('data-theme', dark ? 'dark' : 'light');
-      localStorage.setItem('theme', dark ? 'dark' : 'light');
-    });
-  }
-
   // Handle SPA navigation
   initThemeListeners();
 </script>

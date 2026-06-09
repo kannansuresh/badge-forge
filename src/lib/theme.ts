@@ -33,13 +33,31 @@ export function syncCheckbox(checkboxId: string): void {
   if (cb) cb.checked = resolveTheme() === 'dark';
 }
 
+let listenersInitialized = false;
+
 /**
  * Attach theme listeners for SPA navigation (ClientRouter).
  * Call once on initial page load.
  */
 export function initThemeListeners(): void {
+  if (typeof window === 'undefined') return;
+  if (listenersInitialized) return;
+  listenersInitialized = true;
+
   // Restore theme after ClientRouter swaps <html>
   document.addEventListener('astro:after-swap', applyTheme);
+
   // Re-sync toggle checkbox after page content loads
   document.addEventListener('astro:page-load', () => syncCheckbox('theme-toggle'));
+
+  // Handle theme toggle changes via event delegation on document
+  document.addEventListener('change', (e) => {
+    const target = e.target as HTMLElement | null;
+    if (target && target.id === 'theme-toggle') {
+      const checkbox = target as HTMLInputElement;
+      const dark = checkbox.checked;
+      document.documentElement.setAttribute('data-theme', dark ? 'dark' : 'light');
+      localStorage.setItem('theme', dark ? 'dark' : 'light');
+    }
+  });
 }
