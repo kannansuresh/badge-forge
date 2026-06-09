@@ -151,4 +151,3 @@ src/
 
 MIT — Built by [Kannan Suresh](https://github.com/kannansuresh/)
 
-Changed from base note.
