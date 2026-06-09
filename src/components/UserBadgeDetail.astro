@@ -1,0 +1,82 @@
+---
+import { Icon } from 'astro-icon/components';
+import BadgeDetailView from './BadgeDetailView.astro';
+---
+
+<div id="badge-detail-container">
+  <!-- Loading State -->
+  <div id="detail-loading" class="flex justify-center py-20">
+    <span class="loading loading-spinner loading-lg"></span>
+  </div>
+
+  <!-- Not Found State -->
+  <div id="detail-not-found" class="text-center py-20 hidden">
+    <h1 class="text-xl font-bold mb-2">Badge Not Found</h1>
+    <p class="text-base-content/60 mb-6">This badge may have been deleted.</p>
+    <a href="#" data-link-my-badges-nf class="btn btn-primary"> Go to My Badges </a>
+  </div>
+
+  <!-- Deleted State -->
+  <div id="detail-deleted" class="text-center py-20 hidden">
+    <h1 class="text-xl font-bold mb-2">Badge Deleted</h1>
+    <p class="text-base-content/60 mb-6">Removed permanently.</p>
+    <a href="#" data-link-my-badges-del class="btn btn-primary"> Go to My Badges </a>
+  </div>
+
+  <!-- Badge Content (initially hidden) -->
+  <div id="detail-content" class="hidden">
+    <BadgeDetailView
+      label="loading"
+      message="badge"
+      color="6366f1"
+      logo="loading"
+      style="flat"
+      labelColor="6366f1"
+    >
+      <!-- Header slot -->
+      <a
+        slot="header"
+        href="#"
+        data-link-my-badges
+        class="inline-flex items-center gap-2 text-sm text-base-content/60 hover:text-base-content transition-colors mb-6"
+      >
+        <Icon name="lucide:arrow-left" class="w-4 h-4" /> Back to My Badges
+      </a>
+
+      <!-- Subtitle slot -->
+      <p slot="subtitle" id="badge-subtitle" class="text-sm text-base-content/50 mt-1">
+        Saved badge
+      </p>
+
+      <!-- Actions slot -->
+      <button slot="actions" class="btn btn-sm btn-outline gap-1" data-edit-user-badge>
+        <Icon name="lucide:pencil" class="w-3.5 h-3.5" /> Edit
+      </button>
+      <button slot="actions" class="btn btn-sm btn-ghost text-error gap-1" data-delete-user-badge>
+        <Icon name="lucide:trash-2" class="w-3.5 h-3.5" /> Delete
+      </button>
+    </BadgeDetailView>
+  </div>
+</div>
+
+<!-- Delete Confirmation Modal -->
+<dialog id="delete-confirm-modal" class="modal">
+  <div class="modal-box">
+    <h3 class="text-lg font-bold">Delete Badge</h3>
+    <p class="py-4" id="delete-confirm-text">Delete badge?</p>
+    <div class="modal-action">
+      <button class="btn btn-ghost" data-cancel-delete> Cancel </button>
+      <button class="btn btn-error" data-confirm-delete-btn> Delete </button>
+    </div>
+  </div>
+  <form method="dialog" class="modal-backdrop">
+    <button>close</button>
+  </form>
+</dialog>
+
+<script>
+  import { initUserBadgeDetail } from '../lib/user-badge-detail';
+
+  initUserBadgeDetail();
+  document.addEventListener('astro:page-load', initUserBadgeDetail);
+</script>

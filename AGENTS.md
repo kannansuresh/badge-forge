@@ -43,20 +43,21 @@ badgeforge/
 │   │   ├── BadgeCard.tsx                # [React] Reusable badge card (copy/edit/delete/details)
 │   │   ├── CategoryManager.tsx          # [React] Full category CRUD with modal confirmations
 │   │   ├── GalleryBadgeCard.astro       # [Astro] Static card + TS script for copy/edit
-│   │   ├── GalleryBadgeDetail.tsx       # [React] Read-only badge detail (gallery, static SSG)
-│   │   ├── UserBadgeDetail.tsx          # [React] Read-only badge detail (user-saved, client-side)
+│   │   ├── GalleryBadgeDetail.astro     # [Astro] Read-only badge detail (gallery, static SSG)
+│   │   ├── UserBadgeDetail.astro        # [Astro] Read-only badge detail (user-saved, client-side)
 │   │   └── ThemeController.astro        # [Astro] DaisyUI swap toggle + astro:page-load sync
 │   ├── layouts/Layout.astro             # Global shell: navbar, ClientRouter, theme, footer
 │   ├── lib/
 │   │   ├── storage.ts                   # Dexie DB v3, clipboard, URL builder, formatters, CRUD
 │   │   ├── icons.ts                     # Simple Icons loader, titleToSlug, fuzzy search
 │   │   ├── gallery-categories.ts        # 19 gallery category definitions for seeding
-│   │   └── dom.ts                       # Browser DOM utils (clipboard, gallery cards)
+│   │   ├── dom.ts                       # Browser DOM utils (clipboard, gallery cards)
+│   │   └── user-badge-detail.ts         # User badge detail progressive script
 │   ├── pages/
 │   │   ├── index.astro                  # Landing: hero + feature cards + CTA
 │   │   ├── builder.astro                # Forge page (LiveStudio React island)
 │   │   ├── dashboard.astro              # My Badges page (Dashboard React island)
-│   │   ├── badge.astro                  # User badge detail (UserBadgeDetail island, ?id= query)
+│   │   ├── badge.astro                  # User badge detail (UserBadgeDetail Astro component, ?id= query)
 │   │   ├── categories.astro             # Category management (CategoryManager React island)
 │   │   └── gallery/
 │   │       ├── index.astro              # Category list with preview strips
@@ -202,7 +203,7 @@ badgeforge/
 
 ### Badge Detail Pages
 
-- **Gallery badges** are static SSG pages at `/gallery/[category]/[badgeId]` via `getStaticPaths` iterating all content collections. Each page uses `GalleryBadgeDetail` React island with: large badge preview, metadata grid, save-to-gallery button, edit-in-builder button, and 6 embed format copy options (Markdown, HTML, URL, reST, AsciiDoc, Textile).
-- **User badges** live in IndexedDB and cannot be SSG'd. They use a single `/badge` page with `?id=` query param. The `UserBadgeDetail` React island reads the `id` from `URLSearchParams`, fetches from Dexie, and renders the same full detail view plus a delete action with confirmation modal.
+- **Gallery badges** are static SSG pages at `/gallery/[category]/[badgeId]` via `getStaticPaths` iterating all content collections. Each page uses `GalleryBadgeDetail` Astro component with: large badge preview, metadata grid, save-to-gallery button, edit-in-builder button, and 6 embed format copy options (Markdown, HTML, URL, reST, AsciiDoc, Textile).
+- **User badges** live in IndexedDB and cannot be SSG'd. They use a single `/badge` page with `?id=` query param. The `UserBadgeDetail` Astro component reads the `id` from `URLSearchParams`, fetches from Dexie client-side, and renders the same full detail view plus a delete action with confirmation modal.
 - Gallery badge cards link to detail pages via clickable image + label text; user badge cards link via `ExternalLink` "Details" button.
 - `getBadgeById(id)` was added to `storage.ts` for single-badge lookup from Dexie.

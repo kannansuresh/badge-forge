@@ -55,7 +55,7 @@ A high-performance, local-first web application for creating, customizing, and b
 ### Performance & Architecture
 
 - **Static site generation** — 24 pages build to static HTML in ~1.6s
-- **Islands architecture** — React used only for 4 interactive pages; the rest is pure static HTML
+- **Islands architecture** — React used only for 3 interactive pages; the rest is pure static HTML
 - **Minimum JavaScript** — zero JS on landing page and gallery listing; gallery cards use a single TypeScript module
 - **Lazy-loaded icons** — Simple Icons JSON (372 KB / 100 KB gzipped) loaded on demand when logo search is focused
 - **Client-side navigation** — Astro ClientRouter enables SPA-like transitions between pages
@@ -116,13 +116,15 @@ src/
 │   ├── BadgeCard.tsx               # Reusable badge card (React)
 │   ├── CategoryManager.tsx         # Category CRUD page (React island)
 │   ├── GalleryBadgeCard.astro      # Static gallery card + TS script
-│   └── ThemeController.astro       # DaisyUI swap toggle + TS script
+│   ├── UserBadgeDetail.astro       # Static user badge detail + progressive TS
+│   └── ThemeController.astro       # Theme toggle
 ├── layouts/Layout.astro            # Shell: navbar, ClientRouter, theme, footer
 ├── lib/
 │   ├── storage.ts                  # Dexie.js DB v3, clipboard, URL builder, CRUD
 │   ├── icons.ts                    # Simple Icons loader + fuzzy search
 │   ├── gallery-categories.ts       # 19 category definitions for seeding
-│   └── dom.ts                      # Browser DOM utilities (TypeScript)
+│   ├── dom.ts                      # Browser DOM utilities (TypeScript)
+│   └── user-badge-detail.ts        # Client-side user badge detail script
 ├── pages/
 │   ├── index.astro                 # Landing page
 │   ├── builder.astro               # Forge
