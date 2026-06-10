@@ -31,45 +31,27 @@ const pagefindBase = import.meta.env.BASE_URL.replace(/\/?$/, '/') + 'pagefind/'
 </div>
 
 <script define:vars={{ pagefindBase }}>
-  // ── Pagefind type definitions ──────────────────────────────
-  interface PagefindResultData {
-    url: string;
-    meta?: { title?: string };
-    content?: string;
-  }
-
-  interface PagefindResult {
-    data: () => Promise<PagefindResultData>;
-  }
-
-  interface PagefindSearchFn {
-    (query: string, opts?: Record<string, unknown>): Promise<{ results: PagefindResult[] }>;
-  }
-
-  let pagefindSearch: PagefindSearchFn | null = null;
+  let pagefindSearch = null;
   let pagefindBasePath = pagefindBase || '/pagefind/';
   let loading = false;
-  let debounceId: ReturnType<typeof setTimeout>;
+  let debounceId;
 
-  function getInput(): HTMLInputElement | null {
-    return document.getElementById('search-input') as HTMLInputElement | null;
+  function getInput() {
+    return document.getElementById('search-input');
   }
-  function getResults(): HTMLDivElement | null {
-    return document.getElementById('search-results') as HTMLDivElement | null;
+  function getResults() {
+    return document.getElementById('search-results');
   }
 
-  async function loadPagefind(): Promise<boolean> {
+  async function loadPagefind() {
     if (pagefindSearch) return true;
     if (loading) return false;
     loading = true;
     try {
       const jsUrl = pagefindBasePath + 'pagefind.js';
       const dynamicImport = new Function('specifier', 'return import(specifier)');
-      const mod: Record<string, unknown> = await dynamicImport(jsUrl);
-      const resolved =
-        (mod.search as PagefindSearchFn | undefined) ??
-        (mod.default as { search?: PagefindSearchFn } | undefined)?.search ??
-        (mod as unknown as PagefindSearchFn);
+      const mod = await dynamicImport(jsUrl);
+      const resolved = mod.search ?? mod.default?.search ?? mod;
       if (typeof resolved !== 'function') {
         console.error('Pagefind: search function not found', Object.keys(mod));
         pagefindSearch = null;
@@ -85,7 +67,7 @@ const pagefindBase = import.meta.env.BASE_URL.replace(/\/?$/, '/') + 'pagefind/'
     }
   }
 
-  async function doSearch(): Promise<void> {
+  async function doSearch() {
     const input = getInput();
     const results = getResults();
     if (!input || !results) return;
@@ -117,7 +99,7 @@ const pagefindBase = import.meta.env.BASE_URL.replace(/\/?$/, '/') + 'pagefind/'
         return;
       }
       const items = await Promise.all(
-        pfResult.results.slice(0, 8).map(async (r: PagefindResult) => {
+        pfResult.results.slice(0, 8).map(async (r) => {
           const data = await r.data();
           return `<a href="${data.url}" class="block p-3 hover:bg-base-200 transition-colors no-underline text-sm font-medium truncate">${data.meta?.title || data.url || 'Untitled'}</a>`;
         }),
