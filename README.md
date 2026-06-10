@@ -4,6 +4,8 @@ A high-performance, local-first web application for creating, customizing, and b
 
 ![BadgeForge](https://img.shields.io/badge/BadgeForge-v1.0-6366f1?style=for-the-badge)
 
+![image.png](img-2c89f420-6e5e-4420-8ca7-208b58de17c3-image.png)
+
 ## Features
 
 ### The Forge — Live Badge Builder
