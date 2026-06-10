@@ -3,10 +3,17 @@
  * mobile menu close on navigation.
  */
 
+/** Strip the base path prefix so comparisons work on subpath deployments. */
+function normalizedPath(base: string, raw: string): string {
+  if (base === '/' || base === '') return raw;
+  return raw.startsWith(base) ? raw.slice(base.length - 1) || '/' : raw;
+}
+
 /** Update the active nav link highlight based on current path. */
 function updateActiveNav(): void {
   if (typeof window === 'undefined') return;
-  const path = window.location.pathname;
+  const base = document.body.dataset.base || '/';
+  const path = normalizedPath(base, window.location.pathname);
   document.querySelectorAll('.nav-link').forEach((link) => {
     const match = link.getAttribute('data-match');
     const isActive =

@@ -1,6 +1,9 @@
 ---
 import { Icon } from 'astro-icon/components';
 // Search component using Pagefind — lazy-loaded, keyboard accessible
+
+// Pagefind must be loaded from the correct base path (handles subpath deployments)
+const pagefindBase = import.meta.env.BASE_URL.replace(/\/?$/, '/') + 'pagefind/';
 ---
 
 <div id="badgeforge-search" class="relative">
@@ -27,7 +30,7 @@ import { Icon } from 'astro-icon/components';
   </div>
 </div>
 
-<script>
+<script define:vars={{ pagefindBase }}>
   // ── Pagefind type definitions ──────────────────────────────
   interface PagefindResultData {
     url: string;
@@ -44,6 +47,7 @@ import { Icon } from 'astro-icon/components';
   }
 
   let pagefindSearch: PagefindSearchFn | null = null;
+  let pagefindBasePath = pagefindBase || '/pagefind/';
   let loading = false;
   let debounceId: ReturnType<typeof setTimeout>;
 
@@ -59,8 +63,9 @@ import { Icon } from 'astro-icon/components';
     if (loading) return false;
     loading = true;
     try {
+      const jsUrl = pagefindBasePath + 'pagefind.js';
       const dynamicImport = new Function('specifier', 'return import(specifier)');
-      const mod: Record<string, unknown> = await dynamicImport('/pagefind/pagefind.js');
+      const mod: Record<string, unknown> = await dynamicImport(jsUrl);
       const resolved =
         (mod.search as PagefindSearchFn | undefined) ??
         (mod.default as { search?: PagefindSearchFn } | undefined)?.search ??
@@ -105,7 +110,7 @@ import { Icon } from 'astro-icon/components';
     }
 
     try {
-      const pfResult = await searchFn(query.trim());
+      const pfResult = await searchFn(query.trim(), { basePath: pagefindBasePath });
       if (!pfResult?.results?.length) {
         results.innerHTML = '<div class="p-4 text-sm text-base-content/50">No results found.</div>';
         results.classList.remove('hidden');

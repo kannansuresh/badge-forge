@@ -177,6 +177,15 @@ badgeforge/
 - SDK (`simple-icons/sdk`) uses Node.js APIs — cannot be bundled for browser
 - Lazy-loaded: only imported when user focuses the logo search field
 
+### Pagefind Search
+
+- `Search.astro` lazy-loads Pagefind's JS API (not the bundled UI) for a custom search drawer
+- **Subpath deployments** (e.g., `BASE_PATH=/badge-forge/`): both the JS import path and the `search()` call must use the correct base path
+- `define:vars={{ pagefindBase }}` passes the server-computed `BASE_URL + 'pagefind/'` to the client script
+- `searchFn(query, { basePath: pagefindBasePath })` tells Pagefind to resolve result URLs relative to the correct base
+- Without `basePath`, results link to wrong URLs on subpath deployments; without the correct JS import path, Pagefind fails to load entirely
+- The pagefind index lives at `dist/pagefind/` and the `pagefind --site dist` command runs after `astro build` in `bun run build`
+
 ### Astro 6 specifics
 
 - Content config must be `src/content.config.ts`, not `src/content/config.ts`
